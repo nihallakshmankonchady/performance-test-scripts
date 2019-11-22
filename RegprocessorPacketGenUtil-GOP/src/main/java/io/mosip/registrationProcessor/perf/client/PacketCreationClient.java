@@ -1,0 +1,63 @@
+/**
+ * 
+ */
+package io.mosip.registrationProcessor.perf.client;
+
+import java.io.IOException;
+
+import org.apache.log4j.Logger;
+import org.hibernate.Session;
+
+import io.mosip.dbentity.TokenGenerationEntity;
+import io.mosip.registrationProcessor.perf.service.RegPacketProcessor;
+import io.mosip.registrationProcessor.perf.util.CSVUtil;
+import io.mosip.registrationProcessor.perf.util.PropertiesUtil;
+import io.mosip.registrationProcessor.perf.util.TokenGeneration;
+import io.mosip.resgistrationProcessor.perf.dbaccess.DBUtil;
+
+/**
+ * @author Gaurav Sharan
+ *
+ */
+public class PacketCreationClient implements Runnable {
+	private static Logger logger = Logger.getLogger(PacketCreationClient.class);
+
+	/**
+	 * 
+	 */
+	public PacketCreationClient() {
+	}
+
+	@Override
+	public void run() {
+		String CONFIG_FILE = "config.properties";
+		PropertiesUtil prop = new PropertiesUtil(CONFIG_FILE);
+		Session session = new DBUtil().obtainSession(prop);
+		try {
+			processRegPacket(prop, session);
+			session.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void processRegPacket(PropertiesUtil prop, Session session) throws IOException {
+
+		RegPacketProcessor regpacketProcessor = new RegPacketProcessor();
+		String token = getToken("syncTokenGenerationFilePath", prop);
+		regpacketProcessor.processValidPacket(token, prop, session);
+		logger.debug("token :" + token);
+	}
+
+	private String getToken(String tokenType, PropertiesUtil prop) throws IOException {
+
+		TokenGeneration generateToken = new TokenGeneration();
+		TokenGenerationEntity tokenEntity = new TokenGenerationEntity();
+		String tokenGenerationProperties = generateToken.readPropertyFile(tokenType);
+		tokenEntity = generateToken.createTokenGeneratorDto(tokenGenerationProperties);
+		String token = generateToken.getToken(tokenEntity, prop);
+		return token;
+
+	}
+
+}
