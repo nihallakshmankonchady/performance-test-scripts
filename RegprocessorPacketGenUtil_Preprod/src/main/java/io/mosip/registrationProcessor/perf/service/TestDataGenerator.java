@@ -106,6 +106,7 @@ public class TestDataGenerator {
 			csvDtoList.add(csvDto);
 			csvDtoData.add(rowData);
 			if (csvDtoData.size() >= 10) {
+				System.out.println("Test data generation; iteration " + i + " over");
 
 				try {
 					csvUtil.writeObjectsToCsv(csvDtoData, csvPath);

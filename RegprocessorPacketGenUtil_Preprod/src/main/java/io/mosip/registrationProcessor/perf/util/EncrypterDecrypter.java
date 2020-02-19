@@ -99,6 +99,8 @@ public class EncrypterDecrypter {
 		destinationPath = destinationPath + "//" + fileName;
 		// Response response=applnMethods.postRequestToDecrypt(decryptDto,
 		// decrypterURL);
+
+		// TODO
 		validToken = getToken("syncTokenGenerationFilePath", prop);
 		boolean tokenStatus = apiRequests.validateToken(validToken, prop);
 		while (!tokenStatus) {
@@ -233,6 +235,7 @@ public class EncrypterDecrypter {
 		try {
 			JSONObject data = (JSONObject) new JSONParser().parse(response.asString());
 			JSONObject responseObject = (JSONObject) data.get("response");
+			System.out.println(data);
 			// String encryptedPacketString=
 			// CryptoUtil.encodeBase64(data.get("data").toString().getBytes());
 			System.out.println(

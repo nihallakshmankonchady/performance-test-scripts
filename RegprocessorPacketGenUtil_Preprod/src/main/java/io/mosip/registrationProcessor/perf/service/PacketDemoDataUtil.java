@@ -335,7 +335,9 @@ public class PacketDemoDataUtil {
 		identityDto.setPostalCode(postalCodeStr);
 		identityDto.setPhone(testDataUtil.generatePhoneNumber().toString());
 		String[] names = fullNameEng.split(" ");
-		identityDto.setEmail(testDataUtil.generateEmailAddress(names[0], names[1]));
+//		identityDto.setEmail(testDataUtil.generateEmailAddress(names[0], names[1]));
+		System.out.println(identityDto.getEmail());
+		identityDto.getEmail();
 
 		identityDto.setCNIENumber(testDataUtil.generateCnieNumber());
 

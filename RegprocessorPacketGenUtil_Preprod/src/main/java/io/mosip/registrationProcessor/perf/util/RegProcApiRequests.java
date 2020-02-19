@@ -8,6 +8,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.google.gson.Gson;
+
 import io.restassured.http.Cookie;
 import io.restassured.response.Response;
 
@@ -46,8 +48,8 @@ public class RegProcApiRequests {
 		// logger.info("REST-ASSURED: Sending a GET request to " + prop.BASE_URL + url);
 
 		Cookie.Builder builder = new Cookie.Builder("Authorization", regProcAuthToken);
-		Response getResponse = given().cookie(builder.build()).relaxedHTTPSValidation().queryParams(valueMap).log()
-				.all().when().get(prop.BASE_URL + url).then().extract().response();
+		Response getResponse = given().cookie(builder.build()).relaxedHTTPSValidation().queryParams(valueMap).when()
+				.get(prop.BASE_URL + url).then().extract().response();
 		// log then response
 		logger.info("REST-ASSURED: The response from the request is: " + getResponse.asString());
 		logger.info("REST-ASSURED: The response Time is: " + getResponse.time());
@@ -86,6 +88,7 @@ public class RegProcApiRequests {
 			// prop.BASE_URL + url);
 			// logger.info("REST ASSURRED :: Request data To encrypt is " + body);
 			Cookie.Builder builder = new Cookie.Builder("Authorization", token);
+			System.out.println("Sending encrypt request to: " + prop.BASE_URL + url);
 			Response postResponse = given().cookie(builder.build()).relaxedHTTPSValidation().body(body)
 					.contentType(contentHeader).accept(acceptHeader).when().post(prop.BASE_URL + url).then().extract()
 					.response();
@@ -114,14 +117,16 @@ public class RegProcApiRequests {
 	public Response postRequest(String url, Object body, String contentHeader, String acceptHeader,
 			PropertiesUtil prop) {
 
-	//	logger.info("URL IS  :: " + prop.BASE_URL + url);
-
+		// logger.info("URL IS :: " + prop.BASE_URL + url);
+		System.out.println("Request data is : " + new Gson().toJson(body));
 		Response postResponse = given().relaxedHTTPSValidation().body(body).contentType(contentHeader)
 				.accept(acceptHeader).when().post(prop.BASE_URL + url).then().extract().response();
 		// log then response
-		//logger.info("REST-ASSURED: The response from the request is: " + postResponse.asString());
-	//	logger.info("REST-ASSURED: The response Time is: " + postResponse.time());
-	//	logger.info("REST-ASSURED:454545445 The response Time is: " + postResponse.asString());
+		logger.info("REST-ASSURED: The response from the request is: " + postResponse.asString());
+		System.out.println("REST-ASSURED: The response from the request is: " + postResponse.asString());
+		// logger.info("REST-ASSURED: The response Time is: " + postResponse.time());
+		// logger.info("REST-ASSURED:454545445 The response Time is: " +
+		// postResponse.asString());
 		return postResponse;
 	}
 

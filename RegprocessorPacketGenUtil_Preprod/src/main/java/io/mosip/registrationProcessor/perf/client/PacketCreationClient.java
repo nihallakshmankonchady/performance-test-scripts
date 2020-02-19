@@ -21,11 +21,13 @@ import io.mosip.resgistrationProcessor.perf.dbaccess.DBUtil;
  */
 public class PacketCreationClient implements Runnable {
 	private static Logger logger = Logger.getLogger(PacketCreationClient.class);
+	private String authToken;
 
 	/**
 	 * 
 	 */
-	public PacketCreationClient() {
+	public PacketCreationClient(String authToken) {
+		this.authToken = authToken;
 	}
 
 	@Override
@@ -34,19 +36,23 @@ public class PacketCreationClient implements Runnable {
 		PropertiesUtil prop = new PropertiesUtil(CONFIG_FILE);
 		Session session = new DBUtil().obtainSession(prop);
 		try {
-			processRegPacket(prop, session);
+			processRegPacket(prop, session, this.authToken);
 			session.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	private void processRegPacket(PropertiesUtil prop, Session session) throws IOException {
+	private void processRegPacket(PropertiesUtil prop, Session session, String authToken) throws IOException {
 
 		RegPacketProcessor regpacketProcessor = new RegPacketProcessor();
 		String token = getToken("syncTokenGenerationFilePath", prop);
-		regpacketProcessor.processValidPacket(token, prop, session);
-		logger.debug("token :" + token);
+//		logger.debug("token :" + token);
+//		logger.info("token :" + token);
+		System.out.println("token :" + authToken);
+		// regpacketProcessor.processValidPacket(token, prop, session);
+		regpacketProcessor.processValidPacket(authToken, prop, session);
+
 	}
 
 	private String getToken(String tokenType, PropertiesUtil prop) throws IOException {

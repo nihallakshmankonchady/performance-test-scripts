@@ -58,6 +58,7 @@ public class CSVUtil {
 		CSVWriter writer = new CSVWriter(outputfile, ',', CSVWriter.NO_QUOTE_CHARACTER,
 				CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END);
 		writer.writeAll(csvDtoData);
+		System.out.println("written to csv");
 		writer.close();
 	}
 

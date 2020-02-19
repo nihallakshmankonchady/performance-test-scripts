@@ -2,8 +2,6 @@ package io.mosip.dbentity;
 
 import java.time.LocalDateTime;
 
-import io.mosip.dbdto.TokenGenerationDto;
-
 public class TokenGenerationEntity {
 	private TokenGenerationDto request;
 

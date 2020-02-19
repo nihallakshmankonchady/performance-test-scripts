@@ -9,7 +9,43 @@
 	<packaging>jar</packaging>
 
 	<name>RegProcessorpacketGenUtil</name>
+	<properties>
+		<jdk.version>1.8</jdk.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
 	<dependencies>
+
+		<dependency>
+			<groupId>io.mosip.kernel</groupId>
+			<artifactId>kernel-core</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.mosip.kernel</groupId>
+			<artifactId>kernel-idvalidator-rid</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.mosip.registrationprocessor</groupId>
+			<artifactId>registration-processor-core</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.mosip.registrationprocessor</groupId>
+			<artifactId>registration-processor-rest-client</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.mosip.registrationprocessor</groupId>
+			<artifactId>registration-processor-registration-status-service</artifactId>
+			<version>1.0.2</version>
+		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -170,6 +206,12 @@
 			<version>1.21</version>
 		</dependency>
 
+		<!-- <dependency> -->
+		<!-- <groupId>io.mosip.registrationprocessor</groupId> -->
+		<!-- <artifactId>registration-status-service-impl</artifactId> -->
+		<!-- <version>1.0.5</version> -->
+		<!-- </dependency> -->
+
 	</dependencies>
 	<build>
 		<finalName>RegProcessorpacketGenUtil</finalName>
@@ -231,13 +273,4 @@
 
 	</build>
 
-
-
-	<properties>
-		<jdk.version>1.8</jdk.version>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	</properties>
 </project>

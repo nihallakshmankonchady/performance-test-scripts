@@ -172,6 +172,7 @@ public class TweakRegProcPackets {
 			}
 		}
 		originalRegId = properties.getProperty("registrationId");
+		originalRegId="10006100360000720191015045421";
 		// TODO Read center ID and machine ID and user ID from DB
 		// String centerId = properties.getProperty("centerId");
 		// String machineId = properties.getProperty("machineId");

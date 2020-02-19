@@ -68,7 +68,7 @@ public class RegPacketProcessor {
 		 * Decrypt a valid encrypted packet
 		 */
 		String validPacketForPacketGeneration = folderPath.getProperty("validPacketForPacketGeneration");
-	//	 packetCreater.decryptPacket(validPacketForPacketGeneration, prop);
+		//packetCreater.decryptPacket(validPacketForPacketGeneration, prop);
 		/*
 		 * decrypted packet will be present at decryptedPacket path
 		 */

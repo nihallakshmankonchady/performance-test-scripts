@@ -17,6 +17,9 @@ public class PropertiesUtil {
 	public String ENVIRONMENT;
 	public String BASE_URL;
 	public String ID_JSON_FILE;
+	public String NUMBER_OF_THREADS_PACKET_CREATION;
+	public String NUMBER_OF_THREADS_TEST_DATA;
+	public String AUTH_TOKEN;
 
 	/*
 	 * public void loadProperties(String configFile) {
@@ -59,5 +62,8 @@ public class PropertiesUtil {
 		BASE_URL = properties.getProperty("BASE_URL");
 		PACKET_UPLOAD_TIME = properties.getProperty("PACKET_UPLOAD_TIME");
 		ID_JSON_FILE = properties.getProperty("ID_JSON_FILE");
+		NUMBER_OF_THREADS_PACKET_CREATION = properties.getProperty("NUMBER_OF_THREADS_PACKET_CREATION");
+		NUMBER_OF_THREADS_TEST_DATA = properties.getProperty("NUMBER_OF_THREADS_TEST_DATA");
+		AUTH_TOKEN = properties.getProperty("AUTH_TOKEN");
 	}
 }
