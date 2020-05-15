@@ -1,9 +1,17 @@
 package io.mosip.registrationProcessor.perf.service;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Properties;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -16,7 +24,6 @@ import com.google.gson.Gson;
 import io.mosip.registration.processor.perf.packet.dto.FieldValueArray;
 import io.mosip.registration.processor.perf.packet.dto.Identity;
 import io.mosip.registration.processor.perf.packet.dto.PacketMetaInfo;
-import io.mosip.registrationProcessor.perf.dto.RegCenterDetailDto;
 import io.mosip.registrationProcessor.perf.regPacket.dto.RegProcIdDto;
 import io.mosip.registrationProcessor.perf.util.EncrypterDecrypter;
 import io.mosip.registrationProcessor.perf.util.JSONUtil;
