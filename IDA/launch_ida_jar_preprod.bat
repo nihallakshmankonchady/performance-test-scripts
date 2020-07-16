@@ -1,0 +1,1 @@
+"C:/Program Files/Java/jdk1.8.0_202/bin/java" -Dspring.cloud.config.label=QA_IDA -Dspring.profiles.active=testpreprod -Dspring.cloud.config.uri=http://104.211.212.28:51000 -jar "C:\MOSIP Codes\Functional Testing\1.1\mosip-functional-tests\authentication-partnerdemo-service\target\authentication-partnerdemo-service-1.0.8-SNAPSHOT.jar"
