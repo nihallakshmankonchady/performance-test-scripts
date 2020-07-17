@@ -36,13 +36,18 @@
           </elementProp>
           <elementProp name="authorization" elementType="Argument">
             <stringProp name="Argument.name">authorization</stringProp>
-            <stringProp name="Argument.value">eyJhbGciOiJSUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJRakpYVzgtemMwR1RWRkQ0RnZiWkdTblZLSlhDMWRXVnBPVUxMLWVZT0JNIn0.eyJqdGkiOiIxNzVlNGUwZC05MjYwLTRiMmYtODc5Zi0wMDk0ODJiZGNkNGQiLCJleHAiOjE1ODc3MTA3NTIsIm5iZiI6MCwiaWF0IjoxNTg3MzY1MTUyLCJpc3MiOiJodHRwczovL21vc2lwa2V5Y2xvYWtwcC5zb3V0aGluZGlhLmNsb3VkYXBwLmF6dXJlLmNvbS9hdXRoL3JlYWxtcy9tb3NpcCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIyNjU4NjJhNS1mZjQ4LTQ3MzMtOGE0OC02OGEwZjU5YjQzMzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJwcmUtcmVnaXN0cmF0aW9uIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMTFjNTNiN2YtY2FkMS00NzU3LWExOGEtOGJhN2M0ODQ3ZDhhIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJQUkVSRUciLCJ1bWFfYXV0aG9yaXphdGlvbiIsIklORElWSURVQUwiLCJQUkVfUkVHSVNUUkFUSU9OX0FETUlOIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicHJlLXJlZ2lzdHJhdGlvbiI6eyJyb2xlcyI6WyJ1bWFfcHJvdGVjdGlvbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiY2xpZW50SWQiOiJwcmUtcmVnaXN0cmF0aW9uIiwiY2xpZW50SG9zdCI6IjEwNC4yMTEuMjQ2LjIwMiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXByZS1yZWdpc3RyYXRpb24iLCJjbGllbnRBZGRyZXNzIjoiMTA0LjIxMS4yNDYuMjAyIiwiZW1haWwiOiJzZXJ2aWNlLWFjY291bnQtcHJlLXJlZ2lzdHJhdGlvbkBwbGFjZWhvbGRlci5vcmcifQ.KwmVxRhxhQdiUIQ2S2OrGuyin6Ltfm18zdRovvZXQqcb7EpEaecbjq8WtZdMAdt53GP0GxcPyd8hZqGpsadhMd0fuD7FvCkGP_L9v1u9c7OhXQcE7Sh_-gejGG0V4iL3rg2JBrvThKSVPChN5pysSI7LNEQ_l2RIhwLzPGpBBP85Y3McAWN2Hav8Rwr33Rs9gYtg1ZVcmDw8lStQ3nr2SB88yatLAh3ibFMv4MYBPYkq52AtA8IzvZh8DKlIg_geNjvZCiLsm1UeAXyETtZbWBn8kepUxLaaSGLCe6CVm0N9JCJQP-gqdsAHYUilyBnaph5PdzeOuVoQdxITXIGKng</stringProp>
+            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJWV2FLWGtaakpnOHpoLU55NzRjZnZ4amM0NEVONURFX05SdkpkQjVVY1dZIn0.eyJqdGkiOiJmYzA2MGRkYy0wOTdiLTRiM2ItYmVkZC1hOGE1MzQyYzQ1MzAiLCJleHAiOjE1OTE5NzQ1NjksIm5iZiI6MCwiaWF0IjoxNTkxOTM4NTY5LCJpc3MiOiJodHRwczovL3ByZXByb2Quc291dGhpbmRpYS5jbG91ZGFwcC5henVyZS5jb20va2V5Y2xvYWsvYXV0aC9yZWFsbXMvcHJlcmVnaXN0cmF0aW9uIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImEwMmMzNDAzLWM5MGMtNGNlOC04MGVlLTU3NzY3MWYwOGQ1NCIsInR5cCI6IkJlYXJlciIsImF6cCI6Im1vc2lwLXByZXJlZy1jbGllbnQiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiJlODE4YzY1Ni01ZmMyLTQ3MGItOTgzOS1mZDViM2UyM2U3YTkiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIlBSRVJFRyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJJTkRJVklEVUFMIiwiUFJFX1JFR0lTVFJBVElPTl9BRE1JTiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7Im1vc2lwLXByZXJlZy1jbGllbnQiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImNsaWVudElkIjoibW9zaXAtcHJlcmVnLWNsaWVudCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiY2xpZW50SG9zdCI6IjEwLjI0NC4xLjQiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtbW9zaXAtcHJlcmVnLWNsaWVudCIsImNsaWVudEFkZHJlc3MiOiIxMC4yNDQuMS40In0.RZ7mJ46UksTesG0UhDJwgUbR2QSLhkWQTOh31hfmnaME7G2JZw8pnw-jqPftGHSbBdikHp74rlYsxlcDuPptd34KRWBro5zJnjiQ7zyrUPldNRaVNz0uUR9rVVCPdbdB0xLDzU8B59H528yhSUjcTysHqR7raxuU0zedGCORqo_q-H4vUdPsfMfK0zmIv5Pg0tnMPSgJ33qS_lsWIo8EDoGL7Xa2HFT56CG14-t0p88TuqyVFVMsdFezWZN8TYwaL9kTfUl-3gQAoQzk8tIIajqKU6d0gnJV6rPhRo9q8-jo4ntv_cOv2JGaLqYxh99px9HGaHoxTTnniCcns-BBlA</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL</stringProp>
+            <stringProp name="Argument.value">preprod.southindia.cloudapp.azure.com</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="true">
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="false">
         <stringProp name="filename">${data_path}\server_data.csv</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames">BASE_URL</stringProp>
@@ -209,7 +214,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="regproc_authenticate" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="prereg_authenticate" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -219,9 +224,9 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;pre-registration&quot;,&#xd;
-    &quot;secretKey&quot;: &quot;149d8d00-531e-4518-8fe7-922f6a2182ad&quot;,&#xd;
-    &quot;appId&quot;: &quot;pre-registration&quot;&#xd;
+    &quot;clientId&quot;: &quot;mosip-prereg-client&quot;,&#xd;
+    &quot;secretKey&quot;: &quot;abc123&quot;,&#xd;
+    &quot;appId&quot;: &quot;prereg&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
   &quot;version&quot;: &quot;1.0&quot;&#xd;
@@ -230,9 +235,9 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">150.10.30.98</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path">v1/authmanager/authenticate/clientidsecretkey</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -327,7 +332,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
             </elementProp>
             <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path">v1/authmanager/authorize/admin/validateToken</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -382,7 +387,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="Random Controller - TR_kernel_applicantType" enabled="true">
+        <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="Random Controller - TR_kernel_applicantType" enabled="false">
           <intProp name="InterleaveControl.style">1</intProp>
         </RandomController>
         <hashTree>
@@ -429,9 +434,9 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain"></stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -527,9 +532,9 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain"></stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -625,9 +630,9 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain"></stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -723,9 +728,9 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain"></stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -821,9 +826,9 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain"></stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -877,7 +882,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             </hashTree>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_kernel_applicantType" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_kernel_applicantType" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -922,7 +927,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+            <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -975,7 +980,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_kernel_applicantType" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_kernel_applicantType" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -1020,7 +1025,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+            <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1073,7 +1078,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_kernel_applicantType" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_kernel_applicantType" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -1118,7 +1123,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+            <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1171,7 +1176,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_kernel_applicantType" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_kernel_applicantType" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -1216,7 +1221,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+            <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1269,7 +1274,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_kernel_applicantType" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_kernel_applicantType" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -1314,7 +1319,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+            <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1388,39 +1393,46 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-2137456067">
-            <stringProp name="1507423">1000</stringProp>
+          <collectionProp name="902647605">
+            <stringProp name="48692">125</stringProp>
             <stringProp name="48">0</stringProp>
-            <stringProp name="52469">500</stringProp>
-            <stringProp name="1628509">5200</stringProp>
+            <stringProp name="48625">100</stringProp>
+            <stringProp name="1570849">3400</stringProp>
             <stringProp name="1598">20</stringProp>
           </collectionProp>
-          <collectionProp name="-163056983">
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="1509345">1200</stringProp>
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="1598718">4200</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="1532051488">
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="1538175">2100</stringProp>
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="1569888">3300</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="1228490834">
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="1546018">2950</stringProp>
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="1540097">2300</stringProp>
+          <collectionProp name="736482738">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="52469">500</stringProp>
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1567005">3000</stringProp>
             <stringProp name="1567">10</stringProp>
           </collectionProp>
-          <collectionProp name="-144632942">
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="1572771">3600</stringProp>
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="1512228">1500</stringProp>
+          <collectionProp name="-1049268983">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="56313">900</stringProp>
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1539136">2200</stringProp>
+            <stringProp name="10">10</stringProp>
+          </collectionProp>
+          <collectionProp name="-1583715370">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1511267">1400</stringProp>
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1515111">1800</stringProp>
+            <stringProp name="10">10</stringProp>
+          </collectionProp>
+          <collectionProp name="-339929770">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1515111">1800</stringProp>
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1511267">1400</stringProp>
+            <stringProp name="10">10</stringProp>
+          </collectionProp>
+          <collectionProp name="1477670900">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1542980">2600</stringProp>
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="53430">600</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
         </collectionProp>
@@ -1478,9 +1490,9 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain"></stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1576,9 +1588,9 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain"></stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1674,9 +1686,9 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain"></stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1772,9 +1784,9 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain"></stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1870,9 +1882,9 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
               </elementProp>
               <stringProp name="HTTPSampler.domain"></stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/applicanttype/getApplicantType</stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/getApplicantType</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1970,7 +1982,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">${result_path}\applicant_type\20April\result.xml</stringProp>
+        <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -2007,7 +2019,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\MOSIP_PT\Scripts\Kernel\Results\applicant_type\20April\result.csv</stringProp>
+        <stringProp name="filename">${result_path}/getApplicantType/12June/250users_run1.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ThreadsStateOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Active Threads Over Time" enabled="true">
@@ -2044,7 +2056,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\MOSIP_PT\Scripts\Kernel\Results\applicant_type\20April\result.csv</stringProp>
+        <stringProp name="filename"></stringProp>
         <longProp name="interval_grouping">500</longProp>
         <boolProp name="graph_aggregated">false</boolProp>
         <stringProp name="include_sample_labels"></stringProp>
@@ -2089,7 +2101,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\MOSIP_PT\Scripts\Kernel\Results\applicant_type\20April\result.csv</stringProp>
+        <stringProp name="filename"></stringProp>
         <longProp name="interval_grouping">1000</longProp>
         <boolProp name="graph_aggregated">false</boolProp>
         <stringProp name="include_sample_labels"></stringProp>
@@ -2134,7 +2146,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\MOSIP_PT\Scripts\Kernel\Results\applicant_type\20April\result.csv</stringProp>
+        <stringProp name="filename"></stringProp>
         <longProp name="interval_grouping">1000</longProp>
         <boolProp name="graph_aggregated">false</boolProp>
         <stringProp name="include_sample_labels"></stringProp>
@@ -2192,12 +2204,12 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
           <collectionProp name="">
             <stringProp name="245914917">jp@gc - Active Threads Over Time</stringProp>
             <stringProp name="1267279877">jp@gc - Transactions per Second</stringProp>
-            <stringProp name="-243013315">jp@gc - Response Times Over Time</stringProp>
+            <stringProp name="1267279877">jp@gc - Transactions per Second</stringProp>
           </collectionProp>
           <collectionProp name="">
             <stringProp name="-1133722501">jp@gc - Ultimate Thread Group</stringProp>
             <stringProp name="117711132">Successful Transactions per Second</stringProp>
-            <stringProp name="-1525975814">Kernel_applicantType</stringProp>
+            <stringProp name="-1517411905">Failed Transactions per Second</stringProp>
           </collectionProp>
         </collectionProp>
       </kg.apc.jmeter.vizualizers.CompositeResultCollector>

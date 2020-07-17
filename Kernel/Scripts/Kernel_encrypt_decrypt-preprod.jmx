@@ -20,17 +20,17 @@
           </elementProp>
           <elementProp name="responsesPath" elementType="Argument">
             <stringProp name="Argument.name">responsesPath</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\RegistrationProcessor\Responses</stringProp>
+            <stringProp name="Argument.value">C:/MOSIP_PT/Scripts/Kernel\Responses</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="result_path" elementType="Argument">
             <stringProp name="Argument.name">result_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\RegistrationProcessor\Results</stringProp>
+            <stringProp name="Argument.value">C:/MOSIP_PT/Scripts/Kernel\Results</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="data_path" elementType="Argument">
             <stringProp name="Argument.name">data_path</stringProp>
-            <stringProp name="Argument.value">C:/MOSIP_PT/Scripts/RegistrationProcessor/Data</stringProp>
+            <stringProp name="Argument.value">C:/MOSIP_PT/Scripts/Kernel\Data</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="enc_data_filename" elementType="Argument">
@@ -40,13 +40,28 @@
           </elementProp>
           <elementProp name="authorization" elementType="Argument">
             <stringProp name="Argument.name">authorization</stringProp>
-            <stringProp name="Argument.value">eyJhbGciOiJSUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJRakpYVzgtemMwR1RWRkQ0RnZiWkdTblZLSlhDMWRXVnBPVUxMLWVZT0JNIn0.eyJqdGkiOiJkODFlYmNmYy01OTE4LTQ5MjAtYjM5Yi02YTBhMWExY2MxMGQiLCJleHAiOjE1ODU5MjMzMDgsIm5iZiI6MCwiaWF0IjoxNTg1OTA1MzA4LCJpc3MiOiJodHRwczovL21vc2lwa2V5Y2xvYWtwcC5zb3V0aGluZGlhLmNsb3VkYXBwLmF6dXJlLmNvbS9hdXRoL3JlYWxtcy9tb3NpcCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmZjE3Yjg3OC0zMTIwLTQ2MGUtOTU3MC03MTYxMDhmYzgxMjMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdpc3RyYXRpb24tcHJvY2Vzc29yIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNWE5MjkyZGQtZDdkMy00ZDNjLThjMTktNTBjMTJmMTc2MmI5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSRUdJU1RSQVRJT05fUFJPQ0VTU09SIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWdpc3RyYXRpb24tcHJvY2Vzc29yIjp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRJZCI6InJlZ2lzdHJhdGlvbi1wcm9jZXNzb3IiLCJjbGllbnRIb3N0IjoiMTA0LjIxMS4yNDYuMjAyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtcmVnaXN0cmF0aW9uLXByb2Nlc3NvciIsImNsaWVudEFkZHJlc3MiOiIxMDQuMjExLjI0Ni4yMDIiLCJlbWFpbCI6InNlcnZpY2UtYWNjb3VudC1yZWdpc3RyYXRpb24tcHJvY2Vzc29yQHBsYWNlaG9sZGVyLm9yZyJ9.FU5Phg0JtkYkDtV62HmB__ccdz_KtrAvhA9gR4u0FitvwWgxdPSvs2ksvZQtdhoBQmvwuJ7G8skG1yj0fT3WvFMZo7v-ALENSdQhpm1RXuIweTizdlLvC1kFQWXuIxcWIJa-08vZyTy1Ad4M9LehUeiAOwKsjh9qcRzt3HOLiZPzOe8Aaxsv0yFcSKRB9X7vZkn2TaejiRShBM9OccfRhfYXAKl4zKe2AnwDQMZ6WACGD2LKB3L_zZtc2WZdcM6TwOGPlp0PtYaM2KLmQMHqAywoQAoQrCdOihV0xy3RxlJ4V6H2QLgR70ToHS1PnXMl2jlqkRf7f3UoY0rBCw5oXg</stringProp>
+            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIxalVpZVBqeG5EQ3J3ZDczNjBKckpqZGNUUnVhVl82OFlHMmpRYXI2SDZFIn0.eyJqdGkiOiIzZWZjYjY4MC0yYWI0LTQ0Y2QtOWNhZC0xNzIzMTJkOTU5ZGIiLCJleHAiOjE1OTExMTgzMTEsIm5iZiI6MCwiaWF0IjoxNTkxMDgyMzExLCJpc3MiOiJodHRwczovL3ByZXByb2Quc291dGhpbmRpYS5jbG91ZGFwcC5henVyZS5jb20va2V5Y2xvYWsvYXV0aC9yZWFsbXMvbW9zaXAiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYjY1YzNiM2QtODc0OC00YTc1LWIxYTgtZjBiMTQ2NjgyYWIzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibW9zaXAtcmVncHJvYy1jbGllbnQiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI5NDk5YTBjNy0zODU1LTQyM2QtOTljMi1hMDU2NDdlYWI1N2UiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIlJFR0lTVFJBVElPTl9QUk9DRVNTT1IiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsibW9zaXAtcmVncHJvYy1jbGllbnQiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImNsaWVudElkIjoibW9zaXAtcmVncHJvYy1jbGllbnQiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudEhvc3QiOiIxMC4yNDQuMy4yMSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1tb3NpcC1yZWdwcm9jLWNsaWVudCIsImNsaWVudEFkZHJlc3MiOiIxMC4yNDQuMy4yMSJ9.foc38KypIN9ErdwE4lAFhdq7RtJ_H4ValxsUb9etR-QPDxwFEFq_gAKAtYQ5GP1cxIm5iz0uKEB6AEhs-HPS7jh-Yhxz1rI_ZMbtdZbFO8Eq_9TZsI3ZxAhKtx2_-oy6esg7OwecktvUQjfXGiOYVemDzbZUOR_AXRnh2mB1ibFQpuszyOHlQujLBu_yxZcxQ7XVemc_cudFy52sF99oe3NpCPBYUI0H84W7Fc6lScW9L6f3NtM_1-mnjZidtvlIiOZC1MtffAAnhEzEb85nXAsLN1cvUJdqzCOeC6nsXuCFsiumtnSoyYJv5TxOMAjAdYTnqUZyLuSpvsIf3adeqg</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL</stringProp>
+            <stringProp name="Argument.value">preprod.southindia.cloudapp.azure.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SALT" elementType="Argument">
+            <stringProp name="Argument.name">SALT</stringProp>
+            <stringProp name="Argument.value">LA7YcvP9DdLIVI5CwFt1SQ</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="referenceId" elementType="Argument">
+            <stringProp name="Argument.name">referenceId</stringProp>
+            <stringProp name="Argument.value">REF01</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="true">
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="false">
         <stringProp name="filename">${data_path}\server_data.csv</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames">BASE_URL</stringProp>
@@ -70,8 +85,8 @@
         <boolProp name="HTTPSampler.image_parser">true</boolProp>
         <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
         <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
-        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        <stringProp name="HTTPSampler.connect_timeout">20000</stringProp>
+        <stringProp name="HTTPSampler.response_timeout">60000</stringProp>
       </ConfigTestElement>
       <hashTree/>
       <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
@@ -258,13 +273,13 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Encoded Data" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
-          <stringProp name="filename">C:/MOSIP_PT/Data1/encoded_data.txt</stringProp>
+          <stringProp name="filename">${data_path}/encoded_data.txt</stringProp>
           <boolProp name="ignoreFirstLine">false</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">EncodedData,MachineRefId</stringProp>
+          <stringProp name="variableNames">EncodedData</stringProp>
         </CSVDataSet>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Encrypted Data" enabled="false">
@@ -279,7 +294,185 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
           <stringProp name="variableNames">encrypted_data</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_regproc_encrypt" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_reg-processor_authenticate_secretKey" enabled="false">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="regproc_authenticate" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;id&quot;: &quot;string&quot;,&#xd;
+  &quot;metadata&quot;: {},&#xd;
+  &quot;request&quot;: {&#xd;
+    &quot;clientId&quot;: &quot;mosip-regproc-client&quot;,&#xd;
+    &quot;secretKey&quot;: &quot;abc123&quot;,&#xd;
+    &quot;appId&quot;: &quot;regproc&quot;&#xd;
+  },&#xd;
+  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
+  &quot;version&quot;: &quot;1.0&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">v1/authmanager/authenticate/clientidsecretkey</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="false">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
+import java.io.*;
+
+String timestamp = &quot;&quot;;
+String timestampFormat = &quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSS&quot;;
+Date currDate = new Date();
+Calendar cal = Calendar.getInstance();
+cal.setTime(currDate);
+cal.add(Calendar.HOUR, -6);
+Date date = cal.getTime();
+SimpleDateFormat sdf = new SimpleDateFormat(timestampFormat);
+timestamp = sdf.format(date);
+// System.out.println(timestamp);
+timestamp = timestamp + &quot;Z&quot;;
+vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="true">
+              <stringProp name="FileSaver.filename">${response_folder}/Errors/idrepo_authentication</stringProp>
+              <boolProp name="FileSaver.errorsonly">true</boolProp>
+              <boolProp name="FileSaver.successonly">false</boolProp>
+              <boolProp name="FileSaver.skipsuffix">false</boolProp>
+              <boolProp name="FileSaver.skipautonumber">false</boolProp>
+            </ResultSaver>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
+              <stringProp name="JSON_PATH">$.response.status</stringProp>
+              <stringProp name="EXPECTED_VALUE">Success</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Cookie Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+              <stringProp name="RegexExtractor.refname">authorization</stringProp>
+              <stringProp name="RegexExtractor.regex">Set-Cookie: Authorization=([\w.-]+);</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">authorization_not_found</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_reg-processor_Validate Token" enabled="false">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Validate_Token" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">v1/authmanager/authorize/admin/validateToken</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="false">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">import org.apache.commons.codec.binary.Base64;
+byte[] encodedUsernamePassword = Base64.encodeBase64(&quot;user:passwd&quot;.getBytes());
+vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded; charset=ISO-8859-1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="Cookie" elementType="Header">
+                  <stringProp name="Header.name">Cookie</stringProp>
+                  <stringProp name="Header.value">Authorization=${authorization}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
+              <stringProp name="JSON_PATH">$.response.role</stringProp>
+              <stringProp name="EXPECTED_VALUE"></stringProp>
+              <boolProp name="JSONVALIDATION">false</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_reg-processor_encrypt" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -291,26 +484,28 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-    &quot;request&quot;: {&#xd;
-        &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;,&#xd;
-        &quot;data&quot;: &quot;${EncodedData}&quot;,&#xd;
-        &quot;applicationId&quot;: &quot;REGISTRATION&quot;,&#xd;
-        &quot;referenceId&quot;: &quot;${MachineRefId}&quot;&#xd;
-    },&#xd;
-    &quot;metadata&quot;: &quot;&quot;,&#xd;
-    &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;,&#xd;
-    &quot;id&quot;: &quot;mosip.registration.sync&quot;,&#xd;
-    &quot;version&quot;: &quot;1.0&quot;&#xd;
+  &quot;id&quot;: &quot;string&quot;,&#xd;
+  &quot;metadata&quot;: {},&#xd;
+  &quot;request&quot;: {&#xd;
+    &quot;aad&quot;: &quot;VGhpcyBpcyBzYW1wbGUgYWFk&quot;,&#xd;
+    &quot;applicationId&quot;: &quot;REGISTRATION&quot;,&#xd;
+    &quot;data&quot;: &quot;${EncodedData}&quot;,&#xd;
+    &quot;referenceId&quot;: &quot;${referenceId}&quot;,&#xd;
+    &quot;salt&quot;: &quot;${SALT}&quot;,&#xd;
+    &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;&#xd;
+  },&#xd;
+  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;,&#xd;
+  &quot;version&quot;: &quot;string&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">150.10.30.98</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/cryptomanager/encrypt</stringProp>
+            <stringProp name="HTTPSampler.path">v1/keymanager/encrypt</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -338,7 +533,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
               <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
             </ConstantTimer>
             <hashTree/>
@@ -397,103 +592,14 @@ bw.close();</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_regproc_decrypt" enabled="false">
-          <boolProp name="TransactionController.includeTimers">false</boolProp>
-          <boolProp name="TransactionController.parent">true</boolProp>
-        </TransactionController>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Wait" enabled="true"/>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="regproc_decrypt_data" enabled="true">
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-  &quot;id&quot;: &quot;string&quot;,&#xd;
-  &quot;metadata&quot;: {},&#xd;
-  &quot;request&quot;: {&#xd;
-    &quot;applicationId&quot;: &quot;REGISTRATION&quot;,&#xd;
-    &quot;data&quot;: &quot;${encrypted_data}&quot;,&#xd;
-    &quot;referenceId&quot;: &quot;${MachineRefId}&quot;,&#xd;
-    &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;&#xd;
-  },&#xd;
-  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
-  &quot;version&quot;: &quot;1.0&quot;&#xd;
-}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain">150.10.30.98</stringProp>
-            <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol"></stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/cryptomanager/decrypt</stringProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
-                </elementProp>
-                <elementProp name="Cookie" elementType="Header">
-                  <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${authorization}</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-              <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
-            </ConstantTimer>
-            <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Decrypted Data" enabled="true">
-              <stringProp name="JSONPostProcessor.referenceNames">decrypted_data</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.response.data</stringProp>
-              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
-            </JSONPostProcessor>
-            <hashTree/>
-            <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="DecryptedData" enabled="false">
-              <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
-              <stringProp name="BoundaryExtractor.refname">EncryptedData</stringProp>
-              <stringProp name="BoundaryExtractor.lboundary">&quot;response&quot;:{&quot;data&quot;:&quot;</stringProp>
-              <stringProp name="BoundaryExtractor.rboundary">&quot;},&quot;errors&quot;:null}</stringProp>
-              <stringProp name="BoundaryExtractor.default">EncryptedData notfound</stringProp>
-              <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
-              <stringProp name="BoundaryExtractor.match_number">1</stringProp>
-            </BoundaryExtractor>
-            <hashTree/>
-            <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="true">
-              <stringProp name="FileSaver.filename">${responsesPath}/encrypt</stringProp>
-              <boolProp name="FileSaver.errorsonly">true</boolProp>
-              <boolProp name="FileSaver.successonly">false</boolProp>
-              <boolProp name="FileSaver.skipsuffix">false</boolProp>
-              <boolProp name="FileSaver.skipautonumber">false</boolProp>
-            </ResultSaver>
-            <hashTree/>
-            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Decrypt Assertion" enabled="true">
-              <stringProp name="JSON_PATH">$.response.data</stringProp>
-              <stringProp name="EXPECTED_VALUE">${EncodedData}</stringProp>
-              <boolProp name="JSONVALIDATION">true</boolProp>
-              <boolProp name="EXPECT_NULL">false</boolProp>
-              <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
-            </JSONPathAssertion>
-            <hashTree/>
-          </hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">${thinktime}</stringProp>
+          </TestAction>
+          <hashTree/>
         </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_regproc_decrypt" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
@@ -510,23 +616,25 @@ bw.close();</stringProp>
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
+    &quot;aad&quot;: &quot;VGhpcyBpcyBzYW1wbGUgYWFk&quot;,&#xd;
     &quot;applicationId&quot;: &quot;REGISTRATION&quot;,&#xd;
-    &quot;data&quot;: &quot;Vp8Ttxpny9bQL5fh34jmMnvR98ouRjLtV0JseICDddmYp4N2WpMFsAglPGC5uuR0nR2bC-XXj2hhMA1whADbcrjC3EtnYyJdJnRhNHPdhi74OrZ7425Wf77XuI7-36mO-XmBU-annFzMbFoY5Ywn01xleCrOFuivoGYcbNPAYyFsEy6i-D7sHfy06Iqrrg3Vs-KoCW4v1LrzKO-ahBrIW4PLhA2vTYMxp-WqWokTijO3ENngR7TsE-kQFyAy0wAYoGQ2yay-yTgF58Bu5UKUJwGCwYRS_LmBkZ9X3JJDP1TKhvvrD4bit3yDBGUdnMO39Bs-9b3DPD4-Woppjiq4MSNLRVlfU1BMSVRURVIjrBk70BdPFKMi8jA9zH-Y5QUwp0nZkF9C74y2DrNjTKeieQS3bVMaX0fWgjgriCoasSNkoXInywVAqeai16R2jZyMdeeIGM7tIMPu4ze9QJFuISbTxGN_7Nhip-ZStNL27jStNmNuqSXF0eN-4Pc68_9TM0vJXwQXnkJ7pvF2TzfflUQ-G3BNolVvPBIFZlZcpVBDnFR2KQ6AkdC1-W5P-CcjCGtux7DQuKq9LS2fqlzCPP7a2ugXiKfAsWnIyZIC2AJOlmlz9AA642XF4Oyodc9A9VdG6kDPU20f-wrboCEGHf6ikx4lOQ4iV1St85LOPH9QwOvdqcKEuvZ76cqnp0-3erSQjEimH2L1MappEgUv3EkmYixCw8VtbTXUMG5FIbHeS3b8WdMXlHmiNY0xod9YBHKylMCz_IW-wiXNGSUUMIImBt3n0sn6L_eVbia-9SDIvpxNCzGlmL_Xcek9wIn-TIX2KA9w3Y-lg7eUmUmnPvGInSw4dQqM6PwAhCKC23uwfTm6ZNHZjKO39ZFWNkg-egTS6JBekcrIOcKkXSndkmDq5h4v7wSTjbn4DGKqGy4h-OLMqHtPrtHudww8OHDdG1yOlWiobwejYVXgA0NdEQfGjLddPNxiXdNnonyEoMWLhqrmx7VliiECbmDXe62LB4SOQYSGRjAVhubQrFCousnXoAuREcRmiuG6bs-6oPklQCdT-FvDZzgTSSS4D1qugiN-KXEgarCzth5O98R27POS7wI_Zh_RXdVCkk3OWfvAk-xFboCbRVyv_jmplMBfJwEsq-diSKnIP5iARBUEDqiEY6M6MndlpLumtc4cFxe8xvwOkbqGgdD4vefvsVsU7DLc_6CTv1jbtMMY1QsvmF-qDCT1NbcV5sUZGilO0bAEoPvnj-9CHzPzNV0yn98B0QeGoLKUpyn9TFEIKRToSE87PgKSQiNj7TvX4SbruRgCUbQu_rSxfJTKBDMBAJVE-1AGRJnUWFG3AA8mnE4Xbx2O2vGVaRxBsfXN_aNaX4C8bS0g2b4xPuebPLE7iYEklDrFF49CvhGU68xrh9iAjL7jyrepTd6jejZPuo6-FffIbK-2bSncMI_9pCIATONzNjtMG7vAWE1IRqtGR9K4hBcq05ARlMG-1QknrVbnAQAoLJKO_MY5pqO1zdrpJMq3CNTq91lV4-reu4JlmIKLbxfgghQD-nW3SYsTVOuMpYUAiS0QmfOTMEa1JCHmtaYkZDrI1LSWg6nz3o9HfQE_UzYEEpHWx8MZO5Mq7hHqEy03GIn64JKDmZaJuRP5dungBBCr4Xez_xD32Cf9Tgs0kRMACYRBo2tXKZisoOQtWR2NfVcZRUEaxwTWrRPxdcadV0pbfNuF_1ouhmb0k48fNGueyl-qwUsdlnGvl4103_jMnc8A45k0OHPK3ZD62Bo5vAhu5s_qRvv2tpXv2uD1e81e07e43zpMoqqmlast0FT54NhyXkRlGobEwG6V8DQ-P-E1szRlKlEyncMM4CgEi9m5wg-RZ9fYHkEhXp5-cIIYQsbdimLMjcnoOCVxAXMsEKSXLBnoSpK6CcZS1AEGruJVS_fZa0bD0vv9eoEjZf18d2J8kzS0iZgZNYdi80o2g42scd_NDVF2O_Vi3asIF90BrFctUsgQZPgewza0PNMagt5ibzt4TdJfDsbcFYFtTlpW1P2duhGbD4NY132gKiQ3QEE9DucG0PC38BitIz4uVeJNCNtIgwPf5YsoxQ35wBqqKfD3c5Gm4FiWuhFIQnrtmJ36kiNHwI8y7p4XMCGlYAvdpYYEdP-uf1zCHwwA0BFadCFvuFO5BfLrwdPqH98pjTla__A7QFbO-8iPJj91vXfJAR_3f960N3FQICPQbnf3DtA-XI74kGxRSzDZmGqBh5t6a4vqATOKUOGINbU1PRavoI73XEZHOyzhM_LLzNj75KKAilyz-ypDYouvFnX1VlIZlhuizIy72a3z1U9B8A8NL-zqnvfwFQ6rpOvBAZgXh7Pa_Ck7GQImBHdoriCxXQfKmDI&quot;,&#xd;
-    &quot;referenceId&quot;: &quot;${MachineRefId}&quot;,&#xd;
-    &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;&#xd;
+    &quot;data&quot;: &quot;${encrypted_data}&quot;,&#xd;
+    &quot;referenceId&quot;: &quot;${referenceId}&quot;,&#xd;
+    &quot;salt&quot;: &quot;${SALT}&quot;,&#xd;
+    &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;&#xd;
   },&#xd;
-  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
-  &quot;version&quot;: &quot;1.0&quot;&#xd;
+  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;,&#xd;
+  &quot;version&quot;: &quot;string&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">150.10.30.98</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/cryptomanager/decrypt</stringProp>
+            <stringProp name="HTTPSampler.path">v1/keymanager/decrypt</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -554,7 +662,7 @@ bw.close();</stringProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
               <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
             </ConstantTimer>
             <hashTree/>
@@ -619,16 +727,16 @@ bw.close();</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Encoded Data" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
-          <stringProp name="filename">C:/MOSIP_PT/Data1/encoded_data.txt</stringProp>
+          <stringProp name="filename">${data_path}/encoded_data.txt</stringProp>
           <boolProp name="ignoreFirstLine">false</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">EncodedData,MachineRefId</stringProp>
+          <stringProp name="variableNames">EncodedData</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_regproc_encrypt" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_reg-processor_encrypt" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -640,26 +748,28 @@ bw.close();</stringProp>
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-    &quot;request&quot;: {&#xd;
-        &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;,&#xd;
-        &quot;data&quot;: &quot;${EncodedData}&quot;,&#xd;
-        &quot;applicationId&quot;: &quot;REGISTRATION&quot;,&#xd;
-        &quot;referenceId&quot;: &quot;${MachineRefId}&quot;&#xd;
-    },&#xd;
-    &quot;metadata&quot;: &quot;&quot;,&#xd;
-    &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;,&#xd;
-    &quot;id&quot;: &quot;mosip.registration.sync&quot;,&#xd;
-    &quot;version&quot;: &quot;1.0&quot;&#xd;
+  &quot;id&quot;: &quot;string&quot;,&#xd;
+  &quot;metadata&quot;: {},&#xd;
+  &quot;request&quot;: {&#xd;
+    &quot;aad&quot;: &quot;VGhpcyBpcyBzYW1wbGUgYWFk&quot;,&#xd;
+    &quot;applicationId&quot;: &quot;REGISTRATION&quot;,&#xd;
+    &quot;data&quot;: &quot;${EncodedData}&quot;,&#xd;
+    &quot;referenceId&quot;: &quot;${referenceId}&quot;,&#xd;
+    &quot;salt&quot;: &quot;${SALT}&quot;,&#xd;
+    &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;&#xd;
+  },&#xd;
+  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;,&#xd;
+  &quot;version&quot;: &quot;string&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">150.10.30.98</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/cryptomanager/encrypt</stringProp>
+            <stringProp name="HTTPSampler.path">v1/keymanager/encrypt</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -761,23 +871,25 @@ bw.close();</stringProp>
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
+    &quot;aad&quot;: &quot;VGhpcyBpcyBzYW1wbGUgYWFk&quot;,&#xd;
     &quot;applicationId&quot;: &quot;REGISTRATION&quot;,&#xd;
     &quot;data&quot;: &quot;${encrypted_data}&quot;,&#xd;
-    &quot;referenceId&quot;: &quot;${MachineRefId}&quot;,&#xd;
-    &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;&#xd;
+    &quot;referenceId&quot;: &quot;${referenceId}&quot;,&#xd;
+    &quot;salt&quot;: &quot;${SALT}&quot;,&#xd;
+    &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;&#xd;
   },&#xd;
-  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
-  &quot;version&quot;: &quot;1.0&quot;&#xd;
+  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;,&#xd;
+  &quot;version&quot;: &quot;string&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">150.10.30.98</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/cryptomanager/decrypt</stringProp>
+            <stringProp name="HTTPSampler.path">v1/keymanager/decrypt</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -844,41 +956,57 @@ bw.close();</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Wait" enabled="true"/>
+        <hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">${thinktime}</stringProp>
+          </TestAction>
+          <hashTree/>
+        </hashTree>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="kernel-encrypt-decrypt" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-595809305">
-            <stringProp name="52469">500</stringProp>
+          <collectionProp name="214869451">
+            <stringProp name="48625">100</stringProp>
             <stringProp name="48">0</stringProp>
-            <stringProp name="51508">400</stringProp>
+            <stringProp name="48625">100</stringProp>
             <stringProp name="1598718">4200</stringProp>
             <stringProp name="1567">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1679731539">
-            <stringProp name="49741">250</stringProp>
+          <collectionProp name="-1717325199">
+            <stringProp name="1691">50</stringProp>
             <stringProp name="52469">500</stringProp>
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1597757">4100</stringProp>
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1573732">3700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-906142863">
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1509345">1200</stringProp>
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1570849">3400</stringProp>
+          <collectionProp name="801482833">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1507423">1000</stringProp>
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1568927">3200</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1760312326">
-            <stringProp name="48780">150</stringProp>
-            <stringProp name="1516072">1900</stringProp>
-            <stringProp name="48780">150</stringProp>
-            <stringProp name="1541058">2400</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-2032795093">
-            <stringProp name="49586">200</stringProp>
+          <collectionProp name="-83519630">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1512228">1500</stringProp>
+            <stringProp name="1691">50</stringProp>
             <stringProp name="1543941">2700</stringProp>
-            <stringProp name="49586">200</stringProp>
+            <stringProp name="10">10</stringProp>
+          </collectionProp>
+          <collectionProp name="465837760">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1516072">1900</stringProp>
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1540097">2300</stringProp>
+            <stringProp name="10">10</stringProp>
+          </collectionProp>
+          <collectionProp name="1106450311">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1542980">2600</stringProp>
+            <stringProp name="1691">50</stringProp>
             <stringProp name="1512228">1500</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
@@ -893,16 +1021,16 @@ bw.close();</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Encoded Data" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
-          <stringProp name="filename">C:/MOSIP_PT/Data1/encoded_data.txt</stringProp>
+          <stringProp name="filename">${data_path}/encoded_data.txt</stringProp>
           <boolProp name="ignoreFirstLine">false</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">EncodedData,MachineRefId</stringProp>
+          <stringProp name="variableNames">EncodedData</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_regproc_encrypt" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_reg-processor_encrypt" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -914,16 +1042,18 @@ bw.close();</stringProp>
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-    &quot;request&quot;: {&#xd;
-        &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;,&#xd;
-        &quot;data&quot;: &quot;${EncodedData}&quot;,&#xd;
-        &quot;applicationId&quot;: &quot;REGISTRATION&quot;,&#xd;
-        &quot;referenceId&quot;: &quot;${MachineRefId}&quot;&#xd;
-    },&#xd;
-    &quot;metadata&quot;: &quot;&quot;,&#xd;
-    &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;,&#xd;
-    &quot;id&quot;: &quot;mosip.registration.sync&quot;,&#xd;
-    &quot;version&quot;: &quot;1.0&quot;&#xd;
+  &quot;id&quot;: &quot;string&quot;,&#xd;
+  &quot;metadata&quot;: {},&#xd;
+  &quot;request&quot;: {&#xd;
+    &quot;aad&quot;: &quot;VGhpcyBpcyBzYW1wbGUgYWFk&quot;,&#xd;
+    &quot;applicationId&quot;: &quot;REGISTRATION&quot;,&#xd;
+    &quot;data&quot;: &quot;${EncodedData}&quot;,&#xd;
+    &quot;referenceId&quot;: &quot;${referenceId}&quot;,&#xd;
+    &quot;salt&quot;: &quot;${SALT}&quot;,&#xd;
+    &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;&#xd;
+  },&#xd;
+  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;,&#xd;
+  &quot;version&quot;: &quot;string&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -933,7 +1063,7 @@ bw.close();</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/cryptomanager/encrypt</stringProp>
+            <stringProp name="HTTPSampler.path">v1/keymanager/encrypt</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1044,13 +1174,15 @@ bw.close();</stringProp>
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
+    &quot;aad&quot;: &quot;VGhpcyBpcyBzYW1wbGUgYWFk&quot;,&#xd;
     &quot;applicationId&quot;: &quot;REGISTRATION&quot;,&#xd;
     &quot;data&quot;: &quot;${encrypted_data}&quot;,&#xd;
-    &quot;referenceId&quot;: &quot;${MachineRefId}&quot;,&#xd;
-    &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;&#xd;
+    &quot;referenceId&quot;: &quot;${referenceId}&quot;,&#xd;
+    &quot;salt&quot;: &quot;${SALT}&quot;,&#xd;
+    &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;&#xd;
   },&#xd;
-  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
-  &quot;version&quot;: &quot;1.0&quot;&#xd;
+  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.sss,)}Z&quot;,&#xd;
+  &quot;version&quot;: &quot;string&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -1060,105 +1192,7 @@ bw.close();</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/cryptomanager/decrypt</stringProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
-                </elementProp>
-                <elementProp name="Cookie" elementType="Header">
-                  <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${authorization}</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-              <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
-            </ConstantTimer>
-            <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Decrypted Data" enabled="true">
-              <stringProp name="JSONPostProcessor.referenceNames">decrypted_data</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.response.data</stringProp>
-              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
-            </JSONPostProcessor>
-            <hashTree/>
-            <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="DecryptedData" enabled="false">
-              <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
-              <stringProp name="BoundaryExtractor.refname">EncryptedData</stringProp>
-              <stringProp name="BoundaryExtractor.lboundary">&quot;response&quot;:{&quot;data&quot;:&quot;</stringProp>
-              <stringProp name="BoundaryExtractor.rboundary">&quot;},&quot;errors&quot;:null}</stringProp>
-              <stringProp name="BoundaryExtractor.default">EncryptedData notfound</stringProp>
-              <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
-              <stringProp name="BoundaryExtractor.match_number">1</stringProp>
-            </BoundaryExtractor>
-            <hashTree/>
-            <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="true">
-              <stringProp name="FileSaver.filename">${responsesPath}/encrypt</stringProp>
-              <boolProp name="FileSaver.errorsonly">true</boolProp>
-              <boolProp name="FileSaver.successonly">false</boolProp>
-              <boolProp name="FileSaver.skipsuffix">false</boolProp>
-              <boolProp name="FileSaver.skipautonumber">false</boolProp>
-            </ResultSaver>
-            <hashTree/>
-            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Decrypt Assertion" enabled="true">
-              <stringProp name="JSON_PATH">$.response.data</stringProp>
-              <stringProp name="EXPECTED_VALUE">${EncodedData}</stringProp>
-              <boolProp name="JSONVALIDATION">true</boolProp>
-              <boolProp name="EXPECT_NULL">false</boolProp>
-              <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">false</boolProp>
-            </JSONPathAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_regproc_decrypt" enabled="false">
-          <boolProp name="TransactionController.includeTimers">false</boolProp>
-          <boolProp name="TransactionController.parent">true</boolProp>
-        </TransactionController>
-        <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="regproc_decrypt_data" enabled="true">
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-  &quot;id&quot;: &quot;string&quot;,&#xd;
-  &quot;metadata&quot;: {},&#xd;
-  &quot;request&quot;: {&#xd;
-    &quot;applicationId&quot;: &quot;REGISTRATION&quot;,&#xd;
-    &quot;data&quot;: &quot;Vp8Ttxpny9bQL5fh34jmMnvR98ouRjLtV0JseICDddmYp4N2WpMFsAglPGC5uuR0nR2bC-XXj2hhMA1whADbcrjC3EtnYyJdJnRhNHPdhi74OrZ7425Wf77XuI7-36mO-XmBU-annFzMbFoY5Ywn01xleCrOFuivoGYcbNPAYyFsEy6i-D7sHfy06Iqrrg3Vs-KoCW4v1LrzKO-ahBrIW4PLhA2vTYMxp-WqWokTijO3ENngR7TsE-kQFyAy0wAYoGQ2yay-yTgF58Bu5UKUJwGCwYRS_LmBkZ9X3JJDP1TKhvvrD4bit3yDBGUdnMO39Bs-9b3DPD4-Woppjiq4MSNLRVlfU1BMSVRURVIjrBk70BdPFKMi8jA9zH-Y5QUwp0nZkF9C74y2DrNjTKeieQS3bVMaX0fWgjgriCoasSNkoXInywVAqeai16R2jZyMdeeIGM7tIMPu4ze9QJFuISbTxGN_7Nhip-ZStNL27jStNmNuqSXF0eN-4Pc68_9TM0vJXwQXnkJ7pvF2TzfflUQ-G3BNolVvPBIFZlZcpVBDnFR2KQ6AkdC1-W5P-CcjCGtux7DQuKq9LS2fqlzCPP7a2ugXiKfAsWnIyZIC2AJOlmlz9AA642XF4Oyodc9A9VdG6kDPU20f-wrboCEGHf6ikx4lOQ4iV1St85LOPH9QwOvdqcKEuvZ76cqnp0-3erSQjEimH2L1MappEgUv3EkmYixCw8VtbTXUMG5FIbHeS3b8WdMXlHmiNY0xod9YBHKylMCz_IW-wiXNGSUUMIImBt3n0sn6L_eVbia-9SDIvpxNCzGlmL_Xcek9wIn-TIX2KA9w3Y-lg7eUmUmnPvGInSw4dQqM6PwAhCKC23uwfTm6ZNHZjKO39ZFWNkg-egTS6JBekcrIOcKkXSndkmDq5h4v7wSTjbn4DGKqGy4h-OLMqHtPrtHudww8OHDdG1yOlWiobwejYVXgA0NdEQfGjLddPNxiXdNnonyEoMWLhqrmx7VliiECbmDXe62LB4SOQYSGRjAVhubQrFCousnXoAuREcRmiuG6bs-6oPklQCdT-FvDZzgTSSS4D1qugiN-KXEgarCzth5O98R27POS7wI_Zh_RXdVCkk3OWfvAk-xFboCbRVyv_jmplMBfJwEsq-diSKnIP5iARBUEDqiEY6M6MndlpLumtc4cFxe8xvwOkbqGgdD4vefvsVsU7DLc_6CTv1jbtMMY1QsvmF-qDCT1NbcV5sUZGilO0bAEoPvnj-9CHzPzNV0yn98B0QeGoLKUpyn9TFEIKRToSE87PgKSQiNj7TvX4SbruRgCUbQu_rSxfJTKBDMBAJVE-1AGRJnUWFG3AA8mnE4Xbx2O2vGVaRxBsfXN_aNaX4C8bS0g2b4xPuebPLE7iYEklDrFF49CvhGU68xrh9iAjL7jyrepTd6jejZPuo6-FffIbK-2bSncMI_9pCIATONzNjtMG7vAWE1IRqtGR9K4hBcq05ARlMG-1QknrVbnAQAoLJKO_MY5pqO1zdrpJMq3CNTq91lV4-reu4JlmIKLbxfgghQD-nW3SYsTVOuMpYUAiS0QmfOTMEa1JCHmtaYkZDrI1LSWg6nz3o9HfQE_UzYEEpHWx8MZO5Mq7hHqEy03GIn64JKDmZaJuRP5dungBBCr4Xez_xD32Cf9Tgs0kRMACYRBo2tXKZisoOQtWR2NfVcZRUEaxwTWrRPxdcadV0pbfNuF_1ouhmb0k48fNGueyl-qwUsdlnGvl4103_jMnc8A45k0OHPK3ZD62Bo5vAhu5s_qRvv2tpXv2uD1e81e07e43zpMoqqmlast0FT54NhyXkRlGobEwG6V8DQ-P-E1szRlKlEyncMM4CgEi9m5wg-RZ9fYHkEhXp5-cIIYQsbdimLMjcnoOCVxAXMsEKSXLBnoSpK6CcZS1AEGruJVS_fZa0bD0vv9eoEjZf18d2J8kzS0iZgZNYdi80o2g42scd_NDVF2O_Vi3asIF90BrFctUsgQZPgewza0PNMagt5ibzt4TdJfDsbcFYFtTlpW1P2duhGbD4NY132gKiQ3QEE9DucG0PC38BitIz4uVeJNCNtIgwPf5YsoxQ35wBqqKfD3c5Gm4FiWuhFIQnrtmJ36kiNHwI8y7p4XMCGlYAvdpYYEdP-uf1zCHwwA0BFadCFvuFO5BfLrwdPqH98pjTla__A7QFbO-8iPJj91vXfJAR_3f960N3FQICPQbnf3DtA-XI74kGxRSzDZmGqBh5t6a4vqATOKUOGINbU1PRavoI73XEZHOyzhM_LLzNj75KKAilyz-ypDYouvFnX1VlIZlhuizIy72a3z1U9B8A8NL-zqnvfwFQ6rpOvBAZgXh7Pa_Ck7GQImBHdoriCxXQfKmDI&quot;,&#xd;
-    &quot;referenceId&quot;: &quot;${MachineRefId}&quot;,&#xd;
-    &quot;timeStamp&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;&#xd;
-  },&#xd;
-  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
-  &quot;version&quot;: &quot;1.0&quot;&#xd;
-}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain"></stringProp>
-            <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol"></stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/cryptomanager/decrypt</stringProp>
+            <stringProp name="HTTPSampler.path">v1/keymanager/decrypt</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3118,7 +3152,7 @@ bw.close();</stringProp>
             <sampleCount>true</sampleCount>
           </value>
         </objProp>
-        <stringProp name="filename">C:\MOSIP_PT\Scripts\RegistrationProcessor\Results\cryptomanager_encrypt11March_1.xml</stringProp>
+        <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -3155,7 +3189,7 @@ bw.close();</stringProp>
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\MOSIP_PT\Scripts\RegistrationProcessor\Results\April03\encrypt-decrypt-1220.csv</stringProp>
+        <stringProp name="filename">${result_path}\encrypt-decrypt\encrypt_decrypt_250users_run1.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ResponseTimesOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Response Times Over Time" enabled="true">
@@ -3393,13 +3427,13 @@ bw.close();</stringProp>
         <collectionProp name="COMPOSITE_CFG">
           <collectionProp name="">
             <stringProp name="245914917">jp@gc - Active Threads Over Time</stringProp>
-            <stringProp name="-243013315">jp@gc - Response Times Over Time</stringProp>
-            <stringProp name="-243013315">jp@gc - Response Times Over Time</stringProp>
+            <stringProp name="1267279877">jp@gc - Transactions per Second</stringProp>
+            <stringProp name="1267279877">jp@gc - Transactions per Second</stringProp>
           </collectionProp>
           <collectionProp name="">
             <stringProp name="2133254370">Overall Active Threads</stringProp>
-            <stringProp name="1022879055">TR_regproc_encrypt</stringProp>
-            <stringProp name="-122286985">TR_regproc_decrypt</stringProp>
+            <stringProp name="1305923276">TR_reg-processor_encrypt (success)</stringProp>
+            <stringProp name="901275717">TR_regproc_decrypt (success)</stringProp>
           </collectionProp>
         </collectionProp>
       </kg.apc.jmeter.vizualizers.CompositeResultCollector>
