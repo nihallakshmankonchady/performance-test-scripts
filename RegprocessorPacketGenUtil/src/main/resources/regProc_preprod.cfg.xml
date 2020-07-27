@@ -8,9 +8,9 @@
 
 		<!-- Connection settings -->
 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-		<property name="hibernate.connection.url">jdbc:postgresql://preprod.southindia.cloudapp.azure.com:30090/mosip_master</property>
-		<property name="hibernate.connection.username">masteruser</property>
-		<property name="hibernate.connection.password">Mosip@dev123</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://preprod.mosip.net:30090/mosip_master</property>
+		<property name="hibernate.connection.username">postgres</property>
+		<property name="hibernate.connection.password">postgres</property>
 		<property name="hibernate.default_schema">master</property>
 		<!-- SQL dialect -->
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>

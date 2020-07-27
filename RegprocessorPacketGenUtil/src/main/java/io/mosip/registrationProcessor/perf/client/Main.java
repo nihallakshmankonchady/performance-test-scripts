@@ -25,7 +25,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		if (args.length != 1) {
-			System.out.println("Receives only one parameter");
+			System.err.println("Receives only one parameter");
 		} else {
 			String mode = args[0];
 			switch (mode) {

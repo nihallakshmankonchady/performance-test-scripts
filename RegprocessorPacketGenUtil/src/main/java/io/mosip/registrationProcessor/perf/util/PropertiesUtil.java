@@ -5,6 +5,7 @@ import java.util.Properties;
 
 public class PropertiesUtil {
 
+	public int NUMBER_OF_TEST_DATA;
 	public String REGID_LOG_FILE;
 	public String PACKET_UPLOAD_TIME;
 	public String TEST_DATA_CSV_FILE_PATH;
@@ -69,5 +70,6 @@ public class PropertiesUtil {
 		AUTH_TOKEN = properties.getProperty("AUTH_TOKEN");
 		AUTH_TYPE_CLIENTID_SECRETKEY = Boolean.parseBoolean(properties.getProperty("AUTH_TYPE_CLIENTID_SECRETKEY"));
 		DECRYPTION_NEEDED = Boolean.parseBoolean(properties.getProperty("DECRYPTION_NEEDED"));
+		NUMBER_OF_TEST_DATA = Integer.parseInt(properties.getProperty("NUMBER_OF_TEST_DATA"));
 	}
 }

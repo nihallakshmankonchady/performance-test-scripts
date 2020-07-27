@@ -43,7 +43,7 @@ public class TestDataGenerator {
 		List<RegDataCSVDto> csvDtoList = new ArrayList<>();
 		List<String[]> csvDtoData = new ArrayList<String[]>();
 
-		for (int i = 0; i <= prop.NUMBER_OF_TEST_PACKETS; i++) {
+		for (int i = 0; i <= prop.NUMBER_OF_TEST_DATA; i++) {
 //			if (i == 0) {
 //				String[] header = new String[] { "fullName", "dateOfBirth", "age", "gender", "residenceStatus",
 //						"addressLine1", "addressLine2", "addressLine3", "region", "province", "city", "postalCode",
