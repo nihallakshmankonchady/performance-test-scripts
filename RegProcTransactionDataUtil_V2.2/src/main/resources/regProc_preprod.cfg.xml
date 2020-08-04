@@ -8,7 +8,7 @@
 
 		<!-- Connection settings -->
 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-		<property name="hibernate.connection.url">jdbc:postgresql://52.172.44.157:9001/mosip_regprc</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://preprod.mosip.net:30090/mosip_regprc</property>
 		<property name="hibernate.connection.username">regprcuser</property>
 		<property name="hibernate.connection.password">Mosip@dev123</property>
 		<property name="hibernate.default_schema">regprc</property>
