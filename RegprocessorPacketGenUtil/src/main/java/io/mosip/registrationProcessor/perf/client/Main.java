@@ -31,8 +31,8 @@ public class Main {
 			switch (mode) {
 			case "packet_gen":
 				/*
-				 * Generates packets and outputs packet file path and checksum to a file. It
-				 * also generates a file having a list of registration IDs
+				 * Generates packets and outputs packet file path and checksum to a file.
+				 * It will also generates a file having a list of registration IDs
 				 */
 				try {
 					createPackets();
@@ -43,12 +43,12 @@ public class Main {
 
 			case "sync_data":
 				/*
-				 * Generates a test data file to be input to Jmeter script to sync regsitration
+				 * Generates a test data file to be input to apache jmeter script to sync regsitration
 				 * packets
 				 */
 				generateSyncData();
 				break;
-			case "test_data": // To generate test data for ID Repo create API
+			case "test_data": // To generate test data for ID Repo create API this data is used for IDRepo and IDA
 				try {
 					generateTestData();
 				} catch (InterruptedException e) {
