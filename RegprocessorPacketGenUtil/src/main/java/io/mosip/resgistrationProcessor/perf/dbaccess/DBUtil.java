@@ -35,13 +35,13 @@ public class DBUtil {
 
 	private static File loadConfigFile(PropertiesUtil prop) {
 		File file = null;
-		if ("qa".equals(prop.ENVIRONMENT)) {
+		if ("qa".equalsIgnoreCase(prop.ENVIRONMENT)) {
 
 			String regProcDBConfigFile = System.getProperty("user.dir") + "\\"
 					+ "src\\main\\resources\\regProc_qa.cfg.xml";
 			file = new File(regProcDBConfigFile);
 			return file;
-		} else if ("preprod".equals(prop.ENVIRONMENT)) {
+		} else if ("preprod".equalsIgnoreCase(prop.ENVIRONMENT)) {
 			String regProcDBConfigFile = System.getProperty("user.dir") + "\\"
 					+ "src\\main\\resources\\regProc_preprod.cfg.xml";
 			file = new File(regProcDBConfigFile);

@@ -30,6 +30,10 @@ public class Main {
 			String mode = args[0];
 			switch (mode) {
 			case "packet_gen":
+				/*
+				 * Generates packets and outputs packet file path and checksum to a file. It
+				 * also generates a file having a list of registration IDs
+				 */
 				try {
 					createPackets();
 				} catch (InterruptedException e) {
@@ -38,9 +42,13 @@ public class Main {
 				break;
 
 			case "sync_data":
+				/*
+				 * Generates a test data file to be input to Jmeter script to sync regsitration
+				 * packets
+				 */
 				generateSyncData();
 				break;
-			case "test_data":
+			case "test_data": // To generate test data for ID Repo create API
 				try {
 					generateTestData();
 				} catch (InterruptedException e) {
