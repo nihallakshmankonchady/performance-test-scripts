@@ -16,17 +16,17 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="thinktime" elementType="Argument">
             <stringProp name="Argument.name">thinktime</stringProp>
-            <stringProp name="Argument.value">1000</stringProp>
+            <stringProp name="Argument.value">0000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="responsesPath" elementType="Argument">
             <stringProp name="Argument.name">responsesPath</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\RegistrationProcessor\Responses\Errors\dec13-sample</stringProp>
+            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\RegistrationProcessor\Responses\Errors\July-sample</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="result_path" elementType="Argument">
             <stringProp name="Argument.name">result_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\RegistrationProcessor\Results\feb24_e2e</stringProp>
+            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\RegistrationProcessor\Results\uly3_e2e</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="data_path" elementType="Argument">
@@ -34,25 +34,25 @@
             <stringProp name="Argument.value">C:/MOSIP_PT/Scripts/RegistrationProcessor\Data</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="kernel_ip" elementType="Argument">
-            <stringProp name="Argument.name">kernel_ip</stringProp>
-            <stringProp name="Argument.value">150.10.30.98</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="thinktime_upload" elementType="Argument">
             <stringProp name="Argument.name">thinktime_upload</stringProp>
-            <stringProp name="Argument.value">5000</stringProp>
+            <stringProp name="Argument.value">0000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="authorization" elementType="Argument">
             <stringProp name="Argument.name">authorization</stringProp>
-            <stringProp name="Argument.value">eyJhbGciOiJSUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJRakpYVzgtemMwR1RWRkQ0RnZiWkdTblZLSlhDMWRXVnBPVUxMLWVZT0JNIn0.eyJqdGkiOiIzNDc4NThmNS0wOGExLTRlYTMtYTU1NS0wOGNiMzIxNzU0NGIiLCJleHAiOjE1ODk0NTIyNjMsIm5iZiI6MCwiaWF0IjoxNTg5NDM0MjYzLCJpc3MiOiJodHRwczovL21vc2lwa2V5Y2xvYWtwcC5zb3V0aGluZGlhLmNsb3VkYXBwLmF6dXJlLmNvbS9hdXRoL3JlYWxtcy9tb3NpcCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmZjE3Yjg3OC0zMTIwLTQ2MGUtOTU3MC03MTYxMDhmYzgxMjMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdpc3RyYXRpb24tcHJvY2Vzc29yIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMjg2YzJhOGEtZTMzNS00YjBmLTk5ZWUtYWJjOGQ0ZDg1NTJlIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSRUdJU1RSQVRJT05fUFJPQ0VTU09SIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWdpc3RyYXRpb24tcHJvY2Vzc29yIjp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRJZCI6InJlZ2lzdHJhdGlvbi1wcm9jZXNzb3IiLCJjbGllbnRIb3N0IjoiNTIuMTcyLjEyLjE5MyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXJlZ2lzdHJhdGlvbi1wcm9jZXNzb3IiLCJjbGllbnRBZGRyZXNzIjoiNTIuMTcyLjEyLjE5MyIsImVtYWlsIjoic2VydmljZS1hY2NvdW50LXJlZ2lzdHJhdGlvbi1wcm9jZXNzb3JAcGxhY2Vob2xkZXIub3JnIn0.iwiq-fG12ue4jRpBscEzenWZFO5Q-VvugXepYSqysu791Ih-fOasYL0crFxweLRncgiqR9MtBL_jleUYI5aFL6zNdGeMx4r6inksJtW6MLBslghNQepSFqhaxH575ppRIQX6gPf2_7W_C_6d5iP0eOqqo4B2YTg8EYkdl3CLtIdWleDSe2epa5q_YnERftDapyHuE9yWLz3Y44MHuMnd0KN2MRaRJfrmQfS7e88TgHFccRGMZuOzAWMklChw9_HDooW_Ig5h9gfd7jl2deXanaC0XBNM2daKEXqo7B6_F6tIgueTzEJMfe8kHE5SIVeqJu53Px_CrwdQWI6DVAAg5g</stringProp>
+            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0dlA4TUlwZ08zS1hrNzBMa3R4b0w2NGZCWTUwcEpDV1Q1UF80WHo4X00wIn0.eyJqdGkiOiJkNzUyMjA5Mi1jZGQ1LTQ1MDktOWQ5MC03NjcwMGM3YTk1ZWMiLCJleHAiOjE1OTYxMzE4MTgsIm5iZiI6MCwiaWF0IjoxNTk2MDk1ODE4LCJpc3MiOiJodHRwczovL3ByZXByb2QubW9zaXAubmV0L2tleWNsb2FrL2F1dGgvcmVhbG1zL21vc2lwIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQ0YTgyNWFhLWMwNGQtNDI1NS04ZjQ1LWUwNTg2MjYwNTgzMSIsInR5cCI6IkJlYXJlciIsImF6cCI6Im1vc2lwLXJlZ3Byb2MtY2xpZW50IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNjdhMTU5NGYtOGVjNi00ZmQ1LWE4YTItOTc4NDE5NjIzYzY1IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSRUdJU1RSQVRJT05fUFJPQ0VTU09SIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfSwibW9zaXAtcmVncHJvYy1jbGllbnQiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRIb3N0IjoiMTAuMjQ0LjUuNTAiLCJjbGllbnRJZCI6Im1vc2lwLXJlZ3Byb2MtY2xpZW50IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtbW9zaXAtcmVncHJvYy1jbGllbnQiLCJjbGllbnRBZGRyZXNzIjoiMTAuMjQ0LjUuNTAifQ.QdJWSdCORLYzhL7wEQJP74pBoMWkBb9ChbOKl-chkYU-2B_5rA0ZK6S9TVzdlJXu204ifXV4Zz7cwqQLVFanEMdMgKob3X_1C82i7gZJ2u86uo6REFk1XzVWP5hGWpuC3ZiVAsmThi0_l2Ypz2Xj8iBUNyIFIbhzC9TznlbmFTpxdjiXkq7OVzjDgkNeK40Hn9I9-wNwIPEdnYppVGAJ3FbtAWQUVi_pn00wuAKsZeccUubay5vYwsxqzHdLeKA_aEIFWClOCa4uQepM7vH4zzm8EoAL8nWnX0h2NEA0B8qPnlgR-GT9rvNA0JcBLu5N7LSPa6kBcR5aDo1qdRTqlg</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL</stringProp>
+            <stringProp name="Argument.value">preprod.mosip.net</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="true">
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="false">
         <stringProp name="filename">${data_path}\server_data.csv</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames">BASE_URL</stringProp>
@@ -350,9 +350,9 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;registration-processor&quot;,&#xd;
-    &quot;secretKey&quot;: &quot;d80ec0be-bba7-4d8e-bf0c-85ab45bb976b&quot;,&#xd;
-    &quot;appId&quot;: &quot;registration-processor&quot;&#xd;
+    &quot;clientId&quot;: &quot;mosip-regproc-client&quot;,&#xd;
+    &quot;secretKey&quot;: &quot;abc123&quot;,&#xd;
+    &quot;appId&quot;: &quot;regproc&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
   &quot;version&quot;: &quot;1.0&quot;&#xd;
@@ -361,9 +361,9 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">150.10.30.98</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path">v1/authmanager/authenticate/clientidsecretkey</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -641,8 +641,8 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MOSIP_RegProc_PacketUpload_1User" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MOSIP_RegProc_PacketUpload_1User" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">stopthread</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
@@ -670,7 +670,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="PacketUpload Data" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
-          <stringProp name="filename">C:\MOSIP_PT\Data1/temp/syncRequestData.txt</stringProp>
+          <stringProp name="filename">C:/MOSIP_PT/Data/temp/syncRequestData1.txt</stringProp>
           <boolProp name="ignoreFirstLine">false</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">false</boolProp>
@@ -992,7 +992,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/cryptomanager/encrypt</stringProp>
+            <stringProp name="HTTPSampler.path">v1/keymanager/encrypt</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1565,15 +1565,21 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MOSIP_RegProc_PacketUpload_10_Users" enabled="false">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="MOSIP_RegProc_PacketUpload_10_Users" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">550</stringProp>
+          <stringProp name="LoopController.loops">5</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">10</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">40</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">20</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
@@ -1595,7 +1601,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="PacketUpload Data" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
-          <stringProp name="filename">C:\MOSIP_PT\Data1/temp/syncRequestData.txt</stringProp>
+          <stringProp name="filename">C:/MOSIP_PT/Data/temp/syncRequestData1.txt</stringProp>
           <boolProp name="ignoreFirstLine">false</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">false</boolProp>
@@ -1917,7 +1923,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/cryptomanager/encrypt</stringProp>
+            <stringProp name="HTTPSampler.path">v1/keymanager/encrypt</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4590,7 +4596,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
         </hashTree>
       </hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <boolProp name="ResultCollector.error_logging">true</boolProp>
         <objProp>
           <name>saveConfig</name>
           <value class="SampleSaveConfiguration">
@@ -4621,7 +4627,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <sampleCount>true</sampleCount>
           </value>
         </objProp>
-        <stringProp name="filename">C:\MOSIP_PT\Scripts\RegistrationProcessor\Results\April17\upload_packet_0.xml</stringProp>
+        <stringProp name="filename">C:\MOSIP_PT\Scripts\RegistrationProcessor\Results\30July\upload_packet_7.xml</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -4658,7 +4664,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\MOSIP_PT\Scripts\RegistrationProcessor\Results\April17\upload_packet_5000Packets_1.csv</stringProp>
+        <stringProp name="filename">C:\MOSIP_PT\Scripts\RegistrationProcessor\Results\30July\upload_packet_50Packets_7.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
