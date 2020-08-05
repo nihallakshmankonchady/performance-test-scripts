@@ -11,7 +11,7 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables_preprod" enabled="false">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables_preprod" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="thinktime" elementType="Argument">
             <stringProp name="Argument.name">thinktime</stringProp>
@@ -45,12 +45,12 @@
           </elementProp>
           <elementProp name="vid_list_file_name" elementType="Argument">
             <stringProp name="Argument.name">vid_list_file_name</stringProp>
-            <stringProp name="Argument.value">uin_vid_list_preprod_July24.txt</stringProp>
+            <stringProp name="Argument.value">uin_vid_list_preprod_July30_test.txt</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="authorization" elementType="Argument">
             <stringProp name="Argument.name">authorization</stringProp>
-            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0dlA4TUlwZ08zS1hrNzBMa3R4b0w2NGZCWTUwcEpDV1Q1UF80WHo4X00wIn0.eyJqdGkiOiJhNTVjMzE0Yi01YWRkLTQwNDgtOTAzYS1iZTQxMDRmNWVkZTAiLCJleHAiOjE1OTU2MjkwNjUsIm5iZiI6MCwiaWF0IjoxNTk1NTkzMDY1LCJpc3MiOiJodHRwczovL3ByZXByb2QubW9zaXAubmV0L2tleWNsb2FrL2F1dGgvcmVhbG1zL21vc2lwIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQ0YTgyNWFhLWMwNGQtNDI1NS04ZjQ1LWUwNTg2MjYwNTgzMSIsInR5cCI6IkJlYXJlciIsImF6cCI6Im1vc2lwLXJlZ3Byb2MtY2xpZW50IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiZTVjNmE3ZmItNjI3MS00ZTQzLTk1ODAtZTBkYWQ4Y2E0NjUyIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSRUdJU1RSQVRJT05fUFJPQ0VTU09SIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfSwibW9zaXAtcmVncHJvYy1jbGllbnQiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRIb3N0IjoiMTAuMjQ0LjUuMTgiLCJjbGllbnRJZCI6Im1vc2lwLXJlZ3Byb2MtY2xpZW50IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtbW9zaXAtcmVncHJvYy1jbGllbnQiLCJjbGllbnRBZGRyZXNzIjoiMTAuMjQ0LjUuMTgifQ.o5gs4AYu_8LK54wIsbDKajlsSyVN2n55_XkjnEBozLFRCfm6yuqYv2mS9FeW6GArtGVavgqX0Bc7Gg49q1YCvpIoCj647yRDMFvsioFcPv_N_qMaT0xhw8nrdbShrgE8T6JjQ0DnkhmXlLwODHqIrWRz-nsThpR8Y4u9keVSfQAlv1kMcc4fuujKF3-dSi7JgTBX02ry8I2xYsuSq1M2FICGAqju_QCzm5PTyT1JeqRzQNsczwoCXTx8KURMW9ltBjzrlYpMX3ST6gjuDi_qir-14XvbqOSZmRd7Tle82Hq1Zsmk8Wx2TjXRPBfunKPrQ5hqBzrnGn6moCLNWdSZfA</stringProp>
+            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0dlA4TUlwZ08zS1hrNzBMa3R4b0w2NGZCWTUwcEpDV1Q1UF80WHo4X00wIn0.eyJqdGkiOiI4YjE5OTNjOC0zYTQ1LTQ1ODMtOWVlZC0xNmRlZjQ1Y2M4MmIiLCJleHAiOjE1OTYxNDAxMTMsIm5iZiI6MCwiaWF0IjoxNTk2MTA0MTEzLCJpc3MiOiJodHRwczovL3ByZXByb2QubW9zaXAubmV0L2tleWNsb2FrL2F1dGgvcmVhbG1zL21vc2lwIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQ0YTgyNWFhLWMwNGQtNDI1NS04ZjQ1LWUwNTg2MjYwNTgzMSIsInR5cCI6IkJlYXJlciIsImF6cCI6Im1vc2lwLXJlZ3Byb2MtY2xpZW50IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNGZmOWRlZGQtZTA1NS00NTFmLTk3ZmItNTM4ODBiODNjZjc2IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSRUdJU1RSQVRJT05fUFJPQ0VTU09SIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfSwibW9zaXAtcmVncHJvYy1jbGllbnQiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRIb3N0IjoiMTAuMjQ0LjUuNTAiLCJjbGllbnRJZCI6Im1vc2lwLXJlZ3Byb2MtY2xpZW50IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtbW9zaXAtcmVncHJvYy1jbGllbnQiLCJjbGllbnRBZGRyZXNzIjoiMTAuMjQ0LjUuNTAifQ.Do5S4jYn6kbv9RdBKrwvZTEyWoyIVyU4tcots1207qAsof5H4ZqZMsNVXM2JcIRGyRa_hmGNrQkN3LCcs-wlBCZD5dxOtJ3wiCFfIyO5C53eKDZakS0xGTteqpJjt3f-ERweUcrmnAcd0JYqWxQi3T13gJUg2MmhtgpM-_cJJZlYyTZz6ORiIp8PLJr3SuYRYaxQ8K--d3-81t1FXmadbw_U34LAA9cNTPWHlVTG_f6TLlc-NkttLxGdbxOZoFLCMyVD6Llxlo8QL01__7h4lOS328GkT0vSYyDIDc1mYXW5R90bhoUB_HJP4MtkCJEPhUkgCT1snNNb_CjBtqeLng</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="BASE_URL" elementType="Argument">
@@ -61,7 +61,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables_QA" enabled="true">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables_QA" enabled="false">
         <collectionProp name="Arguments.arguments">
           <elementProp name="thinktime" elementType="Argument">
             <stringProp name="Argument.name">thinktime</stringProp>
@@ -95,7 +95,7 @@
           </elementProp>
           <elementProp name="vid_list_file_name" elementType="Argument">
             <stringProp name="Argument.name">vid_list_file_name</stringProp>
-            <stringProp name="Argument.value">uin_vid_list_qa_1.txt</stringProp>
+            <stringProp name="Argument.value">uin_vid_list_qa_2.txt</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="authorization" elementType="Argument">
@@ -105,6 +105,11 @@
           </elementProp>
           <elementProp name="BASE_URL" elementType="Argument">
             <stringProp name="Argument.name">BASE_URL</stringProp>
+            <stringProp name="Argument.value">qa.mosip.net</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="basepath" elementType="Argument">
+            <stringProp name="Argument.name">basepath</stringProp>
             <stringProp name="Argument.value">qa.mosip.net</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -299,7 +304,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
         <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">5</stringProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
