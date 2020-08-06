@@ -1,6 +1,0 @@
-Label,# Samples,Average,90% Line,Min,Max,Error %,Throughput
-TR_masterdata_locations,131587,2238,5515,21,60011,0.01%,20.82734
-masterdata_locations,131587,2238,5515,21,60011,0.01%,20.82739
-TR_masterdata_locations_locationHierarchy,131460,2227,5462,23,60038,0.01%,20.81454
-masterdata_locationshierarchy,131460,2227,5462,23,60038,0.01%,20.81457
-TOTAL,526094,2233,5488,21,60038,0.01%,83.26916
