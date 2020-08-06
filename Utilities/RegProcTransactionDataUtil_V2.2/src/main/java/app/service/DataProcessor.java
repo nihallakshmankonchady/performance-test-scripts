@@ -44,7 +44,7 @@ public class DataProcessor {
 //				"EXTERNAL_INTEGRATION", "DEMOGRAPHIC_VERIFICATION", "BIOGRAPHIC_VERIFICATION", "UIN_GENERATOR",
 //				"PRINT_SERVICE", "PRINT_POSTAL_SERVICE", "NOTIFICATION", "PACKET_REPROCESS", TOTAL_TIME, TOTAL_TIME_SEC,
 //				"TOTAL_TIME (from registration table)" };
-		String[] activityArray = { "CR_DTIME", "PACKET_RECEIVER", "UPLOAD_PACKET", "VALIDATE_PACKET", "QUALITY_CHECK",
+		String[] activityArray = { "CR_DTIME", "PACKET_RECEIVER","SECUREZONE_NOTIFICATION", "UPLOAD_PACKET", "VALIDATE_PACKET", "QUALITY_CHECK",
 				"OSI_VALIDATE", "EXTERNAL_INTEGRATION", "DEMOGRAPHIC_VERIFICATION", "BIOGRAPHIC_VERIFICATION",
 				"UIN_GENERATOR", "PRINT_SERVICE", "PRINT_POSTAL_SERVICE", "NOTIFICATION", "PACKET_REPROCESS",
 				TOTAL_TIME, TOTAL_TIME_SEC, "TOTAL_TIME (from registration table)" };
@@ -141,18 +141,22 @@ public class DataProcessor {
 			 * trTimeMap stores the time taken in each stage, key of the map contains the
 			 * transaction name (or name of the stage)
 			 */
-			Map<String, Object> trTimeMap = obtainTimeSpentTransactionWise(trList, session);
-
-			/*
-			 * Fetches the least value of cr_dtimes
-			 */
-			String leastCreationTime = obtainLeastCreationTime(trList);
-
-			Set<String> activities1 = trTimeMap.keySet();
-			if (activities1.size() <= activities.size()) {
-				transactionTimesByRegIds.put(regid, trTimeMap);
+			if (trList.size() <= 1) {
+				System.out.println("For regid " + regid + ", number of transactions is " + trList.size());
 			} else {
-				System.err.println("Number of activities not matching for regid:- " + regid);
+				Map<String, Object> trTimeMap = obtainTimeSpentTransactionWise(trList, session);
+
+				/*
+				 * Fetches the least value of cr_dtimes
+				 */
+				String leastCreationTime = obtainLeastCreationTime(trList);
+
+				Set<String> activities1 = trTimeMap.keySet();
+				if (activities1.size() <= activities.size()) {
+					transactionTimesByRegIds.put(regid, trTimeMap);
+				} else {
+					System.err.println("Number of activities not matching for regid:- " + regid);
+				}
 			}
 
 //			
@@ -247,7 +251,15 @@ public class DataProcessor {
 		Collections.sort(trList); // transaction list will be sorted by order of creation time
 
 		Map<String, Object> timeSpentTrMap = new LinkedHashMap<>();
-		String regid = trList.get(0).getRegistrationId();
+		String regid = "";
+		try {
+			regid = trList.get(0).getRegistrationId();
+		} catch (Exception ex) {
+			System.out.println(trList.size());
+			TransactionEntity trEn = trList.get(0);
+			System.out.println(trEn.toString());
+			ex.printStackTrace();
+		}
 		String crDTime = getCrTimeStampOfFirstStage(regid, session);
 		timeSpentTrMap.put("CR_DTIME", crDTime);
 		for (int i = 0; i < trList.size() - 1; i++) {

@@ -8,9 +8,9 @@
 
 		<!-- Connection settings -->
 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-		<property name="hibernate.connection.url">jdbc:postgresql://52.172.44.157:9001/mosip_regprc</property>
-		<property name="hibernate.connection.username">regprcuser</property>
-		<property name="hibernate.connection.password">Mosip@dev123</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://52.140.39.217:9001/mosip_regprc</property>
+		<property name="hibernate.connection.username">postgres</property>
+		<property name="hibernate.connection.password">postgres</property>
 		<property name="hibernate.default_schema">regprc</property>
 		<!-- SQL dialect -->
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
