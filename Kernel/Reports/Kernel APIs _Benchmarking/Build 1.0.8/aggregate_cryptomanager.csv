@@ -1,0 +1,6 @@
+Label,# Samples,Average,90% Line,Min,Max,Error %,Throughput
+TR_reg-processor_encrypt,298195,654,68,7,60117,52.08%,84.83562
+regproc_encrypt_data,298195,654,68,7,60117,52.08%,84.83564
+TR_regproc_decrypt,142907,644,102,9,60024,0.22%,50.31426
+regproc_decrypt_data,142907,644,102,9,60024,0.22%,50.31426
+TOTAL,882204,651,82,7,60117,35.28%,250.9845
