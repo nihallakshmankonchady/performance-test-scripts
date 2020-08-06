@@ -186,10 +186,10 @@ public class TestDataUtility {
 		return addressLine;
 	}
 
-	public String getCountryCode(Session session) {
+	public String getCountryCode(Session session, PropertiesUtil prop) {
 		// String result = "";
 		// List<Location> countryCodes = dao.getCountry();
-		List<Location> countries = new RegProcPerfDaoImpl().getCountry(session);
+		List<Location> countries = new RegProcPerfDaoImpl().getCountry(session, prop.COUNTRY_CODE);
 
 		Location result = obtainRandonLocation(countries);
 		return result.getCode();

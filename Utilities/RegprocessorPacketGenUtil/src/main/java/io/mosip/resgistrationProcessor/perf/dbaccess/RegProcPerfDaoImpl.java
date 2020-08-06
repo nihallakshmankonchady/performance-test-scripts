@@ -15,11 +15,11 @@ public class RegProcPerfDaoImpl {
 	String CONFIG_FILE = "config.properties";
 	PropertiesUtil prop = new PropertiesUtil(CONFIG_FILE);
 
-	public List<Location> getCountry(Session session) {
+	public List<Location> getCountry(Session session, String countryCode) {
 
 		//Session session = dbUtil.obtainSession(prop);
 		List<Location> locations = new ArrayList<>();
-		Query q = session.createQuery("from Location where lang_code='eng' and hierarchy_level=0");
+		Query q = session.createQuery("from Location where lang_code='eng' and hierarchy_level=0 and code='"+countryCode+"'");
 		locations = q.getResultList();
 		//System.out.println("Country fetched: " + locations.size());
 		//session.close();

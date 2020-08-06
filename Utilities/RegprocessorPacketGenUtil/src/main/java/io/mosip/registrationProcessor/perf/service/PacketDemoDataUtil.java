@@ -276,7 +276,7 @@ public class PacketDemoDataUtil {
 		identityDto.setAddressLine3(addressLine3);
 
 		List<FieldData> region = new ArrayList<>();
-		String countryCode = testDataUtil.getCountryCode(session);
+		String countryCode = testDataUtil.getCountryCode(session, prop);
 		Location regionObj = testDataUtil.getLocation(countryCode, 1, session);
 		String regionName = regionObj.getName();
 		String regionValFr = convertLocationEngToFrench(regionName, 1, session);

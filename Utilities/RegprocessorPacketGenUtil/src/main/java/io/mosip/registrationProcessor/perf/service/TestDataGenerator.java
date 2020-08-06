@@ -72,7 +72,7 @@ public class TestDataGenerator {
 			String addressLine3 = testDataUtil.generateAddressLine();
 			csvDto.setAddressLine3(addressLine3);
 
-			String countryCode = testDataUtil.getCountryCode(session);
+			String countryCode = testDataUtil.getCountryCode(session,prop);
 			Location region = testDataUtil.getLocation(countryCode, 1, session);
 			String regionName = region.getName();
 			csvDto.setRegion(regionName);

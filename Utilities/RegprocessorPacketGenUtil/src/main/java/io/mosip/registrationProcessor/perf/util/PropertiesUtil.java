@@ -23,7 +23,7 @@ public class PropertiesUtil {
 	public boolean AUTH_TYPE_CLIENTID_SECRETKEY;
 	public boolean DECRYPTION_NEEDED;
 	public String AUTH_TOKEN;
-
+	public String COUNTRY_CODE;
 	/*
 	 * public void loadProperties(String configFile) {
 	 * 
@@ -71,5 +71,6 @@ public class PropertiesUtil {
 		AUTH_TYPE_CLIENTID_SECRETKEY = Boolean.parseBoolean(properties.getProperty("AUTH_TYPE_CLIENTID_SECRETKEY"));
 		DECRYPTION_NEEDED = Boolean.parseBoolean(properties.getProperty("DECRYPTION_NEEDED"));
 		NUMBER_OF_TEST_DATA = Integer.parseInt(properties.getProperty("NUMBER_OF_TEST_DATA"));
+		COUNTRY_CODE = properties.getProperty("COUNTRY_CODE");
 	}
 }

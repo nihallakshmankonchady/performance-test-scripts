@@ -11,7 +11,7 @@
 		<property name="hibernate.connection.url">jdbc:postgresql://qa.mosip.net:30090/mosip_master</property>
 		<property name="hibernate.connection.username">masteruser</property>
 		<property name="hibernate.connection.password">Mosip@dev123</property>
-		<property name="hibernate.default_schema">regprc</property>
+		<property name="hibernate.default_schema">master</property>
 		<!-- SQL dialect -->
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
