@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -11,13 +11,8 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - preprod" enabled="true">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="basepath" elementType="Argument">
-            <stringProp name="Argument.name">basepath</stringProp>
-            <stringProp name="Argument.value">preprod.mosip.io</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="thinktime" elementType="Argument">
             <stringProp name="Argument.name">thinktime</stringProp>
             <stringProp name="Argument.value">1000</stringProp>
@@ -50,7 +45,7 @@
           </elementProp>
           <elementProp name="uin" elementType="Argument">
             <stringProp name="Argument.name">uin</stringProp>
-            <stringProp name="Argument.value">4981632435</stringProp>
+            <stringProp name="Argument.value">9243504751</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="reg_id" elementType="Argument">
@@ -58,15 +53,75 @@
             <stringProp name="Argument.value">12345678910065220200303074735</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="BASE_URL" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL</stringProp>
+            <stringProp name="Argument.value">preprod.southindia.cloudapp.azure.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
           <elementProp name="authorization" elementType="Argument">
             <stringProp name="Argument.name">authorization</stringProp>
-            <stringProp name="Argument.value">eyJhbGciOiJSUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJRakpYVzgtemMwR1RWRkQ0RnZiWkdTblZLSlhDMWRXVnBPVUxMLWVZT0JNIn0.eyJqdGkiOiI1ZTA1ZTlhNi04MTBmLTQ2MjctYjc2Yy1iYmJhYmZkODlmNzgiLCJleHAiOjE1ODgwMDk4MzIsIm5iZiI6MCwiaWF0IjoxNTg3OTkxODMyLCJpc3MiOiJodHRwczovL21vc2lwa2V5Y2xvYWtwcC5zb3V0aGluZGlhLmNsb3VkYXBwLmF6dXJlLmNvbS9hdXRoL3JlYWxtcy9tb3NpcCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmZjE3Yjg3OC0zMTIwLTQ2MGUtOTU3MC03MTYxMDhmYzgxMjMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdpc3RyYXRpb24tcHJvY2Vzc29yIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiZWE4ODc5ZmYtMjFkNi00NTIwLWJkMmUtYWUzN2Q0YjQ2MTEwIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSRUdJU1RSQVRJT05fUFJPQ0VTU09SIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWdpc3RyYXRpb24tcHJvY2Vzc29yIjp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRJZCI6InJlZ2lzdHJhdGlvbi1wcm9jZXNzb3IiLCJjbGllbnRIb3N0IjoiMTA0LjIxMS4yNDYuMjAyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtcmVnaXN0cmF0aW9uLXByb2Nlc3NvciIsImNsaWVudEFkZHJlc3MiOiIxMDQuMjExLjI0Ni4yMDIiLCJlbWFpbCI6InNlcnZpY2UtYWNjb3VudC1yZWdpc3RyYXRpb24tcHJvY2Vzc29yQHBsYWNlaG9sZGVyLm9yZyJ9.JzxCkR9CXLI9ChKPyfsSkC0A4KGTfOo3SG8FZ-r4ZsCETTAiUqQ3F8E7MMFgEftofkOSw3dXhIfhi7I7J7rqzZ4lRgbdgOSM6uMSBNa5AL4PilDOXp5h8AU-GImyr1PPy12wfLzfSAk-a6I_s6AEjYC_mDKuim8Of-65KEGAZTAhK6UmDWb91jzSX065bfvC4SeZ4f0FCrEm3mY9AbTD9O6nx_2rTUHyZXLxoSdugEV0QmnwpIEt8HNcu3NKS4mjpModKXiwRoCuI7fodW5uS-4yW-k8ytgaEWqw4TeStCj2ttFF_amJv6mFgG6no0ZPPHd8zmxVq9R4MI83xBJQ6g</stringProp>
+            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJCQURweU94ZVNIN2xhRVJXelZnQ2txYzI1aU5nVmJjQ1NpU2FTSjRsOTZRIn0.eyJqdGkiOiI3MTUxZjRiZS1mZGE5LTQ2OTQtODVlZS1lYTljMzEwMmQ1ZjIiLCJleHAiOjE1OTMyMDU0MDAsIm5iZiI6MCwiaWF0IjoxNTkzMTY5NDAwLCJpc3MiOiJodHRwczovL3ByZXByb2Quc291dGhpbmRpYS5jbG91ZGFwcC5henVyZS5jb20va2V5Y2xvYWsvYXV0aC9yZWFsbXMvbW9zaXAiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMDM2NzY3ODUtYTliNy00MGQxLWI4YzAtZWU1OGE4ZjY3NjlmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibW9zaXAtcmVncHJvYy1jbGllbnQiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiIwMzk3NTAwZi05MjdmLTQ4ZDMtOTVkZS00OTVlZmEzOTg2N2YiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIlJFR0lTVFJBVElPTl9QUk9DRVNTT1IiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19LCJtb3NpcC1yZWdwcm9jLWNsaWVudCI6eyJyb2xlcyI6WyJ1bWFfcHJvdGVjdGlvbiJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImNsaWVudElkIjoibW9zaXAtcmVncHJvYy1jbGllbnQiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudEhvc3QiOiIxMC4yNDQuOS43OCIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1tb3NpcC1yZWdwcm9jLWNsaWVudCIsImNsaWVudEFkZHJlc3MiOiIxMC4yNDQuOS43OCJ9.Z23IdRgrGJJa_y_9N5M5y-6__nNZNYeXj6A_4AWPxyVJwvOXG1SMyzkKzXP2ZmFUAUMrlfhh8QMdhKfaC9TepHMDQ0NXaO2pyoEyRcyHq90XWdYN_Zu-30fe7IsTx56_0JUQdV66JWGraztxu7f9RUZCQF4RkEpH225_lmm1dueuz7U8JpuIRn-pMlaP-s_Ew3fM2ubi7N_g_cArYk9U7t9sspGgbdw0u3Se2ZhOPl57x297moVW8mOB-VQYAs4jRaMjwCc_G5Bml2V1qrsBnuj5hbXET5VhKib6nDnpHE6dvYhBAvZP74sw4fFYTgYXesYJ-l1axllrYQih12RpDg</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="true">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - qa" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="thinktime" elementType="Argument">
+            <stringProp name="Argument.name">thinktime</stringProp>
+            <stringProp name="Argument.value">1000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="response_folder" elementType="Argument">
+            <stringProp name="Argument.name">response_folder</stringProp>
+            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IdRepo\Responses</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="data_path" elementType="Argument">
+            <stringProp name="Argument.name">data_path</stringProp>
+            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IdRepo\Data</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="result_path" elementType="Argument">
+            <stringProp name="Argument.name">result_path</stringProp>
+            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IdRepo\Results</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="idrepo_internal_ip" elementType="Argument">
+            <stringProp name="Argument.name">idrepo_internal_ip</stringProp>
+            <stringProp name="Argument.value">150.10.30.228</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="kernel_internal_ip" elementType="Argument">
+            <stringProp name="Argument.name">kernel_internal_ip</stringProp>
+            <stringProp name="Argument.value">150.10.30.98</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="uin" elementType="Argument">
+            <stringProp name="Argument.name">uin</stringProp>
+            <stringProp name="Argument.value">9243504751</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="reg_id" elementType="Argument">
+            <stringProp name="Argument.name">reg_id</stringProp>
+            <stringProp name="Argument.value">12345678910065220200303074735</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL</stringProp>
+            <stringProp name="Argument.value">qa.mosip.net</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="authorization" elementType="Argument">
+            <stringProp name="Argument.name">authorization</stringProp>
+            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJCQURweU94ZVNIN2xhRVJXelZnQ2txYzI1aU5nVmJjQ1NpU2FTSjRsOTZRIn0.eyJqdGkiOiI3MTUxZjRiZS1mZGE5LTQ2OTQtODVlZS1lYTljMzEwMmQ1ZjIiLCJleHAiOjE1OTMyMDU0MDAsIm5iZiI6MCwiaWF0IjoxNTkzMTY5NDAwLCJpc3MiOiJodHRwczovL3ByZXByb2Quc291dGhpbmRpYS5jbG91ZGFwcC5henVyZS5jb20va2V5Y2xvYWsvYXV0aC9yZWFsbXMvbW9zaXAiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMDM2NzY3ODUtYTliNy00MGQxLWI4YzAtZWU1OGE4ZjY3NjlmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibW9zaXAtcmVncHJvYy1jbGllbnQiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiIwMzk3NTAwZi05MjdmLTQ4ZDMtOTVkZS00OTVlZmEzOTg2N2YiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIlJFR0lTVFJBVElPTl9QUk9DRVNTT1IiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19LCJtb3NpcC1yZWdwcm9jLWNsaWVudCI6eyJyb2xlcyI6WyJ1bWFfcHJvdGVjdGlvbiJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImNsaWVudElkIjoibW9zaXAtcmVncHJvYy1jbGllbnQiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudEhvc3QiOiIxMC4yNDQuOS43OCIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1tb3NpcC1yZWdwcm9jLWNsaWVudCIsImNsaWVudEFkZHJlc3MiOiIxMC4yNDQuOS43OCJ9.Z23IdRgrGJJa_y_9N5M5y-6__nNZNYeXj6A_4AWPxyVJwvOXG1SMyzkKzXP2ZmFUAUMrlfhh8QMdhKfaC9TepHMDQ0NXaO2pyoEyRcyHq90XWdYN_Zu-30fe7IsTx56_0JUQdV66JWGraztxu7f9RUZCQF4RkEpH225_lmm1dueuz7U8JpuIRn-pMlaP-s_Ew3fM2ubi7N_g_cArYk9U7t9sspGgbdw0u3Se2ZhOPl57x297moVW8mOB-VQYAs4jRaMjwCc_G5Bml2V1qrsBnuj5hbXET5VhKib6nDnpHE6dvYhBAvZP74sw4fFYTgYXesYJ-l1axllrYQih12RpDg</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="false">
         <stringProp name="filename">${data_path}\server_data.csv</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames">BASE_URL,idrepo_internal_ip,kernel_internal_ip</stringProp>
@@ -108,6 +163,7 @@
       <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
         <collectionProp name="CookieManager.cookies"/>
         <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
       </CookieManager>
       <hashTree/>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Identity Data" enabled="false">
@@ -157,6 +213,7 @@
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_regproc_authenticate_secretKey" enabled="true">
@@ -272,7 +329,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="IdRepo Retrieve - debug" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="IdRepo Retrieve - debug" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -283,12 +340,13 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="uin vid reg-id  Reader" enabled="false">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="uin vid reg-id  Reader" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${data_path}\uin_vid_list_1.txt</stringProp>
+          <stringProp name="filename">${data_path}\uin_vid_list_qa_11Aug.txt</stringProp>
           <boolProp name="ignoreFirstLine">false</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -297,12 +355,12 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
           <stringProp name="variableNames">uin,vid,reg_id</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_regproc_authenticate_secretKey" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_ida_authenticate_secretKey" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="regproc_authenticate" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ida_authenticate" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -312,9 +370,9 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;registration-processor&quot;,&#xd;
-    &quot;secretKey&quot;: &quot;d80ec0be-bba7-4d8e-bf0c-85ab45bb976b&quot;,&#xd;
-    &quot;appId&quot;: &quot;registration-processor&quot;&#xd;
+    &quot;clientId&quot;: &quot;mosip-ida-client&quot;,&#xd;
+    &quot;secretKey&quot;: &quot;abc123&quot;,&#xd;
+    &quot;appId&quot;: &quot;ida&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
   &quot;version&quot;: &quot;1.0&quot;&#xd;
@@ -323,9 +381,9 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">150.10.30.98</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path">v1/authmanager/authenticate/clientidsecretkey</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -409,118 +467,6 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_ida_authenticate_secretKey" enabled="false">
-          <boolProp name="TransactionController.includeTimers">false</boolProp>
-          <boolProp name="TransactionController.parent">true</boolProp>
-        </TransactionController>
-        <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ida_authenticate" enabled="true">
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-  &quot;id&quot;: &quot;string&quot;,&#xd;
-  &quot;metadata&quot;: {},&#xd;
-  &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;ida&quot;,&#xd;
-    &quot;secretKey&quot;: &quot;bad25866-e6a5-4f93-831a-08923ea6eee0&quot;,&#xd;
-    &quot;appId&quot;: &quot;ida&quot;&#xd;
-  },&#xd;
-  &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
-  &quot;version&quot;: &quot;1.0&quot;&#xd;
-}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain">150.10.30.98</stringProp>
-            <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/authmanager/authenticate/clientidsecretkey</stringProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Content-Type" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="" elementType="Header">
-                  <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
-              <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
-            </ConstantTimer>
-            <hashTree/>
-            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="false">
-              <stringProp name="scriptLanguage">groovy</stringProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="cacheKey">true</stringProp>
-              <stringProp name="script">import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-import java.util.TimeZone;
-import java.io.*;
-
-String timestamp = &quot;&quot;;
-String timestampFormat = &quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSS&quot;;
-Date currDate = new Date();
-Calendar cal = Calendar.getInstance();
-cal.setTime(currDate);
-cal.add(Calendar.HOUR, -6);
-Date date = cal.getTime();
-SimpleDateFormat sdf = new SimpleDateFormat(timestampFormat);
-timestamp = sdf.format(date);
-// System.out.println(timestamp);
-timestamp = timestamp + &quot;Z&quot;;
-vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
-            </JSR223PreProcessor>
-            <hashTree/>
-            <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="true">
-              <stringProp name="FileSaver.filename">${response_folder}/Errors/idrepo_authentication</stringProp>
-              <boolProp name="FileSaver.errorsonly">true</boolProp>
-              <boolProp name="FileSaver.successonly">false</boolProp>
-              <boolProp name="FileSaver.skipsuffix">false</boolProp>
-              <boolProp name="FileSaver.skipautonumber">false</boolProp>
-            </ResultSaver>
-            <hashTree/>
-            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
-              <stringProp name="JSON_PATH">$.response.status</stringProp>
-              <stringProp name="EXPECTED_VALUE">Success</stringProp>
-              <boolProp name="JSONVALIDATION">true</boolProp>
-              <boolProp name="EXPECT_NULL">false</boolProp>
-              <boolProp name="INVERT">false</boolProp>
-              <boolProp name="ISREGEX">true</boolProp>
-            </JSONPathAssertion>
-            <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Cookie Extractor" enabled="true">
-              <stringProp name="RegexExtractor.useHeaders">true</stringProp>
-              <stringProp name="RegexExtractor.refname">authorization</stringProp>
-              <stringProp name="RegexExtractor.regex">Set-Cookie: Authorization=([\w.-]+);</stringProp>
-              <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">authorization_not_found</stringProp>
-              <stringProp name="RegexExtractor.match_number">1</stringProp>
-            </RegexExtractor>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_idrepo_retrieve_identity-uin" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
@@ -530,9 +476,9 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">${idrepo_internal_ip}</stringProp>
-            <stringProp name="HTTPSampler.port">80</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path">idrepository/v1/identity/uin/${uin}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -603,7 +549,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
           </TestAction>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_idrepo_retrieve_identity-reg_id" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_idrepo_retrieve_identity-reg_id" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -612,9 +558,9 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">${idrepo_internal_ip}</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path">idrepository/v1/identity/rid/${reg_id}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -704,7 +650,7 @@ bw.close();
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_idrepo_retrieve_identity-vid" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_idrepo_retrieve_identity-vid" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -713,9 +659,9 @@ bw.close();
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">${idrepo_internal_ip}</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path">idrepository/v1/vid/${vid}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -1724,7 +1670,7 @@ bw.close();
             <sampleCount>true</sampleCount>
           </value>
         </objProp>
-        <stringProp name="filename">${result_path}/idrepo_retrieve_identity_uin3march.xml</stringProp>
+        <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -1761,7 +1707,7 @@ bw.close();
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\MOSIP_PT\Scripts\IdRepo\Results\idrepo_retrieve_identity_uin_03march.csv</stringProp>
+        <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
       <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener" enabled="false">
