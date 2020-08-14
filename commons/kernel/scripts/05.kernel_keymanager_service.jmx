@@ -14,11 +14,6 @@
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="basepath" elementType="Argument">
-            <stringProp name="Argument.name">basepath</stringProp>
-            <stringProp name="Argument.value">preprod.mosip.net</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="thinktime" elementType="Argument">
             <stringProp name="Argument.name">thinktime</stringProp>
             <stringProp name="Argument.value">1000</stringProp>
@@ -95,13 +90,13 @@ Connect to 5s</stringProp>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server_Data" enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding">UTF-8</stringProp>
-        <stringProp name="filename">C:/MOSIP_PT/Scripts/Pre-Registration/Data/Server_Data.csv</stringProp>
+        <stringProp name="filename">${data_path}/qa_server_data.csv</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
         <stringProp name="shareMode">shareMode.all</stringProp>
         <boolProp name="stopThread">false</boolProp>
-        <stringProp name="variableNames">BASE_URL_1,db_host,db_port,db_name,db_user,db_password</stringProp>
+        <stringProp name="variableNames">BASE_URL,db_host,db_port,db_name,db_user,db_password,auth_partner_id,misp_lk,partnerID,PartnerApiKey,license_key</stringProp>
       </CSVDataSet>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="01_Auth Service - debug" enabled="false">

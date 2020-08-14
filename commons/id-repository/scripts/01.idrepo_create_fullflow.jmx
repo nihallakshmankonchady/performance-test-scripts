@@ -11,57 +11,7 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables_preprod" enabled="false">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="thinktime" elementType="Argument">
-            <stringProp name="Argument.name">thinktime</stringProp>
-            <stringProp name="Argument.value">2000</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="response_folder" elementType="Argument">
-            <stringProp name="Argument.name">response_folder</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IdRepo\Responses</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="uin" elementType="Argument">
-            <stringProp name="Argument.name">uin</stringProp>
-            <stringProp name="Argument.value">4302791701</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="data_path" elementType="Argument">
-            <stringProp name="Argument.name">data_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IdRepo\Data</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="result_path" elementType="Argument">
-            <stringProp name="Argument.name">result_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IdRepo\Results</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="identity_data_file_name" elementType="Argument">
-            <stringProp name="Argument.name">identity_data_file_name</stringProp>
-            <stringProp name="Argument.value">reg_data.csv</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="vid_list_file_name" elementType="Argument">
-            <stringProp name="Argument.name">vid_list_file_name</stringProp>
-            <stringProp name="Argument.value">uin_vid_list_preprod_July30_test.txt</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="authorization" elementType="Argument">
-            <stringProp name="Argument.name">authorization</stringProp>
-            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0dlA4TUlwZ08zS1hrNzBMa3R4b0w2NGZCWTUwcEpDV1Q1UF80WHo4X00wIn0.eyJqdGkiOiI4YjE5OTNjOC0zYTQ1LTQ1ODMtOWVlZC0xNmRlZjQ1Y2M4MmIiLCJleHAiOjE1OTYxNDAxMTMsIm5iZiI6MCwiaWF0IjoxNTk2MTA0MTEzLCJpc3MiOiJodHRwczovL3ByZXByb2QubW9zaXAubmV0L2tleWNsb2FrL2F1dGgvcmVhbG1zL21vc2lwIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQ0YTgyNWFhLWMwNGQtNDI1NS04ZjQ1LWUwNTg2MjYwNTgzMSIsInR5cCI6IkJlYXJlciIsImF6cCI6Im1vc2lwLXJlZ3Byb2MtY2xpZW50IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNGZmOWRlZGQtZTA1NS00NTFmLTk3ZmItNTM4ODBiODNjZjc2IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSRUdJU1RSQVRJT05fUFJPQ0VTU09SIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfSwibW9zaXAtcmVncHJvYy1jbGllbnQiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRIb3N0IjoiMTAuMjQ0LjUuNTAiLCJjbGllbnRJZCI6Im1vc2lwLXJlZ3Byb2MtY2xpZW50IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtbW9zaXAtcmVncHJvYy1jbGllbnQiLCJjbGllbnRBZGRyZXNzIjoiMTAuMjQ0LjUuNTAifQ.Do5S4jYn6kbv9RdBKrwvZTEyWoyIVyU4tcots1207qAsof5H4ZqZMsNVXM2JcIRGyRa_hmGNrQkN3LCcs-wlBCZD5dxOtJ3wiCFfIyO5C53eKDZakS0xGTteqpJjt3f-ERweUcrmnAcd0JYqWxQi3T13gJUg2MmhtgpM-_cJJZlYyTZz6ORiIp8PLJr3SuYRYaxQ8K--d3-81t1FXmadbw_U34LAA9cNTPWHlVTG_f6TLlc-NkttLxGdbxOZoFLCMyVD6Llxlo8QL01__7h4lOS328GkT0vSYyDIDc1mYXW5R90bhoUB_HJP4MtkCJEPhUkgCT1snNNb_CjBtqeLng</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="BASE_URL" elementType="Argument">
-            <stringProp name="Argument.name">BASE_URL</stringProp>
-            <stringProp name="Argument.value">preprod.mosip.net</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
-      </Arguments>
-      <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables_QA" enabled="true">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="thinktime" elementType="Argument">
             <stringProp name="Argument.name">thinktime</stringProp>
@@ -103,36 +53,14 @@
             <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0dlA4TUlwZ08zS1hrNzBMa3R4b0w2NGZCWTUwcEpDV1Q1UF80WHo4X00wIn0.eyJqdGkiOiJhNTVjMzE0Yi01YWRkLTQwNDgtOTAzYS1iZTQxMDRmNWVkZTAiLCJleHAiOjE1OTU2MjkwNjUsIm5iZiI6MCwiaWF0IjoxNTk1NTkzMDY1LCJpc3MiOiJodHRwczovL3ByZXByb2QubW9zaXAubmV0L2tleWNsb2FrL2F1dGgvcmVhbG1zL21vc2lwIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQ0YTgyNWFhLWMwNGQtNDI1NS04ZjQ1LWUwNTg2MjYwNTgzMSIsInR5cCI6IkJlYXJlciIsImF6cCI6Im1vc2lwLXJlZ3Byb2MtY2xpZW50IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiZTVjNmE3ZmItNjI3MS00ZTQzLTk1ODAtZTBkYWQ4Y2E0NjUyIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSRUdJU1RSQVRJT05fUFJPQ0VTU09SIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfSwibW9zaXAtcmVncHJvYy1jbGllbnQiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRIb3N0IjoiMTAuMjQ0LjUuMTgiLCJjbGllbnRJZCI6Im1vc2lwLXJlZ3Byb2MtY2xpZW50IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtbW9zaXAtcmVncHJvYy1jbGllbnQiLCJjbGllbnRBZGRyZXNzIjoiMTAuMjQ0LjUuMTgifQ.o5gs4AYu_8LK54wIsbDKajlsSyVN2n55_XkjnEBozLFRCfm6yuqYv2mS9FeW6GArtGVavgqX0Bc7Gg49q1YCvpIoCj647yRDMFvsioFcPv_N_qMaT0xhw8nrdbShrgE8T6JjQ0DnkhmXlLwODHqIrWRz-nsThpR8Y4u9keVSfQAlv1kMcc4fuujKF3-dSi7JgTBX02ry8I2xYsuSq1M2FICGAqju_QCzm5PTyT1JeqRzQNsczwoCXTx8KURMW9ltBjzrlYpMX3ST6gjuDi_qir-14XvbqOSZmRd7Tle82Hq1Zsmk8Wx2TjXRPBfunKPrQ5hqBzrnGn6moCLNWdSZfA</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="BASE_URL" elementType="Argument">
-            <stringProp name="Argument.name">BASE_URL</stringProp>
-            <stringProp name="Argument.value">qa.mosip.net</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="basepath" elementType="Argument">
-            <stringProp name="Argument.name">basepath</stringProp>
-            <stringProp name="Argument.value">qa.mosip.net</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
         </collectionProp>
       </Arguments>
-      <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="false">
-        <stringProp name="filename">${data_path}\server_data.csv</stringProp>
-        <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">BASE_URL,idrepo_internal_ip,kernel_internal_ip</stringProp>
-        <boolProp name="ignoreFirstLine">true</boolProp>
-        <stringProp name="delimiter">,</stringProp>
-        <boolProp name="quotedData">false</boolProp>
-        <boolProp name="recycle">true</boolProp>
-        <boolProp name="stopThread">false</boolProp>
-        <stringProp name="shareMode">shareMode.all</stringProp>
-      </CSVDataSet>
       <hashTree/>
       <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
         <collectionProp name="HeaderManager.headers">
           <elementProp name="Origin" elementType="Header">
             <stringProp name="Header.name">Origin</stringProp>
-            <stringProp name="Header.value">https://${basepath}</stringProp>
+            <stringProp name="Header.value">https://${BASE_URL}</stringProp>
           </elementProp>
           <elementProp name="user-agent" elementType="Header">
             <stringProp name="Header.name">user-agent</stringProp>
@@ -160,6 +88,18 @@
         <boolProp name="CookieManager.clearEachIteration">false</boolProp>
         <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
       </CookieManager>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server_Data" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
+        <stringProp name="filename">${data_path}/qa_server_data.csv</stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">BASE_URL,db_host,db_port,db_name,db_user,db_password,auth_partner_id,misp_lk,partnerID,PartnerApiKey,license_key</stringProp>
+      </CSVDataSet>
       <hashTree/>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Document Encrypted Value" enabled="false">
         <stringProp name="delimiter">,</stringProp>
@@ -236,7 +176,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -397,7 +337,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -517,7 +457,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -612,7 +552,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
                 <elementProp name="Origin" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
@@ -855,7 +795,7 @@ vars.put(&quot;reg_id&quot;,reg_id);
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
                 <elementProp name="Cookie" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
@@ -1092,7 +1032,7 @@ bw.close();
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Origin" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
                 <elementProp name="accept" elementType="Header">
                   <stringProp name="Header.name">accept</stringProp>
@@ -1235,7 +1175,7 @@ bw.close();
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1330,7 +1270,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
                 <elementProp name="Origin" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
@@ -1573,7 +1513,7 @@ vars.put(&quot;reg_id&quot;,reg_id);
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
                 <elementProp name="Cookie" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
@@ -1853,7 +1793,7 @@ bw.close();
                 </elementProp>
                 <elementProp name="Origin" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
@@ -1947,6 +1887,7 @@ vars.put(&quot;reg_id&quot;,reg_id);
         </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="idrepo_create_identity" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
@@ -2048,7 +1989,6 @@ vars.put(&quot;reg_id&quot;,reg_id);
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
@@ -2096,7 +2036,7 @@ vars.put(&quot;reg_id&quot;,reg_id);
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
                 <elementProp name="Cookie" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
@@ -2194,6 +2134,7 @@ bw.close();
         </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="idrepo_create_vid" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
@@ -2213,7 +2154,6 @@ bw.close();
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
@@ -2311,6 +2251,7 @@ bw.close();
         </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="regproc_authenticate_secretkey" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
@@ -2330,7 +2271,6 @@ bw.close();
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
@@ -2354,7 +2294,7 @@ bw.close();
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>

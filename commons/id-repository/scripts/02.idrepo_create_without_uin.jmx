@@ -58,31 +58,14 @@
             <stringProp name="Argument.value">eyJhbGciOiJSUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJRakpYVzgtemMwR1RWRkQ0RnZiWkdTblZLSlhDMWRXVnBPVUxMLWVZT0JNIn0.eyJqdGkiOiJiMDBkOWFiZC03ZmU0LTRiOTktYWJiZC03ODc3OGRmNzNkMzMiLCJleHAiOjE1ODgwMDY3MzIsIm5iZiI6MCwiaWF0IjoxNTg3OTg4NzMyLCJpc3MiOiJodHRwczovL21vc2lwa2V5Y2xvYWtwcC5zb3V0aGluZGlhLmNsb3VkYXBwLmF6dXJlLmNvbS9hdXRoL3JlYWxtcy9tb3NpcCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJmZjE3Yjg3OC0zMTIwLTQ2MGUtOTU3MC03MTYxMDhmYzgxMjMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdpc3RyYXRpb24tcHJvY2Vzc29yIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiZTYyOTBiM2EtNzdmMy00ZTBhLWJhOWYtZWI1NDZkY2JkZjk5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJSRUdJU1RSQVRJT05fUFJPQ0VTU09SIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWdpc3RyYXRpb24tcHJvY2Vzc29yIjp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRJZCI6InJlZ2lzdHJhdGlvbi1wcm9jZXNzb3IiLCJjbGllbnRIb3N0IjoiMTA0LjIxMS4yNDYuMjAyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtcmVnaXN0cmF0aW9uLXByb2Nlc3NvciIsImNsaWVudEFkZHJlc3MiOiIxMDQuMjExLjI0Ni4yMDIiLCJlbWFpbCI6InNlcnZpY2UtYWNjb3VudC1yZWdpc3RyYXRpb24tcHJvY2Vzc29yQHBsYWNlaG9sZGVyLm9yZyJ9.Ojpf8KROwlFrDX0HP_zj9PClGqRWhctyApz_Poag6AUbvmvRpjNDqFYbubV_-_44RZzA_cTmUu8KEqMncI0ubhRapo9taqaHrh28iFyPC6EYSgISXnzk_QciFK0R5zCs2tBwvgdPPS-f2rdTnKxcX4mzpY4S0ZQ4FhupOwsBl7Iz4GXafLwrw9uuE_4zLmoW6Ud9_LHwaO7_hjA9RDoXQwtEbA5jOkEpFZ6NISHuVvW_h1r6ERzx-XwvWgJFB_sLEXyIX_MMBv03vgUtxnmOZygX29XK-AmZVTVwL-5rIgrb2nJMP218hV8xUVKprrCucUhzOGTjTeQHOJoaCsLnsw</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="BASE_URL" elementType="Argument">
-            <stringProp name="Argument.name">BASE_URL</stringProp>
-            <stringProp name="Argument.value">preprod.southindia.cloudapp.azure.com</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
         </collectionProp>
       </Arguments>
-      <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="false">
-        <stringProp name="filename">${data_path}\server_data.csv</stringProp>
-        <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">BASE_URL,idrepo_internal_ip,kernel_internal_ip</stringProp>
-        <boolProp name="ignoreFirstLine">true</boolProp>
-        <stringProp name="delimiter">,</stringProp>
-        <boolProp name="quotedData">false</boolProp>
-        <boolProp name="recycle">true</boolProp>
-        <boolProp name="stopThread">false</boolProp>
-        <stringProp name="shareMode">shareMode.all</stringProp>
-      </CSVDataSet>
       <hashTree/>
       <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
         <collectionProp name="HeaderManager.headers">
           <elementProp name="Origin" elementType="Header">
             <stringProp name="Header.name">Origin</stringProp>
-            <stringProp name="Header.value">https://${basepath}</stringProp>
+            <stringProp name="Header.value">https://${BASE_URL}</stringProp>
           </elementProp>
           <elementProp name="user-agent" elementType="Header">
             <stringProp name="Header.name">user-agent</stringProp>
@@ -110,6 +93,18 @@
         <boolProp name="CookieManager.clearEachIteration">false</boolProp>
         <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
       </CookieManager>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server_Data" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
+        <stringProp name="filename">${data_path}/qa_server_data.csv</stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">BASE_URL,db_host,db_port,db_name,db_user,db_password,auth_partner_id,misp_lk,partnerID,PartnerApiKey,license_key</stringProp>
+      </CSVDataSet>
       <hashTree/>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Document Encrypted Value" enabled="false">
         <stringProp name="delimiter">,</stringProp>
@@ -186,7 +181,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -412,7 +407,7 @@ vars.put(&quot;auth&quot;,new String(encodedUsernamePassword));</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -630,7 +625,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
                 <elementProp name="Cookie" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
@@ -973,7 +968,7 @@ bw.close();
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
                 <elementProp name="Cookie" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
@@ -1170,7 +1165,7 @@ bw.close();
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1261,7 +1256,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Origin" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
                 <elementProp name="accept" elementType="Header">
                   <stringProp name="Header.name">accept</stringProp>
@@ -1484,7 +1479,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                   </elementProp>
                   <elementProp name="" elementType="Header">
                     <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">https://${basepath}</stringProp>
+                    <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                   </elementProp>
                   <elementProp name="Cookie" elementType="Header">
                     <stringProp name="Header.name">Cookie</stringProp>
