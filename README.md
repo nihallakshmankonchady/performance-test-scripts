@@ -16,16 +16,16 @@
 - To start JMeter, run the jmeter.bat (for Windows) or jmeter (for Unix) file. 
 - validate the scripts for 1 user
 - execute dry run for 10 min
-- Use below command to run the scripts
-- Running JMeter using command line in non-GUI mode is very simple.
+
+##### Running JMeter using command line in non-GUI mode is very simple.
 - Open command prompt
 - Go into JMeter’s bin folder
 - Enter following command, jmeter -n –t test.jmx -l testresults.jtl
-- -n: It specifies JMeter is to run in non-gui mode
-- -t: Name of JMX file that contains the Test Plan
-- -l: Name of JTL(JMeter text logs) file to log results
-- -j: Name of JMeter run log file
-- Other than these options, JMeter has several other parameters that can be used for running in the non-GUI mode.
-- -R: list of remote servers,
-- -H: proxy server hostname or ip address
-- -P: proxy server port
+-  -n: It specifies JMeter is to run in non-gui mode
+-  -t: Name of JMX file that contains the Test Plan
+-  -l: Name of JTL(JMeter text logs) file to log results
+-  -j: Name of JMeter run log file
+-  Other than these options, JMeter has several other parameters that can be used for running in the non-GUI mode.
+-  -R: list of remote servers,
+-  -H: proxy server hostname or ip address
+-  -P: proxy server port
