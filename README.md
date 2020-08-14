@@ -1,14 +1,14 @@
 ###### Contains
 - This Repo contains performance test scripts,test data,utilities ,summary reports of below modules of mosip 
 
-1. Pre-Registration (UI and batch Jobs)
-2. Registration Processor
-3. IDA
-4. ID Repo
-5. Kernel
+   1. Pre-Registration (UI and batch Jobs)
+   2. Registration Processor
+   3. IDA
+   4. ID Repo
+   5. Kernel
 - Open source Tools used:
-1. Apache Jmeter (https://jmeter.apache.org/)
-2. Glowroot (https://glowroot.org/)
+  1. Apache Jmeter (https://jmeter.apache.org/)
+  2. Glowroot (https://glowroot.org/)
 
 ###### How to run performance scripts using apache jmeter tool
 - Download apche jmeter from https://jmeter.apache.org/download_jmeter.cgi
@@ -16,6 +16,7 @@
 - To start JMeter, run the jmeter.bat (for Windows) or jmeter (for Unix) file. 
 - validate the scripts for 1 user
 - execute dry run for 10 min
+- Execute performance run with various loads in order to achieve targeted NFR's
 
 ##### Running JMeter using command line in non-GUI mode is very simple.
 - Open command prompt
