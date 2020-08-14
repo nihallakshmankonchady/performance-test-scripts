@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -11,13 +11,8 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="false">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="basepath" elementType="Argument">
-            <stringProp name="Argument.name">basepath</stringProp>
-            <stringProp name="Argument.value">preprod.mosip.io</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="thinktime" elementType="Argument">
             <stringProp name="Argument.name">thinktime</stringProp>
             <stringProp name="Argument.value">2000</stringProp>
@@ -38,24 +33,59 @@
             <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Results</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="db_host" elementType="Argument">
-            <stringProp name="Argument.name">db_host</stringProp>
-            <stringProp name="Argument.value">52.172.39.200</stringProp>
+          <elementProp name="ekyc_partner_id" elementType="Argument">
+            <stringProp name="Argument.name">ekyc_partner_id</stringProp>
+            <stringProp name="Argument.value">1873299273</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="db_port" elementType="Argument">
-            <stringProp name="Argument.name">db_port</stringProp>
-            <stringProp name="Argument.value">9001</stringProp>
+          <elementProp name="misp_lk" elementType="Argument">
+            <stringProp name="Argument.name">misp_lk</stringProp>
+            <stringProp name="Argument.value">735899345</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="db_name" elementType="Argument">
-            <stringProp name="Argument.name">db_name</stringProp>
-            <stringProp name="Argument.value">mosip_kernel</stringProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="thinktime" elementType="Argument">
+            <stringProp name="Argument.name">thinktime</stringProp>
+            <stringProp name="Argument.value">1000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="db_user" elementType="Argument">
-            <stringProp name="Argument.name">db_user</stringProp>
-            <stringProp name="Argument.value">kerneluser</stringProp>
+          <elementProp name="response_folder" elementType="Argument">
+            <stringProp name="Argument.name">response_folder</stringProp>
+            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Responses\DataCreation</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="data_path" elementType="Argument">
+            <stringProp name="Argument.name">data_path</stringProp>
+            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Data\</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="result_path" elementType="Argument">
+            <stringProp name="Argument.name">result_path</stringProp>
+            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Results\DataCreation</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="demoApp_host" elementType="Argument">
+            <stringProp name="Argument.name">demoApp_host</stringProp>
+            <stringProp name="Argument.value">localhost</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="demoApp_port" elementType="Argument">
+            <stringProp name="Argument.name">demoApp_port</stringProp>
+            <stringProp name="Argument.value">7654</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="authorization" elementType="Argument">
+            <stringProp name="Argument.name">authorization</stringProp>
+            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzRi1WS3FpX3JCWHdOcmVrcE4xZ0JHSHFBRy0teXVpU0N6ZVM1UjdkdWZjIn0.eyJqdGkiOiI2NDIwZjUyZC02ZDYwLTRkNDAtODA2Mi0wYWRlNGE1MTdjMGMiLCJleHAiOjE1OTI2NDcxNjksIm5iZiI6MCwiaWF0IjoxNTkyNjQ2ODY5LCJpc3MiOiJodHRwczovL3NhbmRib3h2Mi5zb3V0aGluZGlhLmNsb3VkYXBwLmF6dXJlLmNvbS9rZXljbG9hay9hdXRoL3JlYWxtcy9tb3NpcCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIyMmFhZWIwYi1hNWI4LTQyYWItYTk4MS1mMDRkMWMxNTdhNjgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtb3NpcC1pZGEtY2xpZW50IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNzkzYzVkMmYtZGNiYS00NzE2LTkyY2UtMjg4MGUxMDAxNTY3IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJJRF9BVVRIRU5USUNBVElPTiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJtb3NpcC1pZGEtY2xpZW50Ijp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRJZCI6Im1vc2lwLWlkYS1jbGllbnQiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudEhvc3QiOiIxMC4yNDQuMS4xMDAiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtbW9zaXAtaWRhLWNsaWVudCIsImNsaWVudEFkZHJlc3MiOiIxMC4yNDQuMS4xMDAifQ.RcGOW_2h--P-UyuNFV4LCj3LSGjGsDtuJaDtpDT9fpfX5D630ea-aMw74CnzyCetXftGhs53qCinYTrQ4051NflxslwpMfIJRaEFJZ3C1oh10k6Fk0Dis3X1f7zzApnW_LxYZHNPyQ_0gjXJh5bBnCVVA74LtLMUq26hXPIvK5xVo6R3e5-qI7p-I0qMExgOn5A4alEmesuEHV_XkcTIDNu36p8TGmZuRBI8h0enHzR8qVQ97ZxAW_mOwKCBVqYZAf72it5NKVCx6X9Wb1cLicSHmiSllg4y0oEt2lB76vDc9xqQLBKZOycBmSu7UQXKphnja1TShaXCJXJ0I2a_9A</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="uin_vid_list_filename" elementType="Argument">
+            <stringProp name="Argument.name">uin_vid_list_filename</stringProp>
+            <stringProp name="Argument.value">uin_vid_list_qa_11Aug.txt</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="ekyc_partner_id" elementType="Argument">
@@ -72,9 +102,9 @@
       </Arguments>
       <hashTree/>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="true">
-        <stringProp name="filename">${data_path}\server_data_otp.csv</stringProp>
+        <stringProp name="filename">C:/MOSIP_PT/Scripts/IDA/Data/qa_server_data.csv</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">BASE_URL,db_host,db_port,db_name,db_user,ekyc_partner_id,misp_lk</stringProp>
+        <stringProp name="variableNames">BASE_URL,db_host,db_port,db_name,db_user,db_password,auth_partner_id,misp_lk,partnerID,PartnerApiKey,license_key</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
         <stringProp name="delimiter">,</stringProp>
         <boolProp name="quotedData">false</boolProp>
@@ -87,7 +117,7 @@
         <collectionProp name="HeaderManager.headers">
           <elementProp name="Origin" elementType="Header">
             <stringProp name="Header.name">Origin</stringProp>
-            <stringProp name="Header.value">https://${basepath}</stringProp>
+            <stringProp name="Header.value">https://${BASE_URL}</stringProp>
           </elementProp>
           <elementProp name="user-agent" elementType="Header">
             <stringProp name="Header.name">user-agent</stringProp>
@@ -100,7 +130,7 @@
         <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments"/>
         </elementProp>
-        <stringProp name="HTTPSampler.domain">${basepath}</stringProp>
+        <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
         <stringProp name="HTTPSampler.port"></stringProp>
         <stringProp name="HTTPSampler.protocol">https</stringProp>
         <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -113,6 +143,7 @@
       <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
         <collectionProp name="CookieManager.cookies"/>
         <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
       </CookieManager>
       <hashTree/>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="uin Reader" enabled="false">
@@ -143,21 +174,22 @@
         <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">10</stringProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">5</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <longProp name="ThreadGroup.start_time">1370726934000</longProp>
         <longProp name="ThreadGroup.end_time">1370726934000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="uin Reader" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${data_path}\uin_vid_list.txt</stringProp>
+          <stringProp name="filename">${data_path}/${uin_vid_list_filename}</stringProp>
           <boolProp name="ignoreFirstLine">false</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">false</boolProp>
@@ -630,6 +662,7 @@ vars.put(&quot;auth_enc_time&quot;,strDate);</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="uin Reader" enabled="true">
@@ -1126,6 +1159,7 @@ vars.put(&quot;auth_enc_time&quot;,strDate);</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="vid Reader" enabled="true">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -12,389 +12,8 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="false">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="basepath" elementType="Argument">
-            <stringProp name="Argument.name">basepath</stringProp>
-            <stringProp name="Argument.value">preprod.mosip.io</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="thinktime" elementType="Argument">
-            <stringProp name="Argument.name">thinktime</stringProp>
-            <stringProp name="Argument.value">2000</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="response_folder" elementType="Argument">
-            <stringProp name="Argument.name">response_folder</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Responses</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="data_path" elementType="Argument">
-            <stringProp name="Argument.name">data_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Data</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="result_path" elementType="Argument">
-            <stringProp name="Argument.name">result_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Results</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_host" elementType="Argument">
-            <stringProp name="Argument.name">db_host</stringProp>
-            <stringProp name="Argument.value">52.172.39.200</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_port" elementType="Argument">
-            <stringProp name="Argument.name">db_port</stringProp>
-            <stringProp name="Argument.value">9001</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_name" elementType="Argument">
-            <stringProp name="Argument.name">db_name</stringProp>
-            <stringProp name="Argument.value">mosip_kernel</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_user" elementType="Argument">
-            <stringProp name="Argument.name">db_user</stringProp>
-            <stringProp name="Argument.value">kerneluser</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="ekyc_partner_id" elementType="Argument">
-            <stringProp name="Argument.name">ekyc_partner_id</stringProp>
-            <stringProp name="Argument.value">1873299273</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="misp_lk" elementType="Argument">
-            <stringProp name="Argument.name">misp_lk</stringProp>
-            <stringProp name="Argument.value">735899345</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
-      </Arguments>
-      <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - QA" enabled="false">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="BASE_URL" elementType="Argument">
-            <stringProp name="Argument.name">BASE_URL</stringProp>
-            <stringProp name="Argument.value">sandboxv2.southindia.cloudapp.azure.com</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="thinktime" elementType="Argument">
-            <stringProp name="Argument.name">thinktime</stringProp>
-            <stringProp name="Argument.value">1000</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="response_folder" elementType="Argument">
-            <stringProp name="Argument.name">response_folder</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Responses\DataCreation</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="data_path" elementType="Argument">
-            <stringProp name="Argument.name">data_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Data\</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="result_path" elementType="Argument">
-            <stringProp name="Argument.name">result_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Results\DataCreation</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="auth_partner_id" elementType="Argument">
-            <stringProp name="Argument.name">auth_partner_id</stringProp>
-            <stringProp name="Argument.value">1873299273</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="misp_lk" elementType="Argument">
-            <stringProp name="Argument.name">misp_lk</stringProp>
-            <stringProp name="Argument.value">735899345</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_host" elementType="Argument">
-            <stringProp name="Argument.name">db_host</stringProp>
-            <stringProp name="Argument.value">sandboxv2.southindia.cloudapp.azure.com</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_port" elementType="Argument">
-            <stringProp name="Argument.name">db_port</stringProp>
-            <stringProp name="Argument.value">30090</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_name" elementType="Argument">
-            <stringProp name="Argument.name">db_name</stringProp>
-            <stringProp name="Argument.value">mosip_kernel</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_user" elementType="Argument">
-            <stringProp name="Argument.name">db_user</stringProp>
-            <stringProp name="Argument.value">postgres</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_password" elementType="Argument">
-            <stringProp name="Argument.name">db_password</stringProp>
-            <stringProp name="Argument.value">postgres</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="demoApp_host" elementType="Argument">
-            <stringProp name="Argument.name">demoApp_host</stringProp>
-            <stringProp name="Argument.value">localhost</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="demoApp_port" elementType="Argument">
-            <stringProp name="Argument.name">demoApp_port</stringProp>
-            <stringProp name="Argument.value">7654</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="authorization" elementType="Argument">
-            <stringProp name="Argument.name">authorization</stringProp>
-            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzRi1WS3FpX3JCWHdOcmVrcE4xZ0JHSHFBRy0teXVpU0N6ZVM1UjdkdWZjIn0.eyJqdGkiOiI2NDIwZjUyZC02ZDYwLTRkNDAtODA2Mi0wYWRlNGE1MTdjMGMiLCJleHAiOjE1OTI2NDcxNjksIm5iZiI6MCwiaWF0IjoxNTkyNjQ2ODY5LCJpc3MiOiJodHRwczovL3NhbmRib3h2Mi5zb3V0aGluZGlhLmNsb3VkYXBwLmF6dXJlLmNvbS9rZXljbG9hay9hdXRoL3JlYWxtcy9tb3NpcCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIyMmFhZWIwYi1hNWI4LTQyYWItYTk4MS1mMDRkMWMxNTdhNjgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtb3NpcC1pZGEtY2xpZW50IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNzkzYzVkMmYtZGNiYS00NzE2LTkyY2UtMjg4MGUxMDAxNTY3IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJJRF9BVVRIRU5USUNBVElPTiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJtb3NpcC1pZGEtY2xpZW50Ijp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRJZCI6Im1vc2lwLWlkYS1jbGllbnQiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudEhvc3QiOiIxMC4yNDQuMS4xMDAiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtbW9zaXAtaWRhLWNsaWVudCIsImNsaWVudEFkZHJlc3MiOiIxMC4yNDQuMS4xMDAifQ.RcGOW_2h--P-UyuNFV4LCj3LSGjGsDtuJaDtpDT9fpfX5D630ea-aMw74CnzyCetXftGhs53qCinYTrQ4051NflxslwpMfIJRaEFJZ3C1oh10k6Fk0Dis3X1f7zzApnW_LxYZHNPyQ_0gjXJh5bBnCVVA74LtLMUq26hXPIvK5xVo6R3e5-qI7p-I0qMExgOn5A4alEmesuEHV_XkcTIDNu36p8TGmZuRBI8h0enHzR8qVQ97ZxAW_mOwKCBVqYZAf72it5NKVCx6X9Wb1cLicSHmiSllg4y0oEt2lB76vDc9xqQLBKZOycBmSu7UQXKphnja1TShaXCJXJ0I2a_9A</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="uin_vid_list_filename" elementType="Argument">
-            <stringProp name="Argument.name">uin_vid_list_filename</stringProp>
-            <stringProp name="Argument.value">uin_vid_list_qa.txt</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="license_key" elementType="Argument">
-            <stringProp name="Argument.name">license_key</stringProp>
-            <stringProp name="Argument.value">UmjbDSra8pzOGd5rVtKekTb9D6VdvOQg4Kmw5TzBdw18mbzzME</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="partnerID" elementType="Argument">
-            <stringProp name="Argument.name">partnerID</stringProp>
-            <stringProp name="Argument.value">748757</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="PartnerApiKey" elementType="Argument">
-            <stringProp name="Argument.name">PartnerApiKey</stringProp>
-            <stringProp name="Argument.value">9418294</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
-      </Arguments>
-      <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - devtest" enabled="false">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="BASE_URL" elementType="Argument">
-            <stringProp name="Argument.name">BASE_URL</stringProp>
-            <stringProp name="Argument.value">dev-test.southindia.cloudapp.azure.com</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="thinktime" elementType="Argument">
-            <stringProp name="Argument.name">thinktime</stringProp>
-            <stringProp name="Argument.value">1000</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="response_folder" elementType="Argument">
-            <stringProp name="Argument.name">response_folder</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Responses\DataCreation</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="data_path" elementType="Argument">
-            <stringProp name="Argument.name">data_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Data\</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="result_path" elementType="Argument">
-            <stringProp name="Argument.name">result_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Results\DataCreation</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="auth_partner_id" elementType="Argument">
-            <stringProp name="Argument.name">auth_partner_id</stringProp>
-            <stringProp name="Argument.value">1873299273</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="misp_lk" elementType="Argument">
-            <stringProp name="Argument.name">misp_lk</stringProp>
-            <stringProp name="Argument.value">735899345</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_host" elementType="Argument">
-            <stringProp name="Argument.name">db_host</stringProp>
-            <stringProp name="Argument.value">sandboxv2.southindia.cloudapp.azure.com</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_port" elementType="Argument">
-            <stringProp name="Argument.name">db_port</stringProp>
-            <stringProp name="Argument.value">30090</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_name" elementType="Argument">
-            <stringProp name="Argument.name">db_name</stringProp>
-            <stringProp name="Argument.value">mosip_kernel</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_user" elementType="Argument">
-            <stringProp name="Argument.name">db_user</stringProp>
-            <stringProp name="Argument.value">postgres</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_password" elementType="Argument">
-            <stringProp name="Argument.name">db_password</stringProp>
-            <stringProp name="Argument.value">postgres</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="demoApp_host" elementType="Argument">
-            <stringProp name="Argument.name">demoApp_host</stringProp>
-            <stringProp name="Argument.value">localhost</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="demoApp_port" elementType="Argument">
-            <stringProp name="Argument.name">demoApp_port</stringProp>
-            <stringProp name="Argument.value">7654</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="authorization" elementType="Argument">
-            <stringProp name="Argument.name">authorization</stringProp>
-            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzRi1WS3FpX3JCWHdOcmVrcE4xZ0JHSHFBRy0teXVpU0N6ZVM1UjdkdWZjIn0.eyJqdGkiOiI2NDIwZjUyZC02ZDYwLTRkNDAtODA2Mi0wYWRlNGE1MTdjMGMiLCJleHAiOjE1OTI2NDcxNjksIm5iZiI6MCwiaWF0IjoxNTkyNjQ2ODY5LCJpc3MiOiJodHRwczovL3NhbmRib3h2Mi5zb3V0aGluZGlhLmNsb3VkYXBwLmF6dXJlLmNvbS9rZXljbG9hay9hdXRoL3JlYWxtcy9tb3NpcCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIyMmFhZWIwYi1hNWI4LTQyYWItYTk4MS1mMDRkMWMxNTdhNjgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtb3NpcC1pZGEtY2xpZW50IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNzkzYzVkMmYtZGNiYS00NzE2LTkyY2UtMjg4MGUxMDAxNTY3IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJJRF9BVVRIRU5USUNBVElPTiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJtb3NpcC1pZGEtY2xpZW50Ijp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRJZCI6Im1vc2lwLWlkYS1jbGllbnQiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudEhvc3QiOiIxMC4yNDQuMS4xMDAiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtbW9zaXAtaWRhLWNsaWVudCIsImNsaWVudEFkZHJlc3MiOiIxMC4yNDQuMS4xMDAifQ.RcGOW_2h--P-UyuNFV4LCj3LSGjGsDtuJaDtpDT9fpfX5D630ea-aMw74CnzyCetXftGhs53qCinYTrQ4051NflxslwpMfIJRaEFJZ3C1oh10k6Fk0Dis3X1f7zzApnW_LxYZHNPyQ_0gjXJh5bBnCVVA74LtLMUq26hXPIvK5xVo6R3e5-qI7p-I0qMExgOn5A4alEmesuEHV_XkcTIDNu36p8TGmZuRBI8h0enHzR8qVQ97ZxAW_mOwKCBVqYZAf72it5NKVCx6X9Wb1cLicSHmiSllg4y0oEt2lB76vDc9xqQLBKZOycBmSu7UQXKphnja1TShaXCJXJ0I2a_9A</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="uin_vid_list_filename" elementType="Argument">
-            <stringProp name="Argument.name">uin_vid_list_filename</stringProp>
-            <stringProp name="Argument.value">uin_vid_list_qa.txt</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="license_key" elementType="Argument">
-            <stringProp name="Argument.name">license_key</stringProp>
-            <stringProp name="Argument.value">UmjbDSra8pzOGd5rVtKekTb9D6VdvOQg4Kmw5TzBdw18mbzzME</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="partnerID" elementType="Argument">
-            <stringProp name="Argument.name">partnerID</stringProp>
-            <stringProp name="Argument.value">748757</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="PartnerApiKey" elementType="Argument">
-            <stringProp name="Argument.name">PartnerApiKey</stringProp>
-            <stringProp name="Argument.value">9418294</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="bio_test_uin" elementType="Argument">
-            <stringProp name="Argument.name">bio_test_uin</stringProp>
-            <stringProp name="Argument.value">5032549275</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="uin_devtest" elementType="Argument">
-            <stringProp name="Argument.name">uin_devtest</stringProp>
-            <stringProp name="Argument.value">5032549275</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
-      </Arguments>
-      <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - extint" enabled="true">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="BASE_URL" elementType="Argument">
-            <stringProp name="Argument.name">BASE_URL</stringProp>
-            <stringProp name="Argument.value">extint.southindia.cloudapp.azure.com</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="thinktime" elementType="Argument">
-            <stringProp name="Argument.name">thinktime</stringProp>
-            <stringProp name="Argument.value">1000</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="response_folder" elementType="Argument">
-            <stringProp name="Argument.name">response_folder</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Responses\DataCreation</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="data_path" elementType="Argument">
-            <stringProp name="Argument.name">data_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Data\</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="result_path" elementType="Argument">
-            <stringProp name="Argument.name">result_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Results\DataCreation</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="auth_partner_id" elementType="Argument">
-            <stringProp name="Argument.name">auth_partner_id</stringProp>
-            <stringProp name="Argument.value">1873299273</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="misp_lk" elementType="Argument">
-            <stringProp name="Argument.name">misp_lk</stringProp>
-            <stringProp name="Argument.value">735899345</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_host" elementType="Argument">
-            <stringProp name="Argument.name">db_host</stringProp>
-            <stringProp name="Argument.value">sandboxv2.southindia.cloudapp.azure.com</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_port" elementType="Argument">
-            <stringProp name="Argument.name">db_port</stringProp>
-            <stringProp name="Argument.value">30090</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_name" elementType="Argument">
-            <stringProp name="Argument.name">db_name</stringProp>
-            <stringProp name="Argument.value">mosip_kernel</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_user" elementType="Argument">
-            <stringProp name="Argument.name">db_user</stringProp>
-            <stringProp name="Argument.value">postgres</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_password" elementType="Argument">
-            <stringProp name="Argument.name">db_password</stringProp>
-            <stringProp name="Argument.value">postgres</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="demoApp_host" elementType="Argument">
-            <stringProp name="Argument.name">demoApp_host</stringProp>
-            <stringProp name="Argument.value">localhost</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="demoApp_port" elementType="Argument">
-            <stringProp name="Argument.name">demoApp_port</stringProp>
-            <stringProp name="Argument.value">7654</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="authorization" elementType="Argument">
-            <stringProp name="Argument.name">authorization</stringProp>
-            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzRi1WS3FpX3JCWHdOcmVrcE4xZ0JHSHFBRy0teXVpU0N6ZVM1UjdkdWZjIn0.eyJqdGkiOiI2NDIwZjUyZC02ZDYwLTRkNDAtODA2Mi0wYWRlNGE1MTdjMGMiLCJleHAiOjE1OTI2NDcxNjksIm5iZiI6MCwiaWF0IjoxNTkyNjQ2ODY5LCJpc3MiOiJodHRwczovL3NhbmRib3h2Mi5zb3V0aGluZGlhLmNsb3VkYXBwLmF6dXJlLmNvbS9rZXljbG9hay9hdXRoL3JlYWxtcy9tb3NpcCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIyMmFhZWIwYi1hNWI4LTQyYWItYTk4MS1mMDRkMWMxNTdhNjgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtb3NpcC1pZGEtY2xpZW50IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiNzkzYzVkMmYtZGNiYS00NzE2LTkyY2UtMjg4MGUxMDAxNTY3IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJJRF9BVVRIRU5USUNBVElPTiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJtb3NpcC1pZGEtY2xpZW50Ijp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRJZCI6Im1vc2lwLWlkYS1jbGllbnQiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudEhvc3QiOiIxMC4yNDQuMS4xMDAiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtbW9zaXAtaWRhLWNsaWVudCIsImNsaWVudEFkZHJlc3MiOiIxMC4yNDQuMS4xMDAifQ.RcGOW_2h--P-UyuNFV4LCj3LSGjGsDtuJaDtpDT9fpfX5D630ea-aMw74CnzyCetXftGhs53qCinYTrQ4051NflxslwpMfIJRaEFJZ3C1oh10k6Fk0Dis3X1f7zzApnW_LxYZHNPyQ_0gjXJh5bBnCVVA74LtLMUq26hXPIvK5xVo6R3e5-qI7p-I0qMExgOn5A4alEmesuEHV_XkcTIDNu36p8TGmZuRBI8h0enHzR8qVQ97ZxAW_mOwKCBVqYZAf72it5NKVCx6X9Wb1cLicSHmiSllg4y0oEt2lB76vDc9xqQLBKZOycBmSu7UQXKphnja1TShaXCJXJ0I2a_9A</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="uin_vid_list_filename" elementType="Argument">
-            <stringProp name="Argument.name">uin_vid_list_filename</stringProp>
-            <stringProp name="Argument.value">uin_vid_list_qa.txt</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="license_key" elementType="Argument">
-            <stringProp name="Argument.name">license_key</stringProp>
-            <stringProp name="Argument.value">UmjbDSra8pzOGd5rVtKekTb9D6VdvOQg4Kmw5TzBdw18mbzzME</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="partnerID" elementType="Argument">
-            <stringProp name="Argument.name">partnerID</stringProp>
-            <stringProp name="Argument.value">748757</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="PartnerApiKey" elementType="Argument">
-            <stringProp name="Argument.name">PartnerApiKey</stringProp>
-            <stringProp name="Argument.value">9418294</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="uin" elementType="Argument">
-            <stringProp name="Argument.name">uin</stringProp>
-            <stringProp name="Argument.value">8367594152</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
-      </Arguments>
-      <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - preprod " enabled="false">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="BASE_URL" elementType="Argument">
-            <stringProp name="Argument.name">BASE_URL</stringProp>
-            <stringProp name="Argument.value">preprod.southindia.cloudapp.azure.com</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-            <stringProp name="Argument.desc">Kernel IP</stringProp>
-          </elementProp>
           <elementProp name="thinktime" elementType="Argument">
             <stringProp name="Argument.name">thinktime</stringProp>
             <stringProp name="Argument.value">1000</stringProp>
@@ -415,41 +34,6 @@
             <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Results\DataCreation</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="auth_partner_id" elementType="Argument">
-            <stringProp name="Argument.name">auth_partner_id</stringProp>
-            <stringProp name="Argument.value">1873299273</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="misp_lk" elementType="Argument">
-            <stringProp name="Argument.name">misp_lk</stringProp>
-            <stringProp name="Argument.value">735899345</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_host" elementType="Argument">
-            <stringProp name="Argument.name">db_host</stringProp>
-            <stringProp name="Argument.value">52.140.39.217</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_port" elementType="Argument">
-            <stringProp name="Argument.name">db_port</stringProp>
-            <stringProp name="Argument.value">30090</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_name" elementType="Argument">
-            <stringProp name="Argument.name">db_name</stringProp>
-            <stringProp name="Argument.value">mosip_kernel</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_user" elementType="Argument">
-            <stringProp name="Argument.name">db_user</stringProp>
-            <stringProp name="Argument.value">postgres</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_password" elementType="Argument">
-            <stringProp name="Argument.name">db_password</stringProp>
-            <stringProp name="Argument.value">postgres</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="demoApp_host" elementType="Argument">
             <stringProp name="Argument.name">demoApp_host</stringProp>
             <stringProp name="Argument.value">localhost</stringProp>
@@ -458,31 +42,6 @@
           <elementProp name="demoApp_port" elementType="Argument">
             <stringProp name="Argument.name">demoApp_port</stringProp>
             <stringProp name="Argument.value">7654</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="uin_dob_address" elementType="Argument">
-            <stringProp name="Argument.name">uin_dob_address</stringProp>
-            <stringProp name="Argument.value">6804592315</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="vid_dob_address" elementType="Argument">
-            <stringProp name="Argument.name">vid_dob_address</stringProp>
-            <stringProp name="Argument.value">5963784170290149</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="uin_address" elementType="Argument">
-            <stringProp name="Argument.name">uin_address</stringProp>
-            <stringProp name="Argument.value">9821904752</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="license_key" elementType="Argument">
-            <stringProp name="Argument.name">license_key</stringProp>
-            <stringProp name="Argument.value">UmjbDSra8pzOGd5rVtKekTb9D6VdvOQg4Kmw5TzBdw18mbzzME</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="partnerID" elementType="Argument">
-            <stringProp name="Argument.name">partnerID</stringProp>
-            <stringProp name="Argument.value">748757</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PartnerApiKey" elementType="Argument">
@@ -498,92 +57,6 @@
           <elementProp name="uin_vid_list_filename" elementType="Argument">
             <stringProp name="Argument.name">uin_vid_list_filename</stringProp>
             <stringProp name="Argument.value">uin_vid_list_June23.txt</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
-      </Arguments>
-      <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - preprod-5sThinkTime" enabled="false">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="basepath" elementType="Argument">
-            <stringProp name="Argument.name">basepath</stringProp>
-            <stringProp name="Argument.value">preprod.mosip.io</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-            <stringProp name="Argument.desc">Kernel IP</stringProp>
-          </elementProp>
-          <elementProp name="thinktime" elementType="Argument">
-            <stringProp name="Argument.name">thinktime</stringProp>
-            <stringProp name="Argument.value">5000</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="response_folder" elementType="Argument">
-            <stringProp name="Argument.name">response_folder</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Responses\DataCreation</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="data_path" elementType="Argument">
-            <stringProp name="Argument.name">data_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Data</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="result_path" elementType="Argument">
-            <stringProp name="Argument.name">result_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Results\DataCreation</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="auth_partner_id" elementType="Argument">
-            <stringProp name="Argument.name">auth_partner_id</stringProp>
-            <stringProp name="Argument.value">1873299273</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="misp_lk" elementType="Argument">
-            <stringProp name="Argument.name">misp_lk</stringProp>
-            <stringProp name="Argument.value">735899345</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_host" elementType="Argument">
-            <stringProp name="Argument.name">db_host</stringProp>
-            <stringProp name="Argument.value">52.172.39.200</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_port" elementType="Argument">
-            <stringProp name="Argument.name">db_port</stringProp>
-            <stringProp name="Argument.value">9001</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_name" elementType="Argument">
-            <stringProp name="Argument.name">db_name</stringProp>
-            <stringProp name="Argument.value">mosip_kernel</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="db_user" elementType="Argument">
-            <stringProp name="Argument.name">db_user</stringProp>
-            <stringProp name="Argument.value">kerneluser</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="demoApp_host" elementType="Argument">
-            <stringProp name="Argument.name">demoApp_host</stringProp>
-            <stringProp name="Argument.value">localhost</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="demoApp_port" elementType="Argument">
-            <stringProp name="Argument.name">demoApp_port</stringProp>
-            <stringProp name="Argument.value">7656</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="authorization" elementType="Argument">
-            <stringProp name="Argument.name">authorization</stringProp>
-            <stringProp name="Argument.value">Mosip-TokeneyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyZWdpc3RyYXRpb25wcm9jZXNzb3IiLCJtb2JpbGUiOiI4ODkyMzIzNTQyIiwibWFpbCI6Im1vbm9iaWthc2guZGFzQG1pbmR0cmVlLmNvbSIsInJvbGUiOiJSRUdJU1RSQVRJT05fUFJPQ0VTU09SIiwibmFtZSI6InJlZ2lzdHJhdGlvbnByb2Nlc3NvciIsInJJZCI6IjEwMDAxMTAwMDEwMDAwMjIwMTkwNTEwMTIxNDY1OCIsImlhdCI6MTU3NDc1MDQ5OSwiZXhwIjoxNTc0OTIzMjk5fQ.bL4m32tHq9tPMty24wkKhKE5P_PXybHbqZYB7pZIXublV4wQ5O9KIUFj81x09zPjxhywoG3IO9BUO962k4Ztug</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="uin_dob_address" elementType="Argument">
-            <stringProp name="Argument.name">uin_dob_address</stringProp>
-            <stringProp name="Argument.value">6804592315</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="vid_dob_address" elementType="Argument">
-            <stringProp name="Argument.name">vid_dob_address</stringProp>
-            <stringProp name="Argument.value">5963784170290149</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -615,7 +88,20 @@
       <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
         <collectionProp name="CookieManager.cookies"/>
         <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
       </CookieManager>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="server_data" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
+        <stringProp name="filename">C:/MOSIP_PT/Scripts/IDA/Data/qa_server_data.csv</stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">BASE_URL,db_host,db_port,db_name,db_user,db_password,auth_partner_id,misp_lk,partnerID,PartnerApiKey,license_key</stringProp>
+      </CSVDataSet>
       <hashTree/>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Document Encrypted Value" enabled="false">
         <stringProp name="delimiter">,</stringProp>
@@ -629,7 +115,7 @@
         <stringProp name="variableNames">document_enc_value</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="01-address-auth-uin_data_generate - debug" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="01-address-auth-uin_data_generate - debug" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -642,8 +128,21 @@
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="uin vid Reader" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${data_path}/${uin_vid_list_filename}</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">true</boolProp>
+          <stringProp name="variableNames">uin_address,vid_address,reg_id</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_ida_authenticate_secretKey" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
@@ -778,7 +277,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">idrepository/v1/identity/uin/${uin}</stringProp>
+            <stringProp name="HTTPSampler.path">idrepository/v1/identity/uin/${uin_address}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1270,7 +769,7 @@ bw.close();</stringProp>
                   <stringProp name="Argument.value">{&#xd;
 	&quot;id&quot;: &quot;mosip.identity.auth&quot;,&#xd;
 	&quot;consentObtained&quot;: true,&#xd;
-	&quot;individualId&quot;: &quot;${uin}&quot;,&#xd;
+	&quot;individualId&quot;: &quot;${uin_address}&quot;,&#xd;
 	&quot;individualIdType&quot;: &quot;UIN&quot;,&#xd;
 	&quot;request&quot;: &quot;${encryptedIdentity_devtest}&quot;,&#xd;
 	&quot;requestHMAC&quot;:&quot;${requestHMAC_devtest}&quot;,&#xd;
@@ -1584,8 +1083,21 @@ bw.close();</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="uin vid Reader" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${data_path}/${uin_vid_list_filename}</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">true</boolProp>
+          <stringProp name="variableNames">uin_address,vid_address,reg_id</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_ida_authenticate_secretKey" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
@@ -1728,7 +1240,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">idrepository/v1/identity/uin/${uin}</stringProp>
+            <stringProp name="HTTPSampler.path">idrepository/v1/identity/uin/${uin_address}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1980,7 +1492,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
             <stringProp name="HTTPSampler.port">${demoApp_port}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">v1/identity/createAuthRequest?id=${uin}&amp;idType=UIN</stringProp>
+            <stringProp name="HTTPSampler.path">v1/identity/createAuthRequest?id=${uin_address}&amp;idType=UIN</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
