@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.0 r1840935">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Masterdata" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -36,7 +36,7 @@
           </elementProp>
           <elementProp name="authorization" elementType="Argument">
             <stringProp name="Argument.name">authorization</stringProp>
-            <stringProp name="Argument.value">eyJhbGciOiJSUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJRakpYVzgtemMwR1RWRkQ0RnZiWkdTblZLSlhDMWRXVnBPVUxMLWVZT0JNIn0.eyJqdGkiOiJmMmJhYzg3Zi00NjVmLTQyNWMtYTdhZi0wYzJjMGRhZDZiYzUiLCJleHAiOjE1ODgwNTIwNDcsIm5iZiI6MCwiaWF0IjoxNTg3NzA2NDQ3LCJpc3MiOiJodHRwczovL21vc2lwa2V5Y2xvYWtwcC5zb3V0aGluZGlhLmNsb3VkYXBwLmF6dXJlLmNvbS9hdXRoL3JlYWxtcy9tb3NpcCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIyNjU4NjJhNS1mZjQ4LTQ3MzMtOGE0OC02OGEwZjU5YjQzMzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJwcmUtcmVnaXN0cmF0aW9uIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiZTY0NWEzMjUtODg2NS00M2Q1LWI1YzEtNDE0N2VhNmYyNzIyIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJQUkVSRUciLCJ1bWFfYXV0aG9yaXphdGlvbiIsIklORElWSURVQUwiLCJQUkVfUkVHSVNUUkFUSU9OX0FETUlOIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicHJlLXJlZ2lzdHJhdGlvbiI6eyJyb2xlcyI6WyJ1bWFfcHJvdGVjdGlvbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiY2xpZW50SWQiOiJwcmUtcmVnaXN0cmF0aW9uIiwiY2xpZW50SG9zdCI6IjEwNC4yMTEuMjQ2LjIwMiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXByZS1yZWdpc3RyYXRpb24iLCJjbGllbnRBZGRyZXNzIjoiMTA0LjIxMS4yNDYuMjAyIiwiZW1haWwiOiJzZXJ2aWNlLWFjY291bnQtcHJlLXJlZ2lzdHJhdGlvbkBwbGFjZWhvbGRlci5vcmcifQ.ELnY2-CRuaP0WF5JFRouNh3utKJFuJiR-SSgkrrfQq4JnHfha7x-ZsJmsscwOCNojqsaM1b0e3rRUsPSSoH5tq2TW6JLC_ETkno1Lg3eGdl7d1_rZbD9bQ6pYF-V9DiLZmYtMUmgQ89kJ5em5GpvTj7e6HGN-tx7cDhqS2ZYCAzVwICqImie_UGBj7hZxydiC3qv8mOnyeUxiOsZj1VFg4_S9RARqUF-cauYFiFek0BnsE4HbTfyGiPicHslJTzbSJLhjhY-C-muw1pwW0KaCWYeGLkP3KgkIbl9F2yMxZObkTMYG96WSmp0vm27O_0VYQZSBOowuuJro8CSUuayng</stringProp>
+            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ2d3FFQkdmM3hfb185NVpNbG1BZ3Fwa012dzBOY1g0RllzanZ1UUtFQUVrIn0.eyJqdGkiOiI5ZjczN2MzZC02YjBjLTRhYWYtYTFmMi1lYWYxMzMzNTIzMWQiLCJleHAiOjE1OTE0MjkyNTksIm5iZiI6MCwiaWF0IjoxNTkxMzQyODU5LCJpc3MiOiJodHRwczovL3ByZXByb2Quc291dGhpbmRpYS5jbG91ZGFwcC5henVyZS5jb20va2V5Y2xvYWsvYXV0aC9yZWFsbXMvcHJlcmVnaXN0cmF0aW9uIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImM4MDEzN2MxLTc3M2EtNDAzZi05MzNjLWI2NGE1MWI3NzM1YyIsInR5cCI6IkJlYXJlciIsImF6cCI6Im1vc2lwLXByZXJlZy1jbGllbnQiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI2ZjY1ZDhlNS1iMTZmLTQyOGQtODdlNy1lODU0YjU5NGRjZjYiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIlBSRVJFRyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJJTkRJVklEVUFMIiwiUFJFX1JFR0lTVFJBVElPTl9BRE1JTiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7Im1vc2lwLXByZXJlZy1jbGllbnQiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImNsaWVudEhvc3QiOiIxMC4yNDQuMy4yOCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiY2xpZW50SWQiOiJtb3NpcC1wcmVyZWctY2xpZW50IiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LW1vc2lwLXByZXJlZy1jbGllbnQiLCJjbGllbnRBZGRyZXNzIjoiMTAuMjQ0LjMuMjgifQ.fpdu0XAJXmFumECjlSfa66Qb8frKpUdjdNEzKbhJ9pLGkPOBL1XipJumVED2v6dUQBeuPP61_KF20NKhNyCPBtkQ-dAfHqj_voTazjWu08C4xLQcWZEZfu7qRT3i7hbx1pD3g3fk1Y3r6M79aQ6NzBfrGE63O7eoE_6q0WqRJ3-W8Vw0RSCplxkawl5u5kMnniX5oWVitlbnU-ulNvJSziY6FSGDjqlshZpzcegHn6PcJoZqpj0s9cxhKEvkq_gqrvI-l84Pnc5fcDGDUs6BMhFx1D373utRti-jb1cEn9AvyqC4FBCw2AfRBxLeOCtbfi4-x2xQxbfP3iiRxcwKEQ</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="applicationId" elementType="Argument">
@@ -82,7 +82,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="true">
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="false">
         <stringProp name="filename">${data_path}\server_data.csv</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames">BASE_URL</stringProp>
@@ -94,7 +94,7 @@
         <stringProp name="shareMode">shareMode.all</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Center ID Reader" enabled="false">
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Center ID Reader" enabled="true">
         <stringProp name="filename">${data_path}\centerId_list.csv</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames">centerId</stringProp>
@@ -134,6 +134,18 @@
         <stringProp name="HTTPSampler.response_timeout"></stringProp>
       </ConfigTestElement>
       <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="server_data" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
+        <stringProp name="filename">${data_path}/qa_server_data.csv</stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">BASE_URL,db_host,db_port,db_name,db_user,db_password,auth_partner_id,misp_lk,partnerID,PartnerApiKey,license_key</stringProp>
+      </CSVDataSet>
+      <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="kernel-masterdata-debug" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -145,6 +157,7 @@
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_regproc_authenticate_secretKey" enabled="false">
@@ -162,9 +175,9 @@
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;registration-processor&quot;,&#xd;
-    &quot;secretKey&quot;: &quot;d80ec0be-bba7-4d8e-bf0c-85ab45bb976b&quot;,&#xd;
-    &quot;appId&quot;: &quot;registration-processor&quot;&#xd;
+    &quot;clientId&quot;: &quot;mosip-regproc-client&quot;,&#xd;
+    &quot;secretKey&quot;: &quot;abc123&quot;,&#xd;
+    &quot;appId&quot;: &quot;regproc&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
   &quot;version&quot;: &quot;1.0&quot;&#xd;
@@ -196,7 +209,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -274,9 +287,9 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;pre-registration&quot;,&#xd;
-    &quot;secretKey&quot;: &quot;149d8d00-531e-4518-8fe7-922f6a2182ad&quot;,&#xd;
-    &quot;appId&quot;: &quot;pre-registration&quot;&#xd;
+    &quot;clientId&quot;: &quot;mosip-prereg-client&quot;,&#xd;
+    &quot;secretKey&quot;: &quot;abc123&quot;,&#xd;
+    &quot;appId&quot;: &quot;prereg&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
   &quot;version&quot;: &quot;1.0&quot;&#xd;
@@ -308,7 +321,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -743,6 +756,285 @@ vars.put(&quot;documenttype&quot;,vars.get(&quot;documenttypes&quot;).split(&quo
           </TestAction>
           <hashTree/>
         </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_masterdata_registrationcenters" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="masterdata_registrationcenters" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">v1/masterdata/registrationcenters</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="false">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">vars.put(&quot;lang1&quot;,vars.get(&quot;languages&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;languages&quot;).split(&quot;,&quot;).length-1)]);
+vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;location_names&quot;).split(&quot;,&quot;).length-1)]);</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="Cookie" elementType="Header">
+                  <stringProp name="Header.name">Cookie</stringProp>
+                  <stringProp name="Header.value">Authorization=${authorization}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
+              <stringProp name="JSON_PATH">$.response.registrationCenters</stringProp>
+              <stringProp name="EXPECTED_VALUE"></stringProp>
+              <boolProp name="JSONVALIDATION">false</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">false</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
+        <hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">${thinktime}</stringProp>
+          </TestAction>
+          <hashTree/>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_masterdata_registrationcenters_centerId" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="masterdata_registrationcenters_by_centerId" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">v1/masterdata/registrationcenters/${centerId}/${lang}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">vars.put(&quot;lang&quot;,vars.get(&quot;languages&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;languages&quot;).split(&quot;,&quot;).length-1)]);
+</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="Cookie" elementType="Header">
+                  <stringProp name="Header.name">Cookie</stringProp>
+                  <stringProp name="Header.value">Authorization=${authorization}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
+              <stringProp name="JSON_PATH">$.response.registrationCenters</stringProp>
+              <stringProp name="EXPECTED_VALUE"></stringProp>
+              <boolProp name="JSONVALIDATION">false</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">false</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
+        <hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">${thinktime}</stringProp>
+          </TestAction>
+          <hashTree/>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_masterdata_registrationcenters_location_name" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="masterdata_registrationcenters_location_name" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">v1/masterdata/registrationcenters/${lang_code}/${hierarchy}/${location_name}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">vars.put(&quot;lang_code&quot;,vars.get(&quot;languages&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;languages&quot;).split(&quot;,&quot;).length-1)]);
+vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;location_names&quot;).split(&quot;,&quot;).length-1)]);</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="Cookie" elementType="Header">
+                  <stringProp name="Header.name">Cookie</stringProp>
+                  <stringProp name="Header.value">Authorization=${authorization}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
+              <stringProp name="JSON_PATH">$.response.registrationCenters</stringProp>
+              <stringProp name="EXPECTED_VALUE"></stringProp>
+              <boolProp name="JSONVALIDATION">false</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">false</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
+        <hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">${thinktime}</stringProp>
+          </TestAction>
+          <hashTree/>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_masterdata_applicanttype" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="masterdata_applicanttype" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="languages" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${lang}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">languages</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">v1/masterdata/applicanttype/${apptype_code}/languages</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">vars.put(&quot;lang&quot;,vars.get(&quot;languages&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;languages&quot;).split(&quot;,&quot;).length-1)]);
+vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;location_names&quot;).split(&quot;,&quot;).length-1)]);</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="Cookie" elementType="Header">
+                  <stringProp name="Header.name">Cookie</stringProp>
+                  <stringProp name="Header.value">Authorization=${authorization}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
+              <stringProp name="JSON_PATH">$.response.appTypeCode</stringProp>
+              <stringProp name="EXPECTED_VALUE"></stringProp>
+              <boolProp name="JSONVALIDATION">false</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">false</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="kernel-masterdata-registrationcenter-debug" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -755,6 +1047,7 @@ vars.put(&quot;documenttype&quot;,vars.get(&quot;documenttypes&quot;).split(&quo
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_regproc_authenticate_secretKey" enabled="false">
@@ -806,7 +1099,7 @@ vars.put(&quot;documenttype&quot;,vars.get(&quot;documenttypes&quot;).split(&quo
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -918,7 +1211,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -981,7 +1274,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_Kernel_Validate Token" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_Kernel_Validate-Token" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -1244,24 +1537,6 @@ vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&q
             </hashTree>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="false"/>
-        <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
-            <intProp name="ActionProcessor.action">1</intProp>
-            <intProp name="ActionProcessor.target">0</intProp>
-            <stringProp name="ActionProcessor.duration">${thinktime}</stringProp>
-          </TestAction>
-          <hashTree/>
-        </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="false"/>
-        <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
-            <intProp name="ActionProcessor.action">1</intProp>
-            <intProp name="ActionProcessor.target">0</intProp>
-            <stringProp name="ActionProcessor.duration">${thinktime}</stringProp>
-          </TestAction>
-          <hashTree/>
-        </hashTree>
         <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
           <boolProp name="displayJMeterProperties">false</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
@@ -1280,6 +1555,7 @@ vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&q
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_regproc_authenticate_secretKey" enabled="false">
@@ -1331,7 +1607,7 @@ vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&q
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1443,7 +1719,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2222,60 +2498,60 @@ vars.put(&quot;documenttype&quot;,vars.get(&quot;documenttypes&quot;).split(&quo
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group - locations" enabled="false">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-585462867">
-            <stringProp name="52469">500</stringProp>
+          <collectionProp name="-460976604">
+            <stringProp name="1691">50</stringProp>
             <stringProp name="48">0</stringProp>
-            <stringProp name="49741">250</stringProp>
+            <stringProp name="48625">100</stringProp>
             <stringProp name="1658300">6200</stringProp>
             <stringProp name="1598">20</stringProp>
           </collectionProp>
-          <collectionProp name="-530242665">
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="55507">850</stringProp>
-            <stringProp name="48692">125</stringProp>
+          <collectionProp name="-1941867424">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="54546">750</stringProp>
+            <stringProp name="1691">50</stringProp>
             <stringProp name="1630431">5400</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="1422905644">
-            <stringProp name="49741">250</stringProp>
+          <collectionProp name="-1617770976">
+            <stringProp name="1603">25</stringProp>
             <stringProp name="1512228">1500</stringProp>
-            <stringProp name="48692">125</stringProp>
+            <stringProp name="1691">50</stringProp>
             <stringProp name="1601601">4500</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1926886452">
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1541213">2450</stringProp>
+          <collectionProp name="-2020877492">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1539291">2250</stringProp>
             <stringProp name="1691">50</stringProp>
             <stringProp name="1574693">3800</stringProp>
             <stringProp name="1567">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1440132832">
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1567160">3050</stringProp>
+          <collectionProp name="413472008">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1544096">2750</stringProp>
             <stringProp name="1691">50</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1225116268">
+          <collectionProp name="1242743560">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1571004">3450</stringProp>
             <stringProp name="1691">50</stringProp>
-            <stringProp name="1572926">3650</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1516072">1900</stringProp>
+            <stringProp name="1540097">2300</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="696181799">
+          <collectionProp name="274150784">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1598718">4200</stringProp>
             <stringProp name="1691">50</stringProp>
-            <stringProp name="1599834">4350</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1510306">1300</stringProp>
+            <stringProp name="1515111">1800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-496211289">
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1604639">4850</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="53430">600</stringProp>
+          <collectionProp name="622568956">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1602562">4600</stringProp>
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="55352">800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
         </collectionProp>
@@ -2578,60 +2854,53 @@ vars.put(&quot;documenttype&quot;,vars.get(&quot;documenttypes&quot;).split(&quo
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group - templates" enabled="false">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="532960004">
-            <stringProp name="52469">500</stringProp>
+          <collectionProp name="1344683488">
+            <stringProp name="1691">50</stringProp>
             <stringProp name="48">0</stringProp>
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="1628509">5200</stringProp>
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1603523">4700</stringProp>
             <stringProp name="1598">20</stringProp>
           </collectionProp>
-          <collectionProp name="623553872">
-            <stringProp name="49741">250</stringProp>
+          <collectionProp name="-1977193230">
+            <stringProp name="1603">25</stringProp>
             <stringProp name="55507">850</stringProp>
-            <stringProp name="48692">125</stringProp>
-            <stringProp name="1601756">4550</stringProp>
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1574848">3850</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="900162912">
-            <stringProp name="48780">150</stringProp>
+          <collectionProp name="-2088368033">
+            <stringProp name="1603">25</stringProp>
             <stringProp name="1512228">1500</stringProp>
-            <stringProp name="48780">150</stringProp>
-            <stringProp name="1575654">3900</stringProp>
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1568927">3200</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-774380507">
+          <collectionProp name="1366637097">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1538330">2150</stringProp>
             <stringProp name="1691">50</stringProp>
-            <stringProp name="1541213">2450</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1545863">2900</stringProp>
+            <stringProp name="1542019">2500</stringProp>
             <stringProp name="1567">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1518439576">
+          <collectionProp name="-2016886770">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1544902">2800</stringProp>
             <stringProp name="1691">50</stringProp>
-            <stringProp name="1567160">3050</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1541058">2400</stringProp>
+            <stringProp name="1516072">1900</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1258428558">
+          <collectionProp name="-303978220">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1570043">3350</stringProp>
             <stringProp name="1691">50</stringProp>
-            <stringProp name="1572926">3650</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1515111">1800</stringProp>
+            <stringProp name="1510306">1300</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-89511992">
+          <collectionProp name="822620140">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1574693">3800</stringProp>
             <stringProp name="1691">50</stringProp>
-            <stringProp name="1599834">4350</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1508384">1100</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-496211289">
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1604639">4850</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="53430">600</stringProp>
+            <stringProp name="56313">900</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
         </collectionProp>
@@ -2717,72 +2986,56 @@ vars.put(&quot;templatetypecode&quot;,vars.get(&quot;templatetypecodes&quot;).sp
           </TestAction>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="false"/>
-        <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
-            <intProp name="ActionProcessor.action">1</intProp>
-            <intProp name="ActionProcessor.target">0</intProp>
-            <stringProp name="ActionProcessor.duration">${thinktime}</stringProp>
-          </TestAction>
-          <hashTree/>
-        </hashTree>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group - documenttype" enabled="false">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="532960004">
-            <stringProp name="52469">500</stringProp>
+          <collectionProp name="-1458369331">
+            <stringProp name="48625">100</stringProp>
             <stringProp name="48">0</stringProp>
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="1628509">5200</stringProp>
+            <stringProp name="49586">200</stringProp>
+            <stringProp name="1601601">4500</stringProp>
             <stringProp name="1598">20</stringProp>
           </collectionProp>
-          <collectionProp name="623553872">
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="55507">850</stringProp>
-            <stringProp name="48692">125</stringProp>
-            <stringProp name="1601756">4550</stringProp>
+          <collectionProp name="-383708291">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="52469">500</stringProp>
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1598718">4200</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="900162912">
-            <stringProp name="48780">150</stringProp>
-            <stringProp name="1512228">1500</stringProp>
-            <stringProp name="48780">150</stringProp>
-            <stringProp name="1575654">3900</stringProp>
+          <collectionProp name="-155723685">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="56468">950</stringProp>
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1570849">3400</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1565386925">
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1541213">2450</stringProp>
+          <collectionProp name="1843087836">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1510306">1300</stringProp>
             <stringProp name="1691">50</stringProp>
-            <stringProp name="1545863">2900</stringProp>
-            <stringProp name="1567">10</stringProp>
+            <stringProp name="1567005">3000</stringProp>
+            <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1518439576">
+          <collectionProp name="292974721">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1514150">1700</stringProp>
             <stringProp name="1691">50</stringProp>
-            <stringProp name="1567160">3050</stringProp>
-            <stringProp name="1691">50</stringProp>
+            <stringProp name="1544902">2800</stringProp>
+            <stringProp name="10">10</stringProp>
+          </collectionProp>
+          <collectionProp name="-206372200">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1540097">2300</stringProp>
+            <stringProp name="30">30</stringProp>
             <stringProp name="1541058">2400</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1258428558">
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1572926">3650</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1515111">1800</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-89511992">
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1599834">4350</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1508384">1100</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-496211289">
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1604639">4850</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="53430">600</stringProp>
+          <collectionProp name="61133616">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1544902">2800</stringProp>
+            <stringProp name="30">30</stringProp>
+            <stringProp name="1516072">1900</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
         </collectionProp>
@@ -2856,270 +3109,6 @@ vars.put(&quot;documenttype&quot;,vars.get(&quot;documenttypes&quot;).split(&quo
               <boolProp name="ISREGEX">false</boolProp>
             </JSONPathAssertion>
             <hashTree/>
-          </hashTree>
-        </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
-        <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
-            <intProp name="ActionProcessor.action">1</intProp>
-            <intProp name="ActionProcessor.target">0</intProp>
-            <stringProp name="ActionProcessor.duration">${thinktime}</stringProp>
-          </TestAction>
-          <hashTree/>
-        </hashTree>
-      </hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group - registrationcenters" enabled="false">
-        <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="532960004">
-            <stringProp name="52469">500</stringProp>
-            <stringProp name="48">0</stringProp>
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="1628509">5200</stringProp>
-            <stringProp name="1598">20</stringProp>
-          </collectionProp>
-          <collectionProp name="623553872">
-            <stringProp name="49741">250</stringProp>
-            <stringProp name="55507">850</stringProp>
-            <stringProp name="48692">125</stringProp>
-            <stringProp name="1601756">4550</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="900162912">
-            <stringProp name="48780">150</stringProp>
-            <stringProp name="1512228">1500</stringProp>
-            <stringProp name="48780">150</stringProp>
-            <stringProp name="1575654">3900</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-1565386925">
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1541213">2450</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1545863">2900</stringProp>
-            <stringProp name="1567">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-1518439576">
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1567160">3050</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1541058">2400</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-1258428558">
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1572926">3650</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1515111">1800</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-89511992">
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1599834">4350</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1508384">1100</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-496211289">
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="1604639">4850</stringProp>
-            <stringProp name="1691">50</stringProp>
-            <stringProp name="53430">600</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-        </collectionProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-          <intProp name="LoopController.loops">-1</intProp>
-        </elementProp>
-        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
-      </kg.apc.jmeter.threads.UltimateThreadGroup>
-      <hashTree>
-        <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="Registration_centers" enabled="true">
-          <intProp name="InterleaveControl.style">1</intProp>
-        </RandomController>
-        <hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_masterdata_registrationcenters" enabled="true">
-            <boolProp name="TransactionController.includeTimers">false</boolProp>
-            <boolProp name="TransactionController.parent">true</boolProp>
-          </TransactionController>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="masterdata_registrationcenters" enabled="true">
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-                <collectionProp name="Arguments.arguments"/>
-              </elementProp>
-              <stringProp name="HTTPSampler.domain"></stringProp>
-              <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol"></stringProp>
-              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/masterdata/registrationcenters</stringProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-              <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="false">
-                <stringProp name="cacheKey">true</stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="script">vars.put(&quot;lang1&quot;,vars.get(&quot;languages&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;languages&quot;).split(&quot;,&quot;).length-1)]);
-vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;location_names&quot;).split(&quot;,&quot;).length-1)]);</stringProp>
-                <stringProp name="scriptLanguage">groovy</stringProp>
-              </JSR223PreProcessor>
-              <hashTree/>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">*/*</stringProp>
-                  </elementProp>
-                  <elementProp name="Cookie" elementType="Header">
-                    <stringProp name="Header.name">Cookie</stringProp>
-                    <stringProp name="Header.value">Authorization=${authorization}</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
-                <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
-              </ConstantTimer>
-              <hashTree/>
-              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
-                <stringProp name="JSON_PATH">$.response.registrationCenters</stringProp>
-                <stringProp name="EXPECTED_VALUE"></stringProp>
-                <boolProp name="JSONVALIDATION">false</boolProp>
-                <boolProp name="EXPECT_NULL">false</boolProp>
-                <boolProp name="INVERT">false</boolProp>
-                <boolProp name="ISREGEX">false</boolProp>
-              </JSONPathAssertion>
-              <hashTree/>
-            </hashTree>
-          </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_masterdata_registrationcenters_centerId" enabled="true">
-            <boolProp name="TransactionController.includeTimers">false</boolProp>
-            <boolProp name="TransactionController.parent">true</boolProp>
-          </TransactionController>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="masterdata_registrationcenters_by_centerId" enabled="true">
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-                <collectionProp name="Arguments.arguments"/>
-              </elementProp>
-              <stringProp name="HTTPSampler.domain"></stringProp>
-              <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol"></stringProp>
-              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/masterdata/registrationcenters/${centerId}/${lang}</stringProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-              <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
-                <stringProp name="cacheKey">true</stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="script">vars.put(&quot;lang&quot;,vars.get(&quot;languages&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;languages&quot;).split(&quot;,&quot;).length-1)]);
-</stringProp>
-                <stringProp name="scriptLanguage">groovy</stringProp>
-              </JSR223PreProcessor>
-              <hashTree/>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">*/*</stringProp>
-                  </elementProp>
-                  <elementProp name="Cookie" elementType="Header">
-                    <stringProp name="Header.name">Cookie</stringProp>
-                    <stringProp name="Header.value">Authorization=${authorization}</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
-                <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
-              </ConstantTimer>
-              <hashTree/>
-              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
-                <stringProp name="JSON_PATH">$.response.registrationCenters</stringProp>
-                <stringProp name="EXPECTED_VALUE"></stringProp>
-                <boolProp name="JSONVALIDATION">false</boolProp>
-                <boolProp name="EXPECT_NULL">false</boolProp>
-                <boolProp name="INVERT">false</boolProp>
-                <boolProp name="ISREGEX">false</boolProp>
-              </JSONPathAssertion>
-              <hashTree/>
-            </hashTree>
-          </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_masterdata_registrationcenters_location_name" enabled="true">
-            <boolProp name="TransactionController.includeTimers">false</boolProp>
-            <boolProp name="TransactionController.parent">true</boolProp>
-          </TransactionController>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="masterdata_registrationcenters_location_name" enabled="true">
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-                <collectionProp name="Arguments.arguments"/>
-              </elementProp>
-              <stringProp name="HTTPSampler.domain"></stringProp>
-              <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol"></stringProp>
-              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">v1/masterdata/registrationcenters/${lang_code}/${hierarchy}/${location_name}</stringProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-              <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
-                <stringProp name="cacheKey">true</stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="script">vars.put(&quot;lang_code&quot;,vars.get(&quot;languages&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;languages&quot;).split(&quot;,&quot;).length-1)]);
-vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;location_names&quot;).split(&quot;,&quot;).length-1)]);</stringProp>
-                <stringProp name="scriptLanguage">groovy</stringProp>
-              </JSR223PreProcessor>
-              <hashTree/>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">*/*</stringProp>
-                  </elementProp>
-                  <elementProp name="Cookie" elementType="Header">
-                    <stringProp name="Header.name">Cookie</stringProp>
-                    <stringProp name="Header.value">Authorization=${authorization}</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
-                <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
-              </ConstantTimer>
-              <hashTree/>
-              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
-                <stringProp name="JSON_PATH">$.response.registrationCenters</stringProp>
-                <stringProp name="EXPECTED_VALUE"></stringProp>
-                <boolProp name="JSONVALIDATION">false</boolProp>
-                <boolProp name="EXPECT_NULL">false</boolProp>
-                <boolProp name="INVERT">false</boolProp>
-                <boolProp name="ISREGEX">false</boolProp>
-              </JSONPathAssertion>
-              <hashTree/>
-            </hashTree>
           </hashTree>
         </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
@@ -3389,62 +3378,284 @@ vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&q
           <hashTree/>
         </hashTree>
       </hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group -applicanttype" enabled="true">
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group - registrationcenters" enabled="false">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-2114232700">
-            <stringProp name="49741">250</stringProp>
+          <collectionProp name="-1848287425">
+            <stringProp name="48780">150</stringProp>
             <stringProp name="48">0</stringProp>
-            <stringProp name="49741">250</stringProp>
+            <stringProp name="50547">300</stringProp>
+            <stringProp name="1544902">2800</stringProp>
+            <stringProp name="1598">20</stringProp>
+          </collectionProp>
+          <collectionProp name="33143946">
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="53430">600</stringProp>
+            <stringProp name="49586">200</stringProp>
+            <stringProp name="1540097">2300</stringProp>
+            <stringProp name="10">10</stringProp>
+          </collectionProp>
+          <collectionProp name="-95149102">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1509345">1200</stringProp>
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1512228">1500</stringProp>
+            <stringProp name="10">10</stringProp>
+          </collectionProp>
+          <collectionProp name="2033557138">
+            <stringProp name="1603">25</stringProp>
+            <stringProp name="1516072">1900</stringProp>
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="53430">600</stringProp>
+            <stringProp name="10">10</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="Registration_centers" enabled="true">
+          <intProp name="InterleaveControl.style">1</intProp>
+        </RandomController>
+        <hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_masterdata_registrationcenters" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">true</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="masterdata_registrationcenters" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/registrationcenters</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="false">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">vars.put(&quot;lang1&quot;,vars.get(&quot;languages&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;languages&quot;).split(&quot;,&quot;).length-1)]);
+vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;location_names&quot;).split(&quot;,&quot;).length-1)]);</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223PreProcessor>
+              <hashTree/>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">*/*</stringProp>
+                  </elementProp>
+                  <elementProp name="Cookie" elementType="Header">
+                    <stringProp name="Header.name">Cookie</stringProp>
+                    <stringProp name="Header.value">Authorization=${authorization}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+                <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
+              </ConstantTimer>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
+                <stringProp name="JSON_PATH">$.response.registrationCenters</stringProp>
+                <stringProp name="EXPECTED_VALUE"></stringProp>
+                <boolProp name="JSONVALIDATION">false</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_masterdata_registrationcenters_centerId" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">true</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="masterdata_registrationcenters_by_centerId" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/registrationcenters/${centerId}/${lang}</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">vars.put(&quot;lang&quot;,vars.get(&quot;languages&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;languages&quot;).split(&quot;,&quot;).length-1)]);
+</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223PreProcessor>
+              <hashTree/>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">*/*</stringProp>
+                  </elementProp>
+                  <elementProp name="Cookie" elementType="Header">
+                    <stringProp name="Header.name">Cookie</stringProp>
+                    <stringProp name="Header.value">Authorization=${authorization}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+                <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
+              </ConstantTimer>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
+                <stringProp name="JSON_PATH">$.response.registrationCenters</stringProp>
+                <stringProp name="EXPECTED_VALUE"></stringProp>
+                <boolProp name="JSONVALIDATION">false</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TR_masterdata_registrationcenters_location_name" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">true</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="masterdata_registrationcenters_location_name" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">v1/masterdata/registrationcenters/${lang_code}/${hierarchy}/${location_name}</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">vars.put(&quot;lang_code&quot;,vars.get(&quot;languages&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;languages&quot;).split(&quot;,&quot;).length-1)]);
+vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&quot;,&quot;)[new Random().nextInt(vars.get(&quot;location_names&quot;).split(&quot;,&quot;).length-1)]);</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223PreProcessor>
+              <hashTree/>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">*/*</stringProp>
+                  </elementProp>
+                  <elementProp name="Cookie" elementType="Header">
+                    <stringProp name="Header.name">Cookie</stringProp>
+                    <stringProp name="Header.value">Authorization=${authorization}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+                <stringProp name="ConstantTimer.delay">${thinktime}</stringProp>
+              </ConstantTimer>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
+                <stringProp name="JSON_PATH">$.response.registrationCenters</stringProp>
+                <stringProp name="EXPECTED_VALUE"></stringProp>
+                <boolProp name="JSONVALIDATION">false</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
+        <hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">${thinktime}</stringProp>
+          </TestAction>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group -applicanttype" enabled="false">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="-992350100">
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="48">0</stringProp>
+            <stringProp name="1691">50</stringProp>
             <stringProp name="1660377">6450</stringProp>
             <stringProp name="1598">20</stringProp>
           </collectionProp>
-          <collectionProp name="1921968451">
-            <stringProp name="48625">100</stringProp>
+          <collectionProp name="438861702">
+            <stringProp name="1603">25</stringProp>
             <stringProp name="1509345">1200</stringProp>
-            <stringProp name="48625">100</stringProp>
+            <stringProp name="1691">50</stringProp>
             <stringProp name="1630431">5400</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-92179913">
-            <stringProp name="48780">150</stringProp>
+          <collectionProp name="-2126938136">
+            <stringProp name="1603">25</stringProp>
             <stringProp name="1538175">2100</stringProp>
-            <stringProp name="48780">150</stringProp>
+            <stringProp name="1691">50</stringProp>
             <stringProp name="1602562">4600</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="1904209261">
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1546018">2950</stringProp>
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1574693">3800</stringProp>
-            <stringProp name="1567">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-1554130602">
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1574848">3850</stringProp>
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1544902">2800</stringProp>
+          <collectionProp name="463255195">
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1543941">2700</stringProp>
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1596796">4000</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="172798619">
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1603523">4700</stringProp>
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1516072">1900</stringProp>
+          <collectionProp name="-1977917884">
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1571810">3500</stringProp>
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1545863">2900</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="1386015980">
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1629625">5350</stringProp>
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="1510306">1300</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="687114701">
-            <stringProp name="100">100</stringProp>
-            <stringProp name="1656378">6000</stringProp>
-            <stringProp name="48625">100</stringProp>
-            <stringProp name="53430">600</stringProp>
+          <collectionProp name="-1217429260">
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1599679">4300</stringProp>
+            <stringProp name="1691">50</stringProp>
+            <stringProp name="1512228">1500</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
         </collectionProp>
@@ -3568,7 +3779,7 @@ vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&q
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\MOSIP_PT\Scripts\Kernel\Results\masterdata\24April\applicanttype_result_1.xml</stringProp>
+        <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -3605,7 +3816,7 @@ vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&q
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">C:\MOSIP_PT\Scripts\Kernel\Results\masterdata\24April\applicanttype_result_1.csv</stringProp>
+        <stringProp name="filename">${result_path}/masterdata/locations/225users_05June_run1.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ThreadsStateOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Active Threads Over Time" enabled="true">
@@ -3792,7 +4003,7 @@ vars.put(&quot;location_name&quot;,vars.get(&quot;location_names&quot;).split(&q
             <stringProp name="1267279877">jp@gc - Transactions per Second</stringProp>
           </collectionProp>
           <collectionProp name="">
-            <stringProp name="378170484">jp@gc - Ultimate Thread Group -applicanttype</stringProp>
+            <stringProp name="-929728762">jp@gc - Ultimate Thread Group - locations</stringProp>
             <stringProp name="117711132">Successful Transactions per Second</stringProp>
           </collectionProp>
         </collectionProp>

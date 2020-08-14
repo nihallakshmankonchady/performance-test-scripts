@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="OTP_Manager" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -39,24 +39,19 @@
             <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ2d3FFQkdmM3hfb185NVpNbG1BZ3Fwa012dzBOY1g0RllzanZ1UUtFQUVrIn0.eyJqdGkiOiI5NmM1MDlhMy1jM2MzLTQ2NDktODAwOS1hMmFlMTkxMzdiMGYiLCJleHAiOjE1OTE2ODA2ODgsIm5iZiI6MCwiaWF0IjoxNTkxNTk0Mjg4LCJpc3MiOiJodHRwczovL3ByZXByb2Quc291dGhpbmRpYS5jbG91ZGFwcC5henVyZS5jb20va2V5Y2xvYWsvYXV0aC9yZWFsbXMvcHJlcmVnaXN0cmF0aW9uIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImM4MDEzN2MxLTc3M2EtNDAzZi05MzNjLWI2NGE1MWI3NzM1YyIsInR5cCI6IkJlYXJlciIsImF6cCI6Im1vc2lwLXByZXJlZy1jbGllbnQiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiJiMDQyNTc5OS1jZTYyLTQ4Y2YtOGNjNS0yNjI3ZGZiNzZlZTEiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIlBSRVJFRyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJJTkRJVklEVUFMIiwiUFJFX1JFR0lTVFJBVElPTl9BRE1JTiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7Im1vc2lwLXByZXJlZy1jbGllbnQiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImNsaWVudEhvc3QiOiIxMC4yNDQuMS4yMiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiY2xpZW50SWQiOiJtb3NpcC1wcmVyZWctY2xpZW50IiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LW1vc2lwLXByZXJlZy1jbGllbnQiLCJjbGllbnRBZGRyZXNzIjoiMTAuMjQ0LjEuMjIifQ.Mkxx4MXLXelST7Vp6pW70SXhCB8epgRgWehEpSAJ9yvOiO3vdONargduJdINei3ALU7AhaJtnWY2-cE9qo-bZDaGzbpswgoqps0SkrwxcVP2yLzjs2Rd7SLOjZEVHPZJduBXkZs6NMomvx8_Es2MPFsEnQY634TW8l9GNdnkVTZobY1D1ODL3jqGh_zFZYeiiivG0RVgwrrtduk3IICjT7Ft4T_6HE5o9QEsYPrJ1eukCGfCUpQzE0aqngXJaPwkQF3GFWxb1ZUqZVvnzKKRRrSlMflM0m84ysyGFeYWjxDJ1AZvzd5iQIhsia8YF9pJiClpivHibyL732Rl0T2fww</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="BASE_URL" elementType="Argument">
-            <stringProp name="Argument.name">BASE_URL</stringProp>
-            <stringProp name="Argument.value">preprod.southindia.cloudapp.azure.com</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server Data" enabled="false">
-        <stringProp name="filename">${data_path}\server_data.csv</stringProp>
-        <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">BASE_URL</stringProp>
-        <boolProp name="ignoreFirstLine">true</boolProp>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server_Data" enabled="true">
         <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
+        <stringProp name="filename">C:/MOSIP_PT/Scripts/Pre-Registration/Data/Server_Data.csv</stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
-        <boolProp name="stopThread">false</boolProp>
         <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">BASE_URL,db_host,db_port,db_name,db_user,db_password</stringProp>
       </CSVDataSet>
       <hashTree/>
       <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
@@ -86,6 +81,7 @@
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Key Counter" enabled="true">
@@ -146,7 +142,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -511,7 +507,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -867,7 +863,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1265,7 +1261,7 @@ vars.put(&quot;timestamp&quot;,timestamp);</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://${basepath}</stringProp>
+                  <stringProp name="Header.value">https://${BASE_URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>

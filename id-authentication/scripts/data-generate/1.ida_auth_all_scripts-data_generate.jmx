@@ -101,7 +101,7 @@
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="server_data" enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding">UTF-8</stringProp>
-        <stringProp name="filename">C:/MOSIP_PT/Scripts/IDA/Data/qa_server_data.csv</stringProp>
+        <stringProp name="filename">${data_path}/qa_server_data.csv</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
