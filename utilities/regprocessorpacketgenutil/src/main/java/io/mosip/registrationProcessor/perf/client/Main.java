@@ -26,13 +26,16 @@ public class Main {
 
 		if (args.length != 1) {
 			System.err.println("Receives only one parameter");
+			System.out.println("packet_gen - To generate packets");
+			System.out.println("sync_data - To generate sync data(test data to reg proc sync API)");
+			System.out.println("test_data - To generate test data for idrepo create identity API");
 		} else {
 			String mode = args[0];
 			switch (mode) {
 			case "packet_gen":
 				/*
-				 * Generates packets and outputs packet file path and checksum to a file.
-				 * It will also generates a file having a list of registration IDs
+				 * Generates packets and outputs packet file path and checksum to a file. It
+				 * will also generates a file having a list of registration IDs
 				 */
 				try {
 					createPackets();
@@ -43,12 +46,13 @@ public class Main {
 
 			case "sync_data":
 				/*
-				 * Generates a test data file to be input to apache jmeter script to sync regsitration
-				 * packets
+				 * Generates a test data file to be input to apache jmeter script to sync
+				 * regsitration packets
 				 */
 				generateSyncData();
 				break;
-			case "test_data": // To generate test data for ID Repo create API this data is used for IDRepo and IDA
+			case "test_data": // To generate test data for ID Repo create API this data is used for IDRepo and
+								// IDA
 				try {
 					generateTestData();
 				} catch (InterruptedException e) {
