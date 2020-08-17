@@ -113,19 +113,19 @@ public class TokenGeneration {
 		} catch (IOException e) {
 			logger.error("Propert File Was Not Found", e);
 		}
-		String file = System.getProperty("user.dir") + "//src//main//resources//prepodusers_1.txt";
-		List<String> content = new ArrayList<String>();
-		FileReader fileReader = new FileReader(new File(file));
-		BufferedReader bufferedReader = new BufferedReader(fileReader);
-		String line = "";
-		while ((line = bufferedReader.readLine()) != null) {
-			content.add(line);
-		}
-		bufferedReader.close();
-		fileReader.close();
-		Random rand = new Random();
-		int rand_int1 = rand.nextInt(60);
-		tokenRequestDto.setClientId(content.get(rand_int1));
+//		String file = System.getProperty("user.dir") + "//src//main//resources//prepodusers_1.txt";
+//		List<String> content = new ArrayList<String>();
+//		FileReader fileReader = new FileReader(new File(file));
+//		BufferedReader bufferedReader = new BufferedReader(fileReader);
+//		String line = "";
+//		while ((line = bufferedReader.readLine()) != null) {
+//			content.add(line);
+//		}
+//		bufferedReader.close();
+//		fileReader.close();
+//		Random rand = new Random();
+//		int rand_int1 = rand.nextInt(60);
+//		tokenRequestDto.setClientId(content.get(rand_int1));
 		return generateTokenRequest;
 
 	}
