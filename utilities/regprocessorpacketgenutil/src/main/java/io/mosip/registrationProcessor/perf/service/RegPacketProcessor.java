@@ -32,7 +32,7 @@ public class RegPacketProcessor {
 		Properties folderPath = new Properties();
 		try {
 			FileReader reader = new FileReader(
-					new File(System.getProperty("user.dir") + "/src/configProperties/folderPaths.properties"));
+					new File(System.getProperty("user.dir") + "/src/config/folderPaths.properties"));
 			folderPath.load(reader);
 			reader.close();
 		} catch (IOException e1) {
