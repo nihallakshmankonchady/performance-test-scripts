@@ -17,6 +17,7 @@ import java.time.ZoneOffset;
 import java.util.Base64;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 import java.util.Random;
 
 import javax.ws.rs.core.MediaType;
@@ -106,7 +107,6 @@ public class EncrypterDecrypter {
 	public File decryptFile(String token, JSONObject decryptDto, String destinationPath, String fileName,
 			PropertiesUtil prop) throws IOException, ZipException, ParseException {
 		RegProcApiRequests apiRequests = new RegProcApiRequests();
-		String validToken = "";
 		InputStream outstream = null;
 		logger.info(destinationPath);
 		// destinationPath = destinationPath + "//TemporaryValidPackets";
@@ -123,7 +123,7 @@ public class EncrypterDecrypter {
 			token = getToken("syncTokenGenerationFilePath", prop);
 			tokenStatus = apiRequests.validateToken(token, prop);
 		}
-		String decrypterURL = "/v1/keymanager/decrypt";
+		String decrypterURL = readPropertyFromFile("decryptAPI");
 		Response response = apiRequests.postRequestToDecrypt(decrypterURL, decryptDto, MediaType.APPLICATION_JSON,
 				MediaType.APPLICATION_JSON, token, prop);
 		System.out.println("decryption response:-");
@@ -168,19 +168,30 @@ public class EncrypterDecrypter {
 
 			zipFile.extractAll(destinationPath.substring(0, destinationPath.lastIndexOf('.')));
 		} catch (ZipException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 		File extractedFile = new File(destinationPath.substring(0, destinationPath.lastIndexOf('.')));
 		return extractedFile;
+	}
+
+	public String readPropertyFromFile(String apiName) {
+		Properties prop = new Properties();
+		String propertyFilePath = System.getProperty("user.dir") + "/src/config/apiList.properties";
+		FileReader reader;
+		try {
+			reader = new FileReader(new File(propertyFilePath));
+			prop.load(reader);
+		} catch (IOException e) {
+			logger.error("Property File " + propertyFilePath + " Was Not Found", e);
+		}
+		String apiEndPoint = prop.getProperty(apiName);
+		return apiEndPoint;
 	}
 
 	public String encryptFile(File f, String sourcePath, String destinationPath, String fileName, PropertiesUtil prop)
 			throws Exception {
 		// ApplicationLibrary applnMethods = new ApplicationLibrary();
 		RegProcApiRequests apiRequests = new RegProcApiRequests();
-		// String decrypterURL = "/v1/keymanager/decrypt";
-		String encrypterURL = "/v1/keymanager/encrypt";
+		String encrypterURL = readPropertyFromFile("encryptAPI");
 		String applicationId = "REGISTRATION";
 		InputStream outstream = null;
 		TokenGeneration generateToken = new TokenGeneration();
@@ -234,7 +245,8 @@ public class EncrypterDecrypter {
 		RegProcApiRequests apiRequests = new RegProcApiRequests();
 		System.out.println("Folder path is::- " + folderPath);
 		System.out.println("name of folder to encrypt is::- " + dirToEncrypt);
-		String encrypterURL = "/v1/keymanager/encrypt";
+		//String encrypterURL = "/v1/keymanager/encrypt";
+		String encrypterURL = readPropertyFromFile("encryptAPI");
 		String applicationId = "REGISTRATION";
 		InputStream inputstream = null;
 		boolean tokenStatus = apiRequests.validateToken(token, prop);
