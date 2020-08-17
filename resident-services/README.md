@@ -1,2 +1,2 @@
-###### Contains
-- This folder contains jmeter scripts ,data and summary reports of resident module 
+### Contains
+- This folder contains JMeter scripts, data and summary reports of Resident Services.

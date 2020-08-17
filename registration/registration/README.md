@@ -1,2 +1,2 @@
-###### Contains
-- Apache Jmeter acts as registration client
+### Contains
+- Apache JMeter acts as Registration Client

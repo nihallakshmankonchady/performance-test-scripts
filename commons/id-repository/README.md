@@ -1,2 +1,2 @@
-###### Contains
-- This folder contains jmeter scripts ,data and summary reports of idrepo module 
+### Contains
+- This folder contains JMeter scripts, data and summary reports of ID Repository.

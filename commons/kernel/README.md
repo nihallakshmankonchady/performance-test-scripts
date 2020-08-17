@@ -1,2 +1,2 @@
-###### Contains
-- This folder contains jmeter scripts ,data and summary reports of kernel module 
+### Contains
+- This folder contains JMeter scripts, data and summary reports of Kernel.
