@@ -13,11 +13,6 @@
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="basepath" elementType="Argument">
-            <stringProp name="Argument.name">basepath</stringProp>
-            <stringProp name="Argument.value">preprod.mosip.io</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="thinktime" elementType="Argument">
             <stringProp name="Argument.name">thinktime</stringProp>
             <stringProp name="Argument.value">2000</stringProp>
@@ -284,7 +279,7 @@ String db_host = vars.get(&quot;db_host&quot;);
 String db_name = vars.get(&quot;db_name&quot;);
 String db_port =  vars.get(&quot;db_port&quot;);
 String db_user = vars.get(&quot;db_user&quot;);
-String db_pwd = &quot;Mosip@dev123&quot;;
+String db_pwd = vars.get(&quot;db_password&quot;);
 //String muaCode = vars.get(&quot;muaCode&quot;);
 String filter = vars.get(&quot;uin&quot;);
 		
@@ -445,7 +440,7 @@ String db_host = vars.get(&quot;db_host&quot;);
 String db_name = vars.get(&quot;db_name&quot;);
 String db_port =  vars.get(&quot;db_port&quot;);
 String db_user = vars.get(&quot;db_user&quot;);
-String db_pwd = &quot;Mosip@dev123&quot;;
+String db_pwd = vars.get(&quot;db_password&quot;);
 //String muaCode = vars.get(&quot;muaCode&quot;);
 String filter = vars.get(&quot;uin&quot;);
 		
@@ -635,7 +630,7 @@ String db_host = vars.get(&quot;db_host&quot;);
 String db_name = vars.get(&quot;db_name&quot;);
 String db_port =  vars.get(&quot;db_port&quot;);
 String db_user = vars.get(&quot;db_user&quot;);
-String db_pwd = &quot;Mosip@dev123&quot;;
+String db_pwd = vars.get(&quot;db_password&quot;);
 //String muaCode = vars.get(&quot;muaCode&quot;);
 String filter = vars.get(&quot;uin&quot;);
 		
@@ -832,7 +827,8 @@ String db_host = vars.get(&quot;db_host&quot;);
 String db_name = vars.get(&quot;db_name&quot;);
 String db_port =  vars.get(&quot;db_port&quot;);
 String db_user = vars.get(&quot;db_user&quot;);
-String db_pwd = &quot;Mosip@dev123&quot;;
+String db_pwd = vars.get(&quot;db_password&quot;);
+//String db_pwd = &quot;${db_password}&quot;;
 //String muaCode = vars.get(&quot;muaCode&quot;);
 String filter = vars.get(&quot;uin&quot;);
 		

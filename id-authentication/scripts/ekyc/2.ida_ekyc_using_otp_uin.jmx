@@ -35,22 +35,22 @@
           </elementProp>
           <elementProp name="db_host" elementType="Argument">
             <stringProp name="Argument.name">db_host</stringProp>
-            <stringProp name="Argument.value">52.172.39.200</stringProp>
+            <stringProp name="Argument.value">${db_host}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="db_port" elementType="Argument">
             <stringProp name="Argument.name">db_port</stringProp>
-            <stringProp name="Argument.value">9001</stringProp>
+            <stringProp name="Argument.value">${db_port}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="db_name" elementType="Argument">
             <stringProp name="Argument.name">db_name</stringProp>
-            <stringProp name="Argument.value">mosip_kernel</stringProp>
+            <stringProp name="Argument.value">${db_name}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="db_user" elementType="Argument">
             <stringProp name="Argument.name">db_user</stringProp>
-            <stringProp name="Argument.value">kerneluser</stringProp>
+            <stringProp name="Argument.value">${db_user}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="ekyc_partner_id" elementType="Argument">
@@ -279,7 +279,7 @@ String db_host = vars.get(&quot;db_host&quot;);
 String db_name = vars.get(&quot;db_name&quot;);
 String db_port =  vars.get(&quot;db_port&quot;);
 String db_user = vars.get(&quot;db_user&quot;);
-String db_pwd = &quot;Mosip@dev123&quot;;
+String db_pwd = vars.get(&quot;db_password&quot;)
 //String muaCode = vars.get(&quot;muaCode&quot;);
 String filter = vars.get(&quot;uin&quot;);
 		
@@ -469,7 +469,7 @@ String db_host = vars.get(&quot;db_host&quot;);
 String db_name = vars.get(&quot;db_name&quot;);
 String db_port =  vars.get(&quot;db_port&quot;);
 String db_user = vars.get(&quot;db_user&quot;);
-String db_pwd = &quot;Mosip@dev123&quot;;
+String db_pwd = vars.get(&quot;db_password&quot;);
 //String muaCode = vars.get(&quot;muaCode&quot;);
 String filter = vars.get(&quot;uin&quot;);
 		
