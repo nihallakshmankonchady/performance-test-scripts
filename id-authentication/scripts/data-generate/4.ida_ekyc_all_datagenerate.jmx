@@ -11,41 +11,6 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="false">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="thinktime" elementType="Argument">
-            <stringProp name="Argument.name">thinktime</stringProp>
-            <stringProp name="Argument.value">2000</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="response_folder" elementType="Argument">
-            <stringProp name="Argument.name">response_folder</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Responses</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="data_path" elementType="Argument">
-            <stringProp name="Argument.name">data_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Data</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="result_path" elementType="Argument">
-            <stringProp name="Argument.name">result_path</stringProp>
-            <stringProp name="Argument.value">C:\MOSIP_PT\Scripts\IDA\Results</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="ekyc_partner_id" elementType="Argument">
-            <stringProp name="Argument.name">ekyc_partner_id</stringProp>
-            <stringProp name="Argument.value">1873299273</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="misp_lk" elementType="Argument">
-            <stringProp name="Argument.name">misp_lk</stringProp>
-            <stringProp name="Argument.value">735899345</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
-      </Arguments>
-      <hashTree/>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="thinktime" elementType="Argument">

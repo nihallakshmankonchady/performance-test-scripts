@@ -13,11 +13,6 @@
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="basepath" elementType="Argument">
-            <stringProp name="Argument.name">basepath</stringProp>
-            <stringProp name="Argument.value">preprod.mosip.io</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="thinktime" elementType="Argument">
             <stringProp name="Argument.name">thinktime</stringProp>
             <stringProp name="Argument.value">2000</stringProp>
@@ -40,22 +35,22 @@
           </elementProp>
           <elementProp name="db_host" elementType="Argument">
             <stringProp name="Argument.name">db_host</stringProp>
-            <stringProp name="Argument.value">52.172.39.200</stringProp>
+            <stringProp name="Argument.value">${db_host}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="db_port" elementType="Argument">
             <stringProp name="Argument.name">db_port</stringProp>
-            <stringProp name="Argument.value">9001</stringProp>
+            <stringProp name="Argument.value">${db_port}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="db_name" elementType="Argument">
             <stringProp name="Argument.name">db_name</stringProp>
-            <stringProp name="Argument.value">mosip_kernel</stringProp>
+            <stringProp name="Argument.value">${db_name}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="db_user" elementType="Argument">
             <stringProp name="Argument.name">db_user</stringProp>
-            <stringProp name="Argument.value">kerneluser</stringProp>
+            <stringProp name="Argument.value">${db_user}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="ekyc_partner_id" elementType="Argument">
@@ -75,7 +70,7 @@
         <collectionProp name="HeaderManager.headers">
           <elementProp name="Origin" elementType="Header">
             <stringProp name="Header.name">Origin</stringProp>
-            <stringProp name="Header.value">https://${basepath}</stringProp>
+            <stringProp name="Header.value">https://${BASE_URL}</stringProp>
           </elementProp>
           <elementProp name="user-agent" elementType="Header">
             <stringProp name="Header.name">user-agent</stringProp>
@@ -88,7 +83,7 @@
         <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments"/>
         </elementProp>
-        <stringProp name="HTTPSampler.domain">${basepath}</stringProp>
+        <stringProp name="HTTPSampler.domain">${BASE_URL}</stringProp>
         <stringProp name="HTTPSampler.port"></stringProp>
         <stringProp name="HTTPSampler.protocol">https</stringProp>
         <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -114,6 +109,18 @@
         <stringProp name="shareMode">shareMode.all</stringProp>
         <boolProp name="stopThread">false</boolProp>
         <stringProp name="variableNames">uin,vid</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="server_data" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
+        <stringProp name="filename">${data_path}/qa_server_data.csv</stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">BASE_URL,db_host,db_port,db_name,db_user,db_password,auth_partner_id,misp_lk,partnerID,PartnerApiKey,license_key</stringProp>
       </CSVDataSet>
       <hashTree/>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Document Encrypted Value" enabled="false">
