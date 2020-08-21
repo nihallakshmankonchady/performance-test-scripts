@@ -5,6 +5,7 @@
     3. ID Repository
     4. ID Authentication
     5. Kernel
+	5. Resident services
 * Open source Tools used,
     1. [Apache JMeter](https://jmeter.apache.org/)
     2. [Glowroot](https://glowroot.org/)
