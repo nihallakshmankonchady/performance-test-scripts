@@ -8,18 +8,18 @@
     2. ENVIRONMENT=Sandbox environment
     3. BASE_URL=Sandbox url
 	
-*Run below 2 utilities to generate packets and test data for sync
+* Run below 2 utilities to generate packets and test data for sync
     1. packet_gen - To generate packets
     2. sync_data - To generate sync data(test data to reg proc sync API)
   
 ### How to run jmeter scripts 
- *Execute the script 01.regproc_packet_upload_preprod.jmx
+* Execute the script 01.regproc_packet_upload_preprod.jmx
     1. point the sandbox url to ${BASE_URL}
     2. Modify the thread count as per number of packets to upload
     3. Execute script for 1 user
 	4. Execute the script for desired number of packets uploaded
 	
- *Inorder to check the status of the packet uploaded ,execute 02.regprocpacketstatus_from_db.jmx script
+* Check the status of the packet uploaded ,execute 02.regprocpacketstatus_from_db.jmx script
 
 
 
