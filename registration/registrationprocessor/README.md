@@ -4,20 +4,22 @@
 ### How to create test data 
 * We need to generate packets by running the java utility https://github.com/mosip/mosip-performance-tests-mt/tree/master/utilities/regproc_transactiondata_util_v2.2 
 * Check below property in config.properties file located in src/main/resources for test data generation   
-   1.NUMBER_OF_TEST_PACKETS=100
-   2.ENVIRONMENT=Sandbox environment
-   3.BASE_URL=Sandbox url
+    1. NUMBER_OF_TEST_PACKETS=100
+    2. ENVIRONMENT=Sandbox environment
+    3. BASE_URL=Sandbox url
+	
 *Run below 2 utilities to generate packets and test data for sync
-   1.packet_gen - To generate packets
-   2.sync_data - To generate sync data(test data to reg proc sync API)
-   
+    1. packet_gen - To generate packets
+    2. sync_data - To generate sync data(test data to reg proc sync API)
+  
 ### How to run jmeter scripts 
- *Open the script https://github.com/mosip/mosip-performance-tests-mt/blob/master/registration/registrationprocessor/scripts/01.regproc_packet_upload_preprod.jmx
-   1.point the sandbox url to ${BASE_URL}
-   2.Modify the thread count as per number of packets to upload
-   3.Execute script for 1 user
-   4.Execute the script for desired number of packets uploaded
- *Inorder to check the status of the packet uploaded ,execute https://github.com/mosip/mosip-performance-tests-mt/blob/master/registration/registrationprocessor/scripts/02.regprocpacketstatus_from_db.jmx script
+ *Execute the script 01.regproc_packet_upload_preprod.jmx
+    1. point the sandbox url to ${BASE_URL}
+    2. Modify the thread count as per number of packets to upload
+    3. Execute script for 1 user
+	4. Execute the script for desired number of packets uploaded
+	
+ *Inorder to check the status of the packet uploaded ,execute 02.regprocpacketstatus_from_db.jmx script
 
 
 
