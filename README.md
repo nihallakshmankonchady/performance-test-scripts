@@ -17,6 +17,16 @@
 * Execute a dry run for 10 min
 * Execute performance run with various loads in order to achieve targeted NFR's
 
+### path to apache jmeter scripts module wise
+* Jmeter scripts are present in scripts folder in each modules
+* pre-registration scripts are present in the path mosip-performance-tests-mt\pre-registration\scripts
+* registrationprocessor scripts are prsent in the path mosip-performance-tests-mt\registration\registrationprocessor\scripts
+* id-authentication scripts are present in the path mosip-performance-tests-mt\id-authentication\scripts
+* id-repository scripts are present in the path mosip-performance-tests-mt\commons\id-repository\scripts
+* kernel scripts are present in the path mosip-performance-tests-mt\commons\kernel\scripts
+* resident-services scripts are present in the path mosip-performance-tests-mt\resident-services\scripts
+* java utilities are present in the path mosip-performance-tests-mt\utilities
+
 ### Running JMeter using command line in non-GUI mode
 * Open command prompt
 * Go to JMeter’s bin folder
