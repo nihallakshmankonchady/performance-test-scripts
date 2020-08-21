@@ -28,19 +28,6 @@
 * resident-services scripts are present in the path mosip-performance-tests-mt\resident-services\scripts
 * java utilities are present in the path mosip-performance-tests-mt\utilities
 
-### Running JMeter using command line in non-GUI mode
-* Open command prompt
-* Go to JMeter’s bin folder
-* Enter the following command: `jmeter -n –t test.jmx -l testresults.jtl`
-    * -n: It specifies JMeter is to run in non-gui mode
-    * -t: Name of JMX file that contains the Test Plan
-    * -l: Name of JTL(JMeter text logs) file to log results
-    * -j: Name of JMeter run log file
-* Other than these options, JMeter has several other parameters that can be used for running in the non-GUI mode.
-    * -R: List of remote servers,
-    * -H: Proxy server hostname or ip address
-    * -P: Proxy server port
-
 ### How to contribute
 You can contribute to MOSIP! If you see a problem, or have inputs on how we can improve, please see the [Contributor Guide](https://github.com/mosip/mosip-docs/wiki/Contributor-Guide) on how to file bugs, contribute code, and more.
 
