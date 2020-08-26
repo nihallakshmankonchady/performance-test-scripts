@@ -20,13 +20,13 @@
 
 ### path to apache jmeter scripts module wise
 * Jmeter scripts are present in scripts folder in each modules
-* pre-registration scripts are present in the path mosip-performance-tests-mt\pre-registration\scripts
-* registrationprocessor scripts are prsent in the path mosip-performance-tests-mt\registration\registrationprocessor\scripts
-* id-authentication scripts are present in the path mosip-performance-tests-mt\id-authentication\scripts
-* id-repository scripts are present in the path mosip-performance-tests-mt\commons\id-repository\scripts
-* kernel scripts are present in the path mosip-performance-tests-mt\commons\kernel\scripts
-* resident-services scripts are present in the path mosip-performance-tests-mt\resident-services\scripts
-* java utilities are present in the path mosip-performance-tests-mt\utilities
+* pre-registration scripts are present in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/pre-registration/scripts
+* registrationprocessor scripts are prsent in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/registration/registrationprocessor/scripts
+* id-authentication scripts are present in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/id-authentication/scripts
+* id-repository scripts are present in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/commons/id-repository/scripts
+* kernel scripts are present in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/commons/kernel/scripts
+* resident-services scripts are present in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/resident-services/README.md
+* java utilities are present in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/utilities
 
 ### execution steps modulewise
 * pre-registration execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/pre-registration/README.md
