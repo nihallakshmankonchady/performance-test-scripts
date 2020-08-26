@@ -2,7 +2,7 @@
 * This Folder contains performance test scripts, test data,summary reports of registration processor 
 
 ### How to create test data 
-* We need to generate packets by running the java utility https://github.com/mosip/mosip-performance-tests-mt/tree/master/utilities/regproc_transactiondata_util_v2.2 
+* We need to generate packets by running the java utility https://github.com/mosip/mosip-performance-tests-mt/tree/master/utilities/regprocessorpacketgenutil
 * Check below property in config.properties file located in src/main/resources for test data generation   
     1. NUMBER_OF_TEST_PACKETS=100 (number of packets)
     2. ENVIRONMENT=Sandbox environment
