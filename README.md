@@ -28,6 +28,15 @@
 * resident-services scripts are present in the path mosip-performance-tests-mt\resident-services\scripts
 * java utilities are present in the path mosip-performance-tests-mt\utilities
 
+### execution steps modulewise
+* pre-registration execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/pre-registration/README.md
+* registrationprocessor execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/registration/registrationprocessor/README.md
+* id-authentication execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/id-authentication/README.md
+* id-repository execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/commons/id-repository/README.md
+* kernel execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/commons/kernel/README.md
+* resident-services execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/resident-services/README.md
+* java utilities execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/utilities/README.md
+
 ### How to contribute
 You can contribute to MOSIP! If you see a problem, or have inputs on how we can improve, please see the [Contributor Guide](https://github.com/mosip/mosip-docs/wiki/Contributor-Guide) on how to file bugs, contribute code, and more.
 
