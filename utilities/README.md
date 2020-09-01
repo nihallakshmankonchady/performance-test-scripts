@@ -1,2 +1,2 @@
 ### Contains
-- This folder contains JAVA utilities for Registration Processor packet creation, sync and transactions time calculation.
+* this folder contains java utilities for registrationprocessor packet creation, sync and transactions time calculation and other common utilties
