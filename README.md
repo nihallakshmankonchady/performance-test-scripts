@@ -26,7 +26,7 @@
 	* [ID Repository scripts](https://github.com/mosip/mosip-performance-tests-mt/tree/master/commons/id-repository/scripts).
 	* [Kernel scripts](https://github.com/mosip/mosip-performance-tests-mt/tree/master/commons/kernel/scripts).
 	* [Resident Services scripts](https://github.com/mosip/mosip-performance-tests-mt/tree/master/resident-services/scripts)
-* [JMeter scripts for JAVA utilities](https://github.com/mosip/mosip-performance-tests-mt/tree/master/utilities).
+* [JAVA utilities](https://github.com/mosip/mosip-performance-tests-mt/tree/master/utilities).
 
 ### Execution steps for various scripts
 * [Pre-registration execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/pre-registration/README.md)
