@@ -1,2 +1,2 @@
 ### Contains
-* this folder contains java utilities for registrationprocessor packet creation
+This folder contains JAVA utilities for registration processor packet creation.

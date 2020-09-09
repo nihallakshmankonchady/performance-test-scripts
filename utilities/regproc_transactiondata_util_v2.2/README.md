@@ -1,2 +1,2 @@
 ### Contains
-* this folder contains java utilities for registrationprocessor transactions time calculation
+This folder contains JAVA utilities for registration processor transactions time calculation.

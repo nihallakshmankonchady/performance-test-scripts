@@ -1,2 +1,2 @@
 ### Contains
-* this folder contains java utility for volume of VID's generation
+This folder contains JAVA utility for volume of VID's generation.

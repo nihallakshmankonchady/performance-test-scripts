@@ -1,2 +1,2 @@
 ### Contains
-* this folder contains java utility for volume of registrations volume generation
+This folder contains JAVA utility for volume of registrations volume generation.
