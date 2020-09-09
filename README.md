@@ -10,32 +10,34 @@
     1. [Apache JMeter](https://jmeter.apache.org/)
     2. [Glowroot](https://glowroot.org/)
 
-### How to run performance scripts using apache JMeter tool
+### How to run performance scripts using Apache JMeter tool
 * Download Apache JMeter from https://jmeter.apache.org/download_jmeter.cgi
-* Download scripts each module
+* Download scripts for the required module.
 * Start JMeter by running the jmeter.bat file for Windows or jmeter file for Unix. 
-* Validate the scripts for one user
-* Execute a dry run for 10 min
-* Execute performance run with various loads in order to achieve targeted NFR's
+* Validate the scripts for one user.
+* Execute a dry run for 10 min.
+* Execute performance run with various loads in order to achieve targeted NFR's.
 
-### path to apache jmeter scripts module wise
-* Jmeter scripts are present in scripts folder in each modules
-* pre-registration scripts are present in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/pre-registration/scripts
-* registrationprocessor scripts are prsent in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/registration/registrationprocessor/scripts
-* id-authentication scripts are present in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/id-authentication/scripts
-* id-repository scripts are present in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/commons/id-repository/scripts
-* kernel scripts are present in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/commons/kernel/scripts
-* resident-services scripts are present in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/resident-services/scripts
-* java utilities are present in the path https://github.com/mosip/mosip-performance-tests-mt/tree/master/utilities
+### Apache JMeter scripts
+* JMeter scripts for each module are available in the respective scripts folders.
+	* [Pre-registration scripts](https://github.com/mosip/mosip-performance-tests-mt/tree/master/pre-registration/scripts).
+	* [Registration Processor 	scripts](https://github.com/mosip/mosip-performance-tests-mt/tree/master/registration/registrationprocessor/scripts).
+	* [ID Authentication scripts](https://github.com/mosip/mosip-performance-tests-mt/tree/master/id-authentication/scripts).
+	* [ID Repository scripts](https://github.com/mosip/mosip-performance-tests-mt/tree/master/commons/id-repository/scripts).
+	* [Kernel scripts](https://github.com/mosip/mosip-performance-tests-mt/tree/master/commons/kernel/scripts).
+	* [Resident Services scripts](https://github.com/mosip/mosip-performance-tests-mt/tree/master/resident-services/scripts)
+* [JMeter scripts for JAVA utilities](https://github.com/mosip/mosip-performance-tests-mt/tree/master/utilities).
 
-### execution steps modulewise
-* pre-registration execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/pre-registration/README.md
-* registrationprocessor execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/registration/registrationprocessor/README.md
-* id-authentication execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/id-authentication/README.md
-* id-repository execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/commons/id-repository/README.md
-* kernel execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/commons/kernel/README.md
-* resident-services execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/resident-services/README.md
-* java utilities execution steps are avalable in the path https://github.com/mosip/mosip-performance-tests-mt/blob/master/utilities/README.md
+### Execution steps for various scripts
+* [Pre-registration execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/pre-registration/README.md)
+* [Registration Processor execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/registration/registrationprocessor/README.md)
+* [ID Authentication execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/id-authentication/README.md)
+* [ID Repository execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/commons/id-repository/README.md)
+* [Kernel execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/commons/kernel/README.md)
+* [Resident Services execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/resident-services/README.md)
+* [JAVA utilities execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/utilities/README.md)
+
+---
 
 ### How to contribute
 You can contribute to MOSIP! If you see a problem, or have inputs on how we can improve, please see the [Contributor Guide](https://github.com/mosip/mosip-docs/wiki/Contributor-Guide) on how to file bugs, contribute code, and more.
