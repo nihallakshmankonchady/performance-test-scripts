@@ -5,6 +5,6 @@ public class Config {
 	public Config() {
 	}
 
-	public static final Integer ITERATIONS_COUNT = 4000;
+	public static final Integer ITERATIONS_COUNT = 1;
 
 }

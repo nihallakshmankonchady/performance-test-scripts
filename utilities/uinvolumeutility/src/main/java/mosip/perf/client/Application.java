@@ -34,8 +34,8 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		int THREAD_COUNT = 200;
-		int ITERATIONS = 500;
+		int THREAD_COUNT = 1;
+		//int ITERATIONS = 500;
 		List<Thread> threads = new ArrayList<Thread>(THREAD_COUNT);
 
 		// clientMain.start();
