@@ -18,7 +18,7 @@
 * Execute a dry run for 10 min.
 * Execute performance run with various loads in order to achieve targeted NFR's.
 
-### Apache JMeter scripts
+### Apache JMeter scripts module wise
 * JMeter scripts for each module are available in the respective scripts folders.
 	* [Pre-registration scripts](https://github.com/mosip/mosip-performance-tests-mt/tree/master/pre-registration/scripts).
 	* [Registration Processor 	scripts](https://github.com/mosip/mosip-performance-tests-mt/tree/master/registration/registrationprocessor/scripts).
@@ -28,7 +28,7 @@
 	* [Resident Services scripts](https://github.com/mosip/mosip-performance-tests-mt/tree/master/resident-services/scripts)
 * [JAVA utilities](https://github.com/mosip/mosip-performance-tests-mt/tree/master/utilities).
 
-### Execution steps for various scripts
+### Execution steps for module wise
 * [Pre-registration execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/pre-registration/README.md)
 * [Registration Processor execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/registration/registrationprocessor/README.md)
 * [ID Authentication execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/id-authentication/README.md)
