@@ -37,9 +37,9 @@
 * [Resident Services execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/resident-services/README.md)
 * [JAVA utilities execution steps](https://github.com/mosip/mosip-performance-tests-mt/blob/master/utilities/README.md)
 
-# Documentation
+### Documentation
 
 MOSIP documentation is available on [Wiki](https://github.com/mosip/documentation/wiki)
 
-# License
+### License
 This project is licensed under the terms of [Mozilla Public License 2.0](https://github.com/mosip/mosip-platform/blob/master/LICENSE)
