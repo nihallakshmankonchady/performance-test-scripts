@@ -13,3 +13,10 @@
 		5. db_password -- password of kernel database
     3. execute the script for desired number of concurrent users set in thread group
 * Use the same instrunctions for other scripts as well
+
+### Documentation
+
+MOSIP documentation is available on [Wiki](https://github.com/mosip/documentation/wiki)
+
+### License
+This project is licensed under the terms of [Mozilla Public License 2.0](https://github.com/mosip/mosip-platform/blob/master/LICENSE)

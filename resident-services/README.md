@@ -22,3 +22,10 @@
 		5. vid -- vid
 		6. auth_types -- demo, bio-Finger, bio-Iris, bio-FACE
     7. continue above steps for remaining scripts as well 
+
+### Documentation
+
+MOSIP documentation is available on [Wiki](https://github.com/mosip/documentation/wiki)
+
+### License
+This project is licensed under the terms of [Mozilla Public License 2.0](https://github.com/mosip/mosip-platform/blob/master/LICENSE)

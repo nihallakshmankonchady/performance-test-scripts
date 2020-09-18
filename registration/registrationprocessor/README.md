@@ -35,3 +35,10 @@
     1. point the sandbox url to ${BASE_URL}
     2. Provide generated regids in regid_file.csv
     3. Once above java utility is executed ,It will generates the transaction_times.xlsx which has all the transaction times of each stages of each packets
+
+### Documentation
+
+MOSIP documentation is available on [Wiki](https://github.com/mosip/documentation/wiki)
+
+### License
+This project is licensed under the terms of [Mozilla Public License 2.0](https://github.com/mosip/mosip-platform/blob/master/LICENSE)
