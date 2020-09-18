@@ -2,7 +2,7 @@
 * This folder contains performance test scripts, test data, summary reports of ID Authentication module
 
 ### How to run JMeter scripts for data generation scenarios
-* Execute the scripts in test plan from [here](/scripts/data-generate)
+* Execute the scripts in test plan from [here](https://github.com/mosip/mosip-performance-tests-mt/tree/master/id-authentication/scripts)
     1. execute the 01-demo_address_data_generate-uin script to generate test data
 	2. point the sandbox URL to ${BASE_URL} 
 	3. set the parameters of sandbox database like db_host, db_port, db_name, db_user, db_password
@@ -29,7 +29,7 @@
     8. Follow the above steps for other scripts demographic, OTP, e-KYC based test data generations present in the test plan.
  				
 ### How to run jmeter scripts for authentication
- * Execute the scripts in testplan https://github.com/mosip/mosip-performance-tests-mt/tree/master/id-authentication/scripts/authentication
+ * Execute the scripts in testplan from [here](https://github.com/mosip/mosip-performance-tests-mt/tree/master/id-authentication/scripts/authentication)
     1. execute the 01- demo_address_auth-uin script to generate test data
 	2. point the sandbox url to ${BASE_URL} 
 	3. set the parameters of sandbox database like db_host, db_port, db_name, db_user, db_password
