@@ -22,12 +22,12 @@
     3. Execute script for 1 user
 	4. Execute the script for desired number of users/according to pre-registration ids to be consumed
 
-# APIs
+### APIs
 API documentation available on Wiki: [Pre-Registration APIs](https://github.com/mosip/documentation/wiki/Pre-Registration-APIs)
 
-# Documentation
+### Documentation
 
 MOSIP documentation is available on [Wiki](https://github.com/mosip/documentation/wiki)
 
-# License
+### License
 This project is licensed under the terms of [Mozilla Public License 2.0](https://github.com/mosip/mosip-platform/blob/master/LICENSE)
