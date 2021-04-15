@@ -1,0 +1,1176 @@
+{
+	"info": {
+		"_postman_id": "fcb24a89-6c12-4544-a0f7-bd5c14d94d67",
+		"name": "Pre-reg",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login Service",
+			"item": [
+				{
+					"name": "SendOTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"mosip.pre-registration.login.sendotp\",\r\n  \"version\": \"1.0\",\r\n  \"requesttime\": \"{{reqTime}}\",\r\n  \"request\": {\r\n    \"userId\": \"{{preReg_userID}}\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/login/sendOtp",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"login",
+								"sendOtp"
+							]
+						},
+						"description": "This will send OTP to registered user"
+					},
+					"response": []
+				},
+				{
+					"name": "validate otp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"mosip.pre-registration.login.useridotp\",\r\n  \"version\": \"1.0\",\r\n  \"requesttime\": \"{{reqTime}}\",\r\n  \"request\": {\r\n    \"otp\": \"111111\",\r\n    \"userId\": \"{{preReg_userID}}\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/login/validateOtp",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"login",
+								"validateOtp"
+							]
+						},
+						"description": "to valdtae the otp sent to a registered user"
+					},
+					"response": []
+				},
+				{
+					"name": "invalidate token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/login/invalidateToken",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"login",
+								"invalidateToken"
+							]
+						},
+						"description": "to invalidate otps sent previously and send a new otp to the user."
+					},
+					"response": []
+				},
+				{
+					"name": "login/config",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/login/config",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"login",
+								"config"
+							]
+						},
+						"description": "This request will load the configuration parameters while loading the pre-registration portal page"
+					},
+					"response": []
+				},
+				{
+					"name": "login/refreshconfig",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preregistration/v1/login/refreshconfig",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"login",
+								"refreshconfig"
+							]
+						},
+						"description": "This request will reload the configuration parameters."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demographic service",
+			"item": [
+				{
+					"name": "Add applications",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id\": \"mosip.pre-registration.demographic.create\",\r\n\t\"request\": {\r\n\t\t\"langCode\": \"eng\",\r\n\t\t\"demographicDetails\": {\r\n\t\t\t\"identity\": {\r\n\t\t\t\t\"IDSchemaVersion\": \"0.9\",\r\n\t\t\t\t\"firstName\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"FName\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"middleName\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"MName\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"lastName\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"Lname\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"suffix\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"Mr\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"dateOfBirth\": \"2007/01/01\",\r\n\t\t\t\t\"gender\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"MLE\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"residenceStatus\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"FLP\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"bloodType\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"101\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"maritalStatus\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"101\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"addressLine1\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"ytbfvgb\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"addressLine2\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"tngrbfevd\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"addressLine3\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"bfsd\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"addressLine4\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"rbtfevd\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"province\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"100037\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"City\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"100318\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"Barangay\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"101755\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"postalCode\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"143813\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"caddressLine1\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"caddressLine2\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"caddressLine3\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"caddressLine4\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"cprovince\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"ccity\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"cbarangay\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"cPostalCode\": [{\r\n\t\t\t\t\t\"language\": \"eng\",\r\n\t\t\t\t\t\"value\": \"\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"phone\": \"9606139887\",\r\n\t\t\t\t\"email\": \"niyati.swami@technoforte.co.in\"\r\n\t\t\t}\r\n\t\t}\r\n\t},\r\n\t\"version\": \"1.0\",\r\n\t\"requesttime\": \"2020-12-17T05:18:14.919Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/applications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"applications"
+							]
+						},
+						"description": "This request is used to create new pre-registration with demographic details"
+					},
+					"response": [
+						{
+							"name": "POST/applications",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"mosip.pre-registration.demographic.create\",\r\n  \"version\": \"1.0\",\r\n  \"request\": {\r\n    \"langCode\": \"eng\",\r\n    \"demographicDetails\": {\r\n      \"identity\": {\r\n        \"IDSchemaVersion\": 1,\r\n        \"fullName\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"mahesh binayak\"\r\n          },\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"پُجَ تهَكُر\"\r\n          }\r\n        ],\r\n        \"dateOfBirth\": \"1996/01/01\",\r\n        \"gender\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"MLE\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"MLE\"\r\n          }\r\n        ],\r\n        \"addressLine1\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"Green olive villa\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"گرِِن ُلِڤِ ڤِللَ\"\r\n          }\r\n        ],\r\n        \"residenceStatus\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"FR\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"FR\"\r\n          }\r\n        ],\r\n        \"addressLine2\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"22 ananda reddy Layout\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"٢٢ َنَندَ رِددي لَيُُت\"\r\n          }\r\n        ],\r\n        \"addressLine3\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"\"\r\n          }\r\n        ],\r\n        \"region\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"RSK\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"RSK\"\r\n          }\r\n        ],\r\n        \"province\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"KTA\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"KTA\"\r\n          }\r\n        ],\r\n        \"city\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"KNT\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"KNT\"\r\n          }\r\n        ],\r\n        \"zone\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"BNMR\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"BNMR\"\r\n          }\r\n        ],\r\n        \"postalCode\": \"14022\",\r\n        \"phone\":\"7008941519\",\r\n        \"email\": \"maheshbinayak@gmail.com\",\r\n        \"referenceIdentityNumber\": \" 57905897027539\"\r\n      }\r\n    }\r\n  },\r\n  \"requesttime\": \"2020-09-21T11:18:48.393Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://qa.mosip.net/preregistration/v1/applications",
+									"protocol": "https",
+									"host": [
+										"qa",
+										"mosip",
+										"net"
+									],
+									"path": [
+										"preregistration",
+										"v1",
+										"applications"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.16.1"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Sep 2020 09:15:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "173"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, DELETE, PUT, PATCH"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Date, Content-Type, Accept, X-Requested-With, Authorization, From, X-Auth-Token, Request-Id"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Set-Cookie"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": null,\n    \"version\": null,\n    \"responsetime\": \"2020-09-21T09:15:04.916Z\",\n    \"metadata\": null,\n    \"response\": null,\n    \"errors\": [\n        {\n            \"errorCode\": \"KER-ATH-401\",\n            \"message\": \"Authentication Failed\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Applications",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"mosip.pre-registration.demographic.update\",\r\n  \"version\": \"1.0\",\r\n  \"request\": {\r\n    \"langCode\": \"eng\",\r\n    \"demographicDetails\": {\r\n      \"identity\": {\r\n        \"IDSchemaVersion\": 1,\r\n        \"fullName\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"Test Book appointment\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"پُجَ تهَكُر\"\r\n          }\r\n        ],\r\n        \"dateOfBirth\": \"1996/01/01\",\r\n        \"gender\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"MLE\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"MLE\"\r\n          }\r\n        ],\r\n        \"addressLine1\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"A1\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"A1\"\r\n          }\r\n        ],\r\n        \"residenceStatus\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"FR\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"FR\"\r\n          }\r\n        ],\r\n        \"addressLine2\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"22 ananda reddy Layout\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"٢٢ َنَندَ رِددي لَيُُت\"\r\n          }\r\n        ],\r\n        \"addressLine3\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"\"\r\n          }\r\n        ],\r\n        \"region\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"RSK\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"RSK\"\r\n          }\r\n        ],\r\n        \"province\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"KTA\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"KTA\"\r\n          }\r\n        ],\r\n        \"city\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"KNT\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"KNT\"\r\n          }\r\n        ],\r\n        \"zone\": [\r\n          {\r\n            \"language\": \"eng\",\r\n            \"value\": \"BNMR\"\r\n          },\r\n          {\r\n            \"language\": \"ara\",\r\n            \"value\": \"BNMR\"\r\n          }\r\n        ],\r\n        \"postalCode\": \"14022\",\r\n        \"phone\":\"9606139888\",\r\n        \"email\": \"niyati.swami@technoforte.co.in\"\r\n      }\r\n    }\r\n  },\r\n  \"requesttime\": \"2020-10-16T10:21:25.952Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/applications/49730587097638",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"applications",
+								"49730587097638"
+							]
+						},
+						"description": "This request is used to update pre-registration's demographic details by providing pre-registration id in the path parameter and updated demographic details in request body."
+					},
+					"response": []
+				},
+				{
+					"name": "GET Applications with {preRegistrationId}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preregistration/v1/applications/49730587097638",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"applications",
+								"49730587097638"
+							]
+						},
+						"description": "This request is used to retrieve Pre-Registration demographic data by pre-Registration id provided in request path parameter."
+					},
+					"response": []
+				},
+				{
+					"name": "preregistration/applications/status/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preregistration/v1/applications/status/{{preReg_PRID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"applications",
+								"status",
+								"{{preReg_PRID}}"
+							]
+						},
+						"description": "This request is used to retrieve pre-registration application status by providing the pre-registration id in request path parameter."
+					},
+					"response": []
+				},
+				{
+					"name": "get applications details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preregistration/v1/applications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"applications"
+							]
+						},
+						"description": "This request is used to retrieve all Pre-Registration id, Full name in both language, Status Code, Document details(Only for Proof Of Address), Appointment details and Postal Code by user id from authorization token"
+					},
+					"response": []
+				},
+				{
+					"name": "delete applications",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preregistration/v1/applications/21504813854659",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"applications",
+								"21504813854659"
+							]
+						},
+						"description": "This request is used to discard the entire pre-registration details based pre-registration id provided in request path parameter."
+					},
+					"response": []
+				},
+				{
+					"name": "Search Pre-redg withr regcenterand From and To Date",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/appointment/preRegistrationId/10008?from_date=2020-06-01&to_date=      ",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"appointment",
+								"preRegistrationId",
+								"10008"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "2020-06-01"
+								},
+								{
+									"key": "to_date",
+									"value": "      "
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Document-Service",
+			"item": [
+				{
+					"name": "post Document[Upload Doc]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Document request",
+									"value": "{\n    \"id\": \"mosip.pre-registration.document.upload\",\n    \"version\" : \"1.0\",\n    \"requesttime\" : \"2020-10-16T04:30:41.370Z\",\n    \"request\" : {\n\t\"docCatCode\" : \"POI\",\n\t\"docTypCode\" : \"CIN\",\n\t\"langCode\" : \"eng\"\n     }\n}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Niyati.Swami/Downloads/Sample.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/documents/34801960526482",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"documents",
+								"34801960526482"
+							]
+						},
+						"description": "This request is used to upload document with the metadata which include document category code, document type code and document format for a pre-registration Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Copy Document",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/documents/47534680240327?catCode=POA,POI&sourcePreId=32482751856170",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"documents",
+								"47534680240327"
+							],
+							"query": [
+								{
+									"key": "catCode",
+									"value": "POA,POI"
+								},
+								{
+									"key": "sourcePreId",
+									"value": "32482751856170"
+								}
+							]
+						},
+						"description": "This request is used to copy the document from source pre-registration id to destination pre-registration id with the specified document category code.\r\nURL : https://{base_url}/preregistration/v1/documents/{preRegistrationId}?catCode={doc_cat_code}&sourcePreId={preRegistrationId}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Doc for a PRID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/documents/preregistration/34801960526482",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"documents",
+								"preregistration",
+								"34801960526482"
+							]
+						},
+						"description": "This request used to retrieve all documents metadata associated with particular pre-registration.\r\nURL : https://{base_url}/preregistration/v1/documents/preregistration/{preRegistrationId}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Document for a PRID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preregistration/v1/documents/a43b7e00-0f98-11eb-b1e1-93e5372a8cde?preRegistrationId=34801960526482",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"documents",
+								"a43b7e00-0f98-11eb-b1e1-93e5372a8cde"
+							],
+							"query": [
+								{
+									"key": "preRegistrationId",
+									"value": "34801960526482"
+								}
+							]
+						},
+						"description": "This request used to retrieve the document for a particular document id from the File System server\r\n\r\nURL : GET /documents/{documentId}?preRegistrationId={preRegistrationId}\r\n\"response\":{\r\n    \"document\": \"ByteArray\"\r\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete ALL Document for a PRID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preregistration/v1/documents/preregistration/51496289576491",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"documents",
+								"preregistration",
+								"51496289576491"
+							]
+						},
+						"description": "This request used to delete all the documents which are associated with requested pre-registration id.\r\n\r\nURL : DELETE /documents/preregistration/{preRegsitrationId}\r\nResponse :\r\nAll documents assosiated with requested pre-registration id deleted sucessfully\""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Specific Document",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preregistration/v1/documents/271eea29-0d34-11eb-b1e1-978a6bf56ca6?preRegistrationId=51496289576491",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"documents",
+								"271eea29-0d34-11eb-b1e1-978a6bf56ca6"
+							],
+							"query": [
+								{
+									"key": "preRegistrationId",
+									"value": "51496289576491"
+								}
+							]
+						},
+						"description": "This request used to delete the document for a particular document id from database and File System server\r\n\r\nBaseuRL : DELETE /documents/{documentId}?preRegistrationId={preRegistrationId}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DataSync Service",
+			"item": [
+				{
+					"name": "post/sync",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"mosip.pre-registration.datasync.fetch.ids\",\r\n  \"version\": \"1.0\",\r\n  \"requesttime\": \"2020-10-30T08:53:38.460Z\",\r\n  \"request\": {\r\n    \"registrationCenterId\":\"10001\",\r\n    \"fromDate\":\"2020-05-09\",\r\n    \"toDate\":\"2021-10-11\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}//preregistration/v1/sync",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"",
+								"preregistration",
+								"v1",
+								"sync"
+							]
+						},
+						"description": "This request is used by registration client to retrieve all the pre-registration Ids by the date range of appointment done.\r\n\r\n\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "post/sync/consumedPreRegIds",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"mosip.pre-registration.datasync.store\",\r\n  \"version\": \"1.0\",\r\n  \"requesttime\": \"2020-10-13T07:05:08.850Z\",\r\n  \"request\": {\r\n    \"preRegistrationIds\": [\r\n      \"39236840369827\",\r\n      \"62315869042179\"\r\n    ]\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/sync/consumedPreRegIds",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"sync",
+								"consumedPreRegIds"
+							]
+						},
+						"description": "This request is used by registration processor, to retrieve all processed pre-registration ids and store in pre-registration database so that after batch jon run , job will delete records from main table and move to history table(consumed)."
+					},
+					"response": []
+				},
+				{
+					"name": "get sync/preregistrationid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://sandbox.mosip.net/preregistration/v1/sync/49018596730537",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"mosip",
+								"net"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"sync",
+								"49018596730537"
+							]
+						},
+						"description": "This request is used by registration client to retrieve particular pre-registration data based on a pre-registration id."
+					},
+					"response": []
+				}
+			],
+			"description": "This service enables Pre-Registration to a registration client, request to retrieve all pre-registration ids based on registration client id, appointment date and an user type.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Booking service",
+			"item": [
+				{
+					"name": "GET /appointment/availability/sync",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/appointment/availability/sync",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"appointment",
+								"availability",
+								"sync"
+							]
+						},
+						"description": "This request is used to synchronize booking slots availability table with master data."
+					},
+					"response": []
+				},
+				{
+					"name": "Book an appointment for multiple pre-reg id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"mosip.pre-registration.booking.book\",\r\n  \"version\": \"1.0\",\r\n  \"requesttime\": \"2020-12-17T06:24:26.040Z\",\r\n  \"request\":{\r\n  \t\"bookingRequest\": [\r\n  \t\t{\r\n  \t\t\"preRegistrationId\":\"27361295179021\",\r\n        \"registration_center_id\": \"10002\",\r\n        \"appointment_date\": \"2020-12-19\",\r\n        \"time_slot_from\": \"08:00:00\",\r\n        \"time_slot_to\": \"08:15:00\"\r\n   }\r\n\r\n \r\n  ]}\r\n} "
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/appointment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"appointment"
+							]
+						},
+						"description": "This request is used to book mulitple registration centers. If the appointment data exists for the requested pre-registration ids, it will cancel it and update the new appointment data. If no appointment data then it will book an appointment for specified registration center and time slot."
+					},
+					"response": []
+				},
+				{
+					"name": "Book an appointment for multiple pre-reg id Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"mosip.pre-registration.booking.book\",\r\n  \"version\": \"1.0\",\r\n  \"requesttime\": \"2020-07-30T06:24:26.040Z\",\r\n  \"request\":{\r\n  \t\"bookingRequest\": [\r\n  \t\t{\r\n  \t\t\"preRegistrationId\":\"47127049137238\",\r\n        \"registration_center_id\": \"10008\",\r\n        \"appointment_date\": \"2020-08-03\",\r\n        \"time_slot_from\": \"14:15:00\",\r\n        \"time_slot_to\": \"14:30:00\"\r\n   },\r\n   {\r\n  \t\t\"preRegistrationId\":\"42967154728920\",\r\n        \"registration_center_id\": \"10007\",\r\n        \"appointment_date\": \"2020-08-01\",\r\n        \"time_slot_from\": \"12:45:00\",\r\n        \"time_slot_to\": \"13:00:00\"\r\n   }\r\n \r\n  ]}\r\n} "
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/appointment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"appointment"
+							]
+						},
+						"description": "This request is used to book mulitple registration centers. If the appointment data exists for the requested pre-registration ids, it will cancel it and update the new appointment data. If no appointment data then it will book an appointment for specified registration center and time slot."
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Appointment for PRID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preregistration/v1/appointment/63809568256172",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"appointment",
+								"63809568256172"
+							]
+						},
+						"description": "This request used to cancel the appointment. Which will retrieve the appointment details for the specified pre-registration id,if appointment data exists update the availability for the slot by increasing the value and delete the record from the table and update the demographic record status \"Pending_Appointment\".\r\n\r\nURL : PUT /appointment/{preRegistrationId} /cancel appointment."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /appointment/{preRegistrationId} ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preregistration/v1/appointment/availability/10029",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"appointment",
+								"availability",
+								"10029"
+							]
+						},
+						"description": "This request is to retrieve Pre-Registration appointment details by pre-Registration id."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /appointment/availability/{registrationCenterId} ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preregistration/v1/appointment/availability/7777",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"appointment",
+								"availability",
+								"7777"
+							]
+						},
+						"description": "This request is used to retrieve all appointment slots available for booking based on the specified registration center id."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /appointment/preRegistrationId/{registrationCenterId}?from_date=:Date&to_date=:Date.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/preregistration/v1/appointment/preRegistrationId/10004?from_date=2021-02-17&to_date=2021-03-18",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"appointment",
+								"preRegistrationId",
+								"10004"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "2021-02-17"
+								},
+								{
+									"key": "to_date",
+									"value": "2021-03-18"
+								}
+							]
+						},
+						"description": " This request is used to retrieve all pre-registration ids available for specified registration center and date range"
+					},
+					"response": []
+				}
+			],
+			"description": "This service details used by Pre-Registration portal to book an appointment by providing his/her basic appointment details.\r\n"
+		},
+		{
+			"name": "BatchJob Service",
+			"item": [
+				{
+					"name": "PUT /expiredStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"mosip.pre-registration.batchjob.service.expired\",\r\n  \"version\": \"1.0\",\r\n  \"responsetime\": \"2020-09-22T10:15:55.303Z\",\r\n  \"response\": \"Registration appointment status updated to expired successfully\",\r\n  \"errors\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/batch/expiredStatus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"batch",
+								"expiredStatus"
+							]
+						},
+						"description": "This request is used to update status of pre-registration ids appointment to expired status in database. Batch service will expire all the appointments from date before exceution date till the last execution date of batch job"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /consumedStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"mosip.pre-registration.batchjob.service.consumed\",\r\n  \"version\" : \"1.0\",\r\n  \"responsetime\": \"2020-09-22T17:31:04.021Z\",\r\n  \"response\": \"Demographic status to consumed updated successfully\",\r\n  \"errors\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/batch/consumedStatus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"batch",
+								"consumedStatus"
+							]
+						},
+						"description": "This request is used to update the consumed status for all pre-Registration ids given by registration processor."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Generate QR code service (public)",
+			"item": [
+				{
+					"name": "POST qrCode/generate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"mosip.pre-registration.qrcode.generate\",\r\n  \"version\": \"1.0\",\r\n  \"requesttime\": \"2020-10-13T15:31:32.957Z\",\r\n  \"request\": \"37802950913289\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/qrCode/generate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"qrCode",
+								"generate"
+							]
+						},
+						"description": "This request is used to generate QR Code for the pre-registration acknowledgement."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification Service (public)",
+			"item": [
+				{
+					"name": "POST notification/notify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "mosip.pre-registration.notification.notify",
+									"type": "text"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "text"
+								},
+								{
+									"key": "requesttime",
+									"value": "2020-10-17T05:09:24.622Z",
+									"type": "text"
+								},
+								{
+									"key": "request",
+									"value": "{\t\t\"name\": \"First\",\n\t\t\"preRegistrationId\": \"48520928315287\",\n\t\t\"appointmentDate\": \"2020-10-19\",\n\t\t\"appointmentTime\": \"10:30 AM\",\n\t\t\"mobNum\": \"9606139887\",\n\t\t\"emailID\": \"niyati.swami@gmail.com\",\n\t\t\"additionalRecipient\": true,\n\t\t\"isBatch\": false\n\t}",
+									"type": "text"
+								},
+								{
+									"key": "attachment",
+									"type": "file",
+									"src": "/C:/Users/Niyati.Swami/Downloads/48520928315287.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/notification/notify?langCode=eng",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"notification",
+								"notify"
+							],
+							"query": [
+								{
+									"key": "langCode",
+									"value": "eng"
+								}
+							]
+						},
+						"description": "This request is used to notify the pre-registration acknowledgement via Email and SMS."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transliteration Service (Public)",
+			"item": [
+				{
+					"name": "POST /transliteration/transliterate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"mosip.pre-registration.transliteration.transliterate\",\r\n  \"version\": \"1.0\",\r\n  \"requesttime\": \"2020-10-13T15:31:32.957Z\",\r\n  \"request\": {\r\n    \"from_field_lang\": \"eng\",\r\n    \"from_field_value\": \"Kishan\",\r\n    \"to_field_lang\": \"ara\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/transliteration/transliterate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"transliteration",
+								"transliterate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Captcha Service (Public)",
+			"item": [
+				{
+					"name": "POST /captcha/validatecaptcha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"mosip.pre-registration.captcha.id.validate\",\r\n  \"version\": \"1.0\",\r\n  \"requesttime\": \"2020-09-22T15:31:32.957Z\",\r\n  \"request\": {\r\n    \"captchaToken\": \"token_string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/preregistration/v1/captcha/validatecaptcha",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"preregistration",
+								"v1",
+								"captcha",
+								"validatecaptcha"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
