@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-@author: anand-babaleshwar
--->
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
@@ -27,37 +24,18 @@
             <stringProp name="Argument.value">50</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="RegID" elementType="Argument">
-            <stringProp name="Argument.name">RegID</stringProp>
-            <stringProp name="Argument.value">10006100431206920200413052815</stringProp>
+          <elementProp name="start_time_throughput" elementType="Argument">
+            <stringProp name="Argument.name">start_time_throughput</stringProp>
+            <stringProp name="Argument.value">2021-06-07 12:55:45.000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="Regproc DB Configuration - qa" enabled="false">
-        <boolProp name="autocommit">true</boolProp>
-        <stringProp name="checkQuery">select 1</stringProp>
-        <stringProp name="connectionAge">5000</stringProp>
-        <stringProp name="dataSource">regprc_connection</stringProp>
-        <stringProp name="dbUrl">jdbc:postgresql://${db_host}:${db_port}/${db_name}</stringProp>
-        <stringProp name="driver">org.postgresql.Driver</stringProp>
-        <boolProp name="keepAlive">true</boolProp>
-        <stringProp name="password">postgres</stringProp>
-        <stringProp name="poolMax">50</stringProp>
-        <stringProp name="timeout">10000</stringProp>
-        <stringProp name="transactionIsolation">DEFAULT</stringProp>
-        <stringProp name="trimInterval">6000</stringProp>
-        <stringProp name="username">${db_user}</stringProp>
-        <stringProp name="initQuery"></stringProp>
-        <boolProp name="preinit">false</boolProp>
-        <stringProp name="connectionProperties"></stringProp>
-      </JDBCDataSource>
-      <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server_Data" enabled="true">
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server_Data - qa" enabled="false">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding">UTF-8</stringProp>
-        <stringProp name="filename">${data_path}\server_data.csv</stringProp>
+        <stringProp name="filename">C:\MOSIP_PT\Scripts\Data\server_data_qa_db.csv</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
@@ -66,29 +44,115 @@
         <stringProp name="variableNames">BASE_URL_1,db_host,db_port,db_name,db_user,db_password</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="Regproc DB Configuration - preprod" enabled="true">
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Server_Data - cellbox" enabled="false">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
+        <stringProp name="filename">${data_path}\server_data_cellbox_db.csv</stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">BASE_URL_1,db_host,db_port,db_name,db_user,db_password</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="Regproc DB Configuration - qa" enabled="false">
         <boolProp name="autocommit">true</boolProp>
         <stringProp name="checkQuery">select 1</stringProp>
         <stringProp name="connectionAge">5000</stringProp>
         <stringProp name="dataSource">regprc_connection</stringProp>
-        <stringProp name="dbUrl">jdbc:postgresql://${db_host}:${db_port}/${db_name}</stringProp>
+        <stringProp name="dbUrl">jdbc:postgresql://qa.mosip.net:30090/mosip_regprc</stringProp>
         <stringProp name="driver">org.postgresql.Driver</stringProp>
         <boolProp name="keepAlive">true</boolProp>
-        <stringProp name="password">Mosip@dev123</stringProp>
+        <stringProp name="password">mosip123</stringProp>
         <stringProp name="poolMax">50</stringProp>
         <stringProp name="timeout">10000</stringProp>
         <stringProp name="transactionIsolation">DEFAULT</stringProp>
         <stringProp name="trimInterval">6000</stringProp>
-        <stringProp name="username">${db_user}</stringProp>
+        <stringProp name="username">regprcuser</stringProp>
         <stringProp name="initQuery"></stringProp>
         <boolProp name="preinit">false</boolProp>
         <stringProp name="connectionProperties"></stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config -syncRequestData.txt - preprod" enabled="true">
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="Regproc DB Configuration - dev" enabled="false">
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="checkQuery">select 1</stringProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="dataSource">regprc_connection</stringProp>
+        <stringProp name="dbUrl">jdbc:postgresql://dev.mosip.net:30090/mosip_regprc</stringProp>
+        <stringProp name="driver">org.postgresql.Driver</stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="password">mosip123</stringProp>
+        <stringProp name="poolMax">50</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <stringProp name="trimInterval">6000</stringProp>
+        <stringProp name="username">regprcuser</stringProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="connectionProperties"></stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="Regproc DB Configuration - cellbox" enabled="true">
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="checkQuery">select 1</stringProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="dataSource">regprc_connection</stringProp>
+        <stringProp name="dbUrl">jdbc:postgresql://cellbox.mosip.net:30090/mosip_regprc</stringProp>
+        <stringProp name="driver">org.postgresql.Driver</stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="password">mosip123</stringProp>
+        <stringProp name="poolMax">50</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <stringProp name="trimInterval">6000</stringProp>
+        <stringProp name="username">regprcuser</stringProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="connectionProperties"></stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config -syncRequestData" enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="filename">C:\MOSIP_PT\Data\temp\syncRequestData1.txt</stringProp>
+        <stringProp name="filename">C:\MOSIP_PT\test1\temp\syncRequestData_softhsm.txt</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">true</boolProp>
+        <stringProp name="variableNames">RegID</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config -syncRequestData-aws" enabled="false">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">C:\MOSIP_PT\Data_aws_hsm\temp\syncRequestData1.txt</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">true</boolProp>
+        <stringProp name="variableNames">RegID</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config -syncRequestData-aws" enabled="false">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">C:\MOSIP_PT\Data_aws_hsm_1\temp\syncRequestData1.txt</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">true</boolProp>
+        <stringProp name="variableNames">RegID</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config -checksums.txt" enabled="false">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">C:\MOSIP_PT\Data\temp\checksums1.txt</stringProp>
         <boolProp name="ignoreFirstLine">false</boolProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">false</boolProp>
@@ -236,7 +300,7 @@
         </ConstantTimer>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="RegProc_DB-trn_status-preprod - 1 thread" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="RegProc_DB-trn_status" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -244,145 +308,6 @@
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
-        <stringProp name="ThreadGroup.delay"></stringProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-      </ThreadGroup>
-      <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config - checksums" enabled="false">
-          <stringProp name="delimiter">,</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">C:\MOSIP_PT\Data1\temp\checksums.txt</stringProp>
-          <boolProp name="ignoreFirstLine">false</boolProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">false</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">true</boolProp>
-          <stringProp name="variableNames">RegID</stringProp>
-        </CSVDataSet>
-        <hashTree/>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration" enabled="false">
-          <stringProp name="dataSource">regprc_connection</stringProp>
-          <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select id,reg_type,applicant_type,status_code,lang_code,latest_trn_type_code,latest_trn_status_code,status_comment from regprc.registration where id=&apos;${RegID}&apos; order by upd_dtimes</stringProp>
-          <stringProp name="queryArguments"></stringProp>
-          <stringProp name="queryArgumentsTypes"></stringProp>
-          <stringProp name="variableNames"></stringProp>
-          <stringProp name="resultVariable"></stringProp>
-          <stringProp name="queryTimeout"></stringProp>
-          <stringProp name="resultSetHandler">Store as String</stringProp>
-          <stringProp name="resultSetMaxRows"></stringProp>
-        </JDBCSampler>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1149187101">SUCCESS</stringProp>
-              <stringProp name="-604548089">IN_PROGRESS</stringProp>
-              <stringProp name="1691835182">PROCESSED</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message">Result of query doesn&apos;t contain SUCCESS in status_code</stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">34</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction" enabled="true">
-          <stringProp name="dataSource">regprc_connection</stringProp>
-          <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;${RegID}&apos; order by upd_dtimes</stringProp>
-          <stringProp name="queryArguments"></stringProp>
-          <stringProp name="queryArgumentsTypes"></stringProp>
-          <stringProp name="variableNames"></stringProp>
-          <stringProp name="resultVariable"></stringProp>
-          <stringProp name="queryTimeout"></stringProp>
-          <stringProp name="resultSetHandler">Store as String</stringProp>
-          <stringProp name="resultSetMaxRows"></stringProp>
-        </JDBCSampler>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="67232232">Error</stringProp>
-              <stringProp name="2181950">Fail</stringProp>
-              <stringProp name="3135262">fail</stringProp>
-              <stringProp name="-188109835">not found</stringProp>
-              <stringProp name="66247144">ERROR</stringProp>
-              <stringProp name="67232232">Error</stringProp>
-              <stringProp name="2150174">FAIL</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message">Result of query contains erroneous word in the result</stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">6</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction_modified" enabled="false">
-          <stringProp name="dataSource">regprc_connection</stringProp>
-          <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select count(*) from regprc.registration_transaction where cr_dtimes&gt;&apos;2019-12-10 06:33:12.000&apos;	 AND status_comment LIKE &apos;SFTP%&apos;</stringProp>
-          <stringProp name="queryArguments"></stringProp>
-          <stringProp name="queryArgumentsTypes"></stringProp>
-          <stringProp name="variableNames"></stringProp>
-          <stringProp name="resultVariable"></stringProp>
-          <stringProp name="queryTimeout"></stringProp>
-          <stringProp name="resultSetHandler">Store as String</stringProp>
-          <stringProp name="resultSetMaxRows"></stringProp>
-        </JDBCSampler>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="2150174">FAIL</stringProp>
-              <stringProp name="2096857181">Failed</stringProp>
-              <stringProp name="-809373649">Exception</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message">Result of query doesn&apos;t contain SUCCESS in status_code</stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">6</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Registration transaction types" enabled="false">
-          <stringProp name="dataSource">regprc_connection</stringProp>
-          <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select distinct trn_type_code from registration_transaction</stringProp>
-          <stringProp name="queryArguments"></stringProp>
-          <stringProp name="queryArgumentsTypes"></stringProp>
-          <stringProp name="variableNames"></stringProp>
-          <stringProp name="resultVariable"></stringProp>
-          <stringProp name="queryTimeout"></stringProp>
-          <stringProp name="resultSetHandler">Store as String</stringProp>
-          <stringProp name="resultSetMaxRows"></stringProp>
-        </JDBCSampler>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="2150174">FAIL</stringProp>
-              <stringProp name="2096857181">Failed</stringProp>
-              <stringProp name="-809373649">Exception</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message">Result of query doesn&apos;t contain SUCCESS in status_code</stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">6</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-          <stringProp name="ConstantTimer.delay">1000</stringProp>
-        </ConstantTimer>
-        <hashTree/>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="RegProc_DB-trn_status-preprod" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">20</stringProp>
-        </elementProp>
-        <stringProp name="ThreadGroup.num_threads">100</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">20</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
@@ -417,7 +342,7 @@
             <intProp name="Assertion.test_type">6</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="2542607">SFTP</stringProp>
               <stringProp name="-809373649">Exception</stringProp>
@@ -434,6 +359,231 @@
         </hashTree>
         <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
           <stringProp name="ConstantTimer.delay">100</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="RegProc_DB-trn_status" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">10</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction_table" enabled="true">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;${RegID}&apos; order by upd_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - UPLOAD_PACKET" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1704253306">UPLOAD_PACKET</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1739740309">DEMOGRAPHIC_VERIFICATION</stringProp>
+              <stringProp name="2124196634">BIOGRAPHIC_VERIFICATION</stringProp>
+              <stringProp name="525036782">UIN_GENERATOR</stringProp>
+              <stringProp name="-1216096541">PRINT_SERVICE</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1779085124">REPROCESS</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+              <stringProp name="1481625679">exception</stringProp>
+              <stringProp name="2150174">FAIL</stringProp>
+              <stringProp name="3135262">fail</stringProp>
+              <stringProp name="2181950">Fail</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+          <stringProp name="ConstantTimer.delay">1000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="RegProc_DB-trn_delete" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-delete demo-dedup" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">delete from regprc.individual_demographic_dedup</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1739740309">DEMOGRAPHIC_VERIFICATION</stringProp>
+              <stringProp name="2124196634">BIOGRAPHIC_VERIFICATION</stringProp>
+              <stringProp name="525036782">UIN_GENERATOR</stringProp>
+              <stringProp name="-1216096541">PRINT_SERVICE</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2542607">SFTP</stringProp>
+              <stringProp name="-809373649">Exception</stringProp>
+              <stringProp name="1481625679">exception</stringProp>
+              <stringProp name="2150174">FAIL</stringProp>
+              <stringProp name="3135262">fail</stringProp>
+              <stringProp name="2181950">Fail</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-delete registration list" enabled="true">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">delete from regprc.registration_list where reg_id=&apos;${RegID}&apos;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1739740309">DEMOGRAPHIC_VERIFICATION</stringProp>
+              <stringProp name="2124196634">BIOGRAPHIC_VERIFICATION</stringProp>
+              <stringProp name="525036782">UIN_GENERATOR</stringProp>
+              <stringProp name="-1216096541">PRINT_SERVICE</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2542607">SFTP</stringProp>
+              <stringProp name="-809373649">Exception</stringProp>
+              <stringProp name="1481625679">exception</stringProp>
+              <stringProp name="2150174">FAIL</stringProp>
+              <stringProp name="3135262">fail</stringProp>
+              <stringProp name="2181950">Fail</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-delete registration" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">delete from regprc.registration where id=&apos;${RegID}&apos;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1739740309">DEMOGRAPHIC_VERIFICATION</stringProp>
+              <stringProp name="2124196634">BIOGRAPHIC_VERIFICATION</stringProp>
+              <stringProp name="525036782">UIN_GENERATOR</stringProp>
+              <stringProp name="-1216096541">PRINT_SERVICE</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2542607">SFTP</stringProp>
+              <stringProp name="-809373649">Exception</stringProp>
+              <stringProp name="1481625679">exception</stringProp>
+              <stringProp name="2150174">FAIL</stringProp>
+              <stringProp name="3135262">fail</stringProp>
+              <stringProp name="2181950">Fail</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+          <stringProp name="ConstantTimer.delay">300</stringProp>
         </ConstantTimer>
         <hashTree/>
       </hashTree>
@@ -474,6 +624,366 @@
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">false</boolProp>
             <intProp name="Assertion.test_type">34</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="true">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100299992620201214071330&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100296771020201211153219&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100297921820201211153506&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100294251820201211153507&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100297801020201211153743&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100294789320201219235332&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100295913220201214063209&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100292903220201214063245&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100296345320201214065954&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100293299220201214065908&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100294527320201201090146&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100294461520201201084705&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100295841220201201085457&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100295135620201201085205&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10010100294325420201201083634&apos; order by cr_dtimes</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
@@ -529,126 +1039,6 @@
           <stringProp name="dataSource">regprc_connection</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
           <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10002100742539620200707051632&apos; order by cr_dtimes</stringProp>
-          <stringProp name="queryArguments"></stringProp>
-          <stringProp name="queryArgumentsTypes"></stringProp>
-          <stringProp name="variableNames"></stringProp>
-          <stringProp name="resultVariable"></stringProp>
-          <stringProp name="queryTimeout"></stringProp>
-          <stringProp name="resultSetHandler">Store as String</stringProp>
-          <stringProp name="resultSetMaxRows"></stringProp>
-        </JDBCSampler>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-809373649">Exception</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">6</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="true">
-          <stringProp name="dataSource">regprc_connection</stringProp>
-          <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10002100741461720200709080206&apos; order by cr_dtimes</stringProp>
-          <stringProp name="queryArguments"></stringProp>
-          <stringProp name="queryArgumentsTypes"></stringProp>
-          <stringProp name="variableNames"></stringProp>
-          <stringProp name="resultVariable"></stringProp>
-          <stringProp name="queryTimeout"></stringProp>
-          <stringProp name="resultSetHandler">Store as String</stringProp>
-          <stringProp name="resultSetMaxRows"></stringProp>
-        </JDBCSampler>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-809373649">Exception</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">6</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
-          <stringProp name="dataSource">regprc_connection</stringProp>
-          <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10002100744709120200702071851&apos; order by cr_dtimes</stringProp>
-          <stringProp name="queryArguments"></stringProp>
-          <stringProp name="queryArgumentsTypes"></stringProp>
-          <stringProp name="variableNames"></stringProp>
-          <stringProp name="resultVariable"></stringProp>
-          <stringProp name="queryTimeout"></stringProp>
-          <stringProp name="resultSetHandler">Store as String</stringProp>
-          <stringProp name="resultSetMaxRows"></stringProp>
-        </JDBCSampler>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-809373649">Exception</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">6</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
-          <stringProp name="dataSource">regprc_connection</stringProp>
-          <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10002100746507820200702072040&apos; order by cr_dtimes</stringProp>
-          <stringProp name="queryArguments"></stringProp>
-          <stringProp name="queryArgumentsTypes"></stringProp>
-          <stringProp name="variableNames"></stringProp>
-          <stringProp name="resultVariable"></stringProp>
-          <stringProp name="queryTimeout"></stringProp>
-          <stringProp name="resultSetHandler">Store as String</stringProp>
-          <stringProp name="resultSetMaxRows"></stringProp>
-        </JDBCSampler>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-809373649">Exception</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">6</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
-          <stringProp name="dataSource">regprc_connection</stringProp>
-          <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10006100439296120200416134203&apos; order by cr_dtimes</stringProp>
-          <stringProp name="queryArguments"></stringProp>
-          <stringProp name="queryArgumentsTypes"></stringProp>
-          <stringProp name="variableNames"></stringProp>
-          <stringProp name="resultVariable"></stringProp>
-          <stringProp name="queryTimeout"></stringProp>
-          <stringProp name="resultSetHandler">Store as String</stringProp>
-          <stringProp name="resultSetMaxRows"></stringProp>
-        </JDBCSampler>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-809373649">Exception</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message">Result of query contains either of Exception in the result</stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">6</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request-registration_transaction - status" enabled="false">
-          <stringProp name="dataSource">regprc_connection</stringProp>
-          <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select reg_id,trn_type_code,status_code,status_comment,cr_dtimes from regprc.registration_transaction where reg_id=&apos;10006100437294820200416134206&apos; order by cr_dtimes</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames"></stringProp>
@@ -1118,7 +1508,7 @@ where cr_dtimes &gt; &apos;2020-03-27 09:15:00.997&apos;  and status_code=&apos;
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Number of packets" enabled="true">
           <stringProp name="dataSource">regprc_connection</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">SELECT count(*) FROM regprc.registration where cr_dtimes &gt; &apos;2020-07-15 06:42:04.00&apos;</stringProp>
+          <stringProp name="query">SELECT count(*) FROM regprc.registration where cr_dtimes &gt;= &apos;${start_time_throughput}&apos;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames"></stringProp>
@@ -1223,11 +1613,11 @@ where cr_dtimes &gt; &apos;2020-01-24 11:23:11.489 &apos; and status_code=&apos;
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Min cr_dtime" enabled="false">
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Min cr_dtime" enabled="true">
           <stringProp name="dataSource">regprc_connection</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
           <stringProp name="query">SELECT min(cr_dtimes) FROM regprc.registration_transaction
-where cr_dtimes &gt; &apos;2020-03-27 09:15:00.997&apos;</stringProp>
+where cr_dtimes &gt; &apos;${start_time_throughput}&apos;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames"></stringProp>
@@ -1250,11 +1640,11 @@ where cr_dtimes &gt; &apos;2020-03-27 09:15:00.997&apos;</stringProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Max cr_dtime" enabled="false">
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Max cr_dtime" enabled="true">
           <stringProp name="dataSource">regprc_connection</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
           <stringProp name="query">SELECT max(upd_dtimes) FROM regprc.registration_transaction
-where cr_dtimes &gt; &apos;2020-03-27 09:15:00.997&apos;</stringProp>
+where cr_dtimes &gt;= &apos;${start_time_throughput}&apos;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames"></stringProp>
@@ -1281,7 +1671,61 @@ where cr_dtimes &gt; &apos;2020-03-27 09:15:00.997&apos;</stringProp>
           <stringProp name="dataSource">regprc_connection</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
           <stringProp name="query">SELECT max(cr_dtimes)-min(cr_dtimes) FROM regprc.registration_transaction
-where cr_dtimes &gt;&apos;2020-07-15 06:42:04.00&apos;</stringProp>
+where cr_dtimes &gt;=&apos;${start_time_throughput}&apos;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2150174">FAIL</stringProp>
+              <stringProp name="2096857181">Failed</stringProp>
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query doesn&apos;t contain SUCCESS in status_code</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Count - REPROCESS" enabled="true">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">SELECT count(*) FROM regprc.registration_transaction
+where status_code=&apos;REPROCESS&apos; AND cr_dtimes &gt;&apos;${start_time_throughput}&apos;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultSetMaxRows"></stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2150174">FAIL</stringProp>
+              <stringProp name="2096857181">Failed</stringProp>
+              <stringProp name="-809373649">Exception</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message">Result of query doesn&apos;t contain SUCCESS in status_code</stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="List - REPROCESS" enabled="true">
+          <stringProp name="dataSource">regprc_connection</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">SELECT * FROM regprc.registration_transaction
+where status_code=&apos;REPROCESS&apos; and cr_dtimes &gt;&apos;${start_time_throughput}&apos;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames"></stringProp>
@@ -1648,7 +2092,7 @@ where cr_dtimes &gt;&apos;2020-07-15 06:42:04.00&apos;</stringProp>
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
