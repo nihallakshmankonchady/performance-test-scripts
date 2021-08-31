@@ -1,0 +1,18 @@
+namespace: default
+service:
+  serviceName: java-profiler-agent-svc
+  ports:
+    nodePort: 30070
+    profilerAgentPort: 8849
+  profileAppService: ida-kyc-service
+pv:
+  name: java-profiler-agent-pv
+  size: 500Mi
+pvc:
+  name: java-profiler-agent-pvc
+  size: 500Mi # Should not exceed pv size
+sc:
+  name: ""
+nfs:
+  server: console.sb
+  path: /srv/nfs/mosip/java-profiler-agent
