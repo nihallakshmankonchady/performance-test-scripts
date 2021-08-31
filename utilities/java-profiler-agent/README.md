@@ -47,8 +47,8 @@ command:
 
 	c. Add the below section under the spec.template.spec section
 
-		volumes:
-      	- name: profiler-agent
+        volumes:
+        - name: profiler-agent
           persistentVolumeClaim:
             claimName: java-profiler-agent-pvc
 
