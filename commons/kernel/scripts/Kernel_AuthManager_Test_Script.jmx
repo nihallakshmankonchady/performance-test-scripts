@@ -176,7 +176,7 @@
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
     &quot;appId&quot;: &quot;${appIdForIdPassword}&quot;,&#xd;
-    &quot;clientId&quot;: &quot;${clientIdForIdPassword }&quot;,&#xd;
+    &quot;clientId&quot;: &quot;${clientIdForIdPassword}&quot;,&#xd;
     &quot;clientSecret&quot;: &quot;${secretKeyForIdPassword}&quot;,&#xd;
     &quot;password&quot;: &quot;${password}&quot;,&#xd;
     &quot;userName&quot;: &quot;${userName}&quot;&#xd;
