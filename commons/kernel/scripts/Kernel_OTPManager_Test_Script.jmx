@@ -231,7 +231,7 @@
             <boolProp name="resetInterpreter">false</boolProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
-            <stringProp name="script">${__StringToFile(KeyAndOtpToValidate.txt,${key}&amp;${otpValidate}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(KeyAndOtpToValidate.txt,${keyValues}&amp;${otpValidate}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
