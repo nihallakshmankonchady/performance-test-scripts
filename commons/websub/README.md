@@ -20,7 +20,7 @@ This folder contains performance test scripts and test data of Websub module.
       
 * All the thread groups will run in a sequential manner & if we don't want to run all of them we can disable the one which we don't want to run.
 * Also for viewing the results or output of our test we have added certain listener test elements at the end of our test script which are - View Results Tree, Aggregate Report, Active Threads Over Time graph, Response Times Percentiles graph, Response Times vs Threads graph & Transaction Throughput vs Threads graph.
-* We have a test element named 'User Defined Variables' in the test script where the 
+* We have a test element named 'User Defined Variables' in the test script where we have the below variables - 
    1. server IP
    2. server port
    3. protocol
