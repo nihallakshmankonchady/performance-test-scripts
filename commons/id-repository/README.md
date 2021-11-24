@@ -1,31 +1,37 @@
-### Contains
-* This Folder contains performance test scripts, test data,summary reports of id-repository module
+This folder contains performance test scripts and test data of ID-Repository module.
 
+### Environment Required:-
+***Below modules should be running in kubernetes setup***
 
-### How to run jmeter scripts for data generation scenarios
-* We need to generate packets by running the java utility https://github.com/mosip/mosip-performance-tests-mt/tree/master/utilities/regprocessorpacketgenutil
-* Check below property in config.properties file located in src/main/resources for test data generation   
-    1. NUMBER_OF_TEST_DATA=10000 ( set desired number of test data ex:10000)
-	
-* Run below utility to generate test data for id-repository
-    1. test_data - To generate test data for idrepo create identity API
- 				
-### How to run jmeter scripts for id-repository
-* Execute the scripts in testplan https://github.com/mosip/mosip-performance-tests-mt/blob/master/commons/id-repository/scripts/01.idrepo_create_fullflow.jmx
-    1. execute the IdRepo-create script to generate test data
-	2. point the sandbox url to ${BASE_URL} 
-	3. set the parameters of below from reg_data.csv file 
-		fullName,dateOfBirth,age,gender,residenceStatus,addressLine1,addressLine2,addressLine3,region,province,city,postalCode,phone,email,localAdministrativeAuthority,cnieNumber	 
-	4. set the parameters like reg_id Generator
-		1. reg_id Generator -- any 6 digit random number
-	5. generate uin 
- 	6. create identity
-	7. generate vid
-* Use the same instrunctions for other scripts as well
+* Websub
+* Kernel notification service
+* Kernel audit service
+* Kernel authmanager service
+* Biosdk service
+* All IDrepo services
 
-### Documentation
+### Data prequisite:-
+* Center & Machine ID details are required for the RID Generation. This values can be updated based on the environment from [here](https://github.com/mosip/mosip-performance-tests-mt/blob/1.1.5/commons/id-repository/support-files/Center-MachineIDValues.csv).
+* Some of the identity variables like firstname, date of birth & gender can be added from [here](https://github.com/mosip/mosip-performance-tests-mt/blob/1.1.5/commons/id-repository/support-files/addIdentityRequestDetails.csv).
+* Some of the identity variables like firstname, date of birth, gender & address can be updated or modified from [here](https://github.com/mosip/mosip-performance-tests-mt/blob/1.1.5/commons/id-repository/support-files/updateIdentityRequestDetails.csv).
 
-MOSIP documentation is available on [Wiki](https://github.com/mosip/documentation/wiki)
-
-### License
-This project is licensed under the terms of [Mozilla Public License 2.0](https://github.com/mosip/mosip-platform/blob/master/LICENSE)
+### How to run JMeter scripts:-
+* We need to take care of the prerequisites first for which we a helper script [IDRepo_Helper_Script.jmx](https://github.com/mosip/mosip-performance-tests-mt/blob/1.1.5/commons/id-repository/scripts/IDRepo_Helper_Script.jmx).
+* The helper script has one thread group for the creation of authorization token which we will further use in our execution.
+* All the creation tasks which will happen that will automatically save the tokens created to a file in the bin folder of JMeter which will be used further by our test script for execution.
+* For the test execution part we have a script [IDRepo_Test_Script.jmx](https://github.com/mosip/mosip-performance-tests-mt/blob/1.1.5/commons/id-repository/scripts/IDRepo_Test_Script.jmx) which will do all the execution tasks.
+* In the test script we have a preparation & execution thread group for all the API's. In preparation group the data preparation part will happen & in the execution group the main test execution will take place.
+* The ID Repo module API's which we are considering here are - Retrieve Identity using UIN API, Retrieve Identity using VID API, Add Identity API, Update Identity API,Create VID API, Update VID API & Auth type status API.
+* All the thread groups will run in a sequential manner & if we don't want to run all of them we can disable the one which we don't want to run.
+* Also for viewing the results or output of our test we have added certain listener test elements at the end of our test script which are - View Results Tree, Aggregate Report, Active Threads Over Time graph, Response Times Percentiles graph, Response Times vs Threads graph & Transaction Throughput vs Threads graph.
+* We have a test element named 'User Defined Variables' in both the helper & test scripts where the 
+  1. server IP
+  2. server port
+  3. protocol
+  4. clientId
+  5. secretKey
+  6. appId
+  7. vidType - (This is specifically used for Create VID API where we can basically set the type of VID we want to use eg: Temporary or Perpetual)
+  8. lockStatus - (This is specifically used for Auth type status API where we can basically mention the auth status either it will be locked or unlocked)
+  
+  ***All these are parameterized & can be changed based on our requirements which will further reflect in the entire script***
