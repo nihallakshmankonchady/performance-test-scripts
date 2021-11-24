@@ -11,7 +11,7 @@ This folder contains performance test scripts and test data of Websub module.
 ### How to run JMeter script:-
 * This consist of a test script [Websub_Test_Script.jmx](https://github.com/mosip/mosip-performance-tests-mt/blob/1.2.0/commons/websub/script/Websub_Test_Script.jmx) which will do all the execution tasks.
 * The test script consists of 6 thread groups which are listed below - 
-   1. Registering Topic - This is basically used for registering a new topic to the websub and has to be run once before the other tasks/activities.
+   1. Registering Topic - This is basically used for registering a new topic to the websub and has to be run once before the other thread groups.
    2. Subscribing Topic - This is used for subscribing to the registered topic by using subscription id's which we have handled in our script using a counter named 'Subscription ID Counter'.
    3. Publishing Message - This is used for publishing messages to the websub which further will traverse to the subscribers.
    4. Delay - This is used to give delay between messages published and their results obtained.
