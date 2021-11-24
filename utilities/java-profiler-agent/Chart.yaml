@@ -1,0 +1,6 @@
+apiVersion: v2
+name: java-profiler-agent
+description: A Helm chart for configuring java profiler agents to app running in kubernets
+type: application
+version: 1.0.9
+appVersion: 1.0.9

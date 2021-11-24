@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.service.serviceName }}
+  namespace: {{ .Values.namespace }}
+spec:
+  type: NodePort
+  ports:
+  - port: {{ .Values.service.ports.nodePort }}
+    targetPort: {{ .Values.service.ports.profilerAgentPort }}
+    nodePort: {{ .Values.service.ports.nodePort }}
+  selector:
+    app: {{ .Values.service.profileAppService }}
