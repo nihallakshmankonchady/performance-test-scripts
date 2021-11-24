@@ -9,7 +9,7 @@ This folder contains performance test scripts and test data of Websub module.
 * We need to start the [Websub Perf Utility](https://github.com/mosip/mosip-performance-tests-mt/tree/1.1.5/utilities/websub-perf-utility).
 
 ### How to run JMeter script:-
-* This consist of a test script [Websub_Test_Script.jmx](https://github.com/mosip/mosip-performance-tests-mt/blob/1.2.0/commons/websub/scripts/Websub_Test_Script.jmx) which will do all the execution tasks.
+* This consist of a test script [Websub_Test_Script.jmx](https://github.com/mosip/mosip-performance-tests-mt/blob/1.2.0/commons/websub/script/Websub_Test_Script.jmx) which will do all the execution tasks.
 * The test script consists of 6 thread groups which are listed below - 
    1. Registering Topic - This is basically used for registering a new topic to the websub and has to be run once before the other tasks/activities.
    2. Subscribing Topic - This is used for subscribing to the registered topic by using subscription id's which we have handled in our script using a counter named 'Subscription ID Counter'.
@@ -33,6 +33,6 @@ This folder contains performance test scripts and test data of Websub module.
    10. publisherConcurrency - (This is used to update the number of threads/users for the Publishing Message thread group)
    11. publisherIterations - (This is used to update the number of iterations for the Publishing Message thread group)
    
-   **(Note - Total messages published to the websub = publisherConcurrency * publisherIterations)
+   **(Note - Total messages published to the websub = publisherConcurrency * publisherIterations)**
    
   ***All these are parameterized & can be changed based on our requirements which will further reflect in the entire script***
