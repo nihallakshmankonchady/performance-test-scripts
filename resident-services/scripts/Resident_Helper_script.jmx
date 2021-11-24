@@ -60,7 +60,7 @@
       </Arguments>
       <hashTree/>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load RID&apos;s From File" enabled="true">
-        <stringProp name="filename">./RID_list.txt</stringProp>
+        <stringProp name="filename">./ridNew.txt</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames">rid</stringProp>
         <boolProp name="ignoreFirstLine">false</boolProp>
@@ -153,7 +153,7 @@
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(authorization_token_resident.txt,${authToken}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(authorization_token_resident.txt,${authToken}\n,false,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -162,7 +162,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">10</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
