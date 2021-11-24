@@ -15,7 +15,7 @@ This folder contains performance test scripts and test data of Websub module.
    2. Subscribing Topic - This is used for subscribing to the registered topic by using subscription id's which we have handled in our script using a counter named 'Subscription ID Counter'.
    3. Publishing Message - This is used for publishing messages to the websub which further will traverse to the subscribers.
    4. Delay - This is used to give delay between messages published and their results obtained.
-   5. Get Results - This is used for getting the results like total messages received by each subscriber, average turn around time in (ms), ninetieth percentile in (ms) and the subscription id's. Also we will get the total average of the turn around & ninetieth percenetile time in (ms) for all the subscribers used.
+   5. Get Results - This is used for getting the results like total messages received by each subscriber, average turn around time in (ms), ninetieth percentile in (ms) and the subscription id's. Also we will get the total average of the turn around time & ninetieth percentile in (ms) for all the subscribers used.
    6. Reset Results - This is used for resetting the previous results as there is no specific DB to store websub results so it's better to clear the results once we are done with our test.
       
 * All the thread groups will run in a sequential manner & if we don't want to run all of them we can disable the one which we don't want to run.
