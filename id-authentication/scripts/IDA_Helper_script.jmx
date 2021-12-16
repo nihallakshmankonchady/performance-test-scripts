@@ -178,7 +178,7 @@
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Get UIN from IDRepo" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Generate Identities In IDRepo" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -655,10 +655,10 @@
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract IDA-FIR cert" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">IDA-FIRcert</stringProp>
+              <stringProp name="RegexExtractor.refname">idaFirCert</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;certificate&quot;:(.*?),&quot;certSignRequest</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">IDA-FIRcert not found</stringProp>
+              <stringProp name="RegexExtractor.default">idaFirCert not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -670,7 +670,7 @@
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-&quot;certData&quot;: ${IDA-FIRcert}&#xd;
+&quot;certData&quot;: ${idaFirCert}&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -735,10 +735,10 @@
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract PARTNER cert" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">PARTNERcert</stringProp>
+              <stringProp name="RegexExtractor.refname">partnerCert</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;certificate&quot;:(.*?),&quot;certSignRequest</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">PARTNERcert not found</stringProp>
+              <stringProp name="RegexExtractor.default">partnerCert not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -750,7 +750,7 @@
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-&quot;certData&quot;: ${PARTNERcert}&#xd;
+&quot;certData&quot;: ${partnerCert}&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -813,12 +813,12 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract PARTNER cert" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract INTERNAL cert" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">INTERNALcert</stringProp>
+              <stringProp name="RegexExtractor.refname">internalCert</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;certificate&quot;:(.*?),&quot;certSignRequest</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">PARTNERcert not found</stringProp>
+              <stringProp name="RegexExtractor.default">internalCert not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -830,7 +830,7 @@
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-&quot;certData&quot;: ${INTERNALcert}&#xd;
+&quot;certData&quot;: ${internalCert}&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -895,10 +895,10 @@
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract ROOT cert" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">ROOTcert</stringProp>
+              <stringProp name="RegexExtractor.refname">rootCert</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;certificate&quot;:(.*?),&quot;certSignRequest</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">ROOTcert not found</stringProp>
+              <stringProp name="RegexExtractor.default">rootCert not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -937,10 +937,10 @@
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract PMS cert" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">PMScert</stringProp>
+              <stringProp name="RegexExtractor.refname">pmsCert</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;certificate&quot;:(.*?),&quot;certSignRequest</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">PMScert not found</stringProp>
+              <stringProp name="RegexExtractor.default">pmsCert not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -998,10 +998,10 @@
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract PMS Auth Token For Cookie" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">true</stringProp>
-              <stringProp name="RegexExtractor.refname">pms_authorization</stringProp>
+              <stringProp name="RegexExtractor.refname">pmsAuthorization</stringProp>
               <stringProp name="RegexExtractor.regex">Set-Cookie: Authorization=([\w.-]+);</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">authorization_not_found</stringProp>
+              <stringProp name="RegexExtractor.default">pmsAuthorization not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -1037,7 +1037,7 @@
                 </elementProp>
                 <elementProp name="Cookie" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthorization}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1053,10 +1053,10 @@
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract PMS Auth Token" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">pms_authorization</stringProp>
+              <stringProp name="RegexExtractor.refname">pmsAuthToken</stringProp>
               <stringProp name="RegexExtractor.regex">&quot;,&quot;token&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">authorization not found</stringProp>
+              <stringProp name="RegexExtractor.default">pmsAuthToken not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
               <stringProp name="Sample.scope">all</stringProp>
             </RegexExtractor>
@@ -1112,26 +1112,26 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Policygroupame" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">policygroup_name</stringProp>
+              <stringProp name="RegexExtractor.refname">policyGroupName</stringProp>
               <stringProp name="RegexExtractor.regex">&quot;,&quot;name&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">policygroup_name not found</stringProp>
+              <stringProp name="RegexExtractor.default">policyGroupName not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Policygroupid" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">policygroup_id</stringProp>
+              <stringProp name="RegexExtractor.refname">policyGroupId</stringProp>
               <stringProp name="RegexExtractor.regex">&quot;response&quot;:{&quot;id&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">policygroup_id not found</stringProp>
+              <stringProp name="RegexExtractor.default">policyGroupId not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -1206,7 +1206,7 @@
       ],&#xd;
      &quot;authTokenType&quot;: &quot;policy&quot;      &#xd;
     },&#xd;
-    &quot;policyGroupName&quot;: &quot;${policygroup_name}&quot;,&#xd;
+    &quot;policyGroupName&quot;: &quot;${policyGroupName}&quot;,&#xd;
     &quot;policyType&quot;: &quot;Auth&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -1239,26 +1239,26 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Policyname" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">policyname</stringProp>
+              <stringProp name="RegexExtractor.refname">policyName</stringProp>
               <stringProp name="RegexExtractor.regex">&quot;,&quot;name&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">policyname not found</stringProp>
+              <stringProp name="RegexExtractor.default">policyName not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Policyid" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">policyid</stringProp>
+              <stringProp name="RegexExtractor.refname">policyId</stringProp>
               <stringProp name="RegexExtractor.regex">&quot;response&quot;:{&quot;id&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">policyid not found</stringProp>
+              <stringProp name="RegexExtractor.default">policyId not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -1271,7 +1271,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">v1/policymanager/policies/${policyid}/group/${policygroup_id}/publish</stringProp>
+            <stringProp name="HTTPSampler.path">v1/policymanager/policies/${policyId}/group/${policyGroupId}/publish</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1290,7 +1290,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1318,7 +1318,7 @@
     &quot;organizationName&quot;: &quot;${__time(,)}&quot;,&#xd;
     &quot;partnerId&quot;: &quot;${__time(,)}&quot;,&#xd;
     &quot;partnerType&quot;: &quot;Auth_Partner&quot;,&#xd;
-    &quot;policyGroup&quot;: &quot;${policygroup_name}&quot;&#xd;
+    &quot;policyGroup&quot;: &quot;${policyGroupName}&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;version&quot;: &quot;string&quot;&#xd;
@@ -1353,10 +1353,10 @@
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Partnerid" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">partner_id</stringProp>
+              <stringProp name="RegexExtractor.refname">rpPartnerId</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;partnerId&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">partner_id not found</stringProp>
+              <stringProp name="RegexExtractor.default">rpPartnerId not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -1364,7 +1364,7 @@
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="script">${__StringToFile(partner_id.txt,${partner_id}\n,false,)}</stringProp>
+              <stringProp name="script">${__StringToFile(rpPartnerId.txt,${rpPartnerId}\n,false,)}</stringProp>
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
@@ -1376,7 +1376,7 @@
             <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/identity/generatePartnerKeys?partnerName=${partner_id}&amp;partnerType=RELYING_PARTY</stringProp>
+            <stringProp name="HTTPSampler.path">v1/identity/generatePartnerKeys?partnerName=${rpPartnerId}&amp;partnerType=RELYING_PARTY</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1467,7 +1467,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1516,7 +1516,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1534,7 +1534,7 @@
   &quot;request&quot;: {&#xd;
     &quot;certificateData&quot;:${partnerCertificate},&#xd;
     &quot;partnerDomain&quot;: &quot;Auth&quot;,&#xd;
-    &quot;partnerId&quot;: &quot;${partner_id}&quot;&#xd;
+    &quot;partnerId&quot;: &quot;${rpPartnerId}&quot;&#xd;
  &#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -1567,7 +1567,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1592,7 +1592,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${ROOTcert},&#xd;
+    &quot;certificateData&quot;:${rootCert},&#xd;
     &quot;partnerDomain&quot;: &quot;Auth&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -1626,7 +1626,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1642,7 +1642,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${PMScert},&#xd;
+    &quot;certificateData&quot;:${pmsCert},&#xd;
     &quot;partnerDomain&quot;: &quot;Auth&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -1676,7 +1676,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1768,7 +1768,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1790,7 +1790,7 @@
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;policyName&quot;: &quot;${policyname}&quot;,&#xd;
+    &quot;policyName&quot;: &quot;${policyName}&quot;,&#xd;
     &quot;useCaseDescription&quot;: &quot;mapping Partner to policyName&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -1804,7 +1804,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/${partner_id}/apikey/request</stringProp>
+            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/${rpPartnerId}/apikey/request</stringProp>
             <stringProp name="HTTPSampler.method">PATCH</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1823,17 +1823,17 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Api Request Id" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">apiRequestId</stringProp>
+              <stringProp name="RegexExtractor.refname">rpApiRequestId</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;apiRequestId&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">apiRequestId not found</stringProp>
+              <stringProp name="RegexExtractor.default">rpApiRequestId not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -1841,7 +1841,7 @@
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="script">${__StringToFile(apiRequestId.txt,${apiRequestId}\n,false,)}</stringProp>
+              <stringProp name="script">${__StringToFile(rpApiRequestId.txt,${rpApiRequestId}\n,false,)}</stringProp>
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
@@ -1868,7 +1868,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/apikey/${apiRequestId}</stringProp>
+            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/apikey/${rpApiRequestId}</stringProp>
             <stringProp name="HTTPSampler.method">PATCH</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1887,7 +1887,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1901,7 +1901,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/${partner_id}/apikey/request</stringProp>
+            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/${rpPartnerId}/apikey/request</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1920,7 +1920,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1948,7 +1948,7 @@
     &quot;organizationName&quot;: &quot;${__time(,)}&quot;,&#xd;
     &quot;partnerId&quot;: &quot;${__time(,)}&quot;,&#xd;
     &quot;partnerType&quot;: &quot;MISP_Partner&quot;,&#xd;
-    &quot;policyGroup&quot;: &quot;${policygroup_name}&quot;&#xd;
+    &quot;policyGroup&quot;: &quot;${policyGroupName}&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;version&quot;: &quot;string&quot;&#xd;
@@ -1983,10 +1983,10 @@
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract MISP partner ID" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">partnerIdMISP</stringProp>
+              <stringProp name="RegexExtractor.refname">partnerIdMisp</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;partnerId&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">partnerIdMISP not found</stringProp>
+              <stringProp name="RegexExtractor.default">partnerIdMisp not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -1999,7 +1999,7 @@
             <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/identity/generatePartnerKeys?partnerName=${partnerIdMISP}&amp;partnerType=RELYING_PARTY</stringProp>
+            <stringProp name="HTTPSampler.path">v1/identity/generatePartnerKeys?partnerName=${partnerIdMisp}&amp;partnerType=RELYING_PARTY</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2090,7 +2090,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2139,7 +2139,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2157,7 +2157,7 @@
   &quot;request&quot;: {&#xd;
     &quot;certificateData&quot;:${partnerCertificate},&#xd;
     &quot;partnerDomain&quot;: &quot;Auth&quot;,&#xd;
-    &quot;partnerId&quot;: &quot;${partnerIdMISP}&quot;&#xd;
+    &quot;partnerId&quot;: &quot;${partnerIdMisp}&quot;&#xd;
  &#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -2190,7 +2190,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2215,7 +2215,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${ROOTcert},&#xd;
+    &quot;certificateData&quot;:${rootCert},&#xd;
     &quot;partnerDomain&quot;: &quot;Auth&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -2249,7 +2249,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2265,7 +2265,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${PMScert},&#xd;
+    &quot;certificateData&quot;:${pmsCert},&#xd;
     &quot;partnerDomain&quot;: &quot;Auth&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -2299,7 +2299,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2321,7 +2321,7 @@
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;policyName&quot;: &quot;${policyname}&quot;,&#xd;
+    &quot;policyName&quot;: &quot;${policyName}&quot;,&#xd;
     &quot;useCaseDescription&quot;: &quot;mapping Partner to policyName&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -2335,7 +2335,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/${partnerIdMISP}/apikey/request</stringProp>
+            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/${partnerIdMisp}/apikey/request</stringProp>
             <stringProp name="HTTPSampler.method">PATCH</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2354,17 +2354,17 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract apiRequestId" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Api Request Id" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">apiRequestIdMISP</stringProp>
+              <stringProp name="RegexExtractor.refname">apiRequestIdMisp</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;apiRequestId&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">apiRequestId not found</stringProp>
+              <stringProp name="RegexExtractor.default">apiRequestIdMisp not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -2392,7 +2392,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/apikey/${apiRequestIdMISP}</stringProp>
+            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/apikey/${apiRequestIdMisp}</stringProp>
             <stringProp name="HTTPSampler.method">PATCH</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2411,7 +2411,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2425,7 +2425,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/${partnerIdMISP}/apikey/request</stringProp>
+            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/${partnerIdMisp}/apikey/request</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2444,13 +2444,13 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="generate MISP License" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate MISP License" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -2460,7 +2460,7 @@
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;providerId&quot;: &quot;${partnerIdMISP}&quot;&#xd;
+    &quot;providerId&quot;: &quot;${partnerIdMisp}&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;2021-03-12T05:19:24.856Z&quot;,&#xd;
   &quot;version&quot;: &quot;string&quot;&#xd;
@@ -2492,25 +2492,25 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract MISPLicensekey" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract MISP Licensekey" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">MISPLicensekey</stringProp>
+              <stringProp name="RegexExtractor.refname">mispLicenseKey</stringProp>
               <stringProp name="RegexExtractor.regex">&quot;,&quot;licenseKey&quot;:&quot;(.*?)&quot;,&quot;licenseKeyStatus</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">MISPLicensekey not found</stringProp>
+              <stringProp name="RegexExtractor.default">mispLicenseKey not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store MISPLicensekey To File" enabled="true">
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store MISP Licensekey To File" enabled="true">
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="script">${__StringToFile(MISPLicensekey.txt,${MISPLicensekey}\n,false,)}</stringProp>
+              <stringProp name="script">${__StringToFile(mispLicenseKey.txt,${mispLicenseKey}\n,false,)}</stringProp>
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
@@ -2536,7 +2536,7 @@
     &quot;organizationName&quot;: &quot;${__time(,)}&quot;,&#xd;
     &quot;partnerId&quot;: &quot;${__time(,)}&quot;,&#xd;
     &quot;partnerType&quot;: &quot;Auth_Partner&quot;,&#xd;
-    &quot;policyGroup&quot;: &quot;${policygroup_name}&quot;&#xd;
+    &quot;policyGroup&quot;: &quot;${policyGroupName}&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;version&quot;: &quot;string&quot;&#xd;
@@ -2569,20 +2569,20 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract EKYCPARTNERID" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract EKYC Partner ID" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">EKYCPARTNERID</stringProp>
+              <stringProp name="RegexExtractor.refname">ekycPartnerId</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;partnerId&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">EKYCPARTNERID not found</stringProp>
+              <stringProp name="RegexExtractor.default">ekycPartnerId not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store EKYCPARTNERID to File" enabled="true">
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store EKYC Partner ID to File" enabled="true">
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="script">${__StringToFile(EKYCPARTNERID.txt,${EKYCPARTNERID}\n,false,)}</stringProp>
+              <stringProp name="script">${__StringToFile(ekycPartnerId.txt,${ekycPartnerId}\n,false,)}</stringProp>
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
@@ -2594,7 +2594,7 @@
             <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/identity/generatePartnerKeys?partnerName=${EKYCPARTNERID}&amp;partnerType=EKYC</stringProp>
+            <stringProp name="HTTPSampler.path">v1/identity/generatePartnerKeys?partnerName=${ekycPartnerId}&amp;partnerType=EKYC</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2620,28 +2620,28 @@
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract EKYC Intercertificate" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">EKYC_interCertificate</stringProp>
+              <stringProp name="RegexExtractor.refname">ekycInterCertificate</stringProp>
               <stringProp name="RegexExtractor.regex">interCertificate&quot;:(.*?),&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">EKYC_interCertificate not found</stringProp>
+              <stringProp name="RegexExtractor.default">ekycInterCertificate not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract EKYC CA Certificate" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">EKYC_caCertificate</stringProp>
+              <stringProp name="RegexExtractor.refname">ekycCaCertificate</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;caCertificate&quot;:(.*?),&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">EKYC_caCertificate not found</stringProp>
+              <stringProp name="RegexExtractor.default">ekycCaCertificate not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract EKYC Partner Certificate" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">EKYC_partnerCertificate</stringProp>
+              <stringProp name="RegexExtractor.refname">ekycPartnerCertificate</stringProp>
               <stringProp name="RegexExtractor.regex">partnerCertificate&quot;:(.*?)}</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">EKYC_partnerCertificate not found</stringProp>
+              <stringProp name="RegexExtractor.default">ekycPartnerCertificate not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -2656,7 +2656,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${EKYC_caCertificate},&#xd;
+    &quot;certificateData&quot;:${ekycCaCertificate},&#xd;
     &quot;partnerDomain&quot;: &quot;Auth&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -2705,7 +2705,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${EKYC_interCertificate},&#xd;
+    &quot;certificateData&quot;:${ekycInterCertificate},&#xd;
     &quot;partnerDomain&quot;: &quot;Auth&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -2738,7 +2738,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2754,9 +2754,9 @@
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${EKYC_partnerCertificate},&#xd;
+    &quot;certificateData&quot;:${ekycPartnerCertificate},&#xd;
     &quot;partnerDomain&quot;: &quot;Auth&quot;,&#xd;
-    &quot;partnerId&quot;: &quot;${EKYCPARTNERID}&quot;&#xd;
+    &quot;partnerId&quot;: &quot;${ekycPartnerId}&quot;&#xd;
  &#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -2789,7 +2789,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2814,7 +2814,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${ROOTcert},&#xd;
+    &quot;certificateData&quot;:${rootCert},&#xd;
     &quot;partnerDomain&quot;: &quot;Auth&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -2848,7 +2848,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2864,7 +2864,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${PMScert},&#xd;
+    &quot;certificateData&quot;:${pmsCert},&#xd;
     &quot;partnerDomain&quot;: &quot;Auth&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -2898,7 +2898,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2940,7 +2940,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2990,7 +2990,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3012,7 +3012,7 @@
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;policyName&quot;: &quot;${policyname}&quot;,&#xd;
+    &quot;policyName&quot;: &quot;${policyName}&quot;,&#xd;
     &quot;useCaseDescription&quot;: &quot;mapping Partner to policyName&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -3026,7 +3026,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/${EKYCPARTNERID}/apikey/request</stringProp>
+            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/${ekycPartnerId}/apikey/request</stringProp>
             <stringProp name="HTTPSampler.method">PATCH</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3045,25 +3045,25 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract EKYCAPIkey" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract EKYC APIkey" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">EKYCAPIkey</stringProp>
+              <stringProp name="RegexExtractor.refname">ekycApiKey</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;apiRequestId&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">EKYCAPIkey not found</stringProp>
+              <stringProp name="RegexExtractor.default">ekycApiKey not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store EKYCAPIkey To File" enabled="true">
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store EKYC APIkey To File" enabled="true">
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="script">${__StringToFile(EKYCAPIkey.txt,${EKYCAPIkey}\n,false,)}</stringProp>
+              <stringProp name="script">${__StringToFile(ekycApiKey.txt,${ekycApiKey}\n,false,)}</stringProp>
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
@@ -3090,7 +3090,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/apikey/${EKYCAPIkey}</stringProp>
+            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/apikey/${ekycApiKey}</stringProp>
             <stringProp name="HTTPSampler.method">PATCH</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3109,7 +3109,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3123,7 +3123,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/${EKYCPARTNERID}/apikey/request</stringProp>
+            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/${ekycPartnerId}/apikey/request</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3142,7 +3142,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3170,7 +3170,7 @@
     &quot;organizationName&quot;: &quot;${__time(,)}&quot;,&#xd;
     &quot;partnerId&quot;: &quot;${__time(,)}&quot;,&#xd;
     &quot;partnerType&quot;: &quot;Auth_Partner&quot;,&#xd;
-    &quot;policyGroup&quot;: &quot;${policygroup_name}&quot;&#xd;
+    &quot;policyGroup&quot;: &quot;${policyGroupName}&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;version&quot;: &quot;string&quot;&#xd;
@@ -3203,12 +3203,12 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract DEVICEPARTNERID" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract DEVICE Partner ID" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">DEVICEPARTNERID</stringProp>
+              <stringProp name="RegexExtractor.refname">devicePartnerId</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;partnerId&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">DEVICEPARTNERID not found</stringProp>
+              <stringProp name="RegexExtractor.default">devicePartnerId not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -3221,7 +3221,7 @@
             <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/identity/generatePartnerKeys?partnerName=${DEVICEPARTNERID}&amp;partnerType=DEVICE</stringProp>
+            <stringProp name="HTTPSampler.path">v1/identity/generatePartnerKeys?partnerName=${devicePartnerId}&amp;partnerType=DEVICE</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3243,28 +3243,28 @@
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract DEVICE Inter Certificate" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">DEVICE_interCertificate</stringProp>
+              <stringProp name="RegexExtractor.refname">deviceInterCertificate</stringProp>
               <stringProp name="RegexExtractor.regex">interCertificate&quot;:(.*?),&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">DEVICE_interCertificate not found</stringProp>
+              <stringProp name="RegexExtractor.default">deviceInterCertificate not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract DEVICE CA Certificate" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">DEVICE_caCertificate</stringProp>
+              <stringProp name="RegexExtractor.refname">deviceCaCertificate</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;caCertificate&quot;:(.*?),&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">DEVICE_caCertificate not found</stringProp>
+              <stringProp name="RegexExtractor.default">deviceCaCertificate not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract DEVICE Partner Certificate" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">DEVICE_partnerCertificate</stringProp>
+              <stringProp name="RegexExtractor.refname">devicePartnerCertificate</stringProp>
               <stringProp name="RegexExtractor.regex">partnerCertificate&quot;:(.*?)}</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">DEVICE_partnerCertificate not found</stringProp>
+              <stringProp name="RegexExtractor.default">devicePartnerCertificate not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -3279,7 +3279,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${DEVICE_caCertificate},&#xd;
+    &quot;certificateData&quot;:${deviceCaCertificate},&#xd;
     &quot;partnerDomain&quot;: &quot;Device&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -3312,7 +3312,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3328,7 +3328,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${DEVICE_interCertificate},&#xd;
+    &quot;certificateData&quot;:${deviceInterCertificate},&#xd;
     &quot;partnerDomain&quot;: &quot;Device&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -3361,7 +3361,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3377,9 +3377,9 @@
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${DEVICE_partnerCertificate},&#xd;
+    &quot;certificateData&quot;:${devicePartnerCertificate},&#xd;
     &quot;partnerDomain&quot;: &quot;Device&quot;,&#xd;
-    &quot;partnerId&quot;: &quot;${DEVICEPARTNERID}&quot;&#xd;
+    &quot;partnerId&quot;: &quot;${devicePartnerId}&quot;&#xd;
  &#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -3412,7 +3412,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3437,7 +3437,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${ROOTcert},&#xd;
+    &quot;certificateData&quot;:${rootCert},&#xd;
     &quot;partnerDomain&quot;: &quot;Device&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -3471,7 +3471,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3487,7 +3487,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${PMScert},&#xd;
+    &quot;certificateData&quot;:${pmsCert},&#xd;
     &quot;partnerDomain&quot;: &quot;Device&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -3521,7 +3521,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3609,7 +3609,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3637,7 +3637,7 @@
     &quot;organizationName&quot;: &quot;${__time(,)}&quot;,&#xd;
     &quot;partnerId&quot;: &quot;${__time(,)}&quot;,&#xd;
     &quot;partnerType&quot;: &quot;Auth_Partner&quot;,&#xd;
-    &quot;policyGroup&quot;: &quot;${policygroup_name}&quot;&#xd;
+    &quot;policyGroup&quot;: &quot;${policyGroupName}&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;version&quot;: &quot;string&quot;&#xd;
@@ -3670,12 +3670,12 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract FTMPARTNERID" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract FTM Partner ID" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">FTMPARTNERID</stringProp>
+              <stringProp name="RegexExtractor.refname">ftmPartnerId</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;partnerId&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">FTMPARTNERID not found</stringProp>
+              <stringProp name="RegexExtractor.default">ftmPartnerId not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -3688,7 +3688,7 @@
             <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">v1/identity/generatePartnerKeys?partnerName=${FTMPARTNERID}&amp;partnerType=FTM</stringProp>
+            <stringProp name="HTTPSampler.path">v1/identity/generatePartnerKeys?partnerName=${ftmPartnerId}&amp;partnerType=FTM</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3710,28 +3710,28 @@
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract FTM Inter Certificate" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">FTM_interCertificate</stringProp>
+              <stringProp name="RegexExtractor.refname">ftmInterCertificate</stringProp>
               <stringProp name="RegexExtractor.regex">interCertificate&quot;:(.*?),&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">FTM_interCertificate not found</stringProp>
+              <stringProp name="RegexExtractor.default">ftmInterCertificate not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract FTM CA Certificate" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">FTM_caCertificate</stringProp>
+              <stringProp name="RegexExtractor.refname">ftmCaCertificate</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;caCertificate&quot;:(.*?),&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">FTM_caCertificate not found</stringProp>
+              <stringProp name="RegexExtractor.default">ftmCaCertificate not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract FTM Partner Certificate" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">FTM_partnerCertificate</stringProp>
+              <stringProp name="RegexExtractor.refname">ftmPartnerCertificate</stringProp>
               <stringProp name="RegexExtractor.regex">partnerCertificate&quot;:(.*?)}</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">FTM_partnerCertificate not found</stringProp>
+              <stringProp name="RegexExtractor.default">ftmPartnerCertificate not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -3746,7 +3746,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${FTM_caCertificate},&#xd;
+    &quot;certificateData&quot;:${ftmCaCertificate},&#xd;
     &quot;partnerDomain&quot;: &quot;FTM&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -3779,7 +3779,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3795,7 +3795,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${FTM_interCertificate},&#xd;
+    &quot;certificateData&quot;:${ftmInterCertificate},&#xd;
     &quot;partnerDomain&quot;: &quot;FTM&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -3828,7 +3828,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3844,9 +3844,9 @@
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${FTM_partnerCertificate},&#xd;
+    &quot;certificateData&quot;:${ftmPartnerCertificate},&#xd;
     &quot;partnerDomain&quot;: &quot;FTM&quot;,&#xd;
-    &quot;partnerId&quot;: &quot;${FTMPARTNERID}&quot;&#xd;
+    &quot;partnerId&quot;: &quot;${ftmPartnerId}&quot;&#xd;
  &#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -3879,7 +3879,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3904,7 +3904,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${ROOTcert},&#xd;
+    &quot;certificateData&quot;:${rootCert},&#xd;
     &quot;partnerDomain&quot;: &quot;FTM&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -3938,7 +3938,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3954,7 +3954,7 @@
     &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;certificateData&quot;:${PMScert},&#xd;
+    &quot;certificateData&quot;:${pmsCert},&#xd;
     &quot;partnerDomain&quot;: &quot;FTM&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -3988,7 +3988,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -4076,7 +4076,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pms_authorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${pmsAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
