@@ -57,7 +57,7 @@
       </CSVDataSet>
       <hashTree/>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Reg ID, Process And Source Values From File" enabled="true">
-        <stringProp name="filename">./ridProcess&amp;SourceCellbox2.txt</stringProp>
+        <stringProp name="filename">./ridProcess&amp;Source.txt</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames">rid,process,source</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
