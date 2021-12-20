@@ -33,7 +33,7 @@
           </elementProp>
           <elementProp name="serverIP" elementType="Argument">
             <stringProp name="Argument.name">serverIP</stringProp>
-            <stringProp name="Argument.value">dev.mosip.net</stringProp>
+            <stringProp name="Argument.value">cellbox2.mosip.net</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="serverPortNo" elementType="Argument">
@@ -63,7 +63,7 @@
           </elementProp>
           <elementProp name="totalSubscribers" elementType="Argument">
             <stringProp name="Argument.name">totalSubscribers</stringProp>
-            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.value">5</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="publisherConcurrency" elementType="Argument">
@@ -93,7 +93,7 @@
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames">topicName,message</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
-        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="delimiter">&amp;</stringProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
         <boolProp name="stopThread">false</boolProp>
@@ -240,6 +240,16 @@
             </collectionProp>
           </HeaderManager>
           <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49588">202</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
         </hashTree>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Reset Results" enabled="true">
@@ -283,6 +293,16 @@
               </elementProp>
             </collectionProp>
           </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
           <hashTree/>
         </hashTree>
       </hashTree>
@@ -396,7 +416,18 @@ vars.put(&quot;publishedMessageCount&quot;,&quot;&quot;+publishedMessageCount);<
           <stringProp name="BeanShellSampler.parameters"></stringProp>
           <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
         </BeanShellSampler>
-        <hashTree/>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Results" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
@@ -466,9 +497,13 @@ if(totalvalueString==null)
 vars.put(&quot;totalAvgTurnAroundTime&quot;,CurrentSegmentValue);
 }
 
-long totalAvgTurnAroundTime= (java.lang.Integer.parseInt(CurrentSegmentValue)+java.lang.Integer.parseInt(totalvalueString))/${totalSubscribers};
+long totalAvgTurnAroundTime= java.lang.Integer.parseInt(CurrentSegmentValue)+java.lang.Integer.parseInt(totalvalueString);
 
-vars.put(&quot;totalAvgTurnAroundTime&quot;,&quot;&quot;+totalAvgTurnAroundTime);</stringProp>
+vars.put(&quot;totalAvgTurnAroundTime&quot;,&quot;&quot;+totalAvgTurnAroundTime);
+
+long finalAvgTurnAroundTime= java.lang.Integer.parseInt(totalAvgTurnAroundTime)/${totalSubscribers};
+
+vars.put(&quot;finalAvgTurnAroundTime&quot;,&quot;&quot;+finalAvgTurnAroundTime);</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
           <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Calculate Subscribers Average (Ninetieth Percentile)" enabled="true">
@@ -477,16 +512,20 @@ vars.put(&quot;totalAvgTurnAroundTime&quot;,&quot;&quot;+totalAvgTurnAroundTime)
             <stringProp name="filename"></stringProp>
             <stringProp name="script">var CurrentSegmentValue=vars.get(&quot;ninetiethPercentile&quot;);
 
-var totalvalueString=vars.get(&quot;totalAvgNinetiethPercentile&quot;);
+var totalvalueString=vars.get(&quot;totalNinetiethPercentile&quot;);
 
 if(totalvalueString==null)
 {
-vars.put(&quot;totalAvgNinetiethPercentile&quot;,CurrentSegmentValue);
+vars.put(&quot;totalNinetiethPercentile&quot;,CurrentSegmentValue);
 }
 
-long totalAvgNinetiethPercentile= (java.lang.Integer.parseInt(CurrentSegmentValue)+java.lang.Integer.parseInt(totalvalueString))/${totalSubscribers};
+long totalNinetiethPercentile= java.lang.Integer.parseInt(CurrentSegmentValue)+java.lang.Integer.parseInt(totalvalueString);
 
-vars.put(&quot;totalAvgNinetiethPercentile&quot;,&quot;&quot;+totalAvgNinetiethPercentile);</stringProp>
+vars.put(&quot;totalNinetiethPercentile&quot;,&quot;&quot;+totalNinetiethPercentile);
+
+long finalAvgNinetiethPercentile= java.lang.Integer.parseInt(totalNinetiethPercentile)/${totalSubscribers};
+
+vars.put(&quot;finalAvgNinetiethPercentile&quot;,&quot;&quot;+finalAvgNinetiethPercentile);</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -495,7 +534,18 @@ vars.put(&quot;totalAvgNinetiethPercentile&quot;,&quot;&quot;+totalAvgNinetiethP
           <boolProp name="displayJMeterVariables">true</boolProp>
           <boolProp name="displaySystemProperties">false</boolProp>
         </DebugSampler>
-        <hashTree/>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
       </hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
