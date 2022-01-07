@@ -63,17 +63,17 @@
           </elementProp>
           <elementProp name="totalSubscribers" elementType="Argument">
             <stringProp name="Argument.name">totalSubscribers</stringProp>
-            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.value">20</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="publisherConcurrency" elementType="Argument">
             <stringProp name="Argument.name">publisherConcurrency</stringProp>
-            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.value">30</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="publisherIterations" elementType="Argument">
             <stringProp name="Argument.name">publisherIterations</stringProp>
-            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.value">1667</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -104,7 +104,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">10</stringProp>
+          <stringProp name="LoopController.loops">27</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -326,7 +326,11 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${message}</stringProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;timestamp&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
+  &quot;messageString&quot;:${message}&#xd;
+}&#xd;
+</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -481,7 +485,7 @@ vars.put(&quot;publishedMessageCount&quot;,&quot;&quot;+publishedMessageCount);<
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Calculate Subscribers Average (Average Turn Around Time)" enabled="true">
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Calculate Subscribers Total (Average Turn Around Time)" enabled="true">
             <boolProp name="resetInterpreter">false</boolProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -498,12 +502,10 @@ long totalAvgTurnAroundTime= java.lang.Integer.parseInt(CurrentSegmentValue)+jav
 
 vars.put(&quot;totalAvgTurnAroundTime&quot;,&quot;&quot;+totalAvgTurnAroundTime);
 
-long finalAvgTurnAroundTime= java.lang.Integer.parseInt(totalAvgTurnAroundTime)/${totalSubscribers};
-
-vars.put(&quot;finalAvgTurnAroundTime&quot;,&quot;&quot;+finalAvgTurnAroundTime);</stringProp>
+</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
-          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Calculate Subscribers Average (Ninetieth Percentile)" enabled="true">
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Calculate Subscribers Total (Ninetieth Percentile)" enabled="true">
             <boolProp name="resetInterpreter">false</boolProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -520,9 +522,41 @@ long totalNinetiethPercentile= java.lang.Integer.parseInt(CurrentSegmentValue)+j
 
 vars.put(&quot;totalNinetiethPercentile&quot;,&quot;&quot;+totalNinetiethPercentile);
 
-long finalAvgNinetiethPercentile= java.lang.Integer.parseInt(totalNinetiethPercentile)/${totalSubscribers};
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Calculate Subscribers Average (Average Turn Around Time)" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">long finalAvgTurnAroundTime= ${totalAvgTurnAroundTime}/${totalSubscribers};
+
+vars.put(&quot;finalAvgTurnAroundTime&quot;,&quot;&quot;+finalAvgTurnAroundTime);</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Calculate Subscribers Average (Ninetieth Percentile)" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">long finalAvgNinetiethPercentile= ${totalNinetiethPercentile}/${totalSubscribers};
 
 vars.put(&quot;finalAvgNinetiethPercentile&quot;,&quot;&quot;+finalAvgNinetiethPercentile);</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Complete Response Body" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">fullResponseBody</stringProp>
+            <stringProp name="RegexExtractor.regex">(?s)(^.*)</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">fullResponseBody not found</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store Complete Response Body To File" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">${__StringToFile(getResultApiResponseValues.csv,${fullResponseBody}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
