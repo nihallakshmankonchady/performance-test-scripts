@@ -32,7 +32,7 @@
           </elementProp>
           <elementProp name="serverIP" elementType="Argument">
             <stringProp name="Argument.name">serverIP</stringProp>
-            <stringProp name="Argument.value">dev2.mosip.net</stringProp>
+            <stringProp name="Argument.value">cellbox2.mosip.net</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="serverPortNo" elementType="Argument">
@@ -56,13 +56,13 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">10</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration">0</stringProp>
-        <stringProp name="ThreadGroup.delay">0</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">900</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
@@ -471,7 +471,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;id&quot;:&quot;mosip.pre-registration.demographic.create&quot;,&quot;request&quot;:{&quot;langCode&quot;:&quot;eng&quot;,&quot;requiredFields&quot;:[&quot;IDSchemaVersion&quot;,&quot;fullName&quot;,&quot;dateOfBirth&quot;,&quot;gender&quot;,&quot;residenceStatus&quot;,&quot;addressLine1&quot;,&quot;region&quot;,&quot;province&quot;,&quot;city&quot;,&quot;zone&quot;,&quot;postalCode&quot;,&quot;phone&quot;,&quot;email&quot;],&quot;demographicDetails&quot;:{&quot;identity&quot;:{&quot;IDSchemaVersion&quot;:0.1,&quot;fullName&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;PTtesting${userIdCtr}&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;PTtesting${userIdCtr}&quot;}],&quot;dateOfBirth&quot;:&quot;1996/01/01&quot;,&quot;gender&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;MLE&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;MLE&quot;}],&quot;residenceStatus&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;FR&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;FR&quot;}],&quot;addressLine1&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;Bengaluru${userid_ctr}&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;Bengaluru${userid_ctr}&quot;}],&quot;region&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${regionCode}&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;${regionCode}&quot;}],&quot;province&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${provinceCode}&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;${provinceCode}&quot;}],&quot;city&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${cityCode}&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;${cityCode}&quot;}],&quot;zone&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${zoneCode}&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;${zoneCode}&quot;}],&quot;postalCode&quot;:&quot;${postalCode}&quot;,&quot;phone&quot;:&quot;9436766238&quot;,&quot;email&quot;:&quot;ptload${userIdCtr}@gmail.com&quot;}}},&quot;version&quot;:&quot;1.0&quot;,&quot;requesttime&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;}</stringProp>
+                  <stringProp name="Argument.value">{&quot;id&quot;:&quot;mosip.pre-registration.demographic.create&quot;,&quot;request&quot;:{&quot;langCode&quot;:&quot;eng&quot;,&quot;requiredFields&quot;:[&quot;IDSchemaVersion&quot;,&quot;fullName&quot;,&quot;dateOfBirth&quot;,&quot;gender&quot;,&quot;residenceStatus&quot;,&quot;addressLine1&quot;,&quot;region&quot;,&quot;province&quot;,&quot;city&quot;,&quot;zone&quot;,&quot;postalCode&quot;,&quot;phone&quot;,&quot;email&quot;],&quot;demographicDetails&quot;:{&quot;identity&quot;:{&quot;IDSchemaVersion&quot;:0.1,&quot;fullName&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;PTtesting${userIdCtr}&quot;}],&quot;dateOfBirth&quot;:&quot;1990/01/01&quot;,&quot;gender&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;MLE&quot;}],&quot;residenceStatus&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;FR&quot;}],&quot;addressLine1&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;Bengaluru${userIdCtr}&quot;}],&quot;region&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${regionCode}&quot;}],&quot;province&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${provinceCode}&quot;}],&quot;city&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${cityCode}&quot;}],&quot;zone&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${zoneCode}&quot;}],&quot;postalCode&quot;:&quot;${postalCode}&quot;,&quot;phone&quot;:&quot;9436788892&quot;,&quot;email&quot;:&quot;ptload${userIdCtr}@gmail.com&quot;}}},&quot;version&quot;:&quot;1.0&quot;,&quot;requesttime&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -578,7 +578,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;id&quot;:&quot;mosip.applicanttype.fetch&quot;,&quot;request&quot;:{&quot;attributes&quot;:[{&quot;attribute&quot;:&quot;gender&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;MLE&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;MLE&quot;}]},{&quot;attribute&quot;:&quot;city&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${cityCode}&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;${cityCode}&quot;}]},{&quot;attribute&quot;:&quot;postalCode&quot;,&quot;value&quot;:&quot;${postalCode}&quot;},{&quot;attribute&quot;:&quot;fullName&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;PTtesting${userIdCtr}&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;PTtesting${userIdCtr}&quot;}]},{&quot;attribute&quot;:&quot;dateOfBirth&quot;,&quot;value&quot;:&quot;1996/01/01&quot;},{&quot;attribute&quot;:&quot;province&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${provinceCode}&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;${provinceCode}&quot;}]},{&quot;attribute&quot;:&quot;zone&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${zoneCode}&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;${zoneCode}&quot;}]},{&quot;attribute&quot;:&quot;phone&quot;,&quot;value&quot;:&quot;9436766238&quot;},{&quot;attribute&quot;:&quot;addressLine1&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;Bengaluru${userid_ctr}&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;Bengaluru${userid_ctr}&quot;}]},{&quot;attribute&quot;:&quot;residenceStatus&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;FR&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;FR&quot;}]},{&quot;attribute&quot;:&quot;region&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${regionCode}&quot;},{&quot;language&quot;:&quot;fra&quot;,&quot;value&quot;:&quot;${regionCode}&quot;}]},{&quot;attribute&quot;:&quot;email&quot;,&quot;value&quot;:&quot;ptload${userIdCtr}@gmail.com&quot;},{&quot;attribute&quot;:&quot;biometricAvailable&quot;,&quot;value&quot;:false}]},&quot;metadata&quot;:{},&quot;version&quot;:&quot;1.0&quot;,&quot;requesttime&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;}</stringProp>
+                  <stringProp name="Argument.value">{&quot;id&quot;:&quot;mosip.applicanttype.fetch&quot;,&quot;request&quot;:{&quot;attributes&quot;:[{&quot;attribute&quot;:&quot;gender&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;MLE&quot;}]},{&quot;attribute&quot;:&quot;city&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${cityCode}&quot;}]},{&quot;attribute&quot;:&quot;postalCode&quot;,&quot;value&quot;:&quot;${postalCode}&quot;},{&quot;attribute&quot;:&quot;fullName&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;PTtesting${userIdCtr}&quot;}]},{&quot;attribute&quot;:&quot;dateOfBirth&quot;,&quot;value&quot;:&quot;1990/01/01&quot;},{&quot;attribute&quot;:&quot;province&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${provinceCode}&quot;}]},{&quot;attribute&quot;:&quot;zone&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${zoneCode}&quot;}]},{&quot;attribute&quot;:&quot;phone&quot;,&quot;value&quot;:&quot;9436788892&quot;},{&quot;attribute&quot;:&quot;addressLine1&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;Bengaluru${userIdCtr}&quot;}]},{&quot;attribute&quot;:&quot;residenceStatus&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;FR&quot;}]},{&quot;attribute&quot;:&quot;region&quot;,&quot;value&quot;:[{&quot;language&quot;:&quot;eng&quot;,&quot;value&quot;:&quot;${regionCode}&quot;}]},{&quot;attribute&quot;:&quot;email&quot;,&quot;value&quot;:&quot;ptload${userIdCtr}@gmail.com&quot;},{&quot;attribute&quot;:&quot;biometricAvailable&quot;,&quot;value&quot;:false}]},&quot;metadata&quot;:{},&quot;version&quot;:&quot;1.0&quot;,&quot;requesttime&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -611,6 +611,15 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Applicant Type Code" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">applicantTypeCode</stringProp>
+              <stringProp name="RegexExtractor.regex">applicantTypeCode&quot;:&quot;(.*?)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">applicantTypeCode not found</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Applicant Type Languages" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -628,7 +637,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">preregistration/v1/proxy/masterdata/applicanttype/002/languages</stringProp>
+            <stringProp name="HTTPSampler.path">preregistration/v1/proxy/masterdata/applicanttype/${applicantTypeCode}/languages</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -716,8 +725,8 @@
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Upload POI Document" enabled="true">
             <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
               <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\Document1.pdf" elementType="HTTPFileArg">
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\Document1.pdf</stringProp>
+                <elementProp name="./Document1.pdf" elementType="HTTPFileArg">
+                  <stringProp name="File.path">./Document1.pdf</stringProp>
                   <stringProp name="File.paramname">file</stringProp>
                   <stringProp name="File.mimetype">application/pdf</stringProp>
                 </elementProp>
@@ -728,7 +737,99 @@
                 <elementProp name="Document request" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
                   <stringProp name="Argument.name">Document request</stringProp>
-                  <stringProp name="Argument.value">{&quot;id&quot;:&quot;mosip.pre-registration.document.upload&quot;,&quot;request&quot;:{&quot;docCatCode&quot;:&quot;POI&quot;,&quot;docTypCode&quot;:&quot;CIN&quot;,&quot;langCode&quot;:&quot;eng&quot;,&quot;refNumber&quot;:&quot;&quot;},&quot;metadata&quot;:{},&quot;version&quot;:&quot;1.0&quot;,&quot;requesttime&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}c&quot;}&#xd;</stringProp>
+                  <stringProp name="Argument.value">{&quot;id&quot;:&quot;mosip.pre-registration.document.upload&quot;,&quot;request&quot;:{&quot;docCatCode&quot;:&quot;POI&quot;,&quot;docTypCode&quot;:&quot;DOC002&quot;,&quot;langCode&quot;:&quot;eng&quot;,&quot;refNumber&quot;:&quot;&quot;},&quot;metadata&quot;:{},&quot;version&quot;:&quot;1.0&quot;,&quot;requesttime&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;}&#xd;</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
+            <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
+            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">preregistration/v1/documents/${preRegistrationId}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Upload POR Document" enabled="true">
+            <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+              <collectionProp name="HTTPFileArgs.files">
+                <elementProp name="./Document2.pdf" elementType="HTTPFileArg">
+                  <stringProp name="File.path">./Document2.pdf</stringProp>
+                  <stringProp name="File.paramname">file</stringProp>
+                  <stringProp name="File.mimetype">application/pdf</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="Document request" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">Document request</stringProp>
+                  <stringProp name="Argument.value">{&quot;id&quot;:&quot;mosip.pre-registration.document.upload&quot;,&quot;request&quot;:{&quot;docCatCode&quot;:&quot;POR&quot;,&quot;docTypCode&quot;:&quot;DOC016&quot;,&quot;langCode&quot;:&quot;eng&quot;,&quot;refNumber&quot;:&quot;&quot;},&quot;metadata&quot;:{},&quot;version&quot;:&quot;1.0&quot;,&quot;requesttime&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;}&#xd;</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
+            <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
+            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">preregistration/v1/documents/${preRegistrationId}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Upload POE Document" enabled="true">
+            <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+              <collectionProp name="HTTPFileArgs.files">
+                <elementProp name="./Document3.pdf" elementType="HTTPFileArg">
+                  <stringProp name="File.path">./Document3.pdf</stringProp>
+                  <stringProp name="File.paramname">file</stringProp>
+                  <stringProp name="File.mimetype">application/pdf</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="Document request" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">Document request</stringProp>
+                  <stringProp name="Argument.value">{&quot;id&quot;:&quot;mosip.pre-registration.document.upload&quot;,&quot;request&quot;:{&quot;docCatCode&quot;:&quot;POE&quot;,&quot;docTypCode&quot;:&quot;DOC027&quot;,&quot;langCode&quot;:&quot;eng&quot;,&quot;refNumber&quot;:&quot;&quot;},&quot;metadata&quot;:{},&quot;version&quot;:&quot;1.0&quot;,&quot;requesttime&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
@@ -823,52 +924,6 @@
                 <elementProp name="Content-Type" elementType="Header">
                   <stringProp name="Header.name">Content-Type</stringProp>
                   <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Upload POA Document" enabled="true">
-            <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
-              <collectionProp name="HTTPFileArgs.files">
-                <elementProp name="C:\Users\Administrator\Desktop\Document2.pdf" elementType="HTTPFileArg">
-                  <stringProp name="File.path">C:\Users\Administrator\Desktop\Document2.pdf</stringProp>
-                  <stringProp name="File.paramname">file</stringProp>
-                  <stringProp name="File.mimetype">application/pdf</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="Document request" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.name">Document request</stringProp>
-                  <stringProp name="Argument.value">{&quot;id&quot;:&quot;mosip.pre-registration.document.upload&quot;,&quot;request&quot;:{&quot;docCatCode&quot;:&quot;POA&quot;,&quot;docTypCode&quot;:&quot;RNC&quot;,&quot;langCode&quot;:&quot;eng&quot;,&quot;refNumber&quot;:&quot;&quot;},&quot;metadata&quot;:{},&quot;version&quot;:&quot;1.0&quot;,&quot;requesttime&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;}&#xd;</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
-            <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
-            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">preregistration/v1/documents/${preRegistrationId}</stringProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -1012,7 +1067,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">preregistration/v1/proxy/masterdata/applicanttype/002/languages</stringProp>
+            <stringProp name="HTTPSampler.path">preregistration/v1/proxy/masterdata/applicanttype/${applicantTypeCode}/languages</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1212,8 +1267,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Province Hierarchy Level" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">provinceHierarchyLevel</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;hierarchyLevel&quot;:(.*?),&quot;hierarchyLevelName</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">provinceHierarchyLevel not found</stringProp>
+              <stringProp name="RegexExtractor.match_number">3</stringProp>
+            </RegexExtractor>
+            <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Postal Code Details" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Province Details" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -1221,7 +1285,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">preregistration/v1/proxy/masterdata/locations/info/${postalCode}/eng</stringProp>
+            <stringProp name="HTTPSampler.path">preregistration/v1/proxy/masterdata/locations/info/${provinceCode}/eng</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1241,6 +1305,15 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Province Name" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">provinceName</stringProp>
+              <stringProp name="RegexExtractor.regex">,&quot;name&quot;:&quot;(.*?)&quot;,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">provinceName not found</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Registration Center Details" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -1248,7 +1321,7 @@
                 <elementProp name="name" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">name</stringProp>
-                  <stringProp name="Argument.value">${postalCode}</stringProp>
+                  <stringProp name="Argument.value">${provinceName}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
@@ -1258,7 +1331,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">preregistration/v1/proxy/masterdata/registrationcenters/eng/5/names</stringProp>
+            <stringProp name="HTTPSampler.path">preregistration/v1/proxy/masterdata/registrationcenters/eng/${provinceHierarchyLevel}/names</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
