@@ -11,8 +11,8 @@ This folder contains performance test scripts and test data of Websub module.
 ### How to run JMeter script:-
 * This consist of a test script [Websub_Test_Script.jmx](https://github.com/mosip/mosip-performance-tests-mt/blob/1.2.0/commons/websub/script/Websub_Test_Script.jmx) which will do all the execution tasks.
 * The test script consists of 6 thread groups which are listed below - 
-   1. Register Topics : This is basically used for registering a new topic to the websub and has to be run once before the other thread groups.
-   2. Subscribe To Topics : This is used for subscribing to the registered topic by using subscription id's which we have handled in our script using a counter named 'Subscription ID Counter'.
+   1. Register Topics : This is basically used for registering a new topic to the websub and has to be run based on the number of topics we want to register & this has to be run before the other thread groups.
+   2. Subscribe To Topics : This is used for subscribing to the registered topic by using subscription id's which we have handled in our script using a counter named 'Subscription ID Counter' & this thread group we have to run based on the number of topics & subscribers we are using .
    3. Publish Messages : This is used for publishing messages to the websub which further will traverse to the subscribers.
    4. Delay - Time Wait For Message Delivery : This is used for making the script to wait till all the messages are delivered to websub utility and then the results are collected from the websub utility.
    5. Get Results : This is used for getting the results like total messages received by each subscriber, average turn around time in (ms), ninetieth percentile in (ms) and the subscription id's. Also we will get the total average of the turn around time & ninetieth percentile in (ms) for all the subscribers used.
@@ -27,11 +27,12 @@ This folder contains performance test scripts and test data of Websub module.
    4. websubPerfUtilityServerIP
    5. websubPerfUtilityServerPortNo
    6. websubPerfUtilityProtocol
-   7. topicName - (This is used to update the topic name which we will use for registration & then further use for the other tasks as well)
-   8. delay - (This is used to update the delay value in milliseconds which we need to give for the Delay thread group)
-   9. totalSubscribers - (This is used to update the number of subscribers which we want to use)
-   10. publisherConcurrency - (This is used to update the number of threads/users for the Publishing Message thread group)
-   11. publisherIterations - (This is used to update the number of iterations for the Publishing Message thread group)
+   7. delay - (This is used to update the delay value in milliseconds which we need to give for the Delay thread group)
+   8. totalSubscribers - (This is used to update the number of subscribers which we want to use)
+   9. publisherConcurrency - (This is used to update the number of threads/users for the Publishing Message thread group)
+   10. publisherIterations - (This is used to update the number of iterations for the Publishing Message thread group)
+   11. uniqueTopicCount - (This is used to update the number of unique topic names we are using in the 'uniqueTopicNames.csv' file)
+   12. topicSubscriptionCount - (This is the loop count of the Subscribe To Topics thread group **i.e totalSubscribers * uniqueTopicCount**)
    
    **(Note - Total messages published to the websub = publisherConcurrency * publisherIterations)**
    
