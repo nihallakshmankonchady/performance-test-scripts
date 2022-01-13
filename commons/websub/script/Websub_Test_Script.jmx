@@ -73,7 +73,17 @@
           </elementProp>
           <elementProp name="publisherIterations" elementType="Argument">
             <stringProp name="Argument.name">publisherIterations</stringProp>
-            <stringProp name="Argument.value">1667</stringProp>
+            <stringProp name="Argument.value">350</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="uniqueTopicCount" elementType="Argument">
+            <stringProp name="Argument.name">uniqueTopicCount</stringProp>
+            <stringProp name="Argument.value">9</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="topicSubscriptionCount" elementType="Argument">
+            <stringProp name="Argument.name">topicSubscriptionCount</stringProp>
+            <stringProp name="Argument.value">180</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -91,11 +101,23 @@
         <stringProp name="shareMode">shareMode.group</stringProp>
       </CSVDataSet>
       <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Unique Topic Names From File" enabled="true">
+        <stringProp name="filename">./uniqueTopicNames.csv</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">uniqueTopicName</stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.group</stringProp>
+      </CSVDataSet>
+      <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Register Topics (Helper)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">9</stringProp>
+          <stringProp name="LoopController.loops">${uniqueTopicCount}</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -164,7 +186,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">180</stringProp>
+          <stringProp name="LoopController.loops">${topicSubscriptionCount}</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -195,7 +217,7 @@
               </elementProp>
               <elementProp name="hub.topic" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${topicName}</stringProp>
+                <stringProp name="Argument.value">${uniqueTopicName}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">hub.topic</stringProp>
@@ -588,7 +610,7 @@ vars.put(&quot;finalAvgNinetiethPercentile&quot;,&quot;&quot;+finalAvgNinetiethP
         </hashTree>
       </hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <boolProp name="ResultCollector.error_logging">true</boolProp>
         <objProp>
           <name>saveConfig</name>
           <value class="SampleSaveConfiguration">
