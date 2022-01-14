@@ -32,7 +32,6 @@ This folder contains performance test scripts and test data of Websub module.
    9. publisherConcurrency - (This is used to update the number of threads/users for the Publishing Message thread group)
    10. publisherIterations - (This is used to update the number of iterations for the Publishing Message thread group)
    11. uniqueTopicCount - (This is used to update the number of unique topic names we are using in the 'uniqueTopicNames.csv' file)
-   12. topicSubscriptionCount - (This is the loop count of the Subscribe To Topics thread group **i.e totalSubscribers * uniqueTopicCount**)
    
    **(Note - Total messages published to the websub = publisherConcurrency * publisherIterations)**
    
