@@ -26,14 +26,15 @@ import io.mosip.websub.perf.utility.service.WebsubCallbackService;
 public class WebsubCallbackServiceImpl implements WebsubCallbackService {
 
 	
-	//private static final Logger LOGGER = LoggerFactory.getLogger(WebsubCallbackServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(WebsubCallbackServiceImpl.class);
 	private static final String UTC_DATETIME_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
 	private Map<String, PerformanceData> cache = new HashMap<>();
+	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern(UTC_DATETIME_PATTERN);
 	
 	@Override
-	public void compute(RequestDTO requestDTO,String subID) {
+	public void compute(RequestDTO requestDTO,String subID) {	 
+		LOGGER.info("requestDTO - {}",requestDTO);
 		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(UTC_DATETIME_PATTERN);
 		LocalDateTime timeStamp= LocalDateTime.parse(requestDTO.getTimestamp(), formatter);
 		LocalDateTime timeNow= LocalDateTime.now(ZoneOffset.UTC);
 		long millis=ChronoUnit.MILLIS.between(timeStamp,timeNow);
@@ -53,6 +54,9 @@ public class WebsubCallbackServiceImpl implements WebsubCallbackService {
 	@Override
 	public ResultMetadata getResult(String subID) {
 		PerformanceData performenceData= cache.get(subID);
+		if(performenceData==null) {
+			throw new RuntimeException("No data for subID");
+		}
 		ResultMetadata metadata= new ResultMetadata();
 		List<Long> tat= performenceData.getTurnAroundTime();
 		Collections.sort(tat);

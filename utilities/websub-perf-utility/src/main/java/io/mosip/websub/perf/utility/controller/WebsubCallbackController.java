@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ import io.mosip.websub.perf.utility.service.WebsubCallbackService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -40,8 +41,11 @@ public class WebsubCallbackController {
 			@ApiResponse(responseCode = "403", description = "Forbidden" ,content = @Content(schema = @Schema(hidden = true))),
 			@ApiResponse(responseCode = "404", description = "Not Found" ,content = @Content(schema = @Schema(hidden = true)))})
 	@PostMapping(value = "/callback/**")
-	public @ResponseBody ResponseEntity<Void> callbackHandler(@RequestBody RequestDTO requestDTO,HttpServletRequest httpServletRequest) {
+	public  ResponseEntity<Void> callbackHandler(@RequestBody RequestDTO requestDTO,HttpServletRequest httpServletRequest) {
 		String subID=httpServletRequest.getRequestURI().split("/callback/")[1];
+	    if(subID.contains("/")) {
+	    	subID= subID.split("/")[0];
+	    }
 		websubCallbackService.compute(requestDTO,subID);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
@@ -54,7 +58,7 @@ public class WebsubCallbackController {
 			@ApiResponse(responseCode = "403", description = "Forbidden" ,content = @Content(schema = @Schema(hidden = true))),
 			@ApiResponse(responseCode = "404", description = "Not Found" ,content = @Content(schema = @Schema(hidden = true)))})
 	@GetMapping(value = "/result/{subID}")
-	public @ResponseBody ResponseEntity<ResultMetadata> getResult(@PathVariable String subID) {
+	public  ResponseEntity<ResultMetadata> getResult(@PathVariable String subID) {
 		return new ResponseEntity<>(websubCallbackService.getResult(subID),HttpStatus.OK);
 	}
 	
@@ -65,7 +69,7 @@ public class WebsubCallbackController {
 			@ApiResponse(responseCode = "403", description = "Forbidden" ,content = @Content(schema = @Schema(hidden = true))),
 			@ApiResponse(responseCode = "404", description = "Not Found" ,content = @Content(schema = @Schema(hidden = true)))})
 	@GetMapping(value = "/reset")
-	public @ResponseBody ResponseEntity<Void> reset() {
+	public  ResponseEntity<Void> reset() {
 		
 		websubCallbackService.reset();
 		return new ResponseEntity<>(HttpStatus.OK);

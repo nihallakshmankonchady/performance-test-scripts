@@ -6,6 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -21,12 +23,28 @@ import org.springframework.web.filter.OncePerRequestFilter;
  */
 public class IntentVerificationFilter extends OncePerRequestFilter {
 	
+	private static final Logger LOGGER = LoggerFactory.getLogger(IntentVerificationFilter.class);
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {		
-	
 		if (request.getRequestURI().contains("/callback") &&  request.getMethod().equals(HttpMethod.GET.name())) {
-				response.setStatus(HttpServletResponse.SC_ACCEPTED);
+			LOGGER.info("intent verification intercepted");	
+			response.setStatus(HttpServletResponse.SC_ACCEPTED);
+				try {
+					String challange =request.getParameter("hub.challenge");
+					if(challange!=null){
+					response.getWriter().write(request.getParameter("hub.challenge"));
+					response.getWriter().flush();
+					response.getWriter().close();
+				}else{
+					LOGGER.info("hub mode in no challange error {}",request.getParameter("hub.mode"));	
+					LOGGER.info("hub reason in no challange error {}",request.getParameter("hub.reason"));	
+					response.getWriter().flush();
+					response.getWriter().close();
+				}
+				} catch (IOException exception) {
+					LOGGER.error("error received while writing challange back {}",exception.getMessage());
+				}
 		}else {
 			filterChain.doFilter(request, response);
 		}
