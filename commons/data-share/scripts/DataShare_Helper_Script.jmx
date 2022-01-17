@@ -12,13 +12,13 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="Clear cookies" enabled="true">
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="Clear Cookies" enabled="true">
         <collectionProp name="CookieManager.cookies"/>
         <boolProp name="CookieManager.clearEachIteration">true</boolProp>
         <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
       </CookieManager>
       <hashTree/>
-      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="Clear cache" enabled="true">
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="Clear Cache" enabled="true">
         <boolProp name="clearEachIteration">true</boolProp>
         <boolProp name="useExpires">false</boolProp>
         <boolProp name="CacheManager.controlledByThread">false</boolProp>
@@ -33,7 +33,7 @@
           </elementProp>
           <elementProp name="clientId" elementType="Argument">
             <stringProp name="Argument.name">clientId</stringProp>
-            <stringProp name="Argument.value">mosip-datsha-client</stringProp>
+            <stringProp name="Argument.value">mosip-regproc-client</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="secretKey" elementType="Argument">
@@ -43,12 +43,12 @@
           </elementProp>
           <elementProp name="appId" elementType="Argument">
             <stringProp name="Argument.name">appId</stringProp>
-            <stringProp name="Argument.value">datsha</stringProp>
+            <stringProp name="Argument.value">regproc</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="serverIP" elementType="Argument">
             <stringProp name="Argument.name">serverIP</stringProp>
-            <stringProp name="Argument.value">cellbox.mosip.net</stringProp>
+            <stringProp name="Argument.value">cellbox2.mosip.net</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="serverPortNo" elementType="Argument">
@@ -141,7 +141,7 @@
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(authorization_token_datashare.txt,${authToken}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(authorization_token_datashare.txt,${authToken}\n,false,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
