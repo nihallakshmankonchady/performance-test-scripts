@@ -126,10 +126,10 @@
         <stringProp name="shareMode">shareMode.all</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Relying Party API Request ID From File" enabled="true">
-        <stringProp name="filename">./rpApiRequestId.txt</stringProp>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Relying Party API Key From File" enabled="true">
+        <stringProp name="filename">./rpApiKey.txt</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">rpApiRequestId</stringProp>
+        <stringProp name="variableNames">rpApiKey</stringProp>
         <boolProp name="ignoreFirstLine">false</boolProp>
         <stringProp name="delimiter">,</stringProp>
         <boolProp name="quotedData">false</boolProp>
@@ -339,7 +339,7 @@ new File(&quot;sendOtpRequestDetails.txt&quot;).delete();</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">idauthentication/v1/otp/${mispLicenseKey}/${rpPartnerId}/${rpApiRequestId}</stringProp>
+          <stringProp name="HTTPSampler.path">idauthentication/v1/otp/${mispLicenseKey}/${rpPartnerId}/${rpApiKey}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -516,7 +516,7 @@ new File(&quot;sendOtpRequestDetails.txt&quot;).delete();</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">idauthentication/v1/otp/${mispLicenseKey}/${rpPartnerId}/${rpApiRequestId}</stringProp>
+          <stringProp name="HTTPSampler.path">idauthentication/v1/otp/${mispLicenseKey}/${rpPartnerId}/${rpApiKey}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -656,7 +656,7 @@ new File(&quot;sendOtpRequestDetails.txt&quot;).delete();</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">idauthentication/v1/auth/${mispLicenseKey}/${rpPartnerId}/${rpApiRequestId}</stringProp>
+          <stringProp name="HTTPSampler.path">idauthentication/v1/auth/${mispLicenseKey}/${rpPartnerId}/${rpApiKey}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1268,7 +1268,7 @@ new File(&quot;sendOtpRequestDetails.txt&quot;).delete();</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">idauthentication/v1/auth/${mispLicenseKey}/${rpPartnerId}/${rpApiRequestId}</stringProp>
+          <stringProp name="HTTPSampler.path">idauthentication/v1/auth/${mispLicenseKey}/${rpPartnerId}/${rpApiKey}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1604,7 +1604,7 @@ new File(&quot;sendOtpRequestDetails.txt&quot;).delete();</stringProp>
         </hashTree>
       </hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-        <boolProp name="ResultCollector.error_logging">true</boolProp>
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
           <value class="SampleSaveConfiguration">
