@@ -30,7 +30,8 @@ This folder contains performance test scripts and test data for ID Authenticatio
 
 * The second thread group is for the creation of UIN by using existing RID's for which a text file is there in the support files folder [RID_list.txt](https://github.com/mosip/mosip-performance-tests-mt/blob/1.1.5/id-authentication/support-files/RID_list.txt).
 
-* The third thread group is basically for setting up the third party certificates which are required for running the IDA API scripts & also for creating and publishing policy & then creating various partner certificates based on the policy created. **Note - Before creating certificates we need to assign default role as AUTH_PARTNER in the keycloak for the environment we are using so that all new users with the same partner id which we will create will automatically have the desired role which it needs**
+* The third thread group is basically for setting up the third party certificates which are required for running the IDA API scripts & also for creating and publishing policy & then creating various partner certificates based on the policy created. 
+**Note - Before creating certificates we need to assign default role as AUTH_PARTNER in the keycloak for the environment we are using so that all new users with the same partner id which we will create will automatically have the desired role which it needs**
 
 * All the creation tasks which will happen that will automatically save the tokens and id's created to a file in the bin folder of JMeter which will be used further by our test script for execution.
 
