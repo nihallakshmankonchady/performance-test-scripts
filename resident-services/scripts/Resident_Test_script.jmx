@@ -995,7 +995,7 @@ new File(&quot;VID_prep2.txt&quot;).delete();</stringProp>
  &quot;individualId&quot;: &quot;${UIN_tid_UL}&quot;,&#xd;
   &quot;individualIdType&quot;: &quot;UIN&quot;,&#xd;
   &quot;otp&quot;: &quot;111111&quot;,&#xd;
-  &quot;authType&quot;: [&quot;demo&quot;]&#xd;
+  &quot;authType&quot;: [&quot;demo&quot;],&#xd;
   &quot;unlockForSeconds&quot;: &quot;3600&quot;&#xd;
   }&#xd;
 }</stringProp>
