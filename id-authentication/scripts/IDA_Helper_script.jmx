@@ -56,12 +56,37 @@
           </elementProp>
           <elementProp name="idaUtilityserverIP" elementType="Argument">
             <stringProp name="Argument.name">idaUtilityserverIP</stringProp>
-            <stringProp name="Argument.value">65.0.120.180</stringProp>
+            <stringProp name="Argument.value">cellbox2.mosip.net</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="serverPortNo" elementType="Argument">
             <stringProp name="Argument.name">serverPortNo</stringProp>
             <stringProp name="Argument.value">443</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="keycloakUsername" elementType="Argument">
+            <stringProp name="Argument.name">keycloakUsername</stringProp>
+            <stringProp name="Argument.value">admin</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="keycloakPassword" elementType="Argument">
+            <stringProp name="Argument.name">keycloakPassword</stringProp>
+            <stringProp name="Argument.value">admin</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="keycloakClientId" elementType="Argument">
+            <stringProp name="Argument.name">keycloakClientId</stringProp>
+            <stringProp name="Argument.value">admin-cli</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="keycloakGrantType" elementType="Argument">
+            <stringProp name="Argument.name">keycloakGrantType</stringProp>
+            <stringProp name="Argument.value">password</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="keycloakPartnerUserPassword" elementType="Argument">
+            <stringProp name="Argument.name">keycloakPartnerUserPassword</stringProp>
+            <stringProp name="Argument.value">mosip</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -1768,7 +1793,7 @@
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Submit PartnerAPI Key request" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Map Partner Id and Policy" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -1816,17 +1841,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Api Mapping Key" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Partner Policy Mapping Key" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">rpApiMappingKey</stringProp>
+              <stringProp name="RegexExtractor.refname">rpPartnerPolicyMappingKey</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;mappingkey&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">rpApiMappingKey not found</stringProp>
+              <stringProp name="RegexExtractor.default">rpPartnerPolicyMappingKey not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Approve/Reject Partner API Key request" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Approve Partner Policy Mapping" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -1849,7 +1874,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/policy/${rpApiMappingKey}</stringProp>
+            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/policy/${rpPartnerPolicyMappingKey}</stringProp>
             <stringProp name="HTTPSampler.method">PUT</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1874,33 +1899,33 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Keycloak Token Generation" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Keycloak Admin User Token" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="grant_type" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">password</stringProp>
+                  <stringProp name="Argument.value">${keycloakGrantType}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">grant_type</stringProp>
                 </elementProp>
                 <elementProp name="client_id" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">admin-cli</stringProp>
+                  <stringProp name="Argument.value">${keycloakClientId}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">client_id</stringProp>
                 </elementProp>
                 <elementProp name="username" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">admin</stringProp>
+                  <stringProp name="Argument.value">${keycloakUsername}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">username</stringProp>
                 </elementProp>
                 <elementProp name="password" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">admin</stringProp>
+                  <stringProp name="Argument.value">${keycloakPassword}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">password</stringProp>
@@ -1931,17 +1956,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Keycloak Token" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Keycloak Admin User Token" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">keycloakToken</stringProp>
+              <stringProp name="RegexExtractor.refname">keycloakAdminUserToken</stringProp>
               <stringProp name="RegexExtractor.regex">access_token&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">keycloakToken not found</stringProp>
+              <stringProp name="RegexExtractor.default">keycloakAdminUserToken not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Keycloak User" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create Partner User In Keycloak" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -1967,7 +1992,7 @@
 &#xd;
          &quot;type&quot;:&quot;password&quot;,&#xd;
 &#xd;
-         &quot;value&quot;:&quot;${pmsPassword}&quot;&#xd;
+         &quot;value&quot;:&quot;${keycloakPartnerUserPassword}&quot;&#xd;
 &#xd;
       }&#xd;
 &#xd;
@@ -2001,22 +2026,13 @@
                 </elementProp>
                 <elementProp name="Cookie" elementType="Header">
                   <stringProp name="Header.name">Authorization</stringProp>
-                  <stringProp name="Header.value">Bearer ${keycloakToken}</stringProp>
+                  <stringProp name="Header.value">Bearer ${keycloakAdminUserToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
-              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname"></stringProp>
-              <stringProp name="RegexExtractor.regex"></stringProp>
-              <stringProp name="RegexExtractor.template"></stringProp>
-              <stringProp name="RegexExtractor.default"></stringProp>
-              <stringProp name="RegexExtractor.match_number"></stringProp>
-            </RegexExtractor>
-            <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Keycloak User Authentication API" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Auth Token For Partner User" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -2027,7 +2043,7 @@
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
     &quot;appId&quot;: &quot;partner&quot;,&#xd;
-    &quot;password&quot;: &quot;${pmsPassword}&quot;,&#xd;
+    &quot;password&quot;: &quot;${keycloakPartnerUserPassword}&quot;,&#xd;
     &quot;userName&quot;: &quot;${rpPartnerId}&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -2061,17 +2077,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract PMS Auth Token For Cookie" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Partner User Token" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">true</stringProp>
-              <stringProp name="RegexExtractor.refname">pmsAuthorization</stringProp>
+              <stringProp name="RegexExtractor.refname">rpPartnerUserAuthToken</stringProp>
               <stringProp name="RegexExtractor.regex">Set-Cookie: Authorization=([\w.-]+);</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">pmsAuthorization not found</stringProp>
+              <stringProp name="RegexExtractor.default">rpPartnerUserAuthToken not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ValidateToken" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Bearer Token For Partner User" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -2102,7 +2118,7 @@
                 </elementProp>
                 <elementProp name="Cookie" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pmsAuthorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${rpPartnerUserAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -2116,18 +2132,18 @@
               <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract PMS User Auth Token" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Bearer Token for Partner User" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">pmsUserAuthTokenRp</stringProp>
+              <stringProp name="RegexExtractor.refname">rpPartnerUserBearerToken</stringProp>
               <stringProp name="RegexExtractor.regex">&quot;,&quot;token&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">pmsUserAuthTokenRp not found</stringProp>
+              <stringProp name="RegexExtractor.default">rpPartnerUserBearerToken not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
               <stringProp name="Sample.scope">all</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Partner API Key request" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Partner API Key Request" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -2170,7 +2186,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pmsUserAuthTokenRp}</stringProp>
+                  <stringProp name="Header.value">Authorization=${rpPartnerUserBearerToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3246,7 +3262,7 @@
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Submit PartnerAPI Key request" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Map Partner Id and Policy" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -3294,17 +3310,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract EKYC Mapping Key" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Partner Policy Mapping Key" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">ekycMappingKey</stringProp>
+              <stringProp name="RegexExtractor.refname">ekycPartnerPolicyMappingKey</stringProp>
               <stringProp name="RegexExtractor.regex">{&quot;mappingkey&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">ekycMappingKey not found</stringProp>
+              <stringProp name="RegexExtractor.default">ekycPartnerPolicyMappingKey not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Approve/Reject Partner API Key request" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Approve Partner Policy Mapping" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -3327,7 +3343,7 @@
             <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
             <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/policy/${ekycMappingKey}</stringProp>
+            <stringProp name="HTTPSampler.path">v1/partnermanager/partners/policy/${ekycPartnerPolicyMappingKey}</stringProp>
             <stringProp name="HTTPSampler.method">PUT</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3352,33 +3368,33 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Keycloak Token Generation" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Keycloak Admin User Token" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="grant_type" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">password</stringProp>
+                  <stringProp name="Argument.value">${keycloakGrantType}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">grant_type</stringProp>
                 </elementProp>
                 <elementProp name="client_id" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">admin-cli</stringProp>
+                  <stringProp name="Argument.value">${keycloakClientId}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">client_id</stringProp>
                 </elementProp>
                 <elementProp name="username" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">admin</stringProp>
+                  <stringProp name="Argument.value">${keycloakUsername}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">username</stringProp>
                 </elementProp>
                 <elementProp name="password" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">admin</stringProp>
+                  <stringProp name="Argument.value">${keycloakPassword}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">password</stringProp>
@@ -3409,17 +3425,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Keycloak User Token" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Keycloak Admin User Token" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">keycloakToken</stringProp>
+              <stringProp name="RegexExtractor.refname">keycloakAdminUserToken</stringProp>
               <stringProp name="RegexExtractor.regex">access_token&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">keycloakToken not found</stringProp>
+              <stringProp name="RegexExtractor.default">keycloakAdminUserToken not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Keycloak User" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create Partner User In Keycloak" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -3445,7 +3461,7 @@
 &#xd;
          &quot;type&quot;:&quot;password&quot;,&#xd;
 &#xd;
-         &quot;value&quot;:&quot;${pmsPassword}&quot;&#xd;
+         &quot;value&quot;:&quot;${keycloakPartnerUserPassword}&quot;&#xd;
 &#xd;
       }&#xd;
 &#xd;
@@ -3479,13 +3495,13 @@
                 </elementProp>
                 <elementProp name="Cookie" elementType="Header">
                   <stringProp name="Header.name">Authorization</stringProp>
-                  <stringProp name="Header.value">Bearer ${keycloakToken}</stringProp>
+                  <stringProp name="Header.value">Bearer ${keycloakAdminUserToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Keycloak User Authentication API" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Auth Token For Partner User" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -3496,7 +3512,7 @@
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
     &quot;appId&quot;: &quot;partner&quot;,&#xd;
-    &quot;password&quot;: &quot;${pmsPassword}&quot;,&#xd;
+    &quot;password&quot;: &quot;${keycloakPartnerUserPassword}&quot;,&#xd;
     &quot;userName&quot;: &quot;${ekycPartnerId}&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
@@ -3530,17 +3546,17 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract PMS Auth Token For Cookie" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Partner User Token" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">true</stringProp>
-              <stringProp name="RegexExtractor.refname">pmsAuthorization</stringProp>
+              <stringProp name="RegexExtractor.refname">ekycPartnerUserAuthToken</stringProp>
               <stringProp name="RegexExtractor.regex">Set-Cookie: Authorization=([\w.-]+);</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">pmsAuthorization not found</stringProp>
+              <stringProp name="RegexExtractor.default">ekycPartnerUserAuthToken not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ValidateToken" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Bearer Token For Partner User" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -3571,7 +3587,7 @@
                 </elementProp>
                 <elementProp name="Cookie" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pmsAuthorization}</stringProp>
+                  <stringProp name="Header.value">Authorization=${ekycPartnerUserAuthToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -3585,18 +3601,18 @@
               <boolProp name="ISREGEX">true</boolProp>
             </JSONPathAssertion>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract PMS User Auth Token" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Bearer Token for Partner User" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">pmsUserAuthTokenEkyc</stringProp>
+              <stringProp name="RegexExtractor.refname">ekycPartnerUserBearerToken</stringProp>
               <stringProp name="RegexExtractor.regex">&quot;,&quot;token&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">pmsUserAuthTokenEkyc not found</stringProp>
+              <stringProp name="RegexExtractor.default">ekycPartnerUserBearerToken not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
               <stringProp name="Sample.scope">all</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Partner API Key request" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Partner API Key Request" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -3639,7 +3655,7 @@
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Cookie</stringProp>
-                  <stringProp name="Header.value">Authorization=${pmsUserAuthTokenEkyc}</stringProp>
+                  <stringProp name="Header.value">Authorization=${ekycPartnerUserBearerToken}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
