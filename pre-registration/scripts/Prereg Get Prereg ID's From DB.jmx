@@ -16,7 +16,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="dbHost" elementType="Argument">
             <stringProp name="Argument.name">dbHost</stringProp>
-            <stringProp name="Argument.value">15.207.103.91</stringProp>
+            <stringProp name="Argument.value">cellbox2.mosip.net</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="dbPort" elementType="Argument">
