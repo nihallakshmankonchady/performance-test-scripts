@@ -45,7 +45,7 @@
       </Arguments>
       <hashTree/>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Auth Token From File" enabled="true">
-        <stringProp name="filename">./authorization_token_kernel.txt</stringProp>
+        <stringProp name="filename">./authorization_token_auditmanager.txt</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames">authToken</stringProp>
         <boolProp name="ignoreFirstLine">false</boolProp>
