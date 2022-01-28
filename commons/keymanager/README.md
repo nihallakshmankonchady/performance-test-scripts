@@ -8,7 +8,7 @@ This folder contains performance test scripts and test data of Keymanager module
 * Kernel keymanager service
 
 ### Data prequisite:-
-* Encrypt data request variable details for Keymanager API's are stored [here](https://github.com/mosip/mosip-performance-tests-mt/blob/1.2.0/commons/keymanager/support-files/encryptDataRequestVariations.csv)and can be modified based on the requirements.
+* Encrypt data request variable details for Keymanager API's are stored [here](https://github.com/mosip/mosip-performance-tests-mt/blob/1.2.0/commons/keymanager/support-files/encryptDataRequestVariations.csv) and can be modified based on the requirements.
 
 ### How to run JMeter scripts:-
 * We need to take care of the prerequisites first for which we a helper script [Keymanager_Helper_Script.jmx](https://github.com/mosip/mosip-performance-tests-mt/blob/1.2.0/commons/keymanager/scripts/Keymanager_Helper_Script.jmx).
