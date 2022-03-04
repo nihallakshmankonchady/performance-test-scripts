@@ -4,7 +4,8 @@ service:
   ports:
     nodePort: 30070
     profilerAgentPort: 8849
-  profileAppService: ida-kyc-service
+  profileAppService: java-profiler-agent-endpoint-svc
+  podIpAddress: 10.244.6.105 
 pv:
   name: java-profiler-agent-pv
   size: 500Mi
