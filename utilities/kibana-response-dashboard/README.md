@@ -29,4 +29,4 @@
 * packetmanager service
 * resident service
 
-*** Note - Other graphs can also be added to the dashboard by going to edit -> save as (the name of the service by which we want to save). ***
+**Note - Other graphs can also be added to the dashboard by going to edit -> save as (the name of the service by which we want to save)**
