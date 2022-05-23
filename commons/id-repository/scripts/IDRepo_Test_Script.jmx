@@ -33,7 +33,7 @@
           </elementProp>
           <elementProp name="serverIP" elementType="Argument">
             <stringProp name="Argument.name">serverIP</stringProp>
-            <stringProp name="Argument.value">cellbox.mosip.net</stringProp>
+            <stringProp name="Argument.value">cellbox2.mosip.net</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="serverPortNo" elementType="Argument">
@@ -70,9 +70,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">200</stringProp>
+          <stringProp name="LoopController.loops">400</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">5</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -97,6 +97,18 @@
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="variableNames">firstName,dateOfBirth,gender</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Biometrics Details From File" enabled="true">
+          <stringProp name="filename">./biometrics.txt</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">biometrics</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -208,7 +220,7 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity (bio)" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -234,6 +246,8 @@
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
+			&quot;mobileno&quot;: &quot;${__RandomString(10,1234567890,)}&quot;,&#xd;
+			&quot;email&quot;: &quot;abc@gmail${__Random(100,999999999999,)}.com&quot;,&#xd;
 			&quot;presentCountry&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
@@ -251,7 +265,7 @@
 				&quot;value&quot;: &quot;${gender}&quot;&#xd;
 			}],&#xd;
 			&quot;residenceStatus&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
+				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;Foreigner&quot;&#xd;
 			}],&#xd;
 			&quot;bloodType&quot;: [{&#xd;
@@ -259,19 +273,13 @@
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
 			&quot;permanentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;addressCopy&quot;: &quot;#991, 47 Street, 6 block&quot;,&#xd;
 			&quot;presentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;modeOfClaim&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
@@ -287,7 +295,16 @@
 				&quot;version&quot;: 1,&#xd;
 				&quot;value&quot;: &quot;individualBiometrics_bio_CBEFF&quot;&#xd;
 			}&#xd;
-		}&#xd;
+		},&#xd;
+	      &quot;documents&quot;: [{&#xd;
+				&quot;category&quot;: &quot;proofOfAddress&quot;,&#xd;
+				&quot;value&quot;: &quot;ZGF0YQ&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;category&quot;: &quot;individualBiometrics&quot;,&#xd;
+				&quot;value&quot;: &quot;${biometrics}&quot;&#xd;
+			}&#xd;
+		]&#xd;
 	},&#xd;
 	&quot;requesttime&quot;: &quot;2019-01-28T13:07:13.152Z&quot;,&#xd;
 	&quot;version&quot;: &quot;v1.0&quot;&#xd;
@@ -417,9 +434,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <stringProp name="LoopController.loops">400</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">5</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -439,20 +456,23 @@
           <stringProp name="shareMode">shareMode.all</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Transaction ID Counter" enabled="true">
-          <stringProp name="CounterConfig.start">1000000000</stringProp>
-          <stringProp name="CounterConfig.end">9999999999</stringProp>
-          <stringProp name="CounterConfig.incr">1</stringProp>
-          <stringProp name="CounterConfig.name">tranId</stringProp>
-          <stringProp name="CounterConfig.format"></stringProp>
-          <boolProp name="CounterConfig.per_user">false</boolProp>
-        </CounterConfig>
-        <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Add Identity Request Details From File" enabled="true">
           <stringProp name="filename">./addIdentityRequestDetails.csv</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="variableNames">firstName,dateOfBirth,gender</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Biometrics Details From File" enabled="true">
+          <stringProp name="filename">./biometrics.txt</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">biometrics</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -564,7 +584,7 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity (bio)" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -590,6 +610,8 @@
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
+			&quot;mobileno&quot;: &quot;${__RandomString(10,1234567890,)}&quot;,&#xd;
+			&quot;email&quot;: &quot;abc@gmail${__Random(100,999999999999,)}.com&quot;,&#xd;
 			&quot;presentCountry&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
@@ -607,7 +629,7 @@
 				&quot;value&quot;: &quot;${gender}&quot;&#xd;
 			}],&#xd;
 			&quot;residenceStatus&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
+				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;Foreigner&quot;&#xd;
 			}],&#xd;
 			&quot;bloodType&quot;: [{&#xd;
@@ -615,19 +637,13 @@
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
 			&quot;permanentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;addressCopy&quot;: &quot;#991, 47 Street, 6 block&quot;,&#xd;
 			&quot;presentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;modeOfClaim&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
@@ -643,7 +659,16 @@
 				&quot;version&quot;: 1,&#xd;
 				&quot;value&quot;: &quot;individualBiometrics_bio_CBEFF&quot;&#xd;
 			}&#xd;
-		}&#xd;
+		},&#xd;
+	      &quot;documents&quot;: [{&#xd;
+				&quot;category&quot;: &quot;proofOfAddress&quot;,&#xd;
+				&quot;value&quot;: &quot;ZGF0YQ&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;category&quot;: &quot;individualBiometrics&quot;,&#xd;
+				&quot;value&quot;: &quot;${biometrics}&quot;&#xd;
+			}&#xd;
+		]&#xd;
 	},&#xd;
 	&quot;requesttime&quot;: &quot;2019-01-28T13:07:13.152Z&quot;,&#xd;
 	&quot;version&quot;: &quot;v1.0&quot;&#xd;
@@ -691,21 +716,22 @@
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Send OTP (UIN)" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create VID" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;id&quot;: &quot;mosip.identity.otp.internal&quot;,&#xd;
-  &quot;individualId&quot;: &quot;8529589614&quot;,&#xd;
-  &quot;individualIdType&quot;: &quot;UIN&quot;,&#xd;
+  &quot;id&quot;: &quot;mosip.vid.create&quot;,&#xd;
+  &quot;version&quot;: &quot;v1&quot;,&#xd;
+  &quot;requesttime&quot;: &quot;2021-11-12T07:28:59.627Z&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
-  &quot;otpChannel&quot;: [&quot;PHONE&quot;,&quot;EMAIL&quot;],&#xd;
-  &quot;requestTime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
-  &quot;transactionID&quot;: &quot;${tranId}&quot;,&#xd;
-  &quot;version&quot;: &quot;1.0&quot;&#xd;
+  &quot;request&quot;: {&#xd;
+    &quot;vidStatus&quot;: &quot;string&quot;,&#xd;
+    &quot;vidType&quot;: &quot;${vidType}&quot;,&#xd;
+    &quot;UIN&quot;: &quot;${uin}&quot;&#xd;
+  }&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -715,7 +741,7 @@
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">resident/v1/req/otp</stringProp>
+          <stringProp name="HTTPSampler.path">idrepository/v1/vid</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -728,29 +754,20 @@
         <hashTree>
           <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
             <collectionProp name="HeaderManager.headers">
-              <elementProp name="" elementType="Header">
+              <elementProp name="Content-Type" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
-              <elementProp name="" elementType="Header">
+              <elementProp name="Cookie" elementType="Header">
                 <stringProp name="Header.name">Cookie</stringProp>
                 <stringProp name="Header.value">Authorization=${authToken}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract TransactionID" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">transactionID</stringProp>
-            <stringProp name="RegexExtractor.regex">&quot;,&quot;transactionID&quot;:&quot;(.*?)&quot;,&quot;</stringProp>
-            <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">transactionID not found</stringProp>
-            <stringProp name="RegexExtractor.match_number">1</stringProp>
-          </RegexExtractor>
-          <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1484188677">&quot;maskedEmail&quot;:&quot;</stringProp>
+              <stringProp name="-462010515">response&quot;:{&quot;vidStatus&quot;:&quot;ACTIVE</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -758,73 +775,12 @@
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate VID" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-  &quot;id&quot;: &quot;mosip.resident.vid&quot;,&#xd;
-  &quot;request&quot;: {&#xd;
- &quot;individualId&quot;: &quot;${uin}&quot;,&#xd;
-    &quot;individualIdType&quot;: &quot;UIN&quot;,&#xd;
-    &quot;otp&quot;: &quot;111111&quot;,&#xd;
-    &quot;transactionID&quot;: &quot;${transactionID}&quot;,&#xd;
-    &quot;vidType&quot;: &quot;Temporary&quot;&#xd;
-  },&#xd;
-  &quot;requesttime&quot;: &quot;2020-09-30T06:20:22.404Z&quot;,&#xd;
-  &quot;version&quot;: &quot;v1&quot;&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
-          <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
-          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">resident/v1/vid</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Cookie</stringProp>
-                <stringProp name="Header.value">Authorization=${authToken}</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-521841335">&quot;message&quot;:&quot;Notification has been sent to the provided email</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract VID" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">VID</stringProp>
-            <stringProp name="RegexExtractor.regex">{&quot;vid&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.refname">vidGenerated</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;VID&quot;:&quot;(.*?)&quot;},&quot;</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">VID not found</stringProp>
+            <stringProp name="RegexExtractor.default">vidGenerated not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
@@ -832,7 +788,7 @@
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(retrieveIdentityVIDDetails.txt,${VID}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(retrieveIdentityVIDDetails.txt,${vidGenerated}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -843,7 +799,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -860,7 +816,7 @@
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">vid,tran</stringProp>
+          <stringProp name="variableNames">vid</stringProp>
         </CSVDataSet>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Retrieve Identity using VID" enabled="true">
@@ -911,7 +867,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <stringProp name="LoopController.loops">900</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">10</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -1056,9 +1012,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <stringProp name="LoopController.loops">300</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -1090,6 +1046,18 @@
           <stringProp name="shareMode">shareMode.all</stringProp>
         </CSVDataSet>
         <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Biometrics Details From File" enabled="true">
+          <stringProp name="filename">./biometrics.txt</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">biometrics</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load UIN From File" enabled="true">
           <stringProp name="filename">./addIdentityUINValues.txt</stringProp>
           <stringProp name="fileEncoding"></stringProp>
@@ -1102,7 +1070,7 @@
           <stringProp name="shareMode">shareMode.all</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity Execution" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity (bio) Execution" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -1128,6 +1096,8 @@
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
+			&quot;mobileno&quot;: &quot;1234567890&quot;,&#xd;
+			&quot;email&quot;: &quot;abc@gmail100.com&quot;,&#xd;
 			&quot;presentCountry&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
@@ -1145,7 +1115,7 @@
 				&quot;value&quot;: &quot;${gender}&quot;&#xd;
 			}],&#xd;
 			&quot;residenceStatus&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
+				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;Foreigner&quot;&#xd;
 			}],&#xd;
 			&quot;bloodType&quot;: [{&#xd;
@@ -1153,19 +1123,13 @@
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
 			&quot;permanentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;addressCopy&quot;: &quot;#991, 47 Street, 6 block&quot;,&#xd;
 			&quot;presentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;modeOfClaim&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
@@ -1181,7 +1145,16 @@
 				&quot;version&quot;: 1,&#xd;
 				&quot;value&quot;: &quot;individualBiometrics_bio_CBEFF&quot;&#xd;
 			}&#xd;
-		}&#xd;
+		},&#xd;
+	      &quot;documents&quot;: [{&#xd;
+				&quot;category&quot;: &quot;proofOfAddress&quot;,&#xd;
+				&quot;value&quot;: &quot;ZGF0YQ&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;category&quot;: &quot;individualBiometrics&quot;,&#xd;
+				&quot;value&quot;: &quot;${biometrics}&quot;&#xd;
+			}&#xd;
+		]&#xd;
 	},&#xd;
 	&quot;requesttime&quot;: &quot;2019-01-28T13:07:13.152Z&quot;,&#xd;
 	&quot;version&quot;: &quot;v1.0&quot;&#xd;
@@ -1234,9 +1207,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">500</stringProp>
+          <stringProp name="LoopController.loops">1800</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">2</stringProp>
+        <stringProp name="ThreadGroup.num_threads">5</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -1261,6 +1234,18 @@
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="variableNames">firstName,dateOfBirth,gender</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Biometrics Details From File" enabled="true">
+          <stringProp name="filename">./biometrics.txt</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">biometrics</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1372,7 +1357,7 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity (bio)" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -1398,6 +1383,8 @@
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
+			&quot;mobileno&quot;: &quot;${__RandomString(10,1234567890,)}&quot;,&#xd;
+			&quot;email&quot;: &quot;abc@gmail${__Random(100,999999999999,)}.com&quot;,&#xd;
 			&quot;presentCountry&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
@@ -1415,7 +1402,7 @@
 				&quot;value&quot;: &quot;${gender}&quot;&#xd;
 			}],&#xd;
 			&quot;residenceStatus&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
+				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;Foreigner&quot;&#xd;
 			}],&#xd;
 			&quot;bloodType&quot;: [{&#xd;
@@ -1423,19 +1410,13 @@
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
 			&quot;permanentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;addressCopy&quot;: &quot;#991, 47 Street, 6 block&quot;,&#xd;
 			&quot;presentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;modeOfClaim&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
@@ -1451,7 +1432,16 @@
 				&quot;version&quot;: 1,&#xd;
 				&quot;value&quot;: &quot;individualBiometrics_bio_CBEFF&quot;&#xd;
 			}&#xd;
-		}&#xd;
+		},&#xd;
+	      &quot;documents&quot;: [{&#xd;
+				&quot;category&quot;: &quot;proofOfAddress&quot;,&#xd;
+				&quot;value&quot;: &quot;ZGF0YQ&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;category&quot;: &quot;individualBiometrics&quot;,&#xd;
+				&quot;value&quot;: &quot;${biometrics}&quot;&#xd;
+			}&#xd;
+		]&#xd;
 	},&#xd;
 	&quot;requesttime&quot;: &quot;2019-01-28T13:07:13.152Z&quot;,&#xd;
 	&quot;version&quot;: &quot;v1.0&quot;&#xd;
@@ -1570,9 +1560,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">200</stringProp>
+          <stringProp name="LoopController.loops">300</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">5</stringProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -1659,7 +1649,7 @@
 				&quot;value&quot;: &quot;${genderUpdate}&quot;&#xd;
 			}],&#xd;
 			&quot;residenceStatus&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
+				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;Foreigner&quot;&#xd;
 			}],&#xd;
 			&quot;bloodType&quot;: [{&#xd;
@@ -1667,19 +1657,13 @@
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
 			&quot;permanentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;${addressUpdate}&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;${addressUpdate}&quot;&#xd;
 			}],&#xd;
 			&quot;addressCopy&quot;: &quot;${addressUpdate}&quot;,&#xd;
 			&quot;presentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;${addressUpdate}&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;${addressUpdate}&quot;&#xd;
 			}],&#xd;
 			&quot;modeOfClaim&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
@@ -1748,9 +1732,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <stringProp name="LoopController.loops">400</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">5</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -1775,6 +1759,18 @@
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="variableNames">firstName,dateOfBirth,gender</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Biometrics Details From File" enabled="true">
+          <stringProp name="filename">./biometrics.txt</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">biometrics</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1886,7 +1882,7 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity (bio)" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -1912,6 +1908,8 @@
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
+			&quot;mobileno&quot;: &quot;${__RandomString(10,1234567890,)}&quot;,&#xd;
+			&quot;email&quot;: &quot;abc@gmail${__Random(100,999999999999,)}.com&quot;,&#xd;
 			&quot;presentCountry&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
@@ -1929,7 +1927,7 @@
 				&quot;value&quot;: &quot;${gender}&quot;&#xd;
 			}],&#xd;
 			&quot;residenceStatus&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
+				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;Foreigner&quot;&#xd;
 			}],&#xd;
 			&quot;bloodType&quot;: [{&#xd;
@@ -1937,19 +1935,13 @@
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
 			&quot;permanentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;addressCopy&quot;: &quot;#991, 47 Street, 6 block&quot;,&#xd;
 			&quot;presentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;modeOfClaim&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
@@ -1965,7 +1957,16 @@
 				&quot;version&quot;: 1,&#xd;
 				&quot;value&quot;: &quot;individualBiometrics_bio_CBEFF&quot;&#xd;
 			}&#xd;
-		}&#xd;
+		},&#xd;
+	      &quot;documents&quot;: [{&#xd;
+				&quot;category&quot;: &quot;proofOfAddress&quot;,&#xd;
+				&quot;value&quot;: &quot;ZGF0YQ&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;category&quot;: &quot;individualBiometrics&quot;,&#xd;
+				&quot;value&quot;: &quot;${biometrics}&quot;&#xd;
+			}&#xd;
+		]&#xd;
 	},&#xd;
 	&quot;requesttime&quot;: &quot;2019-01-28T13:07:13.152Z&quot;,&#xd;
 	&quot;version&quot;: &quot;v1.0&quot;&#xd;
@@ -2027,7 +2028,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -2112,7 +2113,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1000</stringProp>
+          <stringProp name="LoopController.loops">1800</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">5</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -2139,6 +2140,18 @@
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="variableNames">firstName,dateOfBirth,gender</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Biometrics Details From File" enabled="true">
+          <stringProp name="filename">./biometrics.txt</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">biometrics</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -2250,7 +2263,7 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity (bio)" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2276,6 +2289,8 @@
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
+			&quot;mobileno&quot;: &quot;${__RandomString(10,1234567890,)}&quot;,&#xd;
+			&quot;email&quot;: &quot;abc@gmail${__Random(100,999999999999,)}.com&quot;,&#xd;
 			&quot;presentCountry&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
@@ -2293,7 +2308,7 @@
 				&quot;value&quot;: &quot;${gender}&quot;&#xd;
 			}],&#xd;
 			&quot;residenceStatus&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
+				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;Foreigner&quot;&#xd;
 			}],&#xd;
 			&quot;bloodType&quot;: [{&#xd;
@@ -2301,19 +2316,13 @@
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
 			&quot;permanentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;addressCopy&quot;: &quot;#991, 47 Street, 6 block&quot;,&#xd;
 			&quot;presentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;modeOfClaim&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
@@ -2329,7 +2338,16 @@
 				&quot;version&quot;: 1,&#xd;
 				&quot;value&quot;: &quot;individualBiometrics_bio_CBEFF&quot;&#xd;
 			}&#xd;
-		}&#xd;
+		},&#xd;
+	      &quot;documents&quot;: [{&#xd;
+				&quot;category&quot;: &quot;proofOfAddress&quot;,&#xd;
+				&quot;value&quot;: &quot;ZGF0YQ&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;category&quot;: &quot;individualBiometrics&quot;,&#xd;
+				&quot;value&quot;: &quot;${biometrics}&quot;&#xd;
+			}&#xd;
+		]&#xd;
 	},&#xd;
 	&quot;requesttime&quot;: &quot;2019-01-28T13:07:13.152Z&quot;,&#xd;
 	&quot;version&quot;: &quot;v1.0&quot;&#xd;
@@ -2458,9 +2476,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">500</stringProp>
+          <stringProp name="LoopController.loops">300</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -2545,9 +2563,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <stringProp name="LoopController.loops">400</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">5</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -2572,6 +2590,18 @@
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="variableNames">firstName,dateOfBirth,gender</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Biometrics Details From File" enabled="true">
+          <stringProp name="filename">./biometrics.txt</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">biometrics</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -2683,7 +2713,7 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Identity (bio)" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2709,6 +2739,8 @@
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
+			&quot;mobileno&quot;: &quot;${__RandomString(10,1234567890,)}&quot;,&#xd;
+			&quot;email&quot;: &quot;abc@gmail${__Random(100,999999999999,)}.com&quot;,&#xd;
 			&quot;presentCountry&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
@@ -2726,7 +2758,7 @@
 				&quot;value&quot;: &quot;${gender}&quot;&#xd;
 			}],&#xd;
 			&quot;residenceStatus&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
+				&quot;language&quot;: &quot;eng&quot;,&#xd;
 				&quot;value&quot;: &quot;Foreigner&quot;&#xd;
 			}],&#xd;
 			&quot;bloodType&quot;: [{&#xd;
@@ -2734,19 +2766,13 @@
 				&quot;value&quot;: &quot;MOSIP-Country&quot;&#xd;
 			}],&#xd;
 			&quot;permanentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;addressCopy&quot;: &quot;#991, 47 Street, 6 block&quot;,&#xd;
 			&quot;presentAddressLine1&quot;: [{&#xd;
-				&quot;language&quot;: &quot;ara&quot;,&#xd;
-				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
-			}, {&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
-				&quot;value&quot;: &quot;#٩٩١، ٤٧ سترِِت، ٦ بلُكك&quot;&#xd;
+				&quot;value&quot;: &quot;#991, 47 Street, 6 block&quot;&#xd;
 			}],&#xd;
 			&quot;modeOfClaim&quot;: [{&#xd;
 				&quot;language&quot;: &quot;eng&quot;,&#xd;
@@ -2762,7 +2788,16 @@
 				&quot;version&quot;: 1,&#xd;
 				&quot;value&quot;: &quot;individualBiometrics_bio_CBEFF&quot;&#xd;
 			}&#xd;
-		}&#xd;
+		},&#xd;
+	      &quot;documents&quot;: [{&#xd;
+				&quot;category&quot;: &quot;proofOfAddress&quot;,&#xd;
+				&quot;value&quot;: &quot;ZGF0YQ&quot;&#xd;
+			},&#xd;
+			{&#xd;
+				&quot;category&quot;: &quot;individualBiometrics&quot;,&#xd;
+				&quot;value&quot;: &quot;${biometrics}&quot;&#xd;
+			}&#xd;
+		]&#xd;
 	},&#xd;
 	&quot;requesttime&quot;: &quot;2019-01-28T13:07:13.152Z&quot;,&#xd;
 	&quot;version&quot;: &quot;v1.0&quot;&#xd;
@@ -2824,7 +2859,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -2920,7 +2955,7 @@
         </hashTree>
       </hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-        <boolProp name="ResultCollector.error_logging">true</boolProp>
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
           <value class="SampleSaveConfiguration">

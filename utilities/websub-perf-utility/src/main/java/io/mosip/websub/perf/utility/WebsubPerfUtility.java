@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.scheduling.annotation.EnableAsync;
 
-
 @SpringBootApplication(scanBasePackages = { "io.mosip.websub.perf.utility.*"})
 public class WebsubPerfUtility {
 

@@ -9,5 +9,19 @@ spec:
   - port: {{ .Values.service.ports.nodePort }}
     targetPort: {{ .Values.service.ports.profilerAgentPort }}
     nodePort: {{ .Values.service.ports.nodePort }}
-  selector:
-    app: {{ .Values.service.profileAppService }}
+#  selector:
+#    app: {{ .Values.service.profileAppService }}
+#
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: {{ .Values.service.serviceName }}
+  namespace: {{ .Values.namespace }}
+subsets:
+- addresses:
+  - ip: {{ .Values.service.podIpAddress }}
+  ports:
+  - port: {{ .Values.service.ports.profilerAgentPort }}
+    protocol: TCP
+

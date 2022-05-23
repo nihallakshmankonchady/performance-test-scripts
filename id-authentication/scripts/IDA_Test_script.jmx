@@ -38,7 +38,7 @@
           </elementProp>
           <elementProp name="serverIP" elementType="Argument">
             <stringProp name="Argument.name">serverIP</stringProp>
-            <stringProp name="Argument.value">cellbox.mosip.net</stringProp>
+            <stringProp name="Argument.value">cellbox2.mosip.net</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="serverPortNo" elementType="Argument">
@@ -48,7 +48,7 @@
           </elementProp>
           <elementProp name="idaUtilityserverIP" elementType="Argument">
             <stringProp name="Argument.name">idaUtilityserverIP</stringProp>
-            <stringProp name="Argument.value">localhost</stringProp>
+            <stringProp name="Argument.value">65.0.120.180</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -70,7 +70,7 @@
         <stringProp name="filename">./authorization_token_ida.txt</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames">authToken</stringProp>
-        <boolProp name="ignoreFirstLine">true</boolProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
         <stringProp name="delimiter">,</stringProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
@@ -78,11 +78,11 @@
         <stringProp name="shareMode">shareMode.all</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load RPMISPkey From File" enabled="true">
-        <stringProp name="filename">./RPMISPkey.txt</stringProp>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load MISP Licensekey From File" enabled="true">
+        <stringProp name="filename">./mispLicenseKey.txt</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">RPMISPkey</stringProp>
-        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="variableNames">mispLicenseKey</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
         <stringProp name="delimiter">,</stringProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
@@ -90,11 +90,11 @@
         <stringProp name="shareMode">shareMode.all</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Partner Id From File" enabled="true">
-        <stringProp name="filename">./partner_id.txt</stringProp>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load EKYC Partner ID From File" enabled="true">
+        <stringProp name="filename">./ekycPartnerId.txt</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">partner_id</stringProp>
-        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="variableNames">ekycPartnerId</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
         <stringProp name="delimiter">,</stringProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
@@ -102,11 +102,11 @@
         <stringProp name="shareMode">shareMode.all</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Api Request Id From File" enabled="true">
-        <stringProp name="filename">./apiRequestId.txt</stringProp>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load EKYC API Key From File" enabled="true">
+        <stringProp name="filename">./ekycApiKey.txt</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">apiRequestId</stringProp>
-        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="variableNames">ekycApiKey</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
         <stringProp name="delimiter">,</stringProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
@@ -114,11 +114,11 @@
         <stringProp name="shareMode">shareMode.all</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load EKYCMISPkey From File" enabled="true">
-        <stringProp name="filename">./EKYCMISPkey.txt</stringProp>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Relying Party Partner Id From File" enabled="true">
+        <stringProp name="filename">./rpPartnerId.txt</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">EKYCMISPkey</stringProp>
-        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="variableNames">rpPartnerId</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
         <stringProp name="delimiter">,</stringProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
@@ -126,11 +126,11 @@
         <stringProp name="shareMode">shareMode.all</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load EKYCPARTNERID From File" enabled="true">
-        <stringProp name="filename">./EKYCPARTNERID.txt</stringProp>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Relying Party API Key From File" enabled="true">
+        <stringProp name="filename">./rpApiKey.txt</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">EKYCPARTNERID</stringProp>
-        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="variableNames">rpApiKey</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
         <stringProp name="delimiter">,</stringProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
@@ -138,23 +138,41 @@
         <stringProp name="shareMode">shareMode.all</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load EKYCAPIkey From File" enabled="true">
-        <stringProp name="filename">./EKYCAPIkey.txt</stringProp>
-        <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">EKYCAPIkey</stringProp>
-        <boolProp name="ignoreFirstLine">true</boolProp>
-        <stringProp name="delimiter">,</stringProp>
-        <boolProp name="quotedData">false</boolProp>
-        <boolProp name="recycle">true</boolProp>
-        <boolProp name="stopThread">false</boolProp>
-        <stringProp name="shareMode">shareMode.all</stringProp>
-      </CSVDataSet>
-      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Delete All Parameter Files Created" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Delete All Parameter Files" enabled="true">
+          <stringProp name="BeanShellSampler.query">new File(&quot;auth.txt&quot;).delete();
+
+new File(&quot;authEkyc.txt&quot;).delete();
+
+new File(&quot;authBio.txt&quot;).delete();
+
+new File(&quot;authBioEkyc.txt&quot;).delete();
+
+new File(&quot;sendOtpRequestDetails.txt&quot;).delete();</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+      </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Send OTP (Preparation)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <stringProp name="LoopController.loops">1500</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">10</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -168,7 +186,7 @@
           <stringProp name="CounterConfig.start">1400000000</stringProp>
           <stringProp name="CounterConfig.end">9999999999</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
-          <stringProp name="CounterConfig.name">tranIdSO</stringProp>
+          <stringProp name="CounterConfig.name">tranIdSo</stringProp>
           <stringProp name="CounterConfig.format"></stringProp>
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
@@ -181,7 +199,7 @@
           <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/identity/createOtpReqest?id=${UIN}&amp;transactionId=${tranIdSO}</stringProp>
+          <stringProp name="HTTPSampler.path">v1/identity/createOtpReqest?id=${UIN}&amp;transactionId=${tranIdSo}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -262,12 +280,12 @@
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Sendotpbody" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Send OTP Body" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">sendOTPBody</stringProp>
+            <stringProp name="RegexExtractor.refname">sendOtpBody</stringProp>
             <stringProp name="RegexExtractor.regex">(?s)(^.*)</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">sendotpbody not found</stringProp>
+            <stringProp name="RegexExtractor.default">sendOtpBody not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
@@ -275,7 +293,7 @@
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(SendOTPrequestDetails.txt,${sendOTPBody}&amp;${signature}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(sendOtpRequestDetails.txt,${sendOtpBody}&amp;${signature}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -284,9 +302,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <stringProp name="LoopController.loops">500</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -295,9 +313,9 @@
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Signature And Body Details From File" enabled="true">
-          <stringProp name="filename">./SendOTPrequestDetails.txt</stringProp>
+          <stringProp name="filename">./sendOtpRequestDetails.txt</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">sendOTPBody,signature</stringProp>
+          <stringProp name="variableNames">sendOtpBody,signature</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <stringProp name="delimiter">&amp;</stringProp>
           <boolProp name="quotedData">false</boolProp>
@@ -312,7 +330,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${sendOTPBody}</stringProp>
+                <stringProp name="Argument.value">${sendOtpBody}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -321,7 +339,7 @@
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">idauthentication/v1/otp/${RPMISPkey}/${partner_id}/${apiRequestId}</stringProp>
+          <stringProp name="HTTPSampler.path">idauthentication/v1/otp/${mispLicenseKey}/${rpPartnerId}/${rpApiKey}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -351,7 +369,7 @@
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="2044618045">&quot;response&quot;:{&quot;maskedMobile&quot;:null,&quot;maskedEmail&quot;:&quot;</stringProp>
+              <stringProp name="1168625895">&quot;response&quot;:{&quot;maskedMobile&quot;:</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -365,7 +383,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1000</stringProp>
+          <stringProp name="LoopController.loops">900</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">10</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -379,7 +397,7 @@
           <stringProp name="CounterConfig.start">1000000000</stringProp>
           <stringProp name="CounterConfig.end">9999999999</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
-          <stringProp name="CounterConfig.name">tranIdAWO</stringProp>
+          <stringProp name="CounterConfig.name">tranIdAwo</stringProp>
           <stringProp name="CounterConfig.format"></stringProp>
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
@@ -392,7 +410,7 @@
           <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/identity/createOtpReqest?id=${UIN}&amp;transactionId=${tranIdAWO}</stringProp>
+          <stringProp name="HTTPSampler.path">v1/identity/createOtpReqest?id=${UIN}&amp;transactionId=${tranIdAwo}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -473,12 +491,12 @@
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Sendotpbody" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Send OTP Body" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">sendOTPBody</stringProp>
+            <stringProp name="RegexExtractor.refname">sendOtpBody</stringProp>
             <stringProp name="RegexExtractor.regex">(?s)(^.*)</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">sendotpbody not found</stringProp>
+            <stringProp name="RegexExtractor.default">sendOtpBody not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
@@ -489,7 +507,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${sendOTPBody}</stringProp>
+                <stringProp name="Argument.value">${sendOtpBody}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -498,7 +516,7 @@
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">idauthentication/v1/otp/${RPMISPkey}/${partner_id}/${apiRequestId}</stringProp>
+          <stringProp name="HTTPSampler.path">idauthentication/v1/otp/${mispLicenseKey}/${rpPartnerId}/${rpApiKey}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -535,7 +553,7 @@
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
     &quot;otp&quot;:&quot;111111&quot;,&#xd;
-&quot;transactionId&quot;:&quot;${tranIdAWO}&quot;,&#xd;
+&quot;transactionId&quot;:&quot;${tranIdAwo}&quot;,&#xd;
 &quot;timestamp&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -546,7 +564,7 @@
           <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/identity/createAuthRequest?id=${UIN}&amp;transactionId=${tranIdAWO}</stringProp>
+          <stringProp name="HTTPSampler.path">v1/identity/createAuthRequest?id=${UIN}&amp;transactionId=${tranIdAwo}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -570,12 +588,12 @@
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Reqbody" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Req Body" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">reqbody</stringProp>
+            <stringProp name="RegexExtractor.refname">reqBody</stringProp>
             <stringProp name="RegexExtractor.regex">(?s)(^.*)</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">reqbody not found</stringProp>
+            <stringProp name="RegexExtractor.default">reqBody not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
@@ -592,7 +610,7 @@
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(Auth.txt,${reqbody}&amp;${signature}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(auth.txt,${reqBody}&amp;${signature}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -612,9 +630,9 @@
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Request And Signature From File" enabled="true">
-          <stringProp name="filename">./Auth.txt</stringProp>
+          <stringProp name="filename">./auth.txt</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">reqbody,signature</stringProp>
+          <stringProp name="variableNames">reqBody,signature</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <stringProp name="delimiter">&amp;</stringProp>
           <boolProp name="quotedData">false</boolProp>
@@ -629,7 +647,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${reqbody}</stringProp>
+                <stringProp name="Argument.value">${reqBody}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -638,7 +656,7 @@
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">idauthentication/v1/auth/${RPMISPkey}/${partner_id}/${apiRequestId}</stringProp>
+          <stringProp name="HTTPSampler.path">idauthentication/v1/auth/${mispLicenseKey}/${rpPartnerId}/${rpApiKey}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -682,7 +700,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1000</stringProp>
+          <stringProp name="LoopController.loops">900</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">10</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -696,7 +714,7 @@
           <stringProp name="CounterConfig.start">1100000000</stringProp>
           <stringProp name="CounterConfig.end">9999999999</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
-          <stringProp name="CounterConfig.name">tranIdEWO</stringProp>
+          <stringProp name="CounterConfig.name">tranIdEwo</stringProp>
           <stringProp name="CounterConfig.format"></stringProp>
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
@@ -709,7 +727,7 @@
           <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/identity/createOtpReqest?id=${UIN}&amp;isKyc=true&amp;transactionId=${tranIdEWO}</stringProp>
+          <stringProp name="HTTPSampler.path">v1/identity/createOtpReqest?id=${UIN}&amp;isKyc=true&amp;transactionId=${tranIdEwo}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -790,12 +808,12 @@
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Sendotpbody" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Send OTP Body" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">sendOTPBody</stringProp>
+            <stringProp name="RegexExtractor.refname">sendOtpBody</stringProp>
             <stringProp name="RegexExtractor.regex">(?s)(^.*)</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">sendotpbody not found</stringProp>
+            <stringProp name="RegexExtractor.default">sendOtpBody not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
@@ -806,7 +824,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${sendOTPBody}</stringProp>
+                <stringProp name="Argument.value">${sendOtpBody}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -815,7 +833,7 @@
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">idauthentication/v1/otp/${EKYCMISPkey}/${EKYCPARTNERID}/${EKYCAPIkey}</stringProp>
+          <stringProp name="HTTPSampler.path">idauthentication/v1/otp/${mispLicenseKey}/${ekycPartnerId}/${ekycApiKey}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -852,7 +870,7 @@
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
     &quot;otp&quot;:&quot;111111&quot;,&#xd;
-&quot;transactionId&quot;:&quot;${tranIdEWO}&quot;,&#xd;
+&quot;transactionId&quot;:&quot;${tranIdEwo}&quot;,&#xd;
 &quot;timestamp&quot;:&quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -863,7 +881,7 @@
           <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/identity/createAuthRequest?id=${UIN}&amp;isKyc=true&amp;transactionId=${tranIdEWO}</stringProp>
+          <stringProp name="HTTPSampler.path">v1/identity/createAuthRequest?id=${UIN}&amp;isKyc=true&amp;transactionId=${tranIdEwo}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -889,19 +907,19 @@
           <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Reqbody EKYC" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">reqbodyEKYC</stringProp>
+            <stringProp name="RegexExtractor.refname">reqBodyEkyc</stringProp>
             <stringProp name="RegexExtractor.regex">(?s)(^.*)</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">reqbodyEKYC not found</stringProp>
+            <stringProp name="RegexExtractor.default">reqBodyEkyc not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Signature EKYC" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
-            <stringProp name="RegexExtractor.refname">signatureEKYC</stringProp>
+            <stringProp name="RegexExtractor.refname">signatureEkyc</stringProp>
             <stringProp name="RegexExtractor.regex">signature:\s+(.+)</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">signatureEKYC not found</stringProp>
+            <stringProp name="RegexExtractor.default">signatureEkyc not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
@@ -909,7 +927,7 @@
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(Auth_ekyc.txt,${reqbodyEKYC}&amp;${signatureEKYC}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(authEkyc.txt,${reqBodyEkyc}&amp;${signatureEkyc}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -918,9 +936,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">500</stringProp>
+          <stringProp name="LoopController.loops">300</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">20</stringProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -929,9 +947,9 @@
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Request And Signature From File" enabled="true">
-          <stringProp name="filename">./Auth_ekyc.txt</stringProp>
+          <stringProp name="filename">./authEkyc.txt</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">reqbodyEKYC,signatureEKYC</stringProp>
+          <stringProp name="variableNames">reqBodyEkyc,signatureEkyc</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <stringProp name="delimiter">&amp;</stringProp>
           <boolProp name="quotedData">false</boolProp>
@@ -946,7 +964,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${reqbodyEKYC}</stringProp>
+                <stringProp name="Argument.value">${reqBodyEkyc}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -955,7 +973,7 @@
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">idauthentication/v1/kyc/${EKYCMISPkey}/${EKYCPARTNERID}/${EKYCAPIkey}</stringProp>
+          <stringProp name="HTTPSampler.path">idauthentication/v1/kyc/${mispLicenseKey}/${ekycPartnerId}/${ekycApiKey}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -974,7 +992,7 @@
               </elementProp>
               <elementProp name="Signature" elementType="Header">
                 <stringProp name="Header.name">Signature</stringProp>
-                <stringProp name="Header.value">${signatureEKYC}</stringProp>
+                <stringProp name="Header.value">${signatureEkyc}</stringProp>
               </elementProp>
               <elementProp name="Authorization" elementType="Header">
                 <stringProp name="Header.name">Authorization</stringProp>
@@ -999,7 +1017,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <stringProp name="LoopController.loops">300</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">10</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -1013,7 +1031,7 @@
           <stringProp name="CounterConfig.start">1200000000</stringProp>
           <stringProp name="CounterConfig.end">9999999999</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
-          <stringProp name="CounterConfig.name">tranIdAWB</stringProp>
+          <stringProp name="CounterConfig.name">tranIdAwb</stringProp>
           <stringProp name="CounterConfig.format"></stringProp>
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
@@ -1050,12 +1068,12 @@
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="biovalue" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Bio Value" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">biovalue</stringProp>
+            <stringProp name="RegexExtractor.refname">bioValue</stringProp>
             <stringProp name="RegexExtractor.regex">individualBiometrics&quot;,&quot;value&quot;:&quot;(.*?)&quot;}</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">biovalue not found</stringProp>
+            <stringProp name="RegexExtractor.default">bioValue not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
@@ -1066,7 +1084,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${biovalue}</stringProp>
+                <stringProp name="Argument.value">${bioValue}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -1075,7 +1093,7 @@
           <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/identity/decodeFile?fileName=test8</stringProp>
+          <stringProp name="HTTPSampler.path">v1/identity/decodeBase64UrlSafeToFile?fileName=test8</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1099,13 +1117,13 @@
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="leftIris" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Left Iris" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">leftIris</stringProp>
             <stringProp name="RegexExtractor.regex">&lt;BDB&gt;(.*?)&lt;/BDB&gt;</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">LeftIris not found</stringProp>
-            <stringProp name="RegexExtractor.match_number">12</stringProp>
+            <stringProp name="RegexExtractor.default">leftIris not found</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
         </hashTree>
@@ -1137,14 +1155,14 @@
 					&quot;deviceSubType&quot;: &quot;Double&quot;,&#xd;
 					&quot;deviceProvider&quot;: &quot;MOSIP&quot;,&#xd;
 					&quot;deviceProviderId&quot;: &quot;MOSIP.PROXY.SBI&quot;,&#xd;
-					&quot;dateTime&quot;: &quot;2021-06-15T12:49:17.773Z&quot;&#xd;
+					&quot;dateTime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;&#xd;
 				},&#xd;
 				&quot;mosipProcess&quot;: &quot;Auth&quot;,&#xd;
 				&quot;purpose&quot;: &quot;Auth&quot;,&#xd;
 				&quot;qualityScore&quot;: 70,&#xd;
 				&quot;requestedScore&quot;: 70,&#xd;
-				&quot;timestamp&quot;: &quot;2021-06-15T12:49:17.773Z&quot;,&#xd;
-				&quot;transactionId&quot;: &quot;${tranIdAWB}&quot;&#xd;
+				&quot;timestamp&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
+				&quot;transactionId&quot;: &quot;${tranIdAwb}&quot;&#xd;
 			}&#xd;
 		}&#xd;
 	],&#xd;
@@ -1158,7 +1176,7 @@
           <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/identity/createAuthRequest?id=${UIN}&amp;transactionId=${tranIdAWB}</stringProp>
+          <stringProp name="HTTPSampler.path">v1/identity/createAuthRequest?id=${UIN}&amp;transactionId=${tranIdAwb}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1184,10 +1202,10 @@
           <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Reqbody Bio" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">reqbodyBio</stringProp>
+            <stringProp name="RegexExtractor.refname">reqBodyBio</stringProp>
             <stringProp name="RegexExtractor.regex">(?s)(^.*)</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">reqbodyBio not found</stringProp>
+            <stringProp name="RegexExtractor.default">reqBodyBio not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
@@ -1204,7 +1222,7 @@
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(Auth_bio.txt,${reqbodyBio}&amp;${signatureBio}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(authBio.txt,${reqBodyBio}&amp;${signatureBio}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -1213,9 +1231,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -1224,9 +1242,9 @@
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Request And Signature From File" enabled="true">
-          <stringProp name="filename">./Auth_bio.txt</stringProp>
+          <stringProp name="filename">./authBio.txt</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">reqbodyBio,signatureBio</stringProp>
+          <stringProp name="variableNames">reqBodyBio,signatureBio</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <stringProp name="delimiter">&amp;</stringProp>
           <boolProp name="quotedData">false</boolProp>
@@ -1241,7 +1259,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${reqbodyBio}</stringProp>
+                <stringProp name="Argument.value">${reqBodyBio}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -1250,7 +1268,7 @@
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">idauthentication/v1/auth/${RPMISPkey}/${partner_id}/${apiRequestId}</stringProp>
+          <stringProp name="HTTPSampler.path">idauthentication/v1/auth/${mispLicenseKey}/${rpPartnerId}/${rpApiKey}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1294,7 +1312,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <stringProp name="LoopController.loops">300</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">10</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -1308,7 +1326,7 @@
           <stringProp name="CounterConfig.start">1300000000</stringProp>
           <stringProp name="CounterConfig.end">9999999999</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
-          <stringProp name="CounterConfig.name">tranIdEWB</stringProp>
+          <stringProp name="CounterConfig.name">tranIdEwb</stringProp>
           <stringProp name="CounterConfig.format"></stringProp>
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
@@ -1345,12 +1363,12 @@
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="biovalue" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Bio Value" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">biovalue</stringProp>
+            <stringProp name="RegexExtractor.refname">bioValue</stringProp>
             <stringProp name="RegexExtractor.regex">individualBiometrics&quot;,&quot;value&quot;:&quot;(.*?)&quot;}</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">biovalue not found</stringProp>
+            <stringProp name="RegexExtractor.default">bioValue not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
@@ -1361,7 +1379,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${biovalue}</stringProp>
+                <stringProp name="Argument.value">${bioValue}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -1370,7 +1388,7 @@
           <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/identity/decodeFile?fileName=test8</stringProp>
+          <stringProp name="HTTPSampler.path">v1/identity/decodeBase64UrlSafeToFile?fileName=test8</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1394,13 +1412,13 @@
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="leftIris" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Left Iris" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">leftIris</stringProp>
             <stringProp name="RegexExtractor.regex">&lt;BDB&gt;(.*?)&lt;/BDB&gt;</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">LeftIris not found</stringProp>
-            <stringProp name="RegexExtractor.match_number">12</stringProp>
+            <stringProp name="RegexExtractor.default">leftIris not found</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
         </hashTree>
@@ -1432,14 +1450,14 @@
 					&quot;deviceSubType&quot;: &quot;Double&quot;,&#xd;
 					&quot;deviceProvider&quot;: &quot;MOSIP&quot;,&#xd;
 					&quot;deviceProviderId&quot;: &quot;MOSIP.PROXY.SBI&quot;,&#xd;
-					&quot;dateTime&quot;: &quot;2021-06-15T12:49:17.773Z&quot;&#xd;
+					&quot;dateTime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;&#xd;
 				},&#xd;
 				&quot;mosipProcess&quot;: &quot;Auth&quot;,&#xd;
 				&quot;purpose&quot;: &quot;Auth&quot;,&#xd;
 				&quot;qualityScore&quot;: 70,&#xd;
 				&quot;requestedScore&quot;: 70,&#xd;
-				&quot;timestamp&quot;: &quot;2021-06-15T12:49:17.773Z&quot;,&#xd;
-				&quot;transactionId&quot;: &quot;${tranIdEWB}&quot;&#xd;
+				&quot;timestamp&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
+				&quot;transactionId&quot;: &quot;${tranIdEwb}&quot;&#xd;
 			}&#xd;
 		}&#xd;
 	],&#xd;
@@ -1453,7 +1471,7 @@
           <stringProp name="HTTPSampler.port">${idaUtilityPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/identity/createAuthRequest?id=${UIN}&amp;isKyc=true&amp;transactionId=${tranIdEWB}</stringProp>
+          <stringProp name="HTTPSampler.path">v1/identity/createAuthRequest?id=${UIN}&amp;isKyc=true&amp;transactionId=${tranIdEwb}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1479,19 +1497,19 @@
           <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Reqbody Bio EKYC" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">reqbodyBioEKYC</stringProp>
+            <stringProp name="RegexExtractor.refname">reqbodyBioEkyc</stringProp>
             <stringProp name="RegexExtractor.regex">(?s)(^.*)</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">reqbodyBioEKYC not found</stringProp>
+            <stringProp name="RegexExtractor.default">reqbodyBioEkyc not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Signature Bio EKYC" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
-            <stringProp name="RegexExtractor.refname">signatureBioEKYC</stringProp>
+            <stringProp name="RegexExtractor.refname">signatureBioEkyc</stringProp>
             <stringProp name="RegexExtractor.regex">signature:\s+(.+)</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">signatureBioEKYC not found</stringProp>
+            <stringProp name="RegexExtractor.default">signatureBioEkyc not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
@@ -1499,7 +1517,7 @@
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(Auth_bio_ekyc.txt,${reqbodyBioEKYC}&amp;${signatureBioEKYC}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(authBioEkyc.txt,${reqbodyBioEkyc}&amp;${signatureBioEkyc}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -1508,9 +1526,9 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">20</stringProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">900</stringProp>
@@ -1519,9 +1537,9 @@
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Request And Signature From File" enabled="true">
-          <stringProp name="filename">./Auth_bio_ekyc.txt</stringProp>
+          <stringProp name="filename">./authBioEkyc.txt</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">reqbodyBioEKYC,signatureBioEKYC</stringProp>
+          <stringProp name="variableNames">reqbodyBioEkyc,signatureBioEkyc</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <stringProp name="delimiter">&amp;</stringProp>
           <boolProp name="quotedData">false</boolProp>
@@ -1536,7 +1554,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${reqbodyBioEKYC}</stringProp>
+                <stringProp name="Argument.value">${reqbodyBioEkyc}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -1545,7 +1563,7 @@
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">idauthentication/v1/kyc/${EKYCMISPkey}/${EKYCPARTNERID}/${EKYCAPIkey}</stringProp>
+          <stringProp name="HTTPSampler.path">idauthentication/v1/kyc/${mispLicenseKey}/${ekycPartnerId}/${ekycApiKey}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1564,7 +1582,7 @@
               </elementProp>
               <elementProp name="Signature" elementType="Header">
                 <stringProp name="Header.name">Signature</stringProp>
-                <stringProp name="Header.value">${signatureBioEKYC}</stringProp>
+                <stringProp name="Header.value">${signatureBioEkyc}</stringProp>
               </elementProp>
               <elementProp name="Authorization" elementType="Header">
                 <stringProp name="Header.name">Authorization</stringProp>
