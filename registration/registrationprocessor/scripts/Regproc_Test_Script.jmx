@@ -46,6 +46,16 @@
             <stringProp name="Argument.value">10</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="externalStatusReqBodyRidCount" elementType="Argument">
+            <stringProp name="Argument.name">externalStatusReqBodyRidCount</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="packetExternalStatusReqBodyRidCount" elementType="Argument">
+            <stringProp name="Argument.name">packetExternalStatusReqBodyRidCount</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -208,7 +218,7 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Packet Status Request Body RID Count" enabled="true">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Packet Status Request Body Creation Loop" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">${packetStatusReqBodyRidCount}</stringProp>
         </LoopController>
@@ -299,7 +309,7 @@ ${__javaScript(&apos;${packetStatusReqBodyRid}&apos;.substring(0\,${strLen}-1),m
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
           <boolProp name="stopThread">false</boolProp>
           <stringProp name="variableNames">reqBody</stringProp>
         </CSVDataSet>
@@ -460,6 +470,90 @@ ${__javaScript(&apos;${packetStatusReqBodyRid}&apos;.substring(0\,${strLen}-1),m
           <hashTree/>
         </hashTree>
       </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="External Status Search (Preparation)" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">10000</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">900</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="External Status Request Body Creation Loop" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">${externalStatusReqBodyRidCount}</stringProp>
+        </LoopController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Packet Details From File" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="filename">./packetDetails.csv</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.thread</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">regID,encryptedData,packetPath,machineRefId</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Construct And Store External Status Request Body" enabled="true">
+            <stringProp name="BeanShellSampler.query">FileWriter fWriter = new FileWriter(&quot;externalStatusRequestBody.csv&quot;, true);
+BufferedWriter buff = new BufferedWriter(fWriter);
+
+buff.write(&quot;{       \&quot;registrationId\&quot;: \&quot;${regID}\&quot;     },&quot;);
+
+buff.close();
+fWriter.close();
+
+
+
+
+
+
+
+</stringProp>
+            <stringProp name="BeanShellSampler.filename"></stringProp>
+            <stringProp name="BeanShellSampler.parameters"></stringProp>
+            <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+          </BeanShellSampler>
+          <hashTree/>
+        </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Extract External Status Request Body String From File And Construct Body For Multiple Lines" enabled="true">
+          <stringProp name="BeanShellSampler.query">${__StringFromFile(externalStatusRequestBody.csv,externalStatusReqBodyRid,,)};
+
+${__strLen(${externalStatusReqBodyRid},strLen)};
+
+${__javaScript(&apos;${externalStatusReqBodyRid}&apos;.substring(0\,${strLen}-1),multipleLinesExternalStatusReqBody)};
+
+
+
+
+
+
+
+
+
+
+</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store Multiple External Status Request Bodies To File" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">${__StringToFile(multipleLinesExternalStatusReqBody.csv,${multipleLinesExternalStatusReqBody}\n,true,)}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="External Status Search (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -474,6 +568,18 @@ ${__javaScript(&apos;${packetStatusReqBodyRid}&apos;.substring(0\,${strLen}-1),m
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Multiple External Status Request Body From File" enabled="true">
+          <stringProp name="delimiter">&amp;</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">./multipleLinesExternalStatusReqBody.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">reqBody</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Registration External Status" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -485,9 +591,7 @@ ${__javaScript(&apos;${packetStatusReqBodyRid}&apos;.substring(0\,${strLen}-1),m
   &quot;version&quot;: &quot;1.0&quot;,&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;request&quot;: [&#xd;
-    {&#xd;
-      &quot;registrationId&quot;: &quot;${regID}&quot;&#xd;
-    }&#xd;
+    ${reqBody}&#xd;
   ]&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -534,6 +638,90 @@ ${__javaScript(&apos;${packetStatusReqBodyRid}&apos;.substring(0\,${strLen}-1),m
           <hashTree/>
         </hashTree>
       </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Packet External Status (Preparation)" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">10000</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">900</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Packet External Status Request Body Creation Loop" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">${packetExternalStatusReqBodyRidCount}</stringProp>
+        </LoopController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Packet Details From File" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="filename">./packetDetails.csv</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <stringProp name="shareMode">shareMode.thread</stringProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="variableNames">regID,encryptedData,packetPath,machineRefId</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Construct And Store Packet External Status Request Body" enabled="true">
+            <stringProp name="BeanShellSampler.query">FileWriter fWriter = new FileWriter(&quot;packetExternalStatusRequestBody.csv&quot;, true);
+BufferedWriter buff = new BufferedWriter(fWriter);
+
+buff.write(&quot;{       \&quot;packetId\&quot;: \&quot;${regID}\&quot;     },&quot;);
+
+buff.close();
+fWriter.close();
+
+
+
+
+
+
+
+</stringProp>
+            <stringProp name="BeanShellSampler.filename"></stringProp>
+            <stringProp name="BeanShellSampler.parameters"></stringProp>
+            <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+          </BeanShellSampler>
+          <hashTree/>
+        </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Extract Packet External Status Request Body String From File And Construct Body For Multiple Lines" enabled="true">
+          <stringProp name="BeanShellSampler.query">${__StringFromFile(packetExternalStatusRequestBody.csv,packetExternalStatusReqBodyRid,,)};
+
+${__strLen(${packetExternalStatusReqBodyRid},strLen)};
+
+${__javaScript(&apos;${packetExternalStatusReqBodyRid}&apos;.substring(0\,${strLen}-1),multipleLinesPacketExternalStatusReqBody)};
+
+
+
+
+
+
+
+
+
+
+</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store Multiple Packet External Status Request Bodies To File" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">${__StringToFile(multipleLinesPacketExternalStatusReqBody.csv,${multipleLinesPacketExternalStatusReqBody}\n,true,)}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Packet External Status (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -548,6 +736,18 @@ ${__javaScript(&apos;${packetStatusReqBodyRid}&apos;.substring(0\,${strLen}-1),m
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Multiple Packet External Status Request Body From File" enabled="true">
+          <stringProp name="delimiter">&amp;</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">./multipleLinesPacketExternalStatusReqBody.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">reqBody</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Packet External Status" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -559,9 +759,7 @@ ${__javaScript(&apos;${packetStatusReqBodyRid}&apos;.substring(0\,${strLen}-1),m
   &quot;version&quot;: &quot;1.0&quot;,&#xd;
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;request&quot;: [&#xd;
-    {&#xd;
-      &quot;packetId&quot;: &quot;${regID}&quot;&#xd;
-    }&#xd;
+    ${reqBody}&#xd;
   ]&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
