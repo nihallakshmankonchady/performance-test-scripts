@@ -38,7 +38,7 @@
           </elementProp>
           <elementProp name="residentSecretKey" elementType="Argument">
             <stringProp name="Argument.name">residentSecretKey</stringProp>
-            <stringProp name="Argument.value">rNSjZfaWC6tzfNxS</stringProp>
+            <stringProp name="Argument.value">abc123</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="residentAppId" elementType="Argument">
@@ -63,7 +63,7 @@
           </elementProp>
           <elementProp name="regProcSecretKey" elementType="Argument">
             <stringProp name="Argument.name">regProcSecretKey</stringProp>
-            <stringProp name="Argument.value">t07hxxLnfFgEanzo</stringProp>
+            <stringProp name="Argument.value">abc123</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="regProcAppId" elementType="Argument">
@@ -78,7 +78,7 @@
           </elementProp>
           <elementProp name="idRepoSecretKey" elementType="Argument">
             <stringProp name="Argument.name">idRepoSecretKey</stringProp>
-            <stringProp name="Argument.value">583zQbEp6t3cJHAL</stringProp>
+            <stringProp name="Argument.value">abc123</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="idRepoAppId" elementType="Argument">
