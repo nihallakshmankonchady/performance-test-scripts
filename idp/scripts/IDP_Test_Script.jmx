@@ -12,13 +12,13 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="Clear cookies" enabled="true">
         <collectionProp name="CookieManager.cookies"/>
         <boolProp name="CookieManager.clearEachIteration">true</boolProp>
         <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
       </CookieManager>
       <hashTree/>
-      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="Clear cache" enabled="true">
         <boolProp name="clearEachIteration">true</boolProp>
         <boolProp name="useExpires">true</boolProp>
         <boolProp name="CacheManager.controlledByThread">false</boolProp>
@@ -41,6 +41,11 @@
             <stringProp name="Argument.value">443</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="relyingPartyId" elementType="Argument">
+            <stringProp name="Argument.name">relyingPartyId</stringProp>
+            <stringProp name="Argument.value">Bharathi-Inc</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -56,7 +61,7 @@
         <stringProp name="variableNames">authTokenPms</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create Oidc Client (Execution)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create OIDC Client (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -70,16 +75,16 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable - ClientID" enabled="true">
-          <stringProp name="variableName">tranIdClientId</stringProp>
-          <stringProp name="outputFormat"></stringProp>
-          <stringProp name="minimumValue">10000</stringProp>
-          <stringProp name="maximumValue">999999</stringProp>
-          <stringProp name="randomSeed">${__time()}</stringProp>
-          <boolProp name="perThread">false</boolProp>
-        </RandomVariableConfig>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Client ID Counter - Create OIDC Client" enabled="true">
+          <stringProp name="CounterConfig.start">1100000000</stringProp>
+          <stringProp name="CounterConfig.end">9999999999</stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">clientId</stringProp>
+          <stringProp name="CounterConfig.format"></stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create Oidc Client API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OIDC Client POST Endpoint" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -88,7 +93,7 @@
                 <stringProp name="Argument.value">{&#xd;
   &quot;requestTime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;e-health-service${tranIdClientId}&quot;,&#xd;
+    &quot;clientId&quot;: &quot;${clientId}&quot;,&#xd;
     &quot;clientName&quot;: &quot;Health Service&quot;,&#xd;
     &quot;publicKey&quot;:&#xd;
     {&#xd;
@@ -99,9 +104,9 @@
     &quot;alg&quot;: &quot;RSA1_5&quot;,&#xd;
     &quot;n&quot;: &quot;iB5Eqj0HGsrhIuRP6DMxKxFyRmgjQI0UB91vwjswho8GEn0V6GUCM-74qRbNpeuC3jdjdg7r0dDY-eCmYRjNOZJDHptcwUPSa7g-FfV7rqkj5zx-DayLyTFB30sMgQBlemmmO-zq3lpyz6IQ77OYTkUi-3rDMgYGgaUfB56xUgQCrATPBRzw20JaNcCQnhIdFsN6W6kFiodr-cewHj3WGbRgakpuMsyxzkdHckBYtcaFGAB9LD4iZo0NE0eI22NY-JYYGKC_5emHZAVT4WRphua-2useIwwBkeYCW6TEV7j5UfJ7LSW-GYbnjQPZHDTVca4XXRtPHzG3Z9bHDzNMFw&quot;&#xd;
     },&#xd;
-    &quot;relyingPartyId&quot;: &quot;Bharathi-Inc&quot;,&#xd;
+    &quot;relyingPartyId&quot;: &quot;${relyingPartyId}&quot;,&#xd;
     &quot;userClaims&quot;: [&#xd;
-      &quot;name&quot;&#xd;
+      &quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone&quot;&#xd;
     ],&#xd;
     &quot;authContextRefs&quot;: [&#xd;
       &quot;mosip:idp:acr:static-code&quot;&#xd;
@@ -152,7 +157,7 @@
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="135298752">&quot;clientId&quot;:</stringProp>
+              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -160,9 +165,19 @@
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Update Oidc Client (Preparation)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Update OIDC Client (Preparation)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -176,16 +191,16 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable - UpdateID" enabled="true">
-          <stringProp name="variableName">tranIdClientIdUd</stringProp>
-          <stringProp name="outputFormat"></stringProp>
-          <stringProp name="minimumValue">11000</stringProp>
-          <stringProp name="maximumValue">999999</stringProp>
-          <stringProp name="randomSeed">${__time()}</stringProp>
-          <boolProp name="perThread">false</boolProp>
-        </RandomVariableConfig>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Client ID Counter - Update OIDC Client" enabled="true">
+          <stringProp name="CounterConfig.start">1200000000</stringProp>
+          <stringProp name="CounterConfig.end">9999999999</stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">updatePreparationClientId</stringProp>
+          <stringProp name="CounterConfig.format"></stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Oidc Client API - Update" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OIDC Client POST Endpoint - Update OIDC Client" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -194,7 +209,7 @@
                 <stringProp name="Argument.value">{&#xd;
   &quot;requestTime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;e-health-service${tranIdClientIdUd}&quot;,&#xd;
+    &quot;clientId&quot;: &quot;${updatePreparationClientId}&quot;,&#xd;
     &quot;clientName&quot;: &quot;Health Service&quot;,&#xd;
     &quot;publicKey&quot;:&#xd;
     {&#xd;
@@ -205,9 +220,9 @@
     &quot;alg&quot;: &quot;RSA1_5&quot;,&#xd;
     &quot;n&quot;: &quot;iB5Eqj0HGsrhIuRP6DMxKxFyRmgjQI0UB91vwjswho8GEn0V6GUCM-74qRbNpeuC3jdjdg7r0dDY-eCmYRjNOZJDHptcwUPSa7g-FfV7rqkj5zx-DayLyTFB30sMgQBlemmmO-zq3lpyz6IQ77OYTkUi-3rDMgYGgaUfB56xUgQCrATPBRzw20JaNcCQnhIdFsN6W6kFiodr-cewHj3WGbRgakpuMsyxzkdHckBYtcaFGAB9LD4iZo0NE0eI22NY-JYYGKC_5emHZAVT4WRphua-2useIwwBkeYCW6TEV7j5UfJ7LSW-GYbnjQPZHDTVca4XXRtPHzG3Z9bHDzNMFw&quot;&#xd;
     },&#xd;
-    &quot;relyingPartyId&quot;: &quot;Bharathi-Inc&quot;,&#xd;
+    &quot;relyingPartyId&quot;: &quot;${relyingPartyId}&quot;,&#xd;
     &quot;userClaims&quot;: [&#xd;
-      &quot;name&quot;&#xd;
+      &quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone&quot;&#xd;
     ],&#xd;
     &quot;authContextRefs&quot;: [&#xd;
       &quot;mosip:idp:acr:static-code&quot;&#xd;
@@ -258,12 +273,22 @@
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="135298752">&quot;clientId&quot;:</stringProp>
+              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">false</boolProp>
             <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract ClientID" enabled="true">
@@ -279,12 +304,12 @@
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(ClientID.txt,${clientId}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(Client_ID.txt,${clientId}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Update Oidc Client (Execution)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Update OIDC Client (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -301,7 +326,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./ClientID.txt</stringProp>
+          <stringProp name="filename">./Client_ID.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -310,7 +335,7 @@
           <stringProp name="variableNames">updateClientId</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Update Oidc Client API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OIDC Client PUT Endpoint" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -326,7 +351,7 @@
       &quot;http://example.com&quot;&#xd;
     ],&#xd;
     &quot;userClaims&quot;: [&#xd;
-      &quot;name&quot;&#xd;
+      &quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone&quot;,&quot;address&quot;&#xd;
     ],&#xd;
     &quot;authContextRefs&quot;: [&#xd;
       &quot;mosip:idp:acr:static-code&quot;&#xd;
@@ -373,12 +398,22 @@
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="135298752">&quot;clientId&quot;:</stringProp>
+              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">false</boolProp>
             <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>

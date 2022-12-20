@@ -38,7 +38,7 @@
           </elementProp>
           <elementProp name="secretKey" elementType="Argument">
             <stringProp name="Argument.name">secretKey</stringProp>
-            <stringProp name="Argument.value">JfoG3eLWLW7iSZDt</stringProp>
+            <stringProp name="Argument.value">abc123</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="appId" elementType="Argument">
