@@ -46,6 +46,16 @@
             <stringProp name="Argument.value">Bharathi-Inc</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="userClaims" elementType="Argument">
+            <stringProp name="Argument.name">userClaims</stringProp>
+            <stringProp name="Argument.value">&quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone&quot;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="userClaimsUpdateOIDC" elementType="Argument">
+            <stringProp name="Argument.name">userClaimsUpdateOIDC</stringProp>
+            <stringProp name="Argument.value">&quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone&quot;,&quot;address&quot;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -76,7 +86,7 @@
       </ThreadGroup>
       <hashTree>
         <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Client ID Counter - Create OIDC Client" enabled="true">
-          <stringProp name="CounterConfig.start">1100000000</stringProp>
+          <stringProp name="CounterConfig.start">1100000060</stringProp>
           <stringProp name="CounterConfig.end">9999999999</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
           <stringProp name="CounterConfig.name">clientId</stringProp>
@@ -106,7 +116,7 @@
     },&#xd;
     &quot;relyingPartyId&quot;: &quot;${relyingPartyId}&quot;,&#xd;
     &quot;userClaims&quot;: [&#xd;
-      &quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone&quot;&#xd;
+      ${userClaims}&#xd;
     ],&#xd;
     &quot;authContextRefs&quot;: [&#xd;
       &quot;mosip:idp:acr:static-code&quot;&#xd;
@@ -181,7 +191,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">5</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -192,7 +202,7 @@
       </ThreadGroup>
       <hashTree>
         <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Client ID Counter - Update OIDC Client" enabled="true">
-          <stringProp name="CounterConfig.start">1200000000</stringProp>
+          <stringProp name="CounterConfig.start">1200000060</stringProp>
           <stringProp name="CounterConfig.end">9999999999</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
           <stringProp name="CounterConfig.name">updatePreparationClientId</stringProp>
@@ -222,7 +232,7 @@
     },&#xd;
     &quot;relyingPartyId&quot;: &quot;${relyingPartyId}&quot;,&#xd;
     &quot;userClaims&quot;: [&#xd;
-      &quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone&quot;&#xd;
+      ${userClaims}&#xd;
     ],&#xd;
     &quot;authContextRefs&quot;: [&#xd;
       &quot;mosip:idp:acr:static-code&quot;&#xd;
@@ -291,7 +301,7 @@
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract ClientID" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract clientId" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">clientId</stringProp>
             <stringProp name="RegexExtractor.regex">clientId&quot;:&quot;(.*?)&quot;</stringProp>
@@ -300,11 +310,11 @@
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store ClientID To File" enabled="true">
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store clientId To File" enabled="true">
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(Client_ID.txt,${clientId}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(client_id.txt,${clientId}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -313,7 +323,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">2</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -326,7 +336,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./Client_ID.txt</stringProp>
+          <stringProp name="filename">./client_id.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -351,7 +361,7 @@
       &quot;http://example.com&quot;&#xd;
     ],&#xd;
     &quot;userClaims&quot;: [&#xd;
-      &quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone&quot;,&quot;address&quot;&#xd;
+      ${userClaimsUpdateOIDC}&#xd;
     ],&#xd;
     &quot;authContextRefs&quot;: [&#xd;
       &quot;mosip:idp:acr:static-code&quot;&#xd;
