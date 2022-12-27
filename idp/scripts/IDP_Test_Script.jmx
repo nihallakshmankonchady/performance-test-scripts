@@ -48,12 +48,12 @@
           </elementProp>
           <elementProp name="userClaims" elementType="Argument">
             <stringProp name="Argument.name">userClaims</stringProp>
-            <stringProp name="Argument.value">&quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone&quot;</stringProp>
+            <stringProp name="Argument.value">&quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone_number&quot;</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="userClaimsUpdateOIDC" elementType="Argument">
             <stringProp name="Argument.name">userClaimsUpdateOIDC</stringProp>
-            <stringProp name="Argument.value">&quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone&quot;,&quot;address&quot;</stringProp>
+            <stringProp name="Argument.value">&quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone_number&quot;,&quot;address&quot;</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="scope" elementType="Argument">
@@ -131,7 +131,7 @@
       </ThreadGroup>
       <hashTree>
         <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Client ID Counter - Create OIDC Client" enabled="true">
-          <stringProp name="CounterConfig.start">110000000</stringProp>
+          <stringProp name="CounterConfig.start">100000000</stringProp>
           <stringProp name="CounterConfig.end">999999999</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
           <stringProp name="CounterConfig.name">clientId</stringProp>
@@ -762,7 +762,7 @@
       </ThreadGroup>
       <hashTree>
         <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Client ID Counter - Create OIDC Client" enabled="true">
-          <stringProp name="CounterConfig.start">1100000060</stringProp>
+          <stringProp name="CounterConfig.start">1300000100</stringProp>
           <stringProp name="CounterConfig.end">9999999999</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
           <stringProp name="CounterConfig.name">clientId</stringProp>
@@ -863,7 +863,7 @@
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Update Oidc Client (Preparation)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Update OIDC Client (Preparation)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -878,7 +878,7 @@
       </ThreadGroup>
       <hashTree>
         <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Client ID Counter - Update OIDC Client" enabled="true">
-          <stringProp name="CounterConfig.start">120000000</stringProp>
+          <stringProp name="CounterConfig.start">150000000</stringProp>
           <stringProp name="CounterConfig.end">999999999</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
           <stringProp name="CounterConfig.name">updatePreparationClientId</stringProp>
@@ -1012,7 +1012,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./client_id.txt</stringProp>
+          <stringProp name="filename">./update_oidc_preparation_client_id.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1078,6 +1078,121 @@
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Authorization</stringProp>
                 <stringProp name="Header.value">Bearer ${authTokenPms}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UI - OAuth Details (Execution)" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">./client_id.txt</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">oAuthDetailsEndpointClientId</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OAuth Details Endpoint API" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;requestTime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
+  &quot;request&quot;: {&#xd;
+    &quot;clientId&quot;: &quot;${oAuthDetailsEndpointClientId}&quot;,&#xd;
+    &quot;scope&quot;: &quot;${scope}&quot;,&#xd;
+    &quot;responseType&quot;: &quot;code&quot;,&#xd;
+    &quot;redirectUri&quot;: &quot;https://healthservices.dev.mosip.com/userprofile&quot;,&#xd;
+    &quot;display&quot;: &quot;popup&quot;,&#xd;
+    &quot;prompt&quot;: &quot;login&quot;,&#xd;
+    &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
+    &quot;claims&quot;: {&#xd;
+      &quot;userinfo&quot;: {&#xd;
+        &quot;given_name&quot;: {&#xd;
+          &quot;essential&quot;: true&#xd;
+        },&#xd;
+        &quot;phone&quot;: null,&#xd;
+        &quot;email&quot;: {&#xd;
+          &quot;essential&quot;: true&#xd;
+        },&#xd;
+        &quot;picture&quot;: {&#xd;
+          &quot;essential&quot;: false&#xd;
+        },&#xd;
+        &quot;gender&quot;: {&#xd;
+          &quot;essential&quot;: false&#xd;
+        }&#xd;
+      },&#xd;
+      &quot;id_token&quot;: {}&#xd;
+    },&#xd;
+    &quot;nonce&quot;: &quot;973eieljzng&quot;,&#xd;
+    &quot;state&quot;: &quot;eree2311&quot;,&#xd;
+    &quot;claimsLocales&quot;: &quot;en&quot;&#xd;
+  }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
+          <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/v1/idp/authorization/oauth-details</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -1296,121 +1411,6 @@
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">/v1/idp/authorization/send-otp</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="49586">200</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UI - OAuth Details (Execution)" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
-        </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
-        <stringProp name="ThreadGroup.delay"></stringProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-      </ThreadGroup>
-      <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
-          <stringProp name="delimiter">,</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./client_id.txt</stringProp>
-          <boolProp name="ignoreFirstLine">true</boolProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">oAuthDetailsEndpointClientId</stringProp>
-        </CSVDataSet>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OAuth Details Endpoint API" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-  &quot;requestTime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
-  &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;${oAuthDetailsEndpointClientId}&quot;,&#xd;
-    &quot;scope&quot;: &quot;${scope}&quot;,&#xd;
-    &quot;responseType&quot;: &quot;code&quot;,&#xd;
-    &quot;redirectUri&quot;: &quot;https://healthservices.dev.mosip.com/userprofile&quot;,&#xd;
-    &quot;display&quot;: &quot;popup&quot;,&#xd;
-    &quot;prompt&quot;: &quot;login&quot;,&#xd;
-    &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
-    &quot;claims&quot;: {&#xd;
-      &quot;userinfo&quot;: {&#xd;
-        &quot;given_name&quot;: {&#xd;
-          &quot;essential&quot;: true&#xd;
-        },&#xd;
-        &quot;phone&quot;: null,&#xd;
-        &quot;email&quot;: {&#xd;
-          &quot;essential&quot;: true&#xd;
-        },&#xd;
-        &quot;picture&quot;: {&#xd;
-          &quot;essential&quot;: false&#xd;
-        },&#xd;
-        &quot;gender&quot;: {&#xd;
-          &quot;essential&quot;: false&#xd;
-        }&#xd;
-      },&#xd;
-      &quot;id_token&quot;: {}&#xd;
-    },&#xd;
-    &quot;nonce&quot;: &quot;973eieljzng&quot;,&#xd;
-    &quot;state&quot;: &quot;eree2311&quot;,&#xd;
-    &quot;claimsLocales&quot;: &quot;en&quot;&#xd;
-  }&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
-          <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
-          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/idp/authorization/oauth-details</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
