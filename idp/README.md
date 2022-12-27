@@ -1,3 +1,4 @@
+
 ### Contains
 * This folder contains performance helper scripts, test scripts, test data files of below MOSIP modules.
     1. IDP (OIDC API's)
@@ -36,4 +37,11 @@
 * JMeter scripts for the module are available in the respective scripts folder.
 	* [IDP UI](https://github.com/mosip/mosip-performance-tests-mt/tree/develop/IDP/scripts).
 	
+
+**Contains**
+This folder contains idp Helper and Test script.
+IDP_Test_Script contains the below mentioned IdP: Management API's.
+OIDC Client Endpoint 
+Update OIDC Client Endpoint
+Before executing the IDP Test Script with above api's have to update the Counter number otherwise it will give duplicate client id error.
 
