@@ -56,6 +56,7 @@
             <stringProp name="Argument.value">&quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone&quot;,&quot;address&quot;</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+
           <elementProp name="scope" elementType="Argument">
             <stringProp name="Argument.name">scope</stringProp>
             <stringProp name="Argument.value">openid</stringProp>
@@ -66,6 +67,7 @@
             <stringProp name="Argument.value">mosip:idp:acr:static-code mosip:idp:acr:generated-code</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -419,6 +421,7 @@
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
+
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -704,6 +707,7 @@
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="-1843418944">&quot;message&quot;:&quot;Clientid and Token combination had been validated successfully&quot;</stringProp>
+
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -711,6 +715,7 @@
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
+
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Auth Token" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">authToken</stringProp>
