@@ -28,7 +28,12 @@
 ### Additional points for Execution 
 * Create Initial OIDC Clients - Without IDA (Setup) : File is generated which contains the client id without IDA registeration to be used for the UI IDP API's. Need to manage the number of threads and loop count according to the requirement of total samples.
 * Create Identities in MOSIP - IDA (Setup) : This thread contains the authorization api's for regproc and idrepo from which the auth token will be generated. There is set of 3 api's generate RID, generate UIN, add identity. From here we will get the UIN which can be further used as individual id. These 3 api's are present in the loop controller where we can define the number of samples for creating identities in which "addIdentitySetup" is used as a variable.
-* We can reuse the client id prepared from the setup thread group i.e. Create Initial OIDC Clients in other api's where client id is required.
+* We can reuse the client id prepared from the setup thread group i.e. Create Initial OIDC Clients in other api's where client id is required. 
+* In the below mentioned api's we can reuse the client id : 
+    * OAuth Details (Execution)
+    * Send OTP (Preparation)
+    * Authentication Endpoint - OTP (Preparation)
+    * Authorization Code (Preparation)
 
 
 	
