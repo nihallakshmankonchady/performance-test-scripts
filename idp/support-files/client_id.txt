@@ -1,7 +1,0 @@
-${clientId}
-e-health-service564662
-e-health-service431479
-e-health-service296149
-e-health-service97547
-e-health-service360771
-e-health-service951332
