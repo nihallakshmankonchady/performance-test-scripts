@@ -26,9 +26,9 @@
    * Authorization Code (Execution) - The total number of samples for preparation should be equal or higher in number as compared to execution. Have to pass the Transaction id generated from the preparation.
 
 ### Additional points for Execution 
-* Create Initial OIDC Clients - Without IDA (Setup) : File is generated which contains the client id without IDA registeration to be used for the UI IDP API's.
-* Create Identities in MOSIP - IDA (Preparation) : This thread contains the authorization api's for regproc and idrepo from which the auth token will be generated. Auth token will be used in the execution.
-* Create Identities in MOSIP - IDA (Execution) : Contains set of 3 api's generate RID, generate UIN, add identity. From here we will get the UIN which can be further used as individual id.
+* Create Initial OIDC Clients - Without IDA (Setup) : File is generated which contains the client id without IDA registeration to be used for the UI IDP API's. Need to manage the number of threads and loop count according to the requirement of total samples.
+* Create Identities in MOSIP - IDA (Setup) : This thread contains the authorization api's for regproc and idrepo from which the auth token will be generated. There is set of 3 api's generate RID, generate UIN, add identity. From here we will get the UIN which can be further used as individual id. These 3 api's are present in the loop controller where we can define the number of samples for creating identities in which "addIdentitySetup" is used as a variable.
+* We can reuse the client id prepared from the setup thread group i.e. Create Initial OIDC Clients in other api's where client id is required. But cant use it for Update OIDC Client (Execution) as in this we are going to execute for a large number of samples and for that we have separately added the Preparation part for it.
 
 
 	
