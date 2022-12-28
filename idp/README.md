@@ -14,7 +14,7 @@
 
 ### Execution points for IDP UI API's
 *  UI - OAuth Details : 
-   * OAuth Details (Execution) - Client id will be loaded from a file created by Create Initial OIDC Clients (Setup). Total samples created during execution can be higher from preparation.
+   * OAuth Details (Execution) - Client id will be loaded from a file created by Create Initial OIDC Clients (Setup). Total samples created during execution can be higher in number as compared to the samples present in the file.
 *  UI - Send OTP :
    * Send OTP (Preparation) - OAuth Details api will be used here in which created client id would be used.
    * Send OTP (Execution) - Same execution scenario applied as of OAuth details i.e. execution samples can be higher of preparation. Transaction id will be used which is created from the preparation part. Registered individual id also need to be passed in the body for which have separately added the setup thread group for creating identity.
@@ -28,7 +28,7 @@
 ### Additional points for Execution 
 * Create Initial OIDC Clients - Without IDA (Setup) : File is generated which contains the client id without IDA registeration to be used for the UI IDP API's. Need to manage the number of threads and loop count according to the requirement of total samples.
 * Create Identities in MOSIP - IDA (Setup) : This thread contains the authorization api's for regproc and idrepo from which the auth token will be generated. There is set of 3 api's generate RID, generate UIN, add identity. From here we will get the UIN which can be further used as individual id. These 3 api's are present in the loop controller where we can define the number of samples for creating identities in which "addIdentitySetup" is used as a variable.
-* We can reuse the client id prepared from the setup thread group i.e. Create Initial OIDC Clients in other api's where client id is required. But cant use it for Update OIDC Client (Execution) as in this we are going to execute for a large number of samples and for that we have separately added the Preparation part for it.
+* We can reuse the client id prepared from the setup thread group i.e. Create Initial OIDC Clients in other api's where client id is required.
 
 
 	
