@@ -32,12 +32,6 @@
 ### Additional points for Execution 
 * JSR223 Sampler - This sampler is being used to generate the JWT token value from a client id and its private secret key which will be used for the execution.
 
-
-### Apache JMeter scripts module wise
-* JMeter scripts for the module are available in the respective scripts folder.
-	* [IDP UI](https://github.com/mosip/mosip-performance-tests-mt/tree/develop/IDP/scripts).
-	
-
 **Contains**
 This folder contains idp Helper and Test script.
 IDP_Test_Script contains the below mentioned IdP: Management API's.
