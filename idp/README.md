@@ -1,6 +1,6 @@
 
 ### Contains
-* This folder contains performance helper scripts, test scripts of below MOSIP modules.
+* This folder contains performance helper script and test script of IDP MOSIP module.
     1. Management API Endpoints
     2. UI API Endpoints
     3. OIDC API Endpoints
