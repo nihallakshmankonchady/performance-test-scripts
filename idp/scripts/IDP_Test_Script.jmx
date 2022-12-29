@@ -1235,7 +1235,7 @@
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">SendOtpIndividualId</stringProp>
+          <stringProp name="variableNames">sendOtpIndividualId</stringProp>
         </CSVDataSet>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname=" Send OTP Endpoint API" enabled="true">
@@ -1248,7 +1248,7 @@
   &quot;requestTime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;request&quot;: {&#xd;
     &quot;transactionId&quot;: &quot;${tidSendOtp}&quot;,&#xd;
-    &quot;individualId&quot;: &quot;${SendOtpIndividualId}&quot;,&#xd;
+    &quot;individualId&quot;: &quot;${sendOtpIndividualId}&quot;,&#xd;
     &quot;otpChannels&quot;: [&quot;EMAIL&quot;]&#xd;
   }&#xd;
 } </stringProp>
