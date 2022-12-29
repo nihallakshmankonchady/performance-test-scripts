@@ -104,6 +104,16 @@
             <stringProp name="Argument.value">idp.dev.mosip.net</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="loadCsrfToken" elementType="Argument">
+            <stringProp name="Argument.name">loadCsrfToken</stringProp>
+            <stringProp name="Argument.value">e9bb2b7c-57ca-42d5-8657-c29e30dda2c9</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="redirectUri" elementType="Argument">
+            <stringProp name="Argument.name">redirectUri</stringProp>
+            <stringProp name="Argument.value">https://healthservices.dev.mosip.net/userprofile</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -119,138 +129,6 @@
         <stringProp name="variableNames">authTokenPms</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create Initial OIDC Clients - Without IDA (Setup)" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
-        </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
-        <stringProp name="ThreadGroup.delay"></stringProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-      </ThreadGroup>
-      <hashTree>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Client ID Counter" enabled="true">
-          <stringProp name="CounterConfig.start">700000000</stringProp>
-          <stringProp name="CounterConfig.end">999999999</stringProp>
-          <stringProp name="CounterConfig.incr">1</stringProp>
-          <stringProp name="CounterConfig.name">clientId</stringProp>
-          <stringProp name="CounterConfig.format"></stringProp>
-          <boolProp name="CounterConfig.per_user">false</boolProp>
-        </CounterConfig>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OIDC Client POST Endpoint" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-  &quot;requestTime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
-  &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;${clientId}&quot;,&#xd;
-    &quot;clientName&quot;: &quot;Health Service&quot;,&#xd;
-    &quot;publicKey&quot;:&#xd;
-    {&#xd;
-    &quot;kty&quot;: &quot;RSA&quot;,&#xd;
-    &quot;e&quot;: &quot;AQAB&quot;,&#xd;
-    &quot;use&quot;: &quot;enc&quot;,&#xd;
-    &quot;kid&quot;: &quot;m9m90WGVevLS1gMo0Ar21MkEqkLePsP0MijW7PTeqDI&quot;,&#xd;
-    &quot;alg&quot;: &quot;RSA1_5&quot;,&#xd;
-    &quot;n&quot;: &quot;iB5Eqj0HGsrhIuRP6DMxKxFyRmgjQI0UB91vwjswho8GEn0V6GUCM-74qRbNpeuC3jdjdg7r0dDY-eCmYRjNOZJDHptcwUPSa7g-FfV7rqkj5zx-DayLyTFB30sMgQBlemmmO-zq3lpyz6IQ77OYTkUi-3rDMgYGgaUfB56xUgQCrATPBRzw20JaNcCQnhIdFsN6W6kFiodr-cewHj3WGbRgakpuMsyxzkdHckBYtcaFGAB9LD4iZo0NE0eI22NY-JYYGKC_5emHZAVT4WRphua-2useIwwBkeYCW6TEV7j5UfJ7LSW-GYbnjQPZHDTVca4XXRtPHzG3Z9bHDzNMFw&quot;&#xd;
-    },&#xd;
-    &quot;relyingPartyId&quot;: &quot;${relyingPartyId}&quot;,&#xd;
-    &quot;userClaims&quot;: [&#xd;
-      ${userClaims}&#xd;
-    ],&#xd;
-    &quot;authContextRefs&quot;: [&#xd;
-      &quot;${acrValues}&quot;&#xd;
-    ],&#xd;
-    &quot;logoUri&quot;: &quot;http://example.com&quot;,&#xd;
-    &quot;redirectUris&quot;: [&#xd;
-      &quot;http://example.com&quot;&#xd;
-    ],&#xd;
-    &quot;grantTypes&quot;: [&#xd;
-      &quot;authorization_code&quot;&#xd;
-    ],&#xd;
-    &quot;clientAuthMethods&quot;: [&#xd;
-      &quot;private_key_jwt&quot;&#xd;
-    ]&#xd;
-  }&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
-          <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
-          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/idp/client-mgmt/oidc-client</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">Bearer ${authTokenPms}</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="49586">200</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract ClientID" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">clientId</stringProp>
-            <stringProp name="RegexExtractor.regex">clientId&quot;:&quot;(.*?)&quot;</stringProp>
-            <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">clientId not found</stringProp>
-            <stringProp name="RegexExtractor.match_number">1</stringProp>
-          </RegexExtractor>
-          <hashTree/>
-          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store ClientID To File" enabled="true">
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters"></stringProp>
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(client_id.txt,${clientId}\n,true,)}</stringProp>
-          </BeanShellPostProcessor>
-          <hashTree/>
-        </hashTree>
-      </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create Identities in MOSIP - IDA (Setup)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -697,7 +575,7 @@
               <boolProp name="resetInterpreter">false</boolProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
-              <stringProp name="script">${__StringToFile(individualid_idp1.txt,${uin}\n,true,)}</stringProp>
+              <stringProp name="script">${__StringToFile(individualid_idp.txt,${uin}\n,true,)}</stringProp>
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
@@ -1077,7 +955,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./client_id.txt</stringProp>
+          <stringProp name="filename">/client_id.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1098,7 +976,7 @@
     &quot;clientId&quot;: &quot;${oAuthDetailsEndpointClientId}&quot;,&#xd;
     &quot;scope&quot;: &quot;${scope}&quot;,&#xd;
     &quot;responseType&quot;: &quot;code&quot;,&#xd;
-    &quot;redirectUri&quot;: &quot;https://healthservices.dev.mosip.com/userprofile&quot;,&#xd;
+    &quot;redirectUri&quot;: &quot;${redirectUri}&quot;,&#xd;
     &quot;display&quot;: &quot;popup&quot;,&#xd;
     &quot;prompt&quot;: &quot;login&quot;,&#xd;
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
@@ -1149,6 +1027,14 @@
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -1192,7 +1078,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">/clientid_OAuthDetailsEndpoint.txt</stringProp>
+          <stringProp name="filename">./client_id.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1213,7 +1099,7 @@
     &quot;clientId&quot;: &quot;${sendOtpClientId}&quot;,&#xd;
     &quot;scope&quot;: &quot;${scope}&quot;,&#xd;
     &quot;responseType&quot;: &quot;code&quot;,&#xd;
-    &quot;redirectUri&quot;: &quot;https://healthservices.dev.mosip.com/userprofile&quot;,&#xd;
+    &quot;redirectUri&quot;: &quot;${redirectUri}&quot;,&#xd;
     &quot;display&quot;: &quot;popup&quot;,&#xd;
     &quot;prompt&quot;: &quot;login&quot;,&#xd;
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
@@ -1264,6 +1150,14 @@
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -1310,7 +1204,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">2</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -1335,13 +1229,13 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Individual Id From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">C:/apache-jmeter-5.3/apache-jmeter-5.3/bin/uinList.txt</stringProp>
+          <stringProp name="filename">./individualid_idp.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">sendOtpIndividualId</stringProp>
+          <stringProp name="variableNames">SendOtpIndividualId</stringProp>
         </CSVDataSet>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname=" Send OTP Endpoint API" enabled="true">
@@ -1354,7 +1248,7 @@
   &quot;requestTime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;request&quot;: {&#xd;
     &quot;transactionId&quot;: &quot;${tidSendOtp}&quot;,&#xd;
-    &quot;individualId&quot;: &quot;${sendOtpIndividualId}&quot;,&#xd;
+    &quot;individualId&quot;: &quot;${SendOtpIndividualId}&quot;,&#xd;
     &quot;otpChannels&quot;: [&quot;EMAIL&quot;]&#xd;
   }&#xd;
 } </stringProp>
@@ -1383,6 +1277,14 @@
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -1408,7 +1310,7 @@
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UI - Authentication Endpoint - OTP (Preparation)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UI - Authentication - OTP (Preparation)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1437,7 +1339,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Individual Id From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./Individualid_idp.txt</stringProp>
+          <stringProp name="filename">/individualid_idp.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1458,7 +1360,7 @@
     &quot;clientId&quot;: &quot;${authClientId}&quot;,&#xd;
     &quot;scope&quot;: &quot;${scope}&quot;,&#xd;
     &quot;responseType&quot;: &quot;code&quot;,&#xd;
-    &quot;redirectUri&quot;: &quot;https://healthservices.dev.mosip.com/userprofile&quot;,&#xd;
+    &quot;redirectUri&quot;: &quot;${redirectUri}&quot;,&#xd;
     &quot;display&quot;: &quot;popup&quot;,&#xd;
     &quot;prompt&quot;: &quot;login&quot;,&#xd;
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
@@ -1509,6 +1411,14 @@
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -1582,6 +1492,14 @@
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -1609,12 +1527,12 @@
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(transactionid_auth_endpoint.txt,${tidAuthEndpoint}\,${authIndividualId}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(transaction_id_auth_endpoint.txt,${tidAuthEndpoint}\,${authIndividualId}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UI - Authentication Endpoint - OTP (Execution)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UI - Authentication - OTP (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1631,7 +1549,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load TransactionID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./transactionid_auth_endpoint.txt</stringProp>
+          <stringProp name="filename">./transaction_id_auth_endpoint.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1683,6 +1601,14 @@
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -1759,7 +1685,7 @@
     &quot;clientId&quot;: &quot;${authCodeClientId}&quot;,&#xd;
     &quot;scope&quot;: &quot;${scope}&quot;,&#xd;
     &quot;responseType&quot;: &quot;code&quot;,&#xd;
-    &quot;redirectUri&quot;: &quot;https://healthservices.dev.mosip.com/userprofile&quot;,&#xd;
+    &quot;redirectUri&quot;: &quot;${redirectUri}&quot;,&#xd;
     &quot;display&quot;: &quot;popup&quot;,&#xd;
     &quot;prompt&quot;: &quot;login&quot;,&#xd;
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
@@ -1810,6 +1736,14 @@
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -1883,6 +1817,14 @@
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -1951,6 +1893,14 @@
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -1987,7 +1937,7 @@
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(transactionid_authorization_code_endpoint.txt,${transactionID}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(transaction_id_authorization_code_endpoint.txt,${transactionID}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -2009,7 +1959,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load TransactionID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./transactionid_authorization_code_endpoint.txt</stringProp>
+          <stringProp name="filename">./transaction_id_authorization_code_endpoint.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -2059,6 +2009,14 @@
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -2084,7 +2042,7 @@
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - Authorization Endpoint (Execution)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - Authorization (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2179,7 +2137,7 @@
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - Token Endpoint (Preparation)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - Token (Preparation)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2229,7 +2187,7 @@
     &quot;clientId&quot;: &quot;${tokenClientId}&quot;,&#xd;
     &quot;scope&quot;: &quot;${scope}&quot;,&#xd;
     &quot;responseType&quot;: &quot;code&quot;,&#xd;
-    &quot;redirectUri&quot;: &quot;https://healthservices.dev.mosip.com/userprofile&quot;,&#xd;
+    &quot;redirectUri&quot;: &quot;${redirectUri}&quot;,&#xd;
     &quot;display&quot;: &quot;popup&quot;,&#xd;
     &quot;prompt&quot;: &quot;login&quot;,&#xd;
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
@@ -2527,7 +2485,7 @@
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - Token Endpoint (Execution)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - Token (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2671,7 +2629,7 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
               </elementProp>
               <elementProp name="redirect_uri" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">https://healthservices.dev.mosip.com/userprofile</stringProp>
+                <stringProp name="Argument.value">${redirectUri}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">redirect_uri</stringProp>
@@ -2724,7 +2682,7 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - UserInfo Endpoint (Preparation)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - UserInfo (Preparation)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2786,7 +2744,7 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
     &quot;clientId&quot;: &quot;${userInfoClientId}&quot;,&#xd;
     &quot;scope&quot;: &quot;${scope}&quot;,&#xd;
     &quot;responseType&quot;: &quot;code&quot;,&#xd;
-    &quot;redirectUri&quot;: &quot;https://healthservices.dev.mosip.com/userprofile&quot;,&#xd;
+    &quot;redirectUri&quot;: &quot;${redirectUri}&quot;,&#xd;
     &quot;display&quot;: &quot;popup&quot;,&#xd;
     &quot;prompt&quot;: &quot;login&quot;,&#xd;
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
@@ -3170,7 +3128,7 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
               </elementProp>
               <elementProp name="redirect_uri" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">https://healthservices.dev.mosip.com/userprofile</stringProp>
+                <stringProp name="Argument.value">${redirectUri}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">redirect_uri</stringProp>
@@ -3239,7 +3197,7 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - UserInfo Endpoint (Execution)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - UserInfo (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3309,7 +3267,7 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - Configuration Endpoint (Execution)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - Configuration (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3363,7 +3321,7 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - JSON Web Key Set Endpoint (Execution)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC - JSON Web Key Set (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
