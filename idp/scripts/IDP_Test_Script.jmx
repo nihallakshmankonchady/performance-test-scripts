@@ -114,6 +114,11 @@
             <stringProp name="Argument.value">https://healthservices.dev.mosip.net/userprofile</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="jwtExpireInterval" elementType="Argument">
+            <stringProp name="Argument.name">jwtExpireInterval</stringProp>
+            <stringProp name="Argument.value">30000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -129,7 +134,7 @@
         <stringProp name="variableNames">authTokenPms</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create Identities in MOSIP - IDA (Setup)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create Identities in MOSIP Authentication System (Setup)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -581,7 +586,7 @@
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="OIDC Client via PMS (Setup)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create OIDC Client in MOSIP Authentication System (Setup)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -595,7 +600,7 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Generate RSA Key Pair" enabled="true">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Generate Key Pair" enabled="true">
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -611,21 +616,17 @@ RSAKey jwk = new RSAKeyGenerator(2048)
     .keyID(UUID.randomUUID().toString()) // give the key a unique ID
     .generate();
 
-// Output the public and private RSA JWK parameters only
-log.info(&quot;Public Key: &quot; + jwk.toPublicJWK().toString());
-log.info(&quot;Private Key: &quot; + jwk.toString());
+String publicKey = jwk.toPublicJWK().toString();
+vars.put(&quot;publicKey&quot;, publicKey);
 
-String Public_Key = jwk.toPublicJWK().toString();
-vars.put(&quot;publicKey&quot;, Public_Key);
+String encodedPrivateKey = Base64.getEncoder().encodeToString(jwk.toRSAPrivateKey().getEncoded())
 
-String pemFormatKey  =  Base64.getEncoder().encodeToString(jwk.toRSAPrivateKey().getEncoded())
-
-vars.put(&quot;privateKey&quot;, pemFormatKey);
+vars.put(&quot;encodedPrivateKey&quot;, encodedPrivateKey);
 </stringProp>
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OIDC Client via PMS Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PMS OIDC Client POST Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -637,7 +638,7 @@ vars.put(&quot;privateKey&quot;, pemFormatKey);
   &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;name&quot;: &quot;client1&quot;,&#xd;
+    &quot;name&quot;: &quot;clienta2&quot;,&#xd;
     &quot;policyName&quot;: &quot;policy957&quot;,&#xd;
     &quot;publicKey&quot;: ${publicKey},&#xd;
     &quot;authPartnerId&quot;: &quot;dummy_relying_party549222863787&quot;,&#xd;
@@ -718,7 +719,7 @@ vars.put(&quot;privateKey&quot;, pemFormatKey);
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(partner_client_id.csv,${partnerClientId}\,${privateKey}\n,true,)}
+            <stringProp name="script">${__StringToFile(client_id.csv,${partnerClientId}\,${encodedPrivateKey}\n,true,)}
 </stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
@@ -1098,7 +1099,7 @@ vars.put(&quot;privateKey&quot;, pemFormatKey);
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./partner_client_id.txt</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1221,7 +1222,7 @@ vars.put(&quot;privateKey&quot;, pemFormatKey);
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./partner_client_id.txt</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1470,7 +1471,7 @@ vars.put(&quot;privateKey&quot;, pemFormatKey);
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./partner_client_id.txt</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1795,7 +1796,7 @@ vars.put(&quot;privateKey&quot;, pemFormatKey);
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./partner_client_id.txt</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -2202,7 +2203,7 @@ vars.put(&quot;privateKey&quot;, pemFormatKey);
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">\##</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./partner_client_id.txt</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -2297,7 +2298,7 @@ vars.put(&quot;privateKey&quot;, pemFormatKey);
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./partner_client_id.csv</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -2677,13 +2678,13 @@ vars.put(&quot;privateKey&quot;, pemFormatKey);
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./partner_client_id.csv</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">tokenEndpointClientId,tokenSecretKey</stringProp>
+          <stringProp name="variableNames">tokenEndpointClientId,tokenEncodedPrivateKey</stringProp>
         </CSVDataSet>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Code From File" enabled="true">
@@ -2715,31 +2716,29 @@ import java.util.Date;
 import io.jsonwebtoken.security.Keys;
 import java.security.KeyPair;
 
-java.security.Security.addProvider(
-        new org.bouncycastle.jce.provider.BouncyCastleProvider()
-);
-
-KeyPair keyPair = Keys.keyPairFor(SignatureAlgorithm.RS256);
+java.security.Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
 
 //Load the clientid in valriable
 String clientId = vars.get(&quot;tokenEndpointClientId&quot;) ; 
 
 //Save the Secret key/ Private Key in a variable
-String SECRET_KEY = &quot;-----BEGIN RSA PRIVATE KEY-----\n&quot;+ vars.get(&quot;tokenSecretKey&quot;) +&quot;\n-----END RSA PRIVATE KEY-----&quot; ;
+String pemPrivateKey = &quot;-----BEGIN RSA PRIVATE KEY-----\n&quot;+ vars.get(&quot;tokenEncodedPrivateKey&quot;) +&quot;\n-----END RSA PRIVATE KEY-----&quot; ;
 
- PemReader pemReader = new PemReader(new StringReader (SECRET_KEY));
- PemObject pemObject = pemReader.readPemObject();
-  KeyFactory kf = KeyFactory.getInstance(&quot;RSA&quot;);
-  byte[] content = pemObject.getContent ();
-  PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(content);
-  PrivateKey pk = kf.generatePrivate (keySpec);
+String audience = &quot;${protocol}&quot;+ &quot;:&quot; + &quot;//&quot; + &quot;${serverIP}&quot; +&quot;/v1/idp/oauth/token&quot; ;
+
+PemReader pemReader = new PemReader(new StringReader (pemPrivateKey));
+PemObject pemObject = pemReader.readPemObject();
+KeyFactory kf = KeyFactory.getInstance(&quot;RSA&quot;);
+byte[] content = pemObject.getContent ();
+PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(content);
+PrivateKey pk = kf.generatePrivate (keySpec);
 //The RS256 signature algorithm will be used to sign the token in this example
- SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.RS256;
+SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.RS256;
 //Set the Issued date and expiry date to now
- long nowMillis = System.currentTimeMillis();
- Date now = new Date(nowMillis);
- long expMillis = nowMillis + 30000;
-        Date exp = new Date(expMillis);
+long nowMillis = System.currentTimeMillis();
+Date now = new Date(nowMillis);
+long expMillis = nowMillis + ${jwtExpireInterval} ;
+Date exp = new Date(expMillis);
        
 //Build the JWT with the JwtBuilder
 JwtBuilder builder = Jwts.builder()
@@ -2748,10 +2747,9 @@ JwtBuilder builder = Jwts.builder()
                 .setExpiration(exp)
                 .setIssuer(clientId)
                 .setSubject(clientId)
-                .setAudience(&apos;https://api.dev.mosip.net/v1/idp/oauth/token&apos;);
+                .setAudience(audience);
               
-//Save the JWT in the compact string in the jmeter variables    vars.put(&quot;JWT&quot;,builder.compact().toString());
-log.info(builder.compact().toString());
+//Save the JWT in the compact string in the jmeter variables
 String JWT = builder.compact().toString();
 vars.put(&quot;clientAssertionJWT&quot;, JWT);
 </stringProp>
@@ -2868,13 +2866,13 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./partner_client_id.csv</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">userInfoClientId,userInfoSecretKey</stringProp>
+          <stringProp name="variableNames">userInfoClientId,userInfoEncodedPrivateKey</stringProp>
         </CSVDataSet>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Individual Id From File" enabled="true">
@@ -3240,31 +3238,28 @@ import java.util.Date;
 import io.jsonwebtoken.security.Keys;
 import java.security.KeyPair;
 
-java.security.Security.addProvider(
-        new org.bouncycastle.jce.provider.BouncyCastleProvider()
-);
-
-KeyPair keyPair = Keys.keyPairFor(SignatureAlgorithm.RS256);
+java.security.Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
 
 //Save the Secret key/ Private Key in a variable
-
 String clientId = vars.get(&quot;userInfoClientId&quot;) ; 
 
-String SECRET_KEY = &quot;-----BEGIN RSA PRIVATE KEY-----\n&quot;+ vars.get(&quot;userInfoSecretKey&quot;) +&quot;\n-----END RSA PRIVATE KEY-----&quot; ;
+String pemPrivateKey = &quot;-----BEGIN RSA PRIVATE KEY-----\n&quot;+ vars.get(&quot;userInfoEncodedPrivateKey&quot;) +&quot;\n-----END RSA PRIVATE KEY-----&quot; ;
 
- PemReader pemReader = new PemReader(new StringReader (SECRET_KEY));
- PemObject pemObject = pemReader.readPemObject();
-  KeyFactory kf = KeyFactory.getInstance(&quot;RSA&quot;);
-  byte[] content = pemObject.getContent ();
-  PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(content);
-  PrivateKey pk = kf.generatePrivate (keySpec);
+String audience = &quot;${protocol}&quot;+ &quot;:&quot; + &quot;//&quot; + &quot;${serverIP}&quot; +&quot;/v1/idp/oauth/token&quot; ;
+
+PemReader pemReader = new PemReader(new StringReader (pemPrivateKey));
+PemObject pemObject = pemReader.readPemObject();
+KeyFactory kf = KeyFactory.getInstance(&quot;RSA&quot;);
+byte[] content = pemObject.getContent ();
+PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(content);
+PrivateKey pk = kf.generatePrivate (keySpec);
 //The RS256 signature algorithm will be used to sign the token in this example
- SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.RS256;
+SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.RS256;
 //Set the Issued date and expiry date to now
- long nowMillis = System.currentTimeMillis();
- Date now = new Date(nowMillis);
- long expMillis = nowMillis + 30000;
-        Date exp = new Date(expMillis);
+long nowMillis = System.currentTimeMillis();
+Date now = new Date(nowMillis);
+long expMillis = nowMillis + ${jwtExpireInterval};
+Date exp = new Date(expMillis);
        
 //Build the JWT with the JwtBuilder
 JwtBuilder builder = Jwts.builder()
@@ -3273,9 +3268,9 @@ JwtBuilder builder = Jwts.builder()
                 .setExpiration(exp)
                 .setIssuer(clientId)
                 .setSubject(clientId)
-                .setAudience(&apos;https://api.dev.mosip.net/v1/idp/oauth/token&apos;);
+                .setAudience(audience);
               
-//Save the JWT in the compact string in the jmeter variables    vars.put(&quot;JWT&quot;,builder.compact().toString());
+//Save the JWT in the compact string in the jmeter variables
 log.info(builder.compact().toString());
 String JWT = builder.compact().toString();
 vars.put(&quot;clientAssertionJWT&quot;, JWT);

@@ -18,9 +18,9 @@
 
 ### Setup points for Execution
 
-* Create Identities in MOSIP - IDA (Setup) : This thread contains the authorization api's for regproc and idrepo from which the auth token will be generated. There is set of 3 api's generate RID, generate UIN, add identity. From here we will get the UIN which can be further used as individual id. These 3 api's are present in the loop controller where we can define the number of samples for creating identities in which "addIdentitySetup" is used as a variable.
+* Create Identities in MOSIP Authentication System (Setup) : This thread contains the authorization api's for regproc and idrepo from which the auth token will be generated. There is set of 3 api's generate RID, generate UIN, add identity. From here we will get the UIN which can be further used as individual id. These 3 api's are present in the loop controller where we can define the number of samples for creating identities in which "addIdentitySetup" is used as a variable.
 
-* OIDC Client via PMS (Setup) : This thread contains a assertion sampler from which will get a public-private key pair. From here public key will be used in the OIDC client api to generate client id's  which are registered for both IDA and IDP. The private key generated from the sampler will be used in the assertion sampler present in the OIDC Token (Execution). Generated client id's and there respective private key will be stored in a file which will be used further in the required api's.
+* Create OIDC Client in MOSIP Authentication System (Setup) : This thread contains a assertion sampler from which will get a public-private key pair. From here public key will be used in the OIDC client api to generate client id's  which are registered for both IDA and IDP. The private key generated from the sampler will be used in the assertion sampler present in the OIDC Token (Execution). Generated client id's and there respective private key will be stored in a file which will be used further in the required api's.
 
 * We need some jar files which needs to be added in lib folder of jmeter, PFA dependency links for your reference : 
 
@@ -75,7 +75,7 @@
 
 ### Execution points for IDP UI API's
 *  UI - OAuth Details : 
-   * OAuth Details (Execution) - Client id created from OIDC Client via PMS (Setup) will be loaded. Total samples created during execution can be higher in number as compared to the samples present in the file.
+   * OAuth Details (Execution) - Client id created from Create OIDC Client in MOSIP Authentication System (Setup) will be loaded. Total samples created during execution can be higher in number as compared to the samples present in the file.
 
 *  UI - Send OTP :
    * Send OTP (Preparation) - OAuth Details api will be used here in which created client id would be used.
@@ -94,7 +94,7 @@
 
 *  OIDC - Token :
    * OIDC Token (Preparation) - This includes the OAuth Details, Send OTP, Authentication, Authorization Code API's in the preparation part. From Authorization Code api will get the code value which will be used in the execution. Client id and individual id will be read from a file. The code generated can only be used once so the preparation samples must be equal or higher to execution.
-   * OIDC Token (Execution) - Code created from the preparation will be used only once and a signed JWT key value is also required for which we are using a JSR223 Sampler. Generate Client Assertion sampler is been used to generate a signed JWT token value from the client id file created from OIDC Client via PMS (Setup) and its public and private secret key pair which will be used for the execution.  An access token will be generated in the response body.
+   * OIDC Token (Execution) - Code created from the preparation will be used only once and a signed JWT key value is also required for which we are using a JSR223 Sampler. Generate Client Assertion sampler is been used to generate a signed JWT token value from the client id file created from Create OIDC Client in MOSIP Authentication System (Setup) and its public and private secret key pair which will be used for the execution.  An access token will be generated in the response body.
 
 *  OIDC - UserInfo :
    * OIDC UserInfo (Preparation) - For the preparation we need 5 api's OAuth Details, Send OTP, Authentication, Authorization Code and Token Endpoint api from which a access token will be generated. Access token will be used for the execution.
