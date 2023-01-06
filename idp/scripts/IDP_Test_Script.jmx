@@ -91,7 +91,7 @@
           </elementProp>
           <elementProp name="acceptedClaims" elementType="Argument">
             <stringProp name="Argument.name">acceptedClaims</stringProp>
-            <stringProp name="Argument.value">&quot;name&quot;,&quot;gender&quot;,&quot;email&quot;,&quot;birthdate&quot;</stringProp>
+            <stringProp name="Argument.value">&quot;name&quot;,&quot;gender&quot;,&quot;email&quot;</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="addIdentitySetup" elementType="Argument">
@@ -114,6 +114,11 @@
             <stringProp name="Argument.value">https://healthservices.dev.mosip.net/userprofile</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="jwtExpireInterval" elementType="Argument">
+            <stringProp name="Argument.name">jwtExpireInterval</stringProp>
+            <stringProp name="Argument.value">30000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -129,7 +134,7 @@
         <stringProp name="variableNames">authTokenPms</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create Identities in MOSIP - IDA (Setup)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create Identities in MOSIP Authentication System (Setup)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -581,6 +586,145 @@
           </hashTree>
         </hashTree>
       </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create OIDC Client in MOSIP Authentication System (Setup)" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Generate Key Pair" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import java.util.UUID;
+import com.nimbusds.jose.jwk.gen.RSAKeyGenerator;
+import com.nimbusds.jose.jwk.RSAKey;
+import com.nimbusds.jose.jwk.KeyUse;
+import java.util.Base64;
+
+// Generate 2048-bit RSA key pair in JWK format, attach some metadata
+RSAKey jwk = new RSAKeyGenerator(2048)
+    .keyUse(KeyUse.SIGNATURE) // indicate the intended use of the key
+    .keyID(UUID.randomUUID().toString()) // give the key a unique ID
+    .generate();
+
+String publicKey = jwk.toPublicJWK().toString();
+vars.put(&quot;publicKey&quot;, publicKey);
+
+String encodedPrivateKey = Base64.getEncoder().encodeToString(jwk.toRSAPrivateKey().getEncoded())
+
+vars.put(&quot;encodedPrivateKey&quot;, encodedPrivateKey);
+</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PMS OIDC Client POST Endpoint API" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;id&quot;: &quot;string&quot;,&#xd;
+  &quot;version&quot;: &quot;string&quot;,&#xd;
+  &quot;requesttime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
+  &quot;metadata&quot;: {},&#xd;
+  &quot;request&quot;: {&#xd;
+    &quot;name&quot;: &quot;clienta2&quot;,&#xd;
+    &quot;policyName&quot;: &quot;policy957&quot;,&#xd;
+    &quot;publicKey&quot;: ${publicKey},&#xd;
+    &quot;authPartnerId&quot;: &quot;dummy_relying_party549222863787&quot;,&#xd;
+    &quot;logoUri&quot;: &quot;https://mosip.atlassian.net/browse/MOSIP-24363.png&quot;,&#xd;
+    &quot;redirectUris&quot;: [&#xd;
+      &quot;https://healthservices.dev.mosip.net/userprofile&quot;&#xd;
+    ],&#xd;
+    &quot;grantTypes&quot;: [&#xd;
+      &quot;authorization_code&quot;&#xd;
+    ],&#xd;
+    &quot;clientAuthMethods&quot;: [&#xd;
+      &quot;private_key_jwt&quot;&#xd;
+    ]&#xd;
+  }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">api-internal.dev.mosip.net</stringProp>
+          <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/v1/partnermanager/oidc/client</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">Authorization=${authTokenPms}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract ClientId" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">partnerClientId</stringProp>
+            <stringProp name="RegexExtractor.regex">clientId&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">clientId not found</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store ClientId To File" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">${__StringToFile(client_id.csv,${partnerClientId}\,${encodedPrivateKey}\n,true,)}
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Management - Create OIDC Client (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -633,7 +777,7 @@
     ],&#xd;
     &quot;logoUri&quot;: &quot;http://example.com&quot;,&#xd;
     &quot;redirectUris&quot;: [&#xd;
-      &quot;http://example.com&quot;&#xd;
+      &quot;${redirectUri}&quot;&#xd;
     ],&#xd;
     &quot;grantTypes&quot;: [&#xd;
       &quot;authorization_code&quot;&#xd;
@@ -749,7 +893,7 @@
     ],&#xd;
     &quot;logoUri&quot;: &quot;http://example.com&quot;,&#xd;
     &quot;redirectUris&quot;: [&#xd;
-      &quot;http://example.com&quot;&#xd;
+      &quot;${redirectUri}&quot;&#xd;
     ],&#xd;
     &quot;grantTypes&quot;: [&#xd;
       &quot;authorization_code&quot;&#xd;
@@ -868,7 +1012,7 @@
     &quot;status&quot;: &quot;ACTIVE&quot;,&#xd;
     &quot;logoUri&quot;: &quot;http://example.com&quot;,&#xd;
     &quot;redirectUris&quot;: [&#xd;
-      &quot;http://example.com&quot;&#xd;
+      &quot;${redirectUri}&quot;&#xd;
     ],&#xd;
     &quot;userClaims&quot;: [&#xd;
       ${userClaimsUpdateOIDC}&#xd;
@@ -955,7 +1099,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">/client_id.txt</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -982,7 +1126,7 @@
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
     &quot;claims&quot;: {&#xd;
       &quot;userinfo&quot;: {&#xd;
-        &quot;given_name&quot;: {&#xd;
+        &quot;name&quot;: {&#xd;
           &quot;essential&quot;: true&#xd;
         },&#xd;
         &quot;phone&quot;: null,&#xd;
@@ -1078,7 +1222,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./client_id.txt</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1105,7 +1249,7 @@
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
     &quot;claims&quot;: {&#xd;
       &quot;userinfo&quot;: {&#xd;
-        &quot;given_name&quot;: {&#xd;
+        &quot;name&quot;: {&#xd;
           &quot;essential&quot;: true&#xd;
         },&#xd;
         &quot;phone&quot;: null,&#xd;
@@ -1204,7 +1348,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">2</stringProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -1235,7 +1379,7 @@
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">sendOtpIndividualId</stringProp>
+          <stringProp name="variableNames">SendOtpIndividualId</stringProp>
         </CSVDataSet>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname=" Send OTP Endpoint API" enabled="true">
@@ -1248,7 +1392,7 @@
   &quot;requestTime&quot;: &quot;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&apos;Z&apos;,)}&quot;,&#xd;
   &quot;request&quot;: {&#xd;
     &quot;transactionId&quot;: &quot;${tidSendOtp}&quot;,&#xd;
-    &quot;individualId&quot;: &quot;${sendOtpIndividualId}&quot;,&#xd;
+    &quot;individualId&quot;: &quot;${SendOtpIndividualId}&quot;,&#xd;
     &quot;otpChannels&quot;: [&quot;EMAIL&quot;]&#xd;
   }&#xd;
 } </stringProp>
@@ -1327,7 +1471,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./client_id.txt</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1366,7 +1510,7 @@
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
     &quot;claims&quot;: {&#xd;
       &quot;userinfo&quot;: {&#xd;
-        &quot;given_name&quot;: {&#xd;
+        &quot;name&quot;: {&#xd;
           &quot;essential&quot;: true&#xd;
         },&#xd;
         &quot;phone&quot;: null,&#xd;
@@ -1652,7 +1796,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./client_id.txt</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1691,10 +1835,10 @@
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
     &quot;claims&quot;: {&#xd;
       &quot;userinfo&quot;: {&#xd;
-        &quot;given_name&quot;: {&#xd;
+        &quot;name&quot;: {&#xd;
           &quot;essential&quot;: true&#xd;
         },&#xd;
-        &quot;phone&quot;: null,&#xd;
+        &quot;phone_number&quot;: null,&#xd;
         &quot;email&quot;: {&#xd;
           &quot;essential&quot;: true&#xd;
         },&#xd;
@@ -2057,9 +2201,9 @@
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
-          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="delimiter">\##</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./client_id.txt</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -2154,7 +2298,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./client_id.txt</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -2193,7 +2337,7 @@
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
     &quot;claims&quot;: {&#xd;
       &quot;userinfo&quot;: {&#xd;
-        &quot;given_name&quot;: {&#xd;
+        &quot;name&quot;: {&#xd;
           &quot;essential&quot;: true&#xd;
         },&#xd;
         &quot;phone&quot;: null,&#xd;
@@ -2238,6 +2382,14 @@
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -2311,6 +2463,14 @@
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -2379,6 +2539,14 @@
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -2444,6 +2612,14 @@
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -2499,6 +2675,18 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">tokenEndpointClientId,tokenEncodedPrivateKey</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Code From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
@@ -2509,30 +2697,6 @@
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
           <stringProp name="variableNames">codeTokenEndpoint</stringProp>
-        </CSVDataSet>
-        <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
-          <stringProp name="delimiter">,</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./client_id.txt</stringProp>
-          <boolProp name="ignoreFirstLine">true</boolProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">tokenEndpointClientId</stringProp>
-        </CSVDataSet>
-        <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load OIDC client private key From File" enabled="true">
-          <stringProp name="delimiter">,</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./secret_key.txt</stringProp>
-          <boolProp name="ignoreFirstLine">false</boolProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">tokenSecretKey</stringProp>
         </CSVDataSet>
         <hashTree/>
         <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Generate Client Assertion" enabled="true">
@@ -2549,28 +2713,32 @@ import org.bouncycastle.util.io.pem.PemObject;
 import org.bouncycastle.util.io.pem.PemReader;
 import io.jsonwebtoken.*;
 import java.util.Date;
+import io.jsonwebtoken.security.Keys;
+import java.security.KeyPair;
 
-String clientId = &quot;${tokenEndpointClientId}&quot; ;
-java.security.Security.addProvider(
-        new org.bouncycastle.jce.provider.BouncyCastleProvider()
-);
+java.security.Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
+
+//Load the clientid in valriable
+String clientId = vars.get(&quot;tokenEndpointClientId&quot;) ; 
+
 //Save the Secret key/ Private Key in a variable
-String SECRET_KEY = &quot;${tokenSecretKey}&quot;;
+String pemPrivateKey = &quot;-----BEGIN RSA PRIVATE KEY-----\n&quot;+ vars.get(&quot;tokenEncodedPrivateKey&quot;) +&quot;\n-----END RSA PRIVATE KEY-----&quot; ;
 
+String audience = &quot;${protocol}&quot;+ &quot;:&quot; + &quot;//&quot; + &quot;${serverIP}&quot; +&quot;/v1/idp/oauth/token&quot; ;
 
- PemReader pemReader = new PemReader(new StringReader (SECRET_KEY));
- PemObject pemObject = pemReader.readPemObject();
-  KeyFactory kf = KeyFactory.getInstance(&quot;RSA&quot;);
-  byte[] content = pemObject.getContent ();
-  PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(content);
-  PrivateKey pk = kf.generatePrivate (keySpec);
+PemReader pemReader = new PemReader(new StringReader (pemPrivateKey));
+PemObject pemObject = pemReader.readPemObject();
+KeyFactory kf = KeyFactory.getInstance(&quot;RSA&quot;);
+byte[] content = pemObject.getContent ();
+PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(content);
+PrivateKey pk = kf.generatePrivate (keySpec);
 //The RS256 signature algorithm will be used to sign the token in this example
- SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.RS256;
+SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.RS256;
 //Set the Issued date and expiry date to now
- long nowMillis = System.currentTimeMillis();
- Date now = new Date(nowMillis);
- long expMillis = nowMillis + 30000;
-        Date exp = new Date(expMillis);
+long nowMillis = System.currentTimeMillis();
+Date now = new Date(nowMillis);
+long expMillis = nowMillis + ${jwtExpireInterval} ;
+Date exp = new Date(expMillis);
        
 //Build the JWT with the JwtBuilder
 JwtBuilder builder = Jwts.builder()
@@ -2579,10 +2747,9 @@ JwtBuilder builder = Jwts.builder()
                 .setExpiration(exp)
                 .setIssuer(clientId)
                 .setSubject(clientId)
-                .setAudience(&apos;https://api.dev.mosip.net/v1/idp/oauth/token&apos;);
+                .setAudience(audience);
               
-//Save the JWT in the compact string in the jmeter variables    vars.put(&quot;JWT&quot;,builder.compact().toString());
-log.info(builder.compact().toString());
+//Save the JWT in the compact string in the jmeter variables
 String JWT = builder.compact().toString();
 vars.put(&quot;clientAssertionJWT&quot;, JWT);
 </stringProp>
@@ -2699,13 +2866,13 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./client_id.txt</stringProp>
+          <stringProp name="filename">./client_id.csv</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">userInfoClientId</stringProp>
+          <stringProp name="variableNames">userInfoClientId,userInfoEncodedPrivateKey</stringProp>
         </CSVDataSet>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Individual Id From File" enabled="true">
@@ -2718,18 +2885,6 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
           <stringProp name="variableNames">userInfoIndividualId</stringProp>
-        </CSVDataSet>
-        <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load OIDC client private key From File" enabled="true">
-          <stringProp name="delimiter">,</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./secret_key.txt</stringProp>
-          <boolProp name="ignoreFirstLine">false</boolProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">userInfoSecretKey</stringProp>
         </CSVDataSet>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OAuth Details Endpoint API" enabled="true">
@@ -2750,7 +2905,7 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
     &quot;claims&quot;: {&#xd;
       &quot;userinfo&quot;: {&#xd;
-        &quot;given_name&quot;: {&#xd;
+        &quot;name&quot;: {&#xd;
           &quot;essential&quot;: true&#xd;
         },&#xd;
         &quot;phone&quot;: null,&#xd;
@@ -2795,6 +2950,14 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -2868,6 +3031,14 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -2936,6 +3107,14 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -3001,6 +3180,14 @@ vars.put(&quot;clientAssertionJWT&quot;, JWT);
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -3048,28 +3235,31 @@ import org.bouncycastle.util.io.pem.PemObject;
 import org.bouncycastle.util.io.pem.PemReader;
 import io.jsonwebtoken.*;
 import java.util.Date;
+import io.jsonwebtoken.security.Keys;
+import java.security.KeyPair;
 
-String clientId = &quot;${userInfoClientId}&quot; ;
-java.security.Security.addProvider(
-        new org.bouncycastle.jce.provider.BouncyCastleProvider()
-);
+java.security.Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
+
 //Save the Secret key/ Private Key in a variable
-String SECRET_KEY = &quot;${userInfoSecretKey}&quot;;
+String clientId = vars.get(&quot;userInfoClientId&quot;) ; 
 
+String pemPrivateKey = &quot;-----BEGIN RSA PRIVATE KEY-----\n&quot;+ vars.get(&quot;userInfoEncodedPrivateKey&quot;) +&quot;\n-----END RSA PRIVATE KEY-----&quot; ;
 
- PemReader pemReader = new PemReader(new StringReader (SECRET_KEY));
- PemObject pemObject = pemReader.readPemObject();
-  KeyFactory kf = KeyFactory.getInstance(&quot;RSA&quot;);
-  byte[] content = pemObject.getContent ();
-  PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(content);
-  PrivateKey pk = kf.generatePrivate (keySpec);
+String audience = &quot;${protocol}&quot;+ &quot;:&quot; + &quot;//&quot; + &quot;${serverIP}&quot; +&quot;/v1/idp/oauth/token&quot; ;
+
+PemReader pemReader = new PemReader(new StringReader (pemPrivateKey));
+PemObject pemObject = pemReader.readPemObject();
+KeyFactory kf = KeyFactory.getInstance(&quot;RSA&quot;);
+byte[] content = pemObject.getContent ();
+PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(content);
+PrivateKey pk = kf.generatePrivate (keySpec);
 //The RS256 signature algorithm will be used to sign the token in this example
- SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.RS256;
+SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.RS256;
 //Set the Issued date and expiry date to now
- long nowMillis = System.currentTimeMillis();
- Date now = new Date(nowMillis);
- long expMillis = nowMillis + 30000;
-        Date exp = new Date(expMillis);
+long nowMillis = System.currentTimeMillis();
+Date now = new Date(nowMillis);
+long expMillis = nowMillis + ${jwtExpireInterval};
+Date exp = new Date(expMillis);
        
 //Build the JWT with the JwtBuilder
 JwtBuilder builder = Jwts.builder()
@@ -3078,9 +3268,9 @@ JwtBuilder builder = Jwts.builder()
                 .setExpiration(exp)
                 .setIssuer(clientId)
                 .setSubject(clientId)
-                .setAudience(&apos;https://api.dev.mosip.net/v1/idp/oauth/token&apos;);
+                .setAudience(audience);
               
-//Save the JWT in the compact string in the jmeter variables    vars.put(&quot;JWT&quot;,builder.compact().toString());
+//Save the JWT in the compact string in the jmeter variables
 log.info(builder.compact().toString());
 String JWT = builder.compact().toString();
 vars.put(&quot;clientAssertionJWT&quot;, JWT);
