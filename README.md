@@ -1,3 +1,23 @@
+### High level Approach:
+* Simulate load to a particular application to understand the response time behaviour and find the bottlenecks areas
+	* Run with 4 replicas of all the dependent services so the bottleneck on the test application is exposed while profiling
+* There are 3 types of thread groups
+	1. Setup - run once for the prerequesites on a new environment
+	2. Prepartion - Run once before execution threadgroup, it could be once per day or everytime before execution thread group
+	3. Execution - Actual load test will be performed by this thread group
+* There could be multiple setup thread groups based on the context of the setup process
+* Each API that is performance tested will have optionally one preparation thread group and will have one execution thread group
+
+### QA Acceptance Criteria:
+* Readme document should have sufficient information for someone with Jmeter expertise to run the load testing for a particular module
+* All environment specific modification should be done only in the user defined variables
+* All preparation thread groups should be able to run in sequence that is required to run execution for 15 min
+* All execution thread groups should be able to run in sequence for 15 min each
+* Multiple preparation thread groups should be able to run in parallel that is required to run executions for 30 min
+* Multiple execution thread groups should be able to run in parallel for 30 min
+* The sample count on prepration should be always less than the execution sample count except for the API endpoints readme explictly says otherwise.
+* Load can be very less but atleast 3 users should be targeted for execution and preparation thread groups (Unless prepration thread group explictly says in readme that it has to run with single thread)
+	
 ### Contains
 * This Repository contains performance test scripts, test data, utilities, summary reports of below MOSIP modules, 
     1. Pre-registration (UI and batch Jobs)
