@@ -22,6 +22,21 @@
 
 * Create OIDC Client in MOSIP Authentication System (Setup) : This thread contains a JSR223 sampler(Generate Key Pair) from which will get a public-private key pair. The public key generated will be used in the OIDC client api to generate client id's  which will be registered for both IDA and IDP. The private key generated from the sampler will be used in another JSR223 sampler(Generate Client Assertion) present in the OIDC Token (Execution). Generated client id's and there respective private key will be stored in a file which will be used further in the required api's.
 
+* In the above Create OIDC Client in MOSIP Authentication System (Setup) check for the Policy name and Auth partner id for the particular env in which we are executing the scripts. Value for both the fields must be verified in the env.
+
+* For execution purpose neeed to check for the mentioned properties: 
+   * idp default properties: Update the value for the properties according to the execution setup. Perform the execution for IDP api's with redis setup. So check for the redis setup accordingly.
+          mosip.idp.cache.size - Enabled while not using the redis setup. Can keep the cache size around more than 100k.
+          mosip.idp.cache.expire-in-seconds - 86400
+          mosip.idp.access-token-expire-seconds - 86400
+          mosip.idp.id-token-expire-seconds - 86400
+          spring.cache.type=redis - check for this property and enable the redis.
+   * application default properties: Update the value for the below property.
+          mosip.kernel.otp.expiry-time - 86400
+   * id-authentication default properties: Update the value for the below properties.
+          otp.request.flooding.max-count - 100000
+          kyc.token.expire.time.adjustment.seconds - 86400
+
 * We need some jar files which needs to be added in lib folder of jmeter, PFA dependency links for your reference : 
 
    * bcprov-jdk15on-1.66.jar
@@ -67,11 +82,11 @@
 </dependency>
 
 ### Execution points for IDP Management API's
-* Management - Create OIDC Client (Execution) : This thread group will directly execute in which we are using a counter which needs to be updated everytime before execution. Because we can't generate same duplicate cliend id.
+* Management - Create OIDC Client (Execution) : This thread group will directly execute in which we are using a counter which will generate unique client id. Because we can't generate same duplicate cliend id.
 * Management - Update OIDC Client : 
    * Management Update OIDC Client (Preparation) - In this the above mentioned Create OIDC Client API will be used to generate a large number of OIDC client id samples which will get stored in a file and will be used in the execution.
-   * Management Update OIDC Client (Execution) - Thread will use the client id file generated in the preparation part. We can reuse the file for multiple runs and the number of preparation samples should be greater or equal to the number of execution samples. from preparation.
-* Before executing the IDP Test Script with above api's have to update the Counter number everytime otherwise it will give duplicate client id error.
+   * Management Update OIDC Client (Execution) - Thread will use the client id file generated in the preparation part. We can reuse the file for multiple runs and the number of preparation samples should be greater or equal to the number of execution samples.
+
 
 ### Execution points for IDP UI API's
 *  UI - OAuth Details : 
@@ -89,6 +104,22 @@
    * Authorization Code (Preparation) - There will be 3 api's included in the preparation i.e. OAuth Details, Send OTP, Authentication Endpoint - OTP from which we will get the transaction id, OTP which will be used in the execution.  We cant use the preparation file for multiple runs.
    * Authorization Code (Execution) - The total number of samples for preparation should be equal or higher in number as compared to execution. Have to pass the Transaction id generated from the preparation.
 
+*  UI - Send OTP Linked Auth :
+   * Send OTP Linked Auth (Preparation) - For the preparation we need 3 api's OAuth Details, Generate Link Code, Link Transaction api from which a transaction ID will be generated. Transaction ID will be used for the execution.
+   * Send OTP Linked Auth (Execution) - Transaction id will be used which is created in the preparation part. Registered individual id also need to be passed in the body for which we have separately added the setup thread group for creating identity. The files created from preparation part can be used for multiple executions.
+
+* UI - Linked Authentication :
+   * Linked Authentication (Preparation) - For the preparation we need 4 api's OAuth Details, Generate Link Code, Link Transaction and Send OTP Linked Auth api from which we will get the transaction id. We cant use the preparation file for multiple runs as OTP will not be valid.
+   * Linked Authentication (Execution) - For the execution the total preparation samples must be equal or higher in number. Transaction id will be used which is created from the one started with link-transaction endpoint api. Registered individual id also need to be passed in the body.
+
+* UI - Linked Consent :
+   * Linked Consent (Preparation) - For the preparation we need 5 api's OAuth Details, Generate Link Code, Link Transaction, Send OTP Linked Auth and linked authenication api from which we will get the transaction id.
+   * Linked Consent (Execution) - Transaction id will be used which is created from the one started with link-transaction endpoint api.  We cant use the preparation file for multiple runs.
+
+* UI - Link Authorization Code :
+   * Link Authorization Code (Preparation) - This thread includes 6 api's OAuth Details, Generate Link Code, Link Transaction, Send OTP Linked Auth, linked authenication and linked consent api. Transaction id and linked code must be same as the one received from oauth-details and generate link code api respectively.
+   * Link Authorization Code (Execution) - Transaction id and linked code will pe used from the preparation part. Till the linked code is not expired the file can be used for multiple runs.
+
 ### Execution points for IDP OIDC API's
 *  OIDC - Authorization : Its a GET API with no preparations and application will do a browser redirect to this endpoint with all required details passed as query parameters.
 
@@ -103,9 +134,3 @@
 *  OIDC - Configuration (Execution) : Open ID Connect dynamic provider discovery is not supported currently, this endpoint is only for facilitating the OIDC provider details in a standard way.
 
 *  OIDC - JSON Web Key Set (Execution) : Endpoint to fetch all the public keys of the IdP server.Returns public key set in the JWKS format.
-   
-
-
-
-
-
