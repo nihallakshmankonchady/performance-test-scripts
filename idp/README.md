@@ -18,18 +18,18 @@
 
 ### Setup points for Execution
 
-* Create Identities in MOSIP Authentication System (Setup) : This thread contains the authorization api's for regproc and idrepo from which the auth token will be generated. There is set of 3 api's generate RID, generate UIN, add identity. From here we will get the UIN which can be further used as individual id. These 3 api's are present in the loop controller where we can define the number of samples for creating identities in which "addIdentitySetup" is used as a variable.
+* Create Identities in MOSIP Authentication System (Setup) : This thread contains the authorization api's for regproc and idrepo from which the auth token will be generated. There is set of 4 api's generate RID, generate UIN, add identity and add VID. From here we will get the VID which can be further used as individual id. These 4 api's are present in the loop controller where we can define the number of samples for creating identities in which "addIdentitySetup" is used as a variable.
 
 * Create OIDC Client in MOSIP Authentication System (Setup) : This thread contains a JSR223 sampler(Generate Key Pair) from which will get a public-private key pair. The public key generated will be used in the OIDC client api to generate client id's  which will be registered for both IDA and IDP. The private key generated from the sampler will be used in another JSR223 sampler(Generate Client Assertion) present in the OIDC Token (Execution). Generated client id's and there respective private key will be stored in a file which will be used further in the required api's.
 
-* In the above Create OIDC Client in MOSIP Authentication System (Setup) check for the Policy name and Auth partner id for the particular env in which we are executing the scripts. Value for both the fields must be verified in the env.
+* In the above Create OIDC Client in MOSIP Authentication System (Setup) check for the Policy name and Auth partner id for the particular env in which we are executing the scripts. The policy name provided must be associated with the correct Auth partner id.
 
 * For execution purpose neeed to check for the mentioned properties: 
-   * idp default properties: Update the value for the properties according to the execution setup. Perform the execution for IDP api's with redis setup. So check for the redis setup accordingly.
-          mosip.idp.cache.size - Enabled while not using the redis setup. Can keep the cache size around more than 100k.
-          mosip.idp.cache.expire-in-seconds - 86400
-          mosip.idp.access-token-expire-seconds - 86400
-          mosip.idp.id-token-expire-seconds - 86400
+   * esignet default properties: Update the value for the properties according to the execution setup. Perform the execution for IDP api's with redis setup. So check for the redis setup accordingly.
+          mosip.esignet.cache.size - Enabled while not using the redis setup. Can keep the cache size around more than 100k.
+          mosip.esignet.cache.expire-in-seconds - 86400
+          mosip.esignet.access-token-expire-seconds - 86400
+          mosip.esignet.id-token-expire-seconds - 86400
           spring.cache.type=redis - check for this property and enable the redis.
    * application default properties: Update the value for the below property.
           mosip.kernel.otp.expiry-time - 86400
@@ -105,20 +105,20 @@
    * Authorization Code (Execution) - The total number of samples for preparation should be equal or higher in number as compared to execution. Have to pass the Transaction id generated from the preparation.
 
 *  UI - Send OTP Linked Auth :
-   * Send OTP Linked Auth (Preparation) - For the preparation we need 3 api's OAuth Details, Generate Link Code, Link Transaction api from which a transaction ID will be generated. Transaction ID will be used for the execution.
-   * Send OTP Linked Auth (Execution) - Transaction id will be used which is created in the preparation part. Registered individual id also need to be passed in the body for which we have separately added the setup thread group for creating identity. The files created from preparation part can be used for multiple executions.
+   * Send OTP Linked Auth (Preparation) - For the preparation we need 3 api's OAuth Details, Generate Link Code, Link Transaction api from which a link transaction ID will be generated and will be used for the execution.
+   * Send OTP Linked Auth (Execution) - Link transaction id will be used which is created in the preparation part. Registered individual id also need to be passed in the body for which we have separately added the setup thread group for creating identity. The files created from preparation part can't be used for multiple executions transaction has a expiry.
 
 * UI - Linked Authentication :
    * Linked Authentication (Preparation) - For the preparation we need 4 api's OAuth Details, Generate Link Code, Link Transaction and Send OTP Linked Auth api from which we will get the transaction id. We cant use the preparation file for multiple runs as OTP will not be valid.
-   * Linked Authentication (Execution) - For the execution the total preparation samples must be equal or higher in number. Transaction id will be used which is created from the one started with link-transaction endpoint api. Registered individual id also need to be passed in the body.
+   * Linked Authentication (Execution) - For the execution the total preparation samples must be equal or higher in number. The link transaction id received from link-transaction endpoint api will be used. Registered individual id also need to be passed in the body.
 
 * UI - Linked Consent :
    * Linked Consent (Preparation) - For the preparation we need 5 api's OAuth Details, Generate Link Code, Link Transaction, Send OTP Linked Auth and linked authenication api from which we will get the transaction id.
-   * Linked Consent (Execution) - Transaction id will be used which is created from the one started with link-transaction endpoint api.  We cant use the preparation file for multiple runs.
+   * Linked Consent (Execution) - The link transaction id received from link-transaction endpoint api will be used.  We cant use the preparation file for multiple runs.
 
 * UI - Link Authorization Code :
    * Link Authorization Code (Preparation) - This thread includes 6 api's OAuth Details, Generate Link Code, Link Transaction, Send OTP Linked Auth, linked authenication and linked consent api. Transaction id and linked code must be same as the one received from oauth-details and generate link code api respectively.
-   * Link Authorization Code (Execution) - Transaction id and linked code will pe used from the preparation part. Till the linked code is not expired the file can be used for multiple runs.
+   * Link Authorization Code (Execution) - Transaction id and linked code will be used from the preparation part.
 
 ### Execution points for IDP OIDC API's
 *  OIDC - Authorization : Its a GET API with no preparations and application will do a browser redirect to this endpoint with all required details passed as query parameters.
