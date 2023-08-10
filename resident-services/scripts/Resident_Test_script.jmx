@@ -29,21 +29,6 @@
             <stringProp name="Argument.value">443</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="relyingPartyId" elementType="Argument">
-            <stringProp name="Argument.name">relyingPartyId</stringProp>
-            <stringProp name="Argument.value">Bharathi-Inc</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="userClaims" elementType="Argument">
-            <stringProp name="Argument.name">userClaims</stringProp>
-            <stringProp name="Argument.value">&quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone_number&quot;</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="userClaimsUpdateOIDC" elementType="Argument">
-            <stringProp name="Argument.name">userClaimsUpdateOIDC</stringProp>
-            <stringProp name="Argument.value">&quot;name&quot;,&quot;gender&quot;,&quot;birthdate&quot;,&quot;email&quot;,&quot;phone_number&quot;,&quot;address&quot;</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="scope" elementType="Argument">
             <stringProp name="Argument.name">scope</stringProp>
             <stringProp name="Argument.value">openid profile Manage-Identity-Data Manage-VID Manage-Authentication Manage-Service-Requests Manage-Credentials</stringProp>
@@ -57,6 +42,11 @@
           <elementProp name="serverIPInternal" elementType="Argument">
             <stringProp name="Argument.name">serverIPInternal</stringProp>
             <stringProp name="Argument.value">api-internal.cellbox.mosip.net</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="residentOidcClientId" elementType="Argument">
+            <stringProp name="Argument.name">residentOidcClientId</stringProp>
+            <stringProp name="Argument.value">G27lCI-trl4_pwXWBTb4WyCi0cCUZdnA5yVh3EGMBCg</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="regProcClientId" elementType="Argument">
@@ -99,9 +89,14 @@
             <stringProp name="Argument.value">&quot;name&quot;, &quot;phone_number&quot;, &quot;picture&quot;, &quot;email&quot;, &quot;individual_id&quot;, &quot;birthdate&quot;, &quot;address&quot;, &quot;gender&quot;</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="state" elementType="Argument">
+            <stringProp name="Argument.name">state</stringProp>
+            <stringProp name="Argument.value">8c9b75bc-bc1f-4f95-837d-471281802408</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
           <elementProp name="addIdentitySetup" elementType="Argument">
             <stringProp name="Argument.name">addIdentitySetup</stringProp>
-            <stringProp name="Argument.value">2</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="serverIPesignet" elementType="Argument">
@@ -119,26 +114,6 @@
             <stringProp name="Argument.value">https://api-internal.cellbox.mosip.net/resident/v1/login-redirect/aHR0cHM6Ly9yZXNpZGVudC5jZWxsYm94Lm1vc2lwLm5ldC8jL3VpbnNlcnZpY2VzL2Rhc2hib2FyZA</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="jwtExpireInterval" elementType="Argument">
-            <stringProp name="Argument.name">jwtExpireInterval</stringProp>
-            <stringProp name="Argument.value">60000</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="policyName" elementType="Argument">
-            <stringProp name="Argument.name">policyName</stringProp>
-            <stringProp name="Argument.value">mpolicy-default-resident-oidc</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="authPartnerId" elementType="Argument">
-            <stringProp name="Argument.name">authPartnerId</stringProp>
-            <stringProp name="Argument.value">mpartner-default-resident-oidc</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="linkedConsentScope" elementType="Argument">
-            <stringProp name="Argument.name">linkedConsentScope</stringProp>
-            <stringProp name="Argument.value">identity.readonly</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="loginRedirectUri" elementType="Argument">
             <stringProp name="Argument.name">loginRedirectUri</stringProp>
             <stringProp name="Argument.value">/resident/v1/login-redirect/aHR0cHM6Ly9yZXNpZGVudC5jZWxsYm94Lm1vc2lwLm5ldC8jL3VpbnNlcnZpY2VzL2Rhc2hib2FyZA</stringProp>
@@ -154,22 +129,15 @@
             <stringProp name="Argument.value">eng</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="loginUriEncoded" elementType="Argument">
+            <stringProp name="Argument.name">loginUriEncoded</stringProp>
+            <stringProp name="Argument.value">aHR0cHM6Ly9yZXNpZGVudC5jZWxsYm94Lm1vc2lwLm5ldC8jL3VpbnNlcnZpY2VzL2Rhc2hib2FyZA==</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Resident Auth Token From File" enabled="true">
-        <stringProp name="filename">./authorization_token_resident.txt</stringProp>
-        <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="variableNames">authToken</stringProp>
-        <boolProp name="ignoreFirstLine">false</boolProp>
-        <stringProp name="delimiter">,</stringProp>
-        <boolProp name="quotedData">false</boolProp>
-        <boolProp name="recycle">true</boolProp>
-        <boolProp name="stopThread">false</boolProp>
-        <stringProp name="shareMode">shareMode.all</stringProp>
-      </CSVDataSet>
-      <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Delete All Parameter Files Created" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Delete All Parameter Files Created (Cleanup) " enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -184,14 +152,9 @@
       </ThreadGroup>
       <hashTree>
         <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Delete All Parameter Files" enabled="true">
-          <stringProp name="BeanShellSampler.query">new File(&quot;admin_validate_token.txt&quot;).delete();
+          <stringProp name="BeanShellSampler.query">new File(&quot;Vid_List_Resident.txt&quot;).delete();
 
-new File(&quot;login_redirect_code.txt&quot;).delete();
-
-
-
-
-
+new File(&quot;adminValidateToken.txt&quot;).delete();
 </stringProp>
           <stringProp name="BeanShellSampler.filename"></stringProp>
           <stringProp name="BeanShellSampler.parameters"></stringProp>
@@ -642,7 +605,7 @@ new File(&quot;login_redirect_code.txt&quot;).delete();
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Vid" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add VID" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -715,7 +678,7 @@ new File(&quot;login_redirect_code.txt&quot;).delete();
               <stringProp name="RegexExtractor.refname">vid</stringProp>
               <stringProp name="RegexExtractor.regex">&quot;VID&quot;:&quot;(.*?)&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">uin not found</stringProp>
+              <stringProp name="RegexExtractor.default">Vid not found</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
@@ -723,13 +686,13 @@ new File(&quot;login_redirect_code.txt&quot;).delete();
               <boolProp name="resetInterpreter">false</boolProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
-              <stringProp name="script">${__StringToFile(uin_vid_list_resident.txt,${uin}\,${vid}\n,true,)}</stringProp>
+              <stringProp name="script">${__StringToFile(vid_list_resident.txt,${vid}\n,true,)}</stringProp>
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Resident Token (Setup)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Resident Id Access Token Creation (Setup)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -743,28 +706,16 @@ new File(&quot;login_redirect_code.txt&quot;).delete();
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
-          <stringProp name="delimiter">,</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./client_id_resident.csv</stringProp>
-          <boolProp name="ignoreFirstLine">true</boolProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">tokenClientId</stringProp>
-        </CSVDataSet>
-        <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Individual Id From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./uin_vid_list_resident.txt</stringProp>
+          <stringProp name="filename">./vid_list_resident.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">tokenUin,tokenIndividualId</stringProp>
+          <stringProp name="variableNames">tokenIndividualId</stringProp>
         </CSVDataSet>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OAuth Details Endpoint API" enabled="true">
@@ -776,7 +727,7 @@ new File(&quot;login_redirect_code.txt&quot;).delete();
                 <stringProp name="Argument.value">{&#xd;
   &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;${tokenClientId}&quot;,&#xd;
+    &quot;clientId&quot;: &quot;${residentOidcClientId}&quot;,&#xd;
     &quot;scope&quot;: &quot;${scope}&quot;,&#xd;
     &quot;responseType&quot;: &quot;code&quot;,&#xd;
     &quot;redirectUri&quot;: &quot;${redirectUri}&quot;,&#xd;
@@ -804,7 +755,7 @@ new File(&quot;login_redirect_code.txt&quot;).delete();
       &quot;id_token&quot;: {}&#xd;
     },&#xd;
     &quot;nonce&quot;: &quot;973eieljzng&quot;,&#xd;
-    &quot;state&quot;: &quot;eree231&quot;,&#xd;
+    &quot;state&quot;: &quot;${state}&quot;,&#xd;
     &quot;claimsLocales&quot;: &quot;en&quot;&#xd;
   }&#xd;
 }</stringProp>
@@ -883,7 +834,7 @@ new File(&quot;login_redirect_code.txt&quot;).delete();
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname=" Send OTP Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Send OTP Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -894,7 +845,7 @@ new File(&quot;login_redirect_code.txt&quot;).delete();
   &quot;request&quot;: {&#xd;
     &quot;transactionId&quot;: &quot;${tidTokenPrep}&quot;,&#xd;
     &quot;individualId&quot;: &quot;${tokenIndividualId}&quot;,&#xd;
-    &quot;otpChannels&quot;: [&quot;EMAIL&quot;],&#xd;
+    &quot;otpChannels&quot;: [&quot;PHONE&quot;,&quot;EMAIL&quot;],&#xd;
     &quot;captchaToken&quot; : &quot;${captcha}&quot;&#xd;
   }&#xd;
 } </stringProp>
@@ -1177,48 +1128,46 @@ function encodeBase64Url(value) {
           <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Code" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">tokenEndpointCode</stringProp>
+            <stringProp name="RegexExtractor.refname">code</stringProp>
             <stringProp name="RegexExtractor.regex">&quot;code&quot;:&quot;(.*?)&quot;</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">Code not found</stringProp>
+            <stringProp name="RegexExtractor.default">code not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store Code To File" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">${__StringToFile(login_redirect_code.txt,${code}\n,true,)}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Key Manager JWTSign API" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login​ Redirect Uri API" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
+              <elementProp name="state" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;id&quot;: null,&#xd;
-    &quot;version&quot;: null,&#xd;
-    &quot;requesttime&quot;: &quot;${utcTime}Z&quot;,&#xd;
-    &quot;metadata&quot;: null,&#xd;
-    &quot;request&quot;: {&#xd;
-        &quot;dataToSign&quot;: &quot;eyJzdWIiOiJHMjdsQ0ktdHJsNF9wd1hXQlRiNFd5Q2kwY0NVWmRuQTV5VmgzRUdNQkNnIiwiaXNzIjoiRzI3bENJLXRybDRfcHdYV0JUYjRXeUNpMGNDVVpkbkE1eVZoM0VHTUJDZyIsImF1ZCI6Imh0dHBzOi8vZXNpZ25ldC5jZWxsYm94Lm1vc2lwLm5ldC92MS9lc2lnbmV0L29hdXRoL3Rva2VuIiwiZXhwIjoxNzE0NTIxNjAwLCJpYXQiOjE2ODQxNDYzNjV9&quot;,&#xd;
-        &quot;applicationId&quot;: &quot;RESIDENT&quot;,&#xd;
-        &quot;referenceId&quot;: &quot;&quot;,&#xd;
-        &quot;includePayload&quot;: true,&#xd;
-        &quot;includeCertificate&quot;: true,&#xd;
-        &quot;includeCertHash&quot;: false,&#xd;
-        &quot;certificateUrl&quot;: null,&#xd;
-        &quot;validateJson&quot;: null,&#xd;
-        &quot;b64JWSHeaderParam&quot;: null,&#xd;
-        &quot;signAlgorithm&quot;: null&#xd;
-    }&#xd;
-}</stringProp>
+                <stringProp name="Argument.value">${state}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">state</stringProp>
+              </elementProp>
+              <elementProp name="code" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${code}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">code</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${serverIPInternal}</stringProp>
+          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/keymanager/jwtSign</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <stringProp name="HTTPSampler.path">${loginRedirectUri}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -1234,21 +1183,21 @@ function encodeBase64Url(value) {
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
-              <elementProp name="Cookie" elementType="Header">
+              <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Cookie</stringProp>
-                <stringProp name="Header.value">Authorization=${authToken}</stringProp>
+                <stringProp name="Header.value">state=${state}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="1506913836">&quot;errors&quot;:null</stringProp>
+              <stringProp name="-325430817">&lt;title&gt;ResidentUi&lt;/title&gt;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
+            <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
@@ -1261,130 +1210,31 @@ function encodeBase64Url(value) {
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract JWT Sign" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">clientAssertionJWT</stringProp>
-            <stringProp name="RegexExtractor.regex">jwtSignedData&quot;:&quot;(.*?)&quot;</stringProp>
-            <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">jwtSignedData not found</stringProp>
-            <stringProp name="RegexExtractor.match_number">1</stringProp>
-          </RegexExtractor>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Token Endpoint API" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="grant_type" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">authorization_code</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                <stringProp name="Argument.name">grant_type</stringProp>
-              </elementProp>
-              <elementProp name="code" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${tokenEndpointCode}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                <stringProp name="Argument.name">code</stringProp>
-              </elementProp>
-              <elementProp name="client_id" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${tokenClientId}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                <stringProp name="Argument.name">client_id</stringProp>
-              </elementProp>
-              <elementProp name="client_assertion_type" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">urn:ietf:params:oauth:client-assertion-type:jwt-bearer</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                <stringProp name="Argument.name">client_assertion_type</stringProp>
-              </elementProp>
-              <elementProp name="client_assertion" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${clientAssertionJWT}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                <stringProp name="Argument.name">client_assertion</stringProp>
-              </elementProp>
-              <elementProp name="redirect_uri" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${redirectUri}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                <stringProp name="Argument.name">redirect_uri</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${serverIPesignet}</stringProp>
-          <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
-          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/v1/esignet/oauth/token</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="1131976459">&quot;id_token&quot;</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">16</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="49586">200</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract id token" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract id_token" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">id_token</stringProp>
-            <stringProp name="RegexExtractor.regex">&quot;id_token&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.regex">set-cookie: id_token=(.*?);</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">id_token not found</stringProp>
+            <stringProp name="RegexExtractor.default">id_Token not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract access token" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract access_token" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">access_token</stringProp>
-            <stringProp name="RegexExtractor.regex">&quot;access_token&quot;:&quot;(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.regex">set-cookie: Authorization=(.*?);</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">access token not found</stringProp>
+            <stringProp name="RegexExtractor.default">access_token not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store id token To File" enabled="true">
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store access and id token To File" enabled="true">
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(admin_validate_token.txt,${id_token}\,${access_token}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(resident_access_id_token.txt,${id_token}\,${access_token}\,${tokenIndividualId}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -1420,7 +1270,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Id-Access Token From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./admin_validate_token.txt</stringProp>
+          <stringProp name="filename">./resident_access_id_token.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -1429,7 +1279,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <stringProp name="variableNames">adminIdToken,accessToken</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authorize​ admin​ validate token API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Authorize​ Admin​ Validate Token API" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -1483,7 +1333,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Login​ redirectURI (Preparation)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Login​ Redirect Uri (Preparation)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1497,28 +1347,16 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load ClientID From File" enabled="true">
-          <stringProp name="delimiter">,</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./client_id_resident.csv</stringProp>
-          <boolProp name="ignoreFirstLine">true</boolProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">clientId</stringProp>
-        </CSVDataSet>
-        <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Individual Id From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./uin_vid_list_resident.txt</stringProp>
+          <stringProp name="filename">./vid_list_resident.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">uin,individualIdLoginRedirect</stringProp>
+          <stringProp name="variableNames">individualIdLoginRedirect</stringProp>
         </CSVDataSet>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OAuth Details Endpoint API" enabled="true">
@@ -1530,7 +1368,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
                 <stringProp name="Argument.value">{&#xd;
   &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;${clientId}&quot;,&#xd;
+    &quot;clientId&quot;: &quot;${residentOidcClientId}&quot;,&#xd;
     &quot;scope&quot;: &quot;${scope}&quot;,&#xd;
     &quot;responseType&quot;: &quot;code&quot;,&#xd;
     &quot;redirectUri&quot;: &quot;${redirectUri}&quot;,&#xd;
@@ -1558,7 +1396,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
       &quot;id_token&quot;: {}&#xd;
     },&#xd;
     &quot;nonce&quot;: &quot;973eieljzng&quot;,&#xd;
-    &quot;state&quot;: &quot;eree2311&quot;,&#xd;
+    &quot;state&quot;: &quot;${state}&quot;,&#xd;
     &quot;claimsLocales&quot;: &quot;en&quot;&#xd;
   }&#xd;
 }</stringProp>
@@ -1637,7 +1475,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname=" Send OTP Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Send OTP Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -1934,7 +1772,7 @@ function encodeBase64Url(value) {
             <stringProp name="RegexExtractor.refname">authCode</stringProp>
             <stringProp name="RegexExtractor.regex">&quot;code&quot;:&quot;(.*?)&quot;</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">Code not found</stringProp>
+            <stringProp name="RegexExtractor.default">authCode not found</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
@@ -1961,7 +1799,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Login​ redirectURI (Execution)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Login​ Redirect Uri (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1975,7 +1813,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Login Code From File" enabled="true">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Login Auth Code From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="filename">./login_redirect_code.txt</stringProp>
@@ -1987,12 +1825,12 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <stringProp name="variableNames">authCodeLogin</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login​ redirectURI API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login​ Redirect Uri API" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="state" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">eree2311</stringProp>
+                <stringProp name="Argument.value">${state}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">state</stringProp>
@@ -2006,7 +1844,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
+          <stringProp name="HTTPSampler.domain">${serverIPInternal}</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -2029,14 +1867,14 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Cookie</stringProp>
-                <stringProp name="Header.value">state=eree2311;Authorization=${authToken}</stringProp>
+                <stringProp name="Header.value">state=${state}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="-880599004">ResidentUi</stringProp>
+              <stringProp name="667203007"> &lt;title&gt;ResidentUi&lt;/title&gt;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -2056,7 +1894,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Vid Policy (Execution)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VID Policy (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2073,7 +1911,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Id-Access Token From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./admin_validate_token.txt</stringProp>
+          <stringProp name="filename">./resident_access_id_token.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -2082,7 +1920,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <stringProp name="variableNames">adminIdToken,accessToken</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Vid Policy API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="VID Policy API" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -2153,7 +1991,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Id-Access Token From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./admin_validate_token.txt</stringProp>
+          <stringProp name="filename">./resident_access_id_token.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -2162,7 +2000,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <stringProp name="variableNames">adminIdToken,accessToken</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Transaction ID Counter - GenerateVID (UIN)" enabled="true">
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Transaction ID Counter - Generate VID" enabled="true">
           <stringProp name="CounterConfig.start">1100000000</stringProp>
           <stringProp name="CounterConfig.end">9999999999</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
@@ -2222,12 +2060,12 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="1341363085">&quot;message&quot;:&quot;Notification has been sent to the provided</stringProp>
+              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
+            <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
@@ -2273,7 +2111,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Id-Access Token From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./admin_validate_token.txt</stringProp>
+          <stringProp name="filename">./resident_access_id_token.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -2316,12 +2154,12 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1420605054">{&quot;vid&quot;:</stringProp>
+              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
+            <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
@@ -2353,7 +2191,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Id-Access Token From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">./admin_validate_token.txt</stringProp>
+          <stringProp name="filename">./resident_access_id_token.txt</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -2396,12 +2234,12 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="848504320">&quot;id&quot;:&quot;mosip.service.history.get</stringProp>
+              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
+            <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
