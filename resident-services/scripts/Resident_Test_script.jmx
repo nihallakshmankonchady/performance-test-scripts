@@ -109,21 +109,6 @@
             <stringProp name="Argument.value">e9bb2b7c-57ca-42d5-8657-c29e30dda2c9</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="redirectUri" elementType="Argument">
-            <stringProp name="Argument.name">redirectUri</stringProp>
-            <stringProp name="Argument.value">https://api-internal.cellbox.mosip.net/resident/v1/login-redirect/aHR0cHM6Ly9yZXNpZGVudC5jZWxsYm94Lm1vc2lwLm5ldC8jL3VpbnNlcnZpY2VzL2Rhc2hib2FyZA</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="loginRedirectUri" elementType="Argument">
-            <stringProp name="Argument.name">loginRedirectUri</stringProp>
-            <stringProp name="Argument.value">/resident/v1/login-redirect/aHR0cHM6Ly9yZXNpZGVudC5jZWxsYm94Lm1vc2lwLm5ldC8jL3VpbnNlcnZpY2VzL2Rhc2hib2FyZA</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="authTypeCallbackUrl" elementType="Argument">
-            <stringProp name="Argument.name">authTypeCallbackUrl</stringProp>
-            <stringProp name="Argument.value">/resident/v1/callback/authTypeCallback</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="languageCode" elementType="Argument">
             <stringProp name="Argument.name">languageCode</stringProp>
             <stringProp name="Argument.value">eng</stringProp>
@@ -152,9 +137,9 @@
       </ThreadGroup>
       <hashTree>
         <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Delete All Parameter Files" enabled="true">
-          <stringProp name="BeanShellSampler.query">new File(&quot;Vid_List_Resident.txt&quot;).delete();
+          <stringProp name="BeanShellSampler.query">new File(&quot;vid_list_resident.txt&quot;).delete();
 
-new File(&quot;adminValidateToken.txt&quot;).delete();
+new File(&quot;resident_access_id_token.txt&quot;).delete();
 </stringProp>
           <stringProp name="BeanShellSampler.filename"></stringProp>
           <stringProp name="BeanShellSampler.parameters"></stringProp>
@@ -730,7 +715,7 @@ new File(&quot;adminValidateToken.txt&quot;).delete();
     &quot;clientId&quot;: &quot;${residentOidcClientId}&quot;,&#xd;
     &quot;scope&quot;: &quot;${scope}&quot;,&#xd;
     &quot;responseType&quot;: &quot;code&quot;,&#xd;
-    &quot;redirectUri&quot;: &quot;${redirectUri}&quot;,&#xd;
+    &quot;redirectUri&quot;: &quot;${protocol}://${serverIPInternal}/resident/v1/login-redirect/${loginUriEncoded}&quot;,&#xd;
     &quot;display&quot;: &quot;popup&quot;,&#xd;
     &quot;prompt&quot;: &quot;login&quot;,&#xd;
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
@@ -1159,7 +1144,7 @@ function encodeBase64Url(value) {
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${loginRedirectUri}</stringProp>
+          <stringProp name="HTTPSampler.path">/resident/v1/login-redirect/${loginUriEncoded}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1364,7 +1349,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
     &quot;clientId&quot;: &quot;${residentOidcClientId}&quot;,&#xd;
     &quot;scope&quot;: &quot;${scope}&quot;,&#xd;
     &quot;responseType&quot;: &quot;code&quot;,&#xd;
-    &quot;redirectUri&quot;: &quot;${redirectUri}&quot;,&#xd;
+    &quot;redirectUri&quot;: &quot;${protocol}://${serverIPInternal}/resident/v1/login-redirect/${loginUriEncoded}&quot;,&#xd;
     &quot;display&quot;: &quot;popup&quot;,&#xd;
     &quot;prompt&quot;: &quot;login&quot;,&#xd;
     &quot;acrValues&quot;: &quot;${acrValues}&quot;,&#xd;
@@ -1841,7 +1826,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${loginRedirectUri}</stringProp>
+          <stringProp name="HTTPSampler.path">/resident/v1/login-redirect/${loginUriEncoded}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
