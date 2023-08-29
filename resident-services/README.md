@@ -10,7 +10,15 @@
     8. Auth Lock Unlock
     9. Auth Lock Status 
     10. Request Card VID 
-    11. Revoke VID
+    11. Revoke VID 
+    12. Identity Info Schema Type
+    13. Identity Mapping
+    14. Masterdata Idschema
+    15. Download Personalized Card
+    16. Auth Proxy Partner Type
+    17. UI Schema
+    18. Masterdata Getting Templates
+    19. Share Credential
     
 
 
@@ -65,6 +73,15 @@
     * Auth Lock Status 
     * Request Card VID  
     * Revoke VID
+    * Identity Info Schema Type
+    * Identity Mapping
+    * Masterdata Idschema
+    * Download Personalized Card
+    * Auth Proxy Partner Type
+    * UI Schema
+    * Masterdata Getting Templates
+    * Share Credential
+
 
 * Authorize​ Admin​ Validate Token (Execution) - The id and access token generated above in the setup will be used in the headers of this api and can be re-used untill they are not expired.
 
@@ -87,6 +104,21 @@
 
 * Request Card VID - This API is to request the PDF card generation for a specific VID of the logged in user. This will give back a event ID for tracking purpose and to use it to download the VID card from the notifications. The id and access token can be re-used untill they are not expired.
 
-
 * Revoke VID (Preparation) - This thread contains Generate VID api from which we will get a VID which needs to be revoked.
 * Revoke VID (Execution) - The generated VID can only be used once to be revoked so the samples created in the preparation must be equal or higher in number.
+
+* Identity Info Schema Type (Execution) - This API is to get the list of ID Attributes of the logged-in user to pre-populate in the UI. A variable is used as "schemaType" to pass the Type of schema in this API from a file named as schema_type. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Identity Mapping (Execution) - This API is to get the identity mapping Json. The id and access token will be passed in the headers and can be used multiple times untill valid and not expired.
+
+* Masterdata Idschema (Execution) - This API is used to return the Id-schema. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Download Personalized Card (Execution) - This API is to download the personalized PDF card. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Auth Proxy Partner Type (Execution) - This API is to get the list of partner types from PMS. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* UI Schema (Execution) - API to return the UI Spec (UI Schema) for the given schemaType which is one of share-credential/update-demographics/personalized-card. A variable is used as "schemaTypeUI" to pass the Type of schema in this API from the same file used above named as schema_type. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Masterdata Getting Templates (Execution) - This API is to return terms and conditions and will be invoked by UI for the specific language. This is a Proxy API of master data service for getting templates for template type code and language code. Template type code will be passed in this API from a file named as template_type and the variable used is "templateTypeCode". The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Share Credential (Execution) - This API is to share the user specified attributes to selected partner in the selected formats along with a purpose. The id and access token will be used here and can be used multiple times untill its valid and not expired.
