@@ -19,6 +19,14 @@
     17. UI Schema
     18. Masterdata Getting Templates
     19. Share Credential
+    20. Login
+    21. Registration Center List Nearest Location
+    22. Registration Center List Location Hierarchy
+    23. Download Supporting Docs
+    24. Menu Bar Bell Update Time
+    25. Menu Bar Unread Notification Count
+    26. Menu Bar Bell Notification Click
+    27. Validate OTP
     
 
 
@@ -81,6 +89,13 @@
     * UI Schema
     * Masterdata Getting Templates
     * Share Credential
+    * Menu Bar Bell Update Time
+    * Menu Bar Unread Notification Count
+    * Menu Bar Bell Notification Click
+    * Download Supporting Docs
+    * Registration Center List Nearest Location
+    * Registration Center List Location Hierarchy
+    
 
 
 * Authorize​ Admin​ Validate Token (Execution) - The id and access token generated above in the setup will be used in the headers of this api and can be re-used untill they are not expired.
@@ -122,3 +137,20 @@
 * Masterdata Getting Templates (Execution) - This API is to return terms and conditions and will be invoked by UI for the specific language. This is a Proxy API of master data service for getting templates for template type code and language code. Template type code will be passed in this API from a file named as template_type and the variable used is "templateTypeCode". The id and access token will be used here and can be used multiple times untill its valid and not expired.
 
 * Share Credential (Execution) - This API is to share the user specified attributes to selected partner in the selected formats along with a purpose. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Login (Execution) - Using this API, the resident portal will redirect to the Esignet URL where the validation is performed and login happens.
+
+* Menu Bar Unread Notification Count (Execution) - API to return the number of unread service notification list. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Menu Bar Bell Notification Click (Execution) - This returns the last date time of user click event on the bell notification icon. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Menu Bar Bell Update Time (Execution) - API to update last date-time when user clicked on the bell notification. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Validate OTP (Preparartion) - This thread contains Request OTP API to generate OTP which will be used in the execution part.
+* Validate OTP (Execution) - This API will be used to validate OTP when the resident is trying to verify his phone number or email Id. The generated OTP from the preparation can only be used once, so the samples created in the preparation must be equal or higher in number.
+
+* Download Supporting Docs (Execution) - This API is to convert the List of supporting documents request as a downloadable PDF. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Registration Center List Nearest Location (Execution) - This API will download a PDF of nearest Registration Centers. The Longitude, Latitude and Proximity distance will be passed in this API from a file named as coordinates and the variables used are "longitude", "latitude" and "proximityDistance" respectivily. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Registration Center List Location Hierarchy (Execution)  - This API will download a PDF of Registration Centers list. The Hierarchy level will be passed in this API from a file named as coordinates and the variable used is "hierarchyLevel". The id and access token will be used here and can be used multiple times untill its valid and not expired.
