@@ -4323,7 +4323,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">resident/v1//download/nearestRegistrationcenters</stringProp>
+          <stringProp name="HTTPSampler.path">/resident/v1/download/nearestRegistrationcenters</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
