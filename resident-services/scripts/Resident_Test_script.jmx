@@ -109,14 +109,24 @@
             <stringProp name="Argument.value">e9bb2b7c-57ca-42d5-8657-c29e30dda2c9</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="loginUriEncoded" elementType="Argument">
+            <stringProp name="Argument.name">loginUriEncoded</stringProp>
+            <stringProp name="Argument.value">aHR0cHM6Ly9yZXNpZGVudC5jZWxsYm94Lm1vc2lwLm5ldC8jL3VpbnNlcnZpY2VzL2Rhc2hib2FyZA==</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
           <elementProp name="languageCode" elementType="Argument">
             <stringProp name="Argument.name">languageCode</stringProp>
             <stringProp name="Argument.value">eng</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="loginUriEncoded" elementType="Argument">
-            <stringProp name="Argument.name">loginUriEncoded</stringProp>
-            <stringProp name="Argument.value">aHR0cHM6Ly9yZXNpZGVudC5jZWxsYm94Lm1vc2lwLm5ldC8jL3VpbnNlcnZpY2VzL2Rhc2hib2FyZA==</stringProp>
+          <elementProp name="locationCode" elementType="Argument">
+            <stringProp name="Argument.name">locationCode</stringProp>
+            <stringProp name="Argument.value">MOR</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="hierarchyLevel" elementType="Argument">
+            <stringProp name="Argument.name">hierarchyLevel</stringProp>
+            <stringProp name="Argument.value">0</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -3909,16 +3919,6 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="49">1</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="49586">200</stringProp>
@@ -4277,7 +4277,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Coordinates From File" enabled="true">
           <stringProp name="filename">./coordinates.csv</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">longitude,latitude,proximityDistance,locationCode,hierarchyLevel,applicantId</stringProp>
+          <stringProp name="variableNames">longitude,latitude,proximityDistance</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">false</boolProp>
@@ -4393,18 +4393,6 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
           <stringProp name="variableNames">idToken,accessToken</stringProp>
-        </CSVDataSet>
-        <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Coordinates From File" enabled="true">
-          <stringProp name="filename">./coordinates.csv</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">longitude,latitude,proximityDistance,locationCode,hierarchyLevel,applicantId</stringProp>
-          <boolProp name="ignoreFirstLine">true</boolProp>
-          <stringProp name="delimiter">,</stringProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <boolProp name="stopThread">false</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
         </CSVDataSet>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Registeration Center List API (Location Hierarchy)" enabled="true">

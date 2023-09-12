@@ -142,9 +142,9 @@
 
 * Menu Bar Unread Notification Count (Execution) - API to return the number of unread service notification list. The id and access token will be used here and can be used multiple times untill its valid and not expired.
 
-* Menu Bar Bell Notification Click (Execution) - This API is to get the last date time whenever user clicked on the bell notification icon. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+* Menu Bar Bell Notification Click (Execution) - This API is to get the latest date time whenever user clicked on the bell notification icon. The id and access token will be used here and can be used multiple times untill its valid and not expired.
 
-* Menu Bar Bell Update Time (Execution) - This API is to update last date-time when user clicked on the bell notification. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+* Menu Bar Bell Update Time (Execution) - This API is to update latest date-time when user clicked on the bell notification. The id and access token will be used here and can be used multiple times untill its valid and not expired.
 
 * Validate OTP (Preparartion) - This thread contains Request OTP API to generate OTP which will be used in the execution part.
 * Validate OTP (Execution) - This API will be used to validate OTP when the resident is trying to verify his phone number or email Id. The generated OTP from the preparation can only be used once, so the samples created in the preparation must be equal or higher in number.
