@@ -142,9 +142,9 @@
 
 * Menu Bar Unread Notification Count (Execution) - API to return the number of unread service notification list. The id and access token will be used here and can be used multiple times untill its valid and not expired.
 
-* Menu Bar Bell Notification Click (Execution) - This returns the last date time of user click event on the bell notification icon. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+* Menu Bar Bell Notification Click (Execution) - This API is to get the last date time whenever user clicked on the bell notification icon. The id and access token will be used here and can be used multiple times untill its valid and not expired.
 
-* Menu Bar Bell Update Time (Execution) - API to update last date-time when user clicked on the bell notification. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+* Menu Bar Bell Update Time (Execution) - This API is to update last date-time when user clicked on the bell notification. The id and access token will be used here and can be used multiple times untill its valid and not expired.
 
 * Validate OTP (Preparartion) - This thread contains Request OTP API to generate OTP which will be used in the execution part.
 * Validate OTP (Execution) - This API will be used to validate OTP when the resident is trying to verify his phone number or email Id. The generated OTP from the preparation can only be used once, so the samples created in the preparation must be equal or higher in number.
@@ -153,4 +153,4 @@
 
 * Registration Center List Nearest Location (Execution) - This API will download a PDF of nearest Registration Centers. The Longitude, Latitude and Proximity distance will be passed in this API from a file named as coordinates and the variables used are "longitude", "latitude" and "proximityDistance" respectivily. The id and access token will be used here and can be used multiple times untill its valid and not expired.
 
-* Registration Center List Location Hierarchy (Execution)  - This API will download a PDF of Registration Centers list. The Hierarchy level will be passed in this API from a file named as coordinates and the variable used is "hierarchyLevel". The id and access token will be used here and can be used multiple times untill its valid and not expired. Hierarchy level are followed by 0:Country, 1:Region, 2:Province, 3:City, 4:Zone, 5:Postal Code.
+* Registration Center List Location Hierarchy (Execution)  - This API will download a PDF of Registration Centers list. The Hierarchy level will be passed in this API from a file named as coordinates and the variable used is "hierarchyLevel". The id and access token will be used here and can be used multiple times untill its valid and not expired. Hierarchy level are followed as 0:Country, 1:Region, 2:Province, 3:City, 4:Zone, 5:Postal Code.
