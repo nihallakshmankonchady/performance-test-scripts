@@ -119,16 +119,6 @@
             <stringProp name="Argument.value">eng</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="locationCode" elementType="Argument">
-            <stringProp name="Argument.name">locationCode</stringProp>
-            <stringProp name="Argument.value">MOR</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="hierarchyLevel" elementType="Argument">
-            <stringProp name="Argument.name">hierarchyLevel</stringProp>
-            <stringProp name="Argument.value">0</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -4395,6 +4385,18 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <stringProp name="variableNames">idToken,accessToken</stringProp>
         </CSVDataSet>
         <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Hierarchy Level and Name From File" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">./hierarchy_level.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">hierarchyLevel,name</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Registeration Center List API (Location Hierarchy)" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
@@ -4414,7 +4416,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
               </elementProp>
               <elementProp name="name" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">mycountry</stringProp>
+                <stringProp name="Argument.value">${name}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">name</stringProp>
