@@ -1932,7 +1932,7 @@ function encodeBase64Url(value) {
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
+              <stringProp name="566096099">&quot;vidPolicies&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -2363,7 +2363,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(resident_revoke_vid.txt,${adminIdToken}\,${accessToken}\,${vidGen}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(resident_revoke_vid.txt,${idToken}\,${accessToken}\,${vidGen}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -4602,7 +4602,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(eventid_service_request.txt,${adminIdToken}\,${accessToken}\,${event_Id}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(eventid_service_request.txt,${idToken}\,${accessToken}\,${event_Id}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -4718,7 +4718,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">adminIdToken,accessToken,eventId</stringProp>
+          <stringProp name="variableNames">idToken,accessToken,eventId</stringProp>
         </CSVDataSet>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Download Service Request API" enabled="true">
