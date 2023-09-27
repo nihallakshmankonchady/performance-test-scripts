@@ -26,7 +26,12 @@
     24. Menu Bar Bell Update Time
     25. Menu Bar Unread Notification Count
     26. Menu Bar Bell Notification Click
-    27. Validate OTP
+    27. Validate OTP 
+    28. Track Service Request
+    29. Download Service Request
+    30. Menu Bar Notifications Language Code 
+    31. Profile 
+    32. Channel Verification Status
     
 
 
@@ -95,7 +100,11 @@
     * Download Supporting Docs
     * Registration Center List Nearest Location
     * Registration Center List Location Hierarchy
-    
+    * Track Service Request
+    * Download Service Request
+    * Menu Bar Notifications Language Code 
+    * Profile
+
 
 
 * Authorize​ Admin​ Validate Token (Execution) - The id and access token generated above in the setup will be used in the headers of this api and can be re-used untill they are not expired.
@@ -154,3 +163,17 @@
 * Registration Center List Nearest Location (Execution) - This API will download a PDF of nearest Registration Centers. The Longitude, Latitude and Proximity distance will be passed in this API from a file named as coordinates and the variables used are "longitude", "latitude" and "proximityDistance" respectivily. The id and access token will be used here and can be used multiple times untill its valid and not expired.
 
 * Registration Center List Location Hierarchy (Execution)  - This API will download a PDF of Registration Centers list. The Hierarchy level will be passed in this API along with its name from a file named as hirarchy_level and the variables used are "hierarchyLevel" and "name". The id and access token will be used here and can be used multiple times untill its valid and not expired. Hierarchy level are followed as 0:Country, 1:Region, 2:Province, 3:City, 4:Zone, 5:Postal Code.
+
+* Track Service Request (Preparation) - This thread contains Auth Lock Unlock API which will generate Event ID in the response and will be used in the execution part. The Event ID will be stored in a file named as eventid_service_request.txt and can be used for multiple runs.
+
+* Track Service Request (Execution) -  This API is to get the details of status for a given Event ID and including its status. The Event ID generated in the preparation will passed from the file with the variable name as "eventId". The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Download Service Request (Execution) - This API is to convert the acknowledgement of any service request Event ID as a downloadable PDF. The Event ID stored in the file eventid_service_request.txt can be used here to download the PDF. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Menu Bar Notifications Language Code (Execution) - This API is to get notifictions to the asyncrhonous service requests in a paginated way. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Profile (Execution) - This API is to get User details for the current session. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+
+* Channel Verification Status (Preparation) - This thread contains two APIs i.e Request OTP and Validate OTP which are added in a loop controller because we are running both the APIs for otp channel type as "EMAIL" and "PHONE". So will save the individual id and type of channel in a file named as channel_verification_list.txt. Loop count for the loop controller is defined with the variable name "otpChannelTypeLoopCount" which is currenlty set to 2. If required, we can add the channel type to the file and as per the count of otp channel type we can modify the variable defined in the script.
+
+* Channel Verification Status (Execution) - This API is to check if OTP is verified for a channel type for an individual VID. The individual id and channel type will be passed in this API from a file named as channel_verification_list.txt and the variable used are "individualIdVerification" and "channelVerification".
