@@ -196,7 +196,7 @@ of resident-websub-authtype-status-secret which is passed in the headers.
 
 * Download Card Event (Preparation) - In this thread we are using Update UIN API from which will get an Event id which is stored in a file named as event_id_download_card.txt. The id and access token will be used here and can be used multiple times untill its valid and not expired.
 
-* Download Card Event (Execution) - This API is to download the UIN card. An Event id is passed from the file generated in the preparation part. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+* Download Card Event (Execution) - This API is to download the UIN card. An Event id is passed from the file generated in the preparation part. The same Event id can't be used for multiple times so the samples created in preparation must be higher in number. The id and access token will be used here and can be used multiple times untill its valid and not expired.
 
 * Masterdata Get Coordinates (Execution) - This API is to get the longitude, latitude and proximity distance. A file named coordinates is been used to pass the data.
 
