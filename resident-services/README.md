@@ -200,7 +200,7 @@ of resident-websub-authtype-status-secret which is passed in the headers.
 
 * Masterdata Get Coordinates (Execution) - This API is to get the longitude, latitude and proximity distance. A file named coordinates is been used to pass the data.
 
-* Masterdata Location Hierarchy Levels (Execution) - This API is to get the hierarchy level of location.
+* Masterdata Location Hierarchy Levels (Execution) - This API is to get the hierarchy level of location. Thread contains user parameters for different language code. According to the number of languages add the language code in the user parameters.
 
 * Masterdata Location Info (Execution) - This API is to get the information about location.
 
