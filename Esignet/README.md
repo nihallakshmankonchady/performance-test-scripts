@@ -151,3 +151,15 @@
 * Sign Up Service - Setting (Execution) : This thread only contains a Setting endpoint API which is a GET APi. 
 
 * Sign Up Service - Generate Challenge (Execution) : This thread contains Generate Challenge endpoint API. We need to pass an identifier value which is nothing but a 8-10 digit phone number with country code as the prefix. We are using a preprocessor from which we are getting the random generated phone number.
+
+* Sign Up Service - Verify Challenge (Praparation) : In this thread we have generate challenge API from which we will get the value of identifier and from response headers will get the transaction id which wil be stored in a csv file.
+
+* Sign Up Service - Verify Challenge (Execution) : This thread contains verify challenge API in which we will pass the value of identifier i.e. phone number and transaction id in the headers which will get from the csv file generated in preparation. The file generated can be used for multiple iterations. 
+
+* Sign Up Service - Register (Preparation) : This thread contains 2 API's i.e. generate challenge and verify challenge. Will save the value of identifier which will be passed in both the API's in a csv file. Will also get a verified transaction id in the response header of verified challenge endpoint and will save the transaction id in the same csv file and will use that file in the execution.
+
+* Sign Up Service - Register (Execution) : This thread is for register API endpoint and will use a csv file to pass the value of identifier and verified transaction id. Will use the file generated from the preparation and it can't be used multiple times. 
+
+* Sign Up Service - Registration Status (Preparation) : This thread contains 3 API's i.e. generate challenge, verify challenge and register API endpoints. Will save the transaction id generated from the response headers of verify challenge endpoint in a csv file and will use that in the execution.
+
+* Sign Up Service - Registration Status (Execution) : This thread contains Registration Status API endpoint. Will use the file generated from the preparation to pass the transaction id and it can be used multiple times as it will only give the latest status for the transaction id we are passing.
