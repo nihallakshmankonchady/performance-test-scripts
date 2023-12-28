@@ -51,7 +51,7 @@
           </elementProp>
           <elementProp name="secretKeyMobile" elementType="Argument">
             <stringProp name="Argument.name">secretKeyMobile</stringProp>
-            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.value">abc123</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="appIdMobile" elementType="Argument">
@@ -158,7 +158,7 @@
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Mobile - Authentication API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Authentication API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
