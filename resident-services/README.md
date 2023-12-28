@@ -191,18 +191,13 @@
 
 * Channel Verification Status (Execution) - This API is to check if OTP is verified for a channel type for an individual VID. The individual id and channel type will be passed in this API from a file named as channel_verification_list.txt and the variable used are "individualIdVerification" and "channelVerification". 
 
-* Auth Type Callback (Execution) - This API is a Websub callback for Auth Type Lock/Unlock acknowledgement from IDA. Resident Service subscribes to the websub topic AUTH_TYPE_STATUS_UPDATE_ACK and update the Auth type lock/unlock status into resident_transaction. A BeanShell PreProcessor is used to generate SHA256 value using the request body of the API and secret key 
-of resident-websub-authtype-status-secret which is passed in the headers.
+* Download Card Event (Preparation) - In this thread we are using Request Card VID API from which will get an Event id which is stored in a file named as event_id_download_card.txt. The id and access token will be used here and can be used multiple times until its valid and not expired. In this thread we have also added a constant timer with the variable as delay which is defined in user defined variables. The value for delay is 30 sec.
 
-* Download Card Event (Preparation) - In this thread we are using Request Card VID API from which will get an Event id which is stored in a file named as event_id_download_card.txt. The id and access token will be used here and can be used multiple times untill its valid and not expired.
-
-* Download Card Event (Execution) - This API is to download the UIN card. An Event id is passed from the file generated in the preparation part. The same Event id can't be used for multiple times so the samples created in preparation must be higher in number. The id and access token will be used here and can be used multiple times untill its valid and not expired.
+* Download Card Event (Execution) - This API is to download the UIN card. An Event id is passed from the file generated in the preparation part. The same Event id can't be used for multiple times so the samples created in preparation must be higher in number. The id and access token will be used here and can be used multiple times untill its valid and not expired. In this thread also we are using the same delay which is defined in user defined variables.
 
 * Masterdata Get Coordinates (Execution) - This API is to get the longitude, latitude and proximity distance. A file named coordinates is been used to pass the data.
 
-* Masterdata Location Hierarchy Levels (Execution) - This API is to get the hierarchy level of location. Thread contains user parameters for different language code. According to the number of languages add the language code in the user parameters.
-
-* Masterdata Location Info (Execution) - This API is to get the information about location.
+* Masterdata Location Info (Execution) - This API is to get the information about location. We don't have any preparation for this thread. We are passing the location code from a text file regarding which will get the information. 
 
 * Masterdata Registration Centers (Execution) - This API is to get details about a registration center. A file named hierarchy_level is used to pass the hierarchy level and name in the API.
 
