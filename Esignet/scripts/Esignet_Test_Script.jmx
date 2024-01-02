@@ -1618,7 +1618,7 @@ function encodeBase64Url(value) {
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="script">${__StringToFile(transaction_id_send_otp_endpoint.txt,${transactionID}\,${hashValue}\,${captcha}\n,true,)}</stringProp>
+            <stringProp name="script">${__StringToFile(transaction_id_send_otp_endpoint.txt,${transactionID}\,${hashValue}\n,true,)}</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
