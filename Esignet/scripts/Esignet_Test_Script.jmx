@@ -1566,15 +1566,6 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Captcha" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">captcha</stringProp>
-            <stringProp name="RegexExtractor.regex">&quot;captcha.sitekey&quot;:&quot;(.*?)&quot;</stringProp>
-            <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">Captcha not found</stringProp>
-            <stringProp name="RegexExtractor.match_number">1</stringProp>
-          </RegexExtractor>
-          <hashTree/>
           <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
@@ -1655,7 +1646,7 @@ function encodeBase64Url(value) {
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">tidSendOtp,hashValue,captcha</stringProp>
+          <stringProp name="variableNames">tidSendOtp,hashValue</stringProp>
         </CSVDataSet>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Individual Id From File" enabled="true">
@@ -1696,7 +1687,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
     &quot;transactionId&quot;: &quot;${tidSendOtp}&quot;,&#xd;
     &quot;individualId&quot;: &quot;${sendOtpIndividualId}&quot;,&#xd;
    &quot;otpChannels&quot;: [&quot;EMAIL&quot;],&#xd;
-    &quot;captchaToken&quot; : &quot;${captcha}&quot;&#xd;
+    &quot;captchaToken&quot; : &quot;&quot;&#xd;
     &#xd;
   }&#xd;
 } &#xd;
@@ -1923,15 +1914,6 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Captcha" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">captcha</stringProp>
-            <stringProp name="RegexExtractor.regex">&quot;captcha.sitekey&quot;:&quot;(.*?)&quot;</stringProp>
-            <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">Captcha not found</stringProp>
-            <stringProp name="RegexExtractor.match_number">1</stringProp>
-          </RegexExtractor>
-          <hashTree/>
         </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname=" Send OTP Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -1945,7 +1927,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
     &quot;transactionId&quot;: &quot;${tidAuthEndpoint}&quot;,&#xd;
     &quot;individualId&quot;: &quot;${authIndividualId}&quot;,&#xd;
     &quot;otpChannels&quot;: [&quot;EMAIL&quot;],&#xd;
-    &quot;captchaToken&quot;: &quot;${captcha}&quot;&#xd;
+    &quot;captchaToken&quot;: &quot;&quot;&#xd;
   }&#xd;
 } </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2352,15 +2334,6 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Captcha" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">captcha</stringProp>
-            <stringProp name="RegexExtractor.regex">&quot;captcha.sitekey&quot;:&quot;(.*?)&quot;</stringProp>
-            <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">Captcha not found</stringProp>
-            <stringProp name="RegexExtractor.match_number">1</stringProp>
-          </RegexExtractor>
-          <hashTree/>
         </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname=" Send OTP Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -2374,7 +2347,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
     &quot;transactionId&quot;: &quot;${transactionIdAuthCodePrep}&quot;,&#xd;
     &quot;individualId&quot;: &quot;${authCodeIndividualId}&quot;,&#xd;
     &quot;otpChannels&quot;: [&quot;EMAIL&quot;],&#xd;
-    &quot;captchaToken&quot; : &quot;${captcha}&quot;&#xd;
+    &quot;captchaToken&quot; : &quot;&quot;&#xd;
   }&#xd;
 } </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2980,15 +2953,6 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Captcha" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">captcha</stringProp>
-            <stringProp name="RegexExtractor.regex">&quot;captcha.sitekey&quot;:&quot;(.*?)&quot;</stringProp>
-            <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">Captcha not found</stringProp>
-            <stringProp name="RegexExtractor.match_number">1</stringProp>
-          </RegexExtractor>
-          <hashTree/>
         </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname=" Send OTP Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -3002,7 +2966,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
     &quot;transactionId&quot;: &quot;${tidTokenPrep}&quot;,&#xd;
     &quot;individualId&quot;: &quot;${tokenIndividualId}&quot;,&#xd;
     &quot;otpChannels&quot;: [&quot;EMAIL&quot;],&#xd;
-    &quot;captchaToken&quot; : &quot;${captcha}&quot;&#xd;
+    &quot;captchaToken&quot; : &quot;&quot;&#xd;
   }&#xd;
 } </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3648,15 +3612,6 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Captcha" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">captcha</stringProp>
-            <stringProp name="RegexExtractor.regex">&quot;captcha.sitekey&quot;:&quot;(.*?)&quot;</stringProp>
-            <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">Captcha not found</stringProp>
-            <stringProp name="RegexExtractor.match_number">1</stringProp>
-          </RegexExtractor>
-          <hashTree/>
         </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname=" Send OTP Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -3670,7 +3625,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
     &quot;transactionId&quot;: &quot;${tidUserInfoPrep}&quot;,&#xd;
     &quot;individualId&quot;: &quot;${userInfoIndividualId}&quot;,&#xd;
     &quot;otpChannels&quot;: [&quot;EMAIL&quot;],&#xd;
-    &quot;captchaToken&quot; : &quot;${captcha}&quot;&#xd;
+    &quot;captchaToken&quot; : &quot;&quot;&#xd;
   }&#xd;
 } </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
