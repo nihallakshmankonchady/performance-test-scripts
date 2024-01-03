@@ -154,6 +154,7 @@
             <stringProp name="Argument.value">804296</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+
           <elementProp name="walletPartnerId" elementType="Argument">
             <stringProp name="Argument.name">walletPartnerId</stringProp>
             <stringProp name="Argument.value">787</stringProp>
@@ -164,6 +165,7 @@
             <stringProp name="Argument.value">804296</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -179,6 +181,7 @@
         <stringProp name="variableNames">authTokenPms</stringProp>
       </CSVDataSet>
       <hashTree/>
+
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Mobile Auth Token From File" enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
@@ -191,6 +194,7 @@
         <stringProp name="variableNames">authTokenMobile</stringProp>
       </CSVDataSet>
       <hashTree/>
+
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create Identities in MOSIP Authentication System (Setup)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -7484,6 +7488,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
+
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Wallet Binding - Send Binding OTP (Execution)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -7895,6 +7900,7 @@ log.info(&quot;Public Key: ${vars.get(&quot;bindingPublicKey&quot;)}&quot;)
           <hashTree/>
         </hashTree>
       </hashTree>
+
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">true</boolProp>
         <objProp>

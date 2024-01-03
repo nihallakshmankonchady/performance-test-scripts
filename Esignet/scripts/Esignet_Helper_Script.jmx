@@ -44,6 +44,7 @@
             <stringProp name="Argument.value">443</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+
           <elementProp name="clientIdMobile" elementType="Argument">
             <stringProp name="Argument.name">clientIdMobile</stringProp>
             <stringProp name="Argument.value">mpartner-default-mobile</stringProp>
@@ -59,6 +60,7 @@
             <stringProp name="Argument.value">mobile</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -158,6 +160,7 @@
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
+
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Authentication API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -240,6 +243,7 @@
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
+
       </hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
