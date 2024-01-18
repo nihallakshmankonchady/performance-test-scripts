@@ -24,7 +24,9 @@
 
 * Create OIDC Client in MOSIP Authentication System (Setup) : This thread contains a JSR223 sampler(Generate Key Pair) from which will get a public-private key pair. The public key generated will be used in the OIDC client api to generate client id's  which will be registered for both IDA and eSignet. The private key generated from the sampler will be used in another JSR223 sampler(Generate Client Assertion) present in the OIDC Token (Execution). Generated client id's and there respective private key will be stored in a file which will be used further in the required api's.
 
-* In the above Create OIDC Client in MOSIP Authentication System (Setup) check for the Policy name and Auth partner id for the particular env in which we are executing the scripts. The policy name provided must be associated with the correct Auth partner id.
+* In the above Create OIDC Client in MOSIP Authentication System (Setup) check for the Policy name and Auth partner id for the particular env in which we are executing the scripts. The policy name provided must be associated with the correct Auth partner id. 
+
+* Auth Token Generation (Setup) : This thread conatins Auth manager authentication API which will generate auth token value for PMS and mobile client.
 
 * For execution purpose neeed to check for the mentioned properties: 
    * eSignet default properties: Update the value for the properties according to the execution setup. Perform the execution for eSignet api's with redis setup. So check for the redis setup accordingly.
