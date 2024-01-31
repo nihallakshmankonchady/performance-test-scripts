@@ -154,6 +154,7 @@
             <stringProp name="Argument.value">804296</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+<<<<<<< HEAD
           <elementProp name="countryCodeCambd" elementType="Argument">
             <stringProp name="Argument.name">countryCodeCambd</stringProp>
             <stringProp name="Argument.value">+855</stringProp>
@@ -207,6 +208,49 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
+=======
+
+          <elementProp name="walletPartnerId" elementType="Argument">
+            <stringProp name="Argument.name">walletPartnerId</stringProp>
+            <stringProp name="Argument.value">787</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="walletPartnerApiKey" elementType="Argument">
+            <stringProp name="Argument.name">walletPartnerApiKey</stringProp>
+            <stringProp name="Argument.value">804296</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load PMS Auth Token From File" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">./authorization_token_pms.txt</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">authTokenPms</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Mobile Auth Token From File" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">./authorization_token_mobile.txt</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">authTokenMobile</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create Identities in MOSIP Authentication System (Setup)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -1441,6 +1485,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <stringProp name="variableNames">updateClientId</stringProp>
         </CSVDataSet>
         <hashTree/>
+<<<<<<< HEAD
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load PMS Auth Token From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
@@ -1453,6 +1498,8 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <stringProp name="variableNames">authTokenPms</stringProp>
         </CSVDataSet>
         <hashTree/>
+=======
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
         <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UTC Time" enabled="true">
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -1831,6 +1878,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
+<<<<<<< HEAD
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Captcha" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">captcha</stringProp>
@@ -1840,6 +1888,8 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
+=======
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
           <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
@@ -1892,7 +1942,11 @@ function encodeBase64Url(value) {
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
+<<<<<<< HEAD
             <stringProp name="script">${__StringToFile(transaction_id_send_otp_endpoint.txt,${transactionID}\,${hashValue}\,${captcha}\n,true,)}</stringProp>
+=======
+            <stringProp name="script">${__StringToFile(transaction_id_send_otp_endpoint.txt,${transactionID}\,${hashValue}\n,true,)}</stringProp>
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -1920,7 +1974,11 @@ function encodeBase64Url(value) {
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
+<<<<<<< HEAD
           <stringProp name="variableNames">tidSendOtp,hashValue,captcha</stringProp>
+=======
+          <stringProp name="variableNames">tidSendOtp,hashValue</stringProp>
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
         </CSVDataSet>
         <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Individual Id From File" enabled="true">
@@ -1961,7 +2019,11 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
     &quot;transactionId&quot;: &quot;${tidSendOtp}&quot;,&#xd;
     &quot;individualId&quot;: &quot;${sendOtpIndividualId}&quot;,&#xd;
    &quot;otpChannels&quot;: [&quot;EMAIL&quot;],&#xd;
+<<<<<<< HEAD
     &quot;captchaToken&quot; : &quot;${captcha}&quot;&#xd;
+=======
+    &quot;captchaToken&quot; : &quot;&quot;&#xd;
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
     &#xd;
   }&#xd;
 } &#xd;
@@ -2210,7 +2272,11 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
     &quot;transactionId&quot;: &quot;${tidAuthEndpoint}&quot;,&#xd;
     &quot;individualId&quot;: &quot;${authIndividualId}&quot;,&#xd;
     &quot;otpChannels&quot;: [&quot;EMAIL&quot;],&#xd;
+<<<<<<< HEAD
     &quot;captchaToken&quot;: &quot;${captcha}&quot;&#xd;
+=======
+    &quot;captchaToken&quot;: &quot;&quot;&#xd;
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
   }&#xd;
 } </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2639,7 +2705,11 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
     &quot;transactionId&quot;: &quot;${transactionIdAuthCodePrep}&quot;,&#xd;
     &quot;individualId&quot;: &quot;${authCodeIndividualId}&quot;,&#xd;
     &quot;otpChannels&quot;: [&quot;EMAIL&quot;],&#xd;
+<<<<<<< HEAD
     &quot;captchaToken&quot; : &quot;${captcha}&quot;&#xd;
+=======
+    &quot;captchaToken&quot; : &quot;&quot;&#xd;
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
   }&#xd;
 } </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3267,7 +3337,11 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
     &quot;transactionId&quot;: &quot;${tidTokenPrep}&quot;,&#xd;
     &quot;individualId&quot;: &quot;${tokenIndividualId}&quot;,&#xd;
     &quot;otpChannels&quot;: [&quot;EMAIL&quot;],&#xd;
+<<<<<<< HEAD
     &quot;captchaToken&quot; : &quot;${captcha}&quot;&#xd;
+=======
+    &quot;captchaToken&quot; : &quot;&quot;&#xd;
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
   }&#xd;
 } </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3935,7 +4009,11 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
     &quot;transactionId&quot;: &quot;${tidUserInfoPrep}&quot;,&#xd;
     &quot;individualId&quot;: &quot;${userInfoIndividualId}&quot;,&#xd;
     &quot;otpChannels&quot;: [&quot;EMAIL&quot;],&#xd;
+<<<<<<< HEAD
     &quot;captchaToken&quot; : &quot;${captcha}&quot;&#xd;
+=======
+    &quot;captchaToken&quot; : &quot;&quot;&#xd;
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
   }&#xd;
 } </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -7747,6 +7825,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
                 <stringProp name="Header.name">oauth-details-key</stringProp>
                 <stringProp name="Header.value">${tidLinkedAuthCode}</stringProp>
               </elementProp>
+<<<<<<< HEAD
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -8282,6 +8361,8 @@ log.info(&quot;Public Key: ${vars.get(&quot;bindingPublicKey&quot;)}&quot;)
                 <stringProp name="Header.name">Cookie</stringProp>
                 <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
               </elementProp>
+=======
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -8307,7 +8388,12 @@ log.info(&quot;Public Key: ${vars.get(&quot;bindingPublicKey&quot;)}&quot;)
           <hashTree/>
         </hashTree>
       </hashTree>
+<<<<<<< HEAD
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Sign Up Service - Generate Challenge (Execution)" enabled="true">
+=======
+
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Wallet Binding - Send Binding OTP (Execution)" enabled="true">
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -8321,6 +8407,7 @@ log.info(&quot;Public Key: ${vars.get(&quot;bindingPublicKey&quot;)}&quot;)
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
+<<<<<<< HEAD
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Generate Challenge Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -8397,6 +8484,25 @@ log.info(&quot;Public Key: ${vars.get(&quot;bindingPublicKey&quot;)}&quot;)
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
             <stringProp name="script">import java.text.SimpleDateFormat;
+=======
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Individual Id From File" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">./individualid_esignet.txt</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">sendBindingOtpIndividualId</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UTC Time" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import java.text.SimpleDateFormat;
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
 import java.util.Calendar;
 import java.util.TimeZone;//Set the format for the date-time
 SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&quot;);
@@ -8555,7 +8661,11 @@ vars.put(&quot;identifier&quot;, abc);
           <stringProp name="variableNames">transactionIdVerifyChallenge,identifierVerifyChallenge</stringProp>
         </CSVDataSet>
         <hashTree/>
+<<<<<<< HEAD
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Verify Challenge Endpoint API" enabled="true">
+=======
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Wallet Binding - Send Binding OTP Endpoint API" enabled="true">
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -8564,22 +8674,35 @@ vars.put(&quot;identifier&quot;, abc);
                 <stringProp name="Argument.value">{&#xd;
     &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
     &quot;request&quot;: {&#xd;
+<<<<<<< HEAD
         &quot;identifier&quot;: &quot;${countryCodeCambd}${identifierVerifyChallenge}&quot;,&#xd;
         &quot;challengeInfo&quot;: {&#xd;
             &quot;challenge&quot;: &quot;${verifyChallenge}&quot;,&#xd;
             &quot;format&quot;: &quot;alpha-numeric&quot;&#xd;
         }&#xd;
+=======
+        &quot;individualId&quot; : &quot;${sendBindingOtpIndividualId}&quot;,&#xd;
+        &quot;otpChannels&quot; : [&quot;email&quot;]&#xd;
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
     }&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
+<<<<<<< HEAD
           <stringProp name="HTTPSampler.domain">${serverIPCamdgcDev}</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">/v1/signup/registration/verify-challenge</stringProp>
+=======
+          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
+          <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/v1/esignet/binding/binding-otp</stringProp>
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -8597,6 +8720,7 @@ vars.put(&quot;identifier&quot;, abc);
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
+<<<<<<< HEAD
                 <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
                 <stringProp name="Header.value">${loadCsrfToken}</stringProp>
               </elementProp>
@@ -9363,6 +9487,18 @@ log.info(&quot;Password: &quot; + password)</stringProp>
               <elementProp name="Cookie" elementType="Header">
                 <stringProp name="Header.name">Cookie</stringProp>
                 <stringProp name="Header.value">VERIFIED_TRANSACTION_ID=${transactionIdStatus}</stringProp>
+=======
+                <stringProp name="Header.name">PARTNER-ID</stringProp>
+                <stringProp name="Header.value">${walletPartnerId}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">PARTNER-API-KEY</stringProp>
+                <stringProp name="Header.value">${walletPartnerApiKey}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${authTokenMobile}</stringProp>
+>>>>>>> 83bd7eca09de27fcc6897ba61b032b40f3f316e3
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -9389,6 +9525,303 @@ log.info(&quot;Password: &quot; + password)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Wallet Binding (Preparation)" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Individual Id From File" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">./individualid_esignet.txt</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">sendBindingOtpIndividualId</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UTC Time" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.TimeZone;//Set the format for the date-time
+SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&quot;);
+dateFormat.setTimeZone(TimeZone.getTimeZone(&quot;UTC&quot;));// Get the current time in UTC
+Calendar cal = Calendar.getInstance();
+String utcTime = dateFormat.format(cal.getTime());
+vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Wallet Binding - Send Binding OTP Endpoint API" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
+    &quot;request&quot;: {&#xd;
+        &quot;individualId&quot; : &quot;${sendBindingOtpIndividualId}&quot;,&#xd;
+        &quot;otpChannels&quot; : [&quot;email&quot;]&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
+          <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/v1/esignet/binding/binding-otp</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">PARTNER-ID</stringProp>
+                <stringProp name="Header.value">${walletPartnerId}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">PARTNER-API-KEY</stringProp>
+                <stringProp name="Header.value">${walletPartnerApiKey}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${authTokenMobile}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store Individual Id To File" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">${__StringToFile(wallet_binding_individual_id.txt,${sendBindingOtpIndividualId}\n,true,)}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Wallet Binding (Execution)" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Individual Id From File" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">./wallet_binding_individual_id.txt</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">walletBindingIndividualId</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UTC Time" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.TimeZone;//Set the format for the date-time
+SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.sss&quot;);
+dateFormat.setTimeZone(TimeZone.getTimeZone(&quot;UTC&quot;));// Get the current time in UTC
+Calendar cal = Calendar.getInstance();
+String utcTime = dateFormat.format(cal.getTime());
+vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Wallet - Wallet Binding Endpoint API" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
+    &quot;request&quot;: {&#xd;
+        &quot;individualId&quot;: &quot;${walletBindingIndividualId}&quot;,&#xd;
+        &quot;challengeList&quot;: [&#xd;
+            {&#xd;
+                &quot;authFactorType&quot;: &quot;OTP&quot;,&#xd;
+                &quot;challenge&quot;: &quot;111111&quot;,&#xd;
+                &quot;format&quot;: &quot;alpha-numeric&quot;&#xd;
+            }&#xd;
+        ],&#xd;
+        &quot;publicKey&quot;: ${bindingPublicKey},&#xd;
+        &quot;authFactorType&quot;: &quot;WLA&quot;,&#xd;
+        &quot;format&quot;: &quot;jwt&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
+          <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/v1/esignet/binding/wallet-binding</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Genarate Binding Public Key" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import org.bouncycastle.jce.provider.BouncyCastleProvider
+import java.security.*
+import java.security.interfaces.RSAPrivateKey
+import java.security.interfaces.RSAPublicKey
+
+// Add Bouncy Castle as a security provider
+Security.addProvider(new BouncyCastleProvider())
+
+// Generate RSA key pair
+def keyPairGenerator = KeyPairGenerator.getInstance(&quot;RSA&quot;, &quot;BC&quot;)
+keyPairGenerator.initialize(2048, SecureRandom.getInstanceStrong())
+KeyPair keyPair = keyPairGenerator.generateKeyPair()
+
+// Store the private key directly without converting to JWK format
+RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate()
+String privateKeyString = Base64.getEncoder().encodeToString(privateKey.getEncoded())
+vars.put(&quot;bindingPrivateKey&quot;, privateKeyString)
+log.info(&quot;Private Key: ${vars.get(&quot;bindingPrivateKey&quot;)}&quot;)
+
+// Convert public key to JWK format
+RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic()
+def jwkPublicKey = [
+        kty: &quot;RSA&quot;,
+        n: Base64.getUrlEncoder().withoutPadding().encodeToString(publicKey.getModulus().toByteArray()),
+        e: Base64.getUrlEncoder().withoutPadding().encodeToString(publicKey.getPublicExponent().toByteArray())
+]
+
+// Set specific properties in the JWK public key
+jwkPublicKey.alg = &quot;RS256&quot;
+jwkPublicKey.use = &quot;sig&quot;
+
+// Store the JWK public key in a variable for later use
+vars.put(&quot;bindingPublicKey&quot;, new groovy.json.JsonBuilder(jwkPublicKey).toPrettyString())
+log.info(&quot;Public Key: ${vars.get(&quot;bindingPublicKey&quot;)}&quot;)
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-XSRF-TOKEN</stringProp>
+                <stringProp name="Header.value">${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">XSRF-TOKEN=${loadCsrfToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">PARTNER-ID</stringProp>
+                <stringProp name="Header.value">${walletPartnerId}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">PARTNER-API-KEY</stringProp>
+                <stringProp name="Header.value">${walletPartnerApiKey}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${authTokenMobile}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Response Code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">true</boolProp>
         <objProp>
