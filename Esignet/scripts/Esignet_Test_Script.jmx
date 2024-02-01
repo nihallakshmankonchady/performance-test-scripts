@@ -164,53 +164,53 @@
             <stringProp name="Argument.value">804296</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="countryCodeCambd" elementType="Argument">
-            <stringProp name="Argument.name">countryCodeCambd</stringProp>
+          <elementProp name="serverIPCamdgcDev" elementType="Argument">
+            <stringProp name="Argument.name">serverIPCamdgcDev</stringProp>
+            <stringProp name="Argument.value">api.camdgc-dev.mosip.net</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="identifierPrefix" elementType="Argument">
+            <stringProp name="Argument.name">identifierPrefix</stringProp>
             <stringProp name="Argument.value">+855</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="verifyChallenge" elementType="Argument">
-            <stringProp name="Argument.name">verifyChallenge</stringProp>
+          <elementProp name="defaultSignUpChallengeValue" elementType="Argument">
+            <stringProp name="Argument.name">defaultSignUpChallengeValue</stringProp>
             <stringProp name="Argument.value">111111</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="consent" elementType="Argument">
-            <stringProp name="Argument.name">consent</stringProp>
-            <stringProp name="Argument.value">AGREE</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="language" elementType="Argument">
-            <stringProp name="Argument.name">language</stringProp>
+          <elementProp name="signUpRegisterLanguage" elementType="Argument">
+            <stringProp name="Argument.name">signUpRegisterLanguage</stringProp>
             <stringProp name="Argument.value">eng</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="clientId" elementType="Argument">
-            <stringProp name="Argument.name">clientId</stringProp>
+          <elementProp name="pmsClientId" elementType="Argument">
+            <stringProp name="Argument.name">pmsClientId</stringProp>
             <stringProp name="Argument.value">mosip-pms-client</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="secretKey" elementType="Argument">
-            <stringProp name="Argument.name">secretKey</stringProp>
+          <elementProp name="pmsSecretKey" elementType="Argument">
+            <stringProp name="Argument.name">pmsSecretKey</stringProp>
             <stringProp name="Argument.value">abc123</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="appId" elementType="Argument">
-            <stringProp name="Argument.name">appId</stringProp>
+          <elementProp name="pmsAppId" elementType="Argument">
+            <stringProp name="Argument.name">pmsAppId</stringProp>
             <stringProp name="Argument.value">partner</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="clientIdMobile" elementType="Argument">
-            <stringProp name="Argument.name">clientIdMobile</stringProp>
+          <elementProp name="mobileClientId" elementType="Argument">
+            <stringProp name="Argument.name">mobileClientId</stringProp>
             <stringProp name="Argument.value">mpartner-default-mobile</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="secretKeyMobile" elementType="Argument">
-            <stringProp name="Argument.name">secretKeyMobile</stringProp>
+          <elementProp name="mobileSecretKey" elementType="Argument">
+            <stringProp name="Argument.name">mobileSecretKey</stringProp>
             <stringProp name="Argument.value">abc123</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="appIdMobile" elementType="Argument">
-            <stringProp name="Argument.name">appIdMobile</stringProp>
+          <elementProp name="mobileAppId" elementType="Argument">
+            <stringProp name="Argument.name">mobileAppId</stringProp>
             <stringProp name="Argument.value">mobile</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -775,9 +775,9 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;${clientId}&quot;,&#xd;
-    &quot;secretKey&quot;: &quot;${secretKey}&quot;,&#xd;
-    &quot;appId&quot;: &quot;${appId}&quot;&#xd;
+    &quot;clientId&quot;: &quot;${pmsClientId}&quot;,&#xd;
+    &quot;secretKey&quot;: &quot;${pmsSecretKey}&quot;,&#xd;
+    &quot;appId&quot;: &quot;${pmsAppId}&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
   &quot;version&quot;: &quot;1.0&quot;&#xd;
@@ -857,9 +857,9 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;${clientIdMobile}&quot;,&#xd;
-    &quot;secretKey&quot;: &quot;${secretKeyMobile}&quot;,&#xd;
-    &quot;appId&quot;: &quot;${appIdMobile}&quot;&#xd;
+    &quot;clientId&quot;: &quot;${mobileClientId}&quot;,&#xd;
+    &quot;secretKey&quot;: &quot;${mobileSecretKey}&quot;,&#xd;
+    &quot;appId&quot;: &quot;${mobileAppId}&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
   &quot;version&quot;: &quot;1.0&quot;&#xd;
@@ -7813,7 +7813,7 @@ String utcTime = dateFormat.format(cal.getTime());
 vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Wallet Binding - Send Binding OTP Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Send Binding OTP Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -7948,7 +7948,7 @@ String utcTime = dateFormat.format(cal.getTime());
 vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Wallet Binding - Send Binding OTP Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Send Binding OTP Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -8090,7 +8090,7 @@ String utcTime = dateFormat.format(cal.getTime());
 vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Wallet - Wallet Binding Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Wallet Binding Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -8238,7 +8238,7 @@ log.info(&quot;Public Key: ${vars.get(&quot;bindingPublicKey&quot;)}&quot;)
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Setting Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setting Endpoint API" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -8310,7 +8310,7 @@ log.info(&quot;Public Key: ${vars.get(&quot;bindingPublicKey&quot;)}&quot;)
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Generate Challenge Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Challenge Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -8319,7 +8319,7 @@ log.info(&quot;Public Key: ${vars.get(&quot;bindingPublicKey&quot;)}&quot;)
                 <stringProp name="Argument.value">{&#xd;
   &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;identifier&quot;: &quot;${countryCodeCambd}${__Random(10000000,999999999,)}&quot;,&#xd;
+    &quot;identifier&quot;: &quot;${identifierPrefix}${__Random(10000000,999999999,)}&quot;,&#xd;
     &quot;captchaToken&quot;: &quot;&quot;,&#xd;
     &quot;regenerate&quot;: &quot;FALSE&quot;&#xd;
   }&#xd;
@@ -8363,7 +8363,6 @@ log.info(&quot;Public Key: ${vars.get(&quot;bindingPublicKey&quot;)}&quot;)
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
-              <stringProp name="-305399211">&quot;status&quot;:&quot;SUCCESS&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -8397,7 +8396,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Sign Up Service - Verify Challenge (Praparation)" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Sign Up Service - Verify Challenge (Preparation)" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -8411,7 +8410,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Generate Challenge Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Challenge Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -8420,9 +8419,10 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
                 <stringProp name="Argument.value">{&#xd;
   &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;identifier&quot;: &quot;${countryCodeCambd}${identifier}&quot;,&#xd;
+    &quot;identifier&quot;: &quot;${identifierPrefix}${identifier}&quot;,&#xd;
     &quot;captchaToken&quot;: &quot;&quot;,&#xd;
-    &quot;regenerate&quot;: &quot;FALSE&quot;&#xd;
+    &quot;regenerate&quot;: &quot;FALSE&quot;,&#xd;
+    &quot;purpose&quot;: &quot;REGISTRATION&quot;&#xd;
   }&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -8464,7 +8464,6 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
-              <stringProp name="-305399211">&quot;status&quot;:&quot;SUCCESS&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -8482,7 +8481,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UTC Time" enabled="true">
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UTC Time and Random identifier" enabled="true">
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
@@ -8495,8 +8494,8 @@ Calendar cal = Calendar.getInstance();
 String utcTime = dateFormat.format(cal.getTime());
 vars.put(&quot;utcTime&quot;, utcTime);
 
-String abc = &quot;${__Random(10000000,999999999,)}&quot;;
-vars.put(&quot;identifier&quot;, abc);
+String tempValue = &quot;${__Random(10000000,999999999,)}&quot;;
+vars.put(&quot;identifier&quot;, tempValue);
 </stringProp>
           </BeanShellPreProcessor>
           <hashTree/>
@@ -8544,7 +8543,7 @@ vars.put(&quot;identifier&quot;, abc);
           <stringProp name="variableNames">transactionIdVerifyChallenge,identifierVerifyChallenge</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Verify Challenge Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Verify Challenge Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -8553,11 +8552,12 @@ vars.put(&quot;identifier&quot;, abc);
                 <stringProp name="Argument.value">{&#xd;
     &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
     &quot;request&quot;: {&#xd;
-        &quot;identifier&quot;: &quot;${countryCodeCambd}${identifierVerifyChallenge}&quot;,&#xd;
-        &quot;challengeInfo&quot;: {&#xd;
-            &quot;challenge&quot;: &quot;${verifyChallenge}&quot;,&#xd;
-            &quot;format&quot;: &quot;alpha-numeric&quot;&#xd;
-        }&#xd;
+        &quot;identifier&quot;: &quot;${identifierPrefix}${identifierVerifyChallenge}&quot;,&#xd;
+        &quot;challengeInfo&quot;: [{&#xd;
+            &quot;challenge&quot;: &quot;${defaultSignUpChallengeValue}&quot;,&#xd;
+            &quot;format&quot;: &quot;alpha-numeric&quot;,&#xd;
+            &quot;type&quot;: &quot;OTP&quot;&#xd;
+        }]&#xd;
     }&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -8651,7 +8651,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Generate Challenge Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Challenge Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -8660,9 +8660,10 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
                 <stringProp name="Argument.value">{&#xd;
   &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;identifier&quot;: &quot;${countryCodeCambd}${identifier}&quot;,&#xd;
+    &quot;identifier&quot;: &quot;${identifierPrefix}${identifier}&quot;,&#xd;
     &quot;captchaToken&quot;: &quot;&quot;,&#xd;
-    &quot;regenerate&quot;: &quot;FALSE&quot;&#xd;
+    &quot;regenerate&quot;: &quot;FALSE&quot;,&#xd;
+    &quot;purpose&quot;: &quot;REGISTRATION&quot;&#xd;
   }&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -8704,7 +8705,6 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
-              <stringProp name="-305399211">&quot;status&quot;:&quot;SUCCESS&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -8722,7 +8722,7 @@ vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UTC Time" enabled="true">
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UTC Time and Random identifier" enabled="true">
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
@@ -8735,8 +8735,8 @@ Calendar cal = Calendar.getInstance();
 String utcTime = dateFormat.format(cal.getTime());
 vars.put(&quot;utcTime&quot;, utcTime);
 
-String abc = &quot;${__Random(10000000,999999999,)}&quot;;
-vars.put(&quot;identifier&quot;, abc);
+String tempValue = &quot;${__Random(10000000,999999999,)}&quot;;
+vars.put(&quot;identifier&quot;, tempValue);
 </stringProp>
           </BeanShellPreProcessor>
           <hashTree/>
@@ -8750,7 +8750,7 @@ vars.put(&quot;identifier&quot;, abc);
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Verify Challenge Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Verify Challenge Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -8759,11 +8759,12 @@ vars.put(&quot;identifier&quot;, abc);
                 <stringProp name="Argument.value">{&#xd;
     &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
     &quot;request&quot;: {&#xd;
-        &quot;identifier&quot;: &quot;${countryCodeCambd}${identifier}&quot;,&#xd;
-        &quot;challengeInfo&quot;: {&#xd;
-            &quot;challenge&quot;: &quot;${verifyChallenge}&quot;,&#xd;
-            &quot;format&quot;: &quot;alpha-numeric&quot;&#xd;
-        }&#xd;
+        &quot;identifier&quot;: &quot;${identifierPrefix}${identifier}&quot;,&#xd;
+        &quot;challengeInfo&quot;: [{&#xd;
+            &quot;challenge&quot;: &quot;${defaultSignUpChallengeValue}&quot;,&#xd;
+            &quot;format&quot;: &quot;alpha-numeric&quot;,&#xd;
+            &quot;type&quot;: &quot;OTP&quot;&#xd;
+        }]&#xd;
     }&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -8871,7 +8872,7 @@ vars.put(&quot;identifier&quot;, abc);
           <stringProp name="variableNames">transactionIdRegister,identifierRegister</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Register Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Register Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -8880,18 +8881,18 @@ vars.put(&quot;identifier&quot;, abc);
                 <stringProp name="Argument.value">{&#xd;
     &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
     &quot;request&quot;: {&#xd;
-        &quot;username&quot;: &quot;${countryCodeCambd}${identifierRegister}&quot;,&#xd;
+        &quot;username&quot;: &quot;${identifierPrefix}${identifierRegister}&quot;,&#xd;
         &quot;password&quot;: &quot;${registerPassword}&quot;,&#xd;
-        &quot;consent&quot;: &quot;${consent}&quot;,&#xd;
+        &quot;consent&quot;: &quot;AGREE&quot;,&#xd;
         &quot;userInfo&quot;: {&#xd;
             &quot;fullName&quot;: [&#xd;
                 {&#xd;
-                    &quot;language&quot;: &quot;${language}&quot;,&#xd;
+                    &quot;language&quot;: &quot;${signUpRegisterLanguage}&quot;,&#xd;
                     &quot;value&quot;: &quot;${__RandomString(10,abc,)}&quot;&#xd;
                 }&#xd;
             ],&#xd;
-            &quot;phone&quot;: &quot;${countryCodeCambd}${identifierRegister}&quot;,&#xd;
-            &quot;preferredLang&quot;: &quot;${language}&quot;&#xd;
+            &quot;phone&quot;: &quot;${identifierPrefix}${identifierRegister}&quot;,&#xd;
+            &quot;preferredLang&quot;: &quot;${signUpRegisterLanguage}&quot;&#xd;
         }&#xd;
     }&#xd;
 }</stringProp>
@@ -8969,7 +8970,7 @@ String utcTime = dateFormat.format(cal.getTime());
 vars.put(&quot;utcTime&quot;, utcTime);</stringProp>
           </BeanShellPreProcessor>
           <hashTree/>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Password Generation" enabled="true">
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Generate Random Password" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -8998,7 +8999,7 @@ log.info(&quot;Password: &quot; + password)</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Generate Challenge Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Challenge Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -9007,9 +9008,10 @@ log.info(&quot;Password: &quot; + password)</stringProp>
                 <stringProp name="Argument.value">{&#xd;
   &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;identifier&quot;: &quot;${countryCodeCambd}${identifier}&quot;,&#xd;
+    &quot;identifier&quot;: &quot;${identifierPrefix}${identifier}&quot;,&#xd;
     &quot;captchaToken&quot;: &quot;&quot;,&#xd;
-    &quot;regenerate&quot;: &quot;FALSE&quot;&#xd;
+    &quot;regenerate&quot;: &quot;FALSE&quot;,&#xd;
+    &quot;purpose&quot;: &quot;REGISTRATION&quot;&#xd;
   }&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -9051,7 +9053,6 @@ log.info(&quot;Password: &quot; + password)</stringProp>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="685365575">&quot;errors&quot;:[]</stringProp>
-              <stringProp name="-305399211">&quot;status&quot;:&quot;SUCCESS&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -9069,7 +9070,7 @@ log.info(&quot;Password: &quot; + password)</stringProp>
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UTC Time" enabled="true">
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UTC Time and Random identifier" enabled="true">
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
@@ -9082,8 +9083,8 @@ Calendar cal = Calendar.getInstance();
 String utcTime = dateFormat.format(cal.getTime());
 vars.put(&quot;utcTime&quot;, utcTime);
 
-String abc = &quot;${__Random(10000000,999999999,)}&quot;;
-vars.put(&quot;identifier&quot;, abc);
+String tempValue = &quot;${__Random(10000000,999999999,)}&quot;;
+vars.put(&quot;identifier&quot;, tempValue);
 </stringProp>
           </BeanShellPreProcessor>
           <hashTree/>
@@ -9097,7 +9098,7 @@ vars.put(&quot;identifier&quot;, abc);
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Verify Challenge Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Verify Challenge Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -9106,11 +9107,12 @@ vars.put(&quot;identifier&quot;, abc);
                 <stringProp name="Argument.value">{&#xd;
     &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
     &quot;request&quot;: {&#xd;
-        &quot;identifier&quot;: &quot;${countryCodeCambd}${identifier}&quot;,&#xd;
-        &quot;challengeInfo&quot;: {&#xd;
-            &quot;challenge&quot;: &quot;${verifyChallenge}&quot;,&#xd;
-            &quot;format&quot;: &quot;alpha-numeric&quot;&#xd;
-        }&#xd;
+        &quot;identifier&quot;: &quot;${identifierPrefix}${identifier}&quot;,&#xd;
+        &quot;challengeInfo&quot;: [{&#xd;
+            &quot;challenge&quot;: &quot;${defaultSignUpChallengeValue}&quot;,&#xd;
+            &quot;format&quot;: &quot;alpha-numeric&quot;,&#xd;
+            &quot;type&quot;: &quot;OTP&quot;&#xd;
+        }]&#xd;
     }&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -9184,7 +9186,7 @@ vars.put(&quot;identifier&quot;, abc);
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Register Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Register Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -9193,18 +9195,18 @@ vars.put(&quot;identifier&quot;, abc);
                 <stringProp name="Argument.value">{&#xd;
     &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
     &quot;request&quot;: {&#xd;
-        &quot;username&quot;: &quot;${countryCodeCambd}${identifier}&quot;,&#xd;
+        &quot;username&quot;: &quot;${identifierPrefix}${identifier}&quot;,&#xd;
         &quot;password&quot;: &quot;${registerPassword}&quot;,&#xd;
-        &quot;consent&quot;: &quot;${consent}&quot;,&#xd;
+        &quot;consent&quot;: &quot;AGREE&quot;,&#xd;
         &quot;userInfo&quot;: {&#xd;
             &quot;fullName&quot;: [&#xd;
                 {&#xd;
-                    &quot;language&quot;: &quot;${language}&quot;,&#xd;
+                    &quot;language&quot;: &quot;${signUpRegisterLanguage}&quot;,&#xd;
                     &quot;value&quot;: &quot;${__RandomString(10,abc,)}&quot;&#xd;
                 }&#xd;
             ],&#xd;
-            &quot;phone&quot;: &quot;${countryCodeCambd}${identifier}&quot;,&#xd;
-            &quot;preferredLang&quot;: &quot;${language}&quot;&#xd;
+            &quot;phone&quot;: &quot;${identifierPrefix}${identifier}&quot;,&#xd;
+            &quot;preferredLang&quot;: &quot;${signUpRegisterLanguage}&quot;&#xd;
         }&#xd;
     }&#xd;
 }</stringProp>
@@ -9268,7 +9270,7 @@ vars.put(&quot;identifier&quot;, abc);
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Password Generation" enabled="true">
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Generate Random Password" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -9316,7 +9318,7 @@ log.info(&quot;Password: &quot; + password)</stringProp>
           <stringProp name="variableNames">transactionIdStatus</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sign Up Service - Registration Status Endpoint API" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Registration Status Endpoint API" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
