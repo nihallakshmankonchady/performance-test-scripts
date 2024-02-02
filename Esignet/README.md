@@ -40,7 +40,12 @@
           mosip.kernel.otp.expiry-time - 86400
    * id-authentication default properties: Update the value for the below properties.
           otp.request.flooding.max-count - 100000
-          kyc.token.expire.time.adjustment.seconds - 86400
+          kyc.token.expire.time.adjustment.seconds - 86400 
+   
+   * signup default properties : Update the value for the properties according to the execution setup. 
+         mosip.signup.register.txn.timeout=86400
+         mosip.signup.unauthenticated.txn.timeout=86400
+         mosip.signup.status-check.txn.timeout=86400
 
 * We need some jar files which needs to be added in lib folder of jmeter, PFA dependency links for your reference : 
 
@@ -165,4 +170,4 @@
 
 * Sign Up Service - Registration Status (Preparation) : This thread contains 3 API's i.e. generate challenge, verify challenge and register API endpoints. Will save the transaction id generated from the response headers of verify challenge endpoint in a csv file and will use that in the execution.
 
-* Sign Up Service - Registration Status (Execution) : This thread contains Registration Status API endpoint. Will use the file generated from the preparation to pass the transaction id and it can be used multiple times as it will only give the latest status for the transaction id we are passing.
+* Sign Up Service - Registration Status (Execution) : This thread contains Registration Status API endpoint. Will use the file generated from the preparation to pass the transaction id and it can be used multiple times as it will only give the latest status for the transaction id we are passing. The transaction id used has a expiry time which can be configured with the mentioned property mosip.signup.status-check.txn.timeout available in mosip config signup default properties.
