@@ -4,7 +4,8 @@
     1. Management API Endpoints
     2. UI API Endpoints
     3. OIDC API Endpoints 
-    4. Wallet Binding Endpoints
+    4. Wallet Binding Endpoints 
+    5. Sign Up Services Endpoints
 
 
 * Open source Tools used,
@@ -24,12 +25,12 @@
 
 * Create OIDC Client in MOSIP Authentication System (Setup) : This thread contains a JSR223 sampler(Generate Key Pair) from which will get a public-private key pair. The public key generated will be used in the OIDC client api to generate client id's  which will be registered for both IDA and eSignet. The private key generated from the sampler will be used in another JSR223 sampler(Generate Client Assertion) present in the OIDC Token (Execution). Generated client id's and there respective private key will be stored in a file which will be used further in the required api's.
 
-* In the above Create OIDC Client in MOSIP Authentication System (Setup) check for the Policy name and Auth partner id for the particular env in which we are executing the scripts. The policy name provided must be associated with the correct Auth partner id.
+* In the above Create OIDC Client in MOSIP Authentication System (Setup) check for the Policy name and Auth partner id for the particular env in which we are executing the scripts. The policy name provided must be associated with the correct Auth partner id. 
+
+* Auth Token Generation (Setup) : This thread conatins Auth manager authentication API which will generate auth token value for PMS and mobile client.
 
 * For execution purpose neeed to check for the mentioned properties: 
-
    * eSignet default properties: Update the value for the properties according to the execution setup. Perform the execution for eSignet api's with redis setup. So check for the redis setup accordingly.
-
           mosip.esignet.cache.size - Enabled while not using the redis setup. Can keep the cache size around more than 100k.
           mosip.esignet.cache.expire-in-seconds - 86400
           mosip.esignet.access-token-expire-seconds - 86400
@@ -39,7 +40,12 @@
           mosip.kernel.otp.expiry-time - 86400
    * id-authentication default properties: Update the value for the below properties.
           otp.request.flooding.max-count - 100000
-          kyc.token.expire.time.adjustment.seconds - 86400
+          kyc.token.expire.time.adjustment.seconds - 86400 
+   
+   * signup default properties : Update the value for the properties according to the execution setup. 
+         mosip.signup.register.txn.timeout=86400
+         mosip.signup.unauthenticated.txn.timeout=86400
+         mosip.signup.status-check.txn.timeout=86400
 
 * We need some jar files which needs to be added in lib folder of jmeter, PFA dependency links for your reference : 
 
@@ -139,7 +145,6 @@
 
 *  OIDC - JSON Web Key Set (Execution) : Endpoint to fetch all the public keys of the eSignet server.Returns public key set in the JWKS format.
 
-
 ### Execution points for eSignet Wallet Binding API's
 
 *  Wallet Binding - Send Binding OTP (Execution) : This thread group will send the otp for the individual id passed in the request body.  For Registered individual id we have separately added the setup thread group for creating identities.
@@ -147,5 +152,22 @@
 *  Wallet Binding : 
    * Wallet Binding (Preparation) - This preparation thread group contains binding otp api from which we will save the passed individual id into a file and will use that same file in the execution.
 
-   * Wallet Binding (Execution) - In this thread will pass the auth factor type as "WLA". Also, a JWT format binding public key which will be generated from a code written in JSR223 preprocessor. Will use the file generated from the preparation and it can't be used multiple times.
+   * Wallet Binding (Execution) - In this thread will pass the auth factor type as "WLA". Also, a JWT format binding public key which will be generated from a code written in JSR223 preprocessor. Will use the file generated from the preparation and it can't be used multiple times. 
 
+### Execution points for eSignet Sign Up Services API's
+
+* Sign Up Service - Setting (Execution) : This thread only contains a Setting endpoint API which is a GET API. 
+
+* Sign Up Service - Generate Challenge (Execution) : This thread contains Generate Challenge endpoint API. We need to pass an identifier value which is nothing but a 8-10 digit phone number with country code as the prefix. We are using a preprocessor from which we are getting the random generated phone number.
+
+* Sign Up Service - Verify Challenge (Preparation) : In this thread we have generate challenge API from which we will get the value of identifier and from response headers will get the transaction id which will be stored in a csv file.
+
+* Sign Up Service - Verify Challenge (Execution) : This thread contains verify challenge API in which we will pass the value of identifier i.e. phone number and transaction id in the headers which will get from the csv file generated in preparation. The file generated can't be used for multiple iterations. 
+
+* Sign Up Service - Register (Preparation) : This thread contains 2 API's i.e. generate challenge and verify challenge. Will save the value of identifier which will be passed in both the API's in a csv file. Will also get a verified transaction id in the response header of verified challenge endpoint and will save the transaction id in the same csv file and will use that file in the execution.
+
+* Sign Up Service - Register (Execution) : This thread is for register API endpoint and will use a csv file to pass the value of identifier and verified transaction id. Will use the file generated from the preparation and it can't be used multiple times. 
+
+* Sign Up Service - Registration Status (Preparation) : This thread contains 3 API's i.e. generate challenge, verify challenge and register API endpoints. Will save the transaction id generated from the response headers of verify challenge endpoint in a csv file and will use that in the execution.
+
+* Sign Up Service - Registration Status (Execution) : This thread contains Registration Status API endpoint. Will use the file generated from the preparation to pass the transaction id and it can be used multiple times as it will only give the latest status for the transaction id we are passing. The transaction id used has a expiry time which can be configured with the mentioned property mosip.signup.status-check.txn.timeout available in mosip config signup default properties.
