@@ -44,7 +44,7 @@
    
    * signup default properties : Update the value for the properties according to the execution setup.
          mosip.signup.unauthenticated.txn.timeout=86400
-         mosip.signup.register.txn.timeout=86400
+         mosip.signup.verified.txn.timeout=86400
          mosip.signup.status-check.txn.timeout=86400
 
 * We need some jar files which needs to be added in lib folder of jmeter, PFA dependency links for your reference : 
@@ -166,7 +166,7 @@
 
 * Sign Up Service - Register (Preparation) : This thread contains 2 API's i.e. generate challenge and verify challenge. Will save the value of identifier which will be passed in both the API's in a csv file. Will also get a verified transaction id in the response header of verified challenge endpoint and will save the transaction id in the same csv file and will use that file in the execution.
 
-* Sign Up Service - Register (Execution) : This thread is for register API endpoint and will use a csv file to pass the value of identifier and verified transaction id. Will use the file generated from the preparation and it can't be used multiple times. We need to increase the expiry time of the transaction id we are getting from the preparation thread group so for that we need to update the mentioned property mosip.signup.register.txn.timeout in signup default properties.
+* Sign Up Service - Register (Execution) : This thread is for register API endpoint and will use a csv file to pass the value of identifier and verified transaction id. Will use the file generated from the preparation and it can't be used multiple times. We need to increase the expiry time of the transaction id we are getting from the preparation thread group so for that we need to update the mentioned property mosip.signup.verified.txn.timeout in signup default properties.
 
 * Sign Up Service - Registration Status (Preparation) : This thread contains 3 API's i.e. generate challenge, verify challenge and register API endpoints. Will save the transaction id generated from the response headers of verify challenge endpoint in a csv file and will use that in the execution.
 
