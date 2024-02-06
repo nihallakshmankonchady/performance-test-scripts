@@ -176,7 +176,7 @@
           </elementProp>
           <elementProp name="signUpRegisterLanguage" elementType="Argument">
             <stringProp name="Argument.name">signUpRegisterLanguage</stringProp>
-            <stringProp name="Argument.value">eng</stringProp>
+            <stringProp name="Argument.value">khm</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="pmsClientId" elementType="Argument">
@@ -8867,6 +8867,18 @@ vars.put(&quot;identifier&quot;, tempValue);
           <stringProp name="variableNames">transactionIdRegister,identifierRegister</stringProp>
         </CSVDataSet>
         <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Names From File" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">./fullNames.txt</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">fullName</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Register Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -8883,7 +8895,7 @@ vars.put(&quot;identifier&quot;, tempValue);
             &quot;fullName&quot;: [&#xd;
                 {&#xd;
                     &quot;language&quot;: &quot;${signUpRegisterLanguage}&quot;,&#xd;
-                    &quot;value&quot;: &quot;${__RandomString(10,abc,)}&quot;&#xd;
+                    &quot;value&quot;: &quot;${fullName}&quot;&#xd;
                 }&#xd;
             ],&#xd;
             &quot;phone&quot;: &quot;${identifierPrefix}${identifierRegister}&quot;,&#xd;
@@ -8895,10 +8907,10 @@ vars.put(&quot;identifier&quot;, tempValue);
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
+          <stringProp name="HTTPSampler.domain">${serverIPCamdgcPerf}</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
           <stringProp name="HTTPSampler.path">/v1/signup/registration/register</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -8975,7 +8987,8 @@ def randomNumbers = (new Random().nextInt(1000000000)).toString()
 def password = text + randomNumbers 
 
 vars.put(&quot;registerPassword&quot;, password)
-log.info(&quot;Password: &quot; + password)</stringProp>
+log.info(&quot;Password: &quot; + password)
+</stringProp>
           </JSR223PreProcessor>
           <hashTree/>
         </hashTree>
@@ -8994,6 +9007,18 @@ log.info(&quot;Password: &quot; + password)</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load Names From File" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">./fullNames.txt</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">fullName</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Challenge Endpoint API" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -9013,7 +9038,7 @@ log.info(&quot;Password: &quot; + password)</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
+          <stringProp name="HTTPSampler.domain">${serverIPCamdgcPerf}</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -9114,7 +9139,7 @@ vars.put(&quot;identifier&quot;, tempValue);
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
+          <stringProp name="HTTPSampler.domain">${serverIPCamdgcPerf}</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -9197,7 +9222,8 @@ vars.put(&quot;identifier&quot;, tempValue);
             &quot;fullName&quot;: [&#xd;
                 {&#xd;
                     &quot;language&quot;: &quot;${signUpRegisterLanguage}&quot;,&#xd;
-                    &quot;value&quot;: &quot;${__RandomString(10,abc,)}&quot;&#xd;
+                    &quot;value&quot;: &quot;${fullName}&quot;&#xd;
+                    &#xd;
                 }&#xd;
             ],&#xd;
             &quot;phone&quot;: &quot;${identifierPrefix}${identifier}&quot;,&#xd;
@@ -9209,10 +9235,10 @@ vars.put(&quot;identifier&quot;, tempValue);
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${serverIP}</stringProp>
+          <stringProp name="HTTPSampler.domain">${serverIPCamdgcPerf}</stringProp>
           <stringProp name="HTTPSampler.port">${serverPortNo}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
           <stringProp name="HTTPSampler.path">/v1/signup/registration/register</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -9275,7 +9301,8 @@ def randomNumbers = (new Random().nextInt(1000000000)).toString()
 def password = text + randomNumbers 
 
 vars.put(&quot;registerPassword&quot;, password)
-log.info(&quot;Password: &quot; + password)</stringProp>
+log.info(&quot;Password: &quot; + password)
+</stringProp>
           </JSR223PreProcessor>
           <hashTree/>
           <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Store Transaction Id To File" enabled="true">
