@@ -7,6 +7,7 @@
     4. Wallet Binding Endpoints 
     5. Sign Up Services Endpoints
 
+
 * Open source Tools used,
     1. [Apache JMeter](https://jmeter.apache.org/)
 
@@ -20,17 +21,13 @@
 
 ### Setup points for Execution
 
-* Create Identities in MOSIP Authentication System (Setup) : This thread contains the authorization api's for regproc and idrepo from which the auth token will be generated. There is set of 4 api's generate RID, generate UIN, add identity and add VID. From here we will get the VID which can be further used as individual id. These 4 api's are present in the loop controller where we can define the number of samples for creating identities in which "addIdentitySetup" is used as a variable. 
-
-* Create Identities in MOSIP Authentication System - Password Based Auth (Setup) : This thread contains the authorization api's for regproc and idrepo from which the auth token will be generated. There is set of 3 api's generate UIN, generate hash for password and add identity. From here we will get the identifier value which can be further used as an individual id or we can say as phone number in pwd based authentication. These 3 api's are present in the loop controller where we can define the number of samples for creating identities in which "addIdentitySetup" is used as a variable.
+* Create Identities in MOSIP Authentication System (Setup) : This thread contains the authorization api's for regproc and idrepo from which the auth token will be generated. There is set of 4 api's generate RID, generate UIN, add identity and add VID. From here we will get the VID which can be further used as individual id. These 4 api's are present in the loop controller where we can define the number of samples for creating identities in which "addIdentitySetup" is used as a variable.
 
 * Create OIDC Client in MOSIP Authentication System (Setup) : This thread contains a JSR223 sampler(Generate Key Pair) from which will get a public-private key pair. The public key generated will be used in the OIDC client api to generate client id's  which will be registered for both IDA and eSignet. The private key generated from the sampler will be used in another JSR223 sampler(Generate Client Assertion) present in the OIDC Token (Execution). Generated client id's and there respective private key will be stored in a file which will be used further in the required api's.
 
 * In the above Create OIDC Client in MOSIP Authentication System (Setup) check for the Policy name and Auth partner id for the particular env in which we are executing the scripts. The policy name provided must be associated with the correct Auth partner id. 
 
-* Auth Token Generation (Setup) : This thread conatins Auth manager authentication API which will generate auth token value for PMS and mobile client. 
-
-* Store Successful Credentials To File - Password Based Auth (Setup) : In this thread we will pass the file created from Create Identities in MOSIP Authentication System - Password Based Auth (Setup). Here, we will create a csv file which will store successful credentials into the file. 
+* Auth Token Generation (Setup) : This thread conatins Auth manager authentication API which will generate auth token value for PMS and mobile client.
 
 * For execution purpose neeed to check for the mentioned properties: 
    * eSignet default properties: Update the value for the properties according to the execution setup. Perform the execution for eSignet api's with redis setup. So check for the redis setup accordingly.
@@ -110,10 +107,8 @@
    * Send OTP (Execution) - Same execution scenario applied as of OAuth details i.e. preparation samples should be greater or equal to the number of execution samples. than preparation. Transaction id will be used which is created in the preparation part. Registered individual id also need to be passed in the body for which we have separately added the setup thread group for creating identity. The files created from preparation part can be used for multiple executions.
 
 *  UI - Authentication :
-   * Authentication (Preparation) - In this thread group we are authenticating with 2 types of auth factor i.e. "PWD" and "OTP". So we have added an If controller where according to the type of auth factor the controller will execute. In the If controller we are using a variable which is defined in the user defined variables as "authFactorType. When the authFactorType will be "PWD" the first If controller will be executed and which contains OAuth details endpoint. When the authFactorType will be "OTP" the second If controller will be executed which contains 2 api's OAuth Details and Send OTP endpoints. We cant use the preparation file for multiple runs.
-   * Authentication (Execution) - For the execution also there are 2 If controller in which we have authentication endpoint for PWD and OTP respectively. The total preparation samples must be equal or higher in number.
-
-   * UI - Authentication Complete Flow (Execution) - In this thread we have kept all the ednpoints of the auth flow in a single thread group. Thread contains 2 types of auth factor i.e. "PWD" and "OTP" flow endpoints.
+   * Authentication - OTP (Preparation) - For the preparation we need 2 api's OAuth Details and Send OTP from which we will get the transaction id and required OTP respectively. We cant use the preparation file for multiple runs as OTP will not be valid.
+   * Authentication - OTP (Execution) - For the execution the total preparation samples must be equal or higher in number. Transaction id will be used which is created from OAuth details api. Registered individual id also need to be passed in the body along with the OTP.
 
 *  UI - Authorization Code : 
    * Authorization Code (Preparation) - There will be 3 api's included in the preparation i.e. OAuth Details, Send OTP, Authentication Endpoint - OTP from which we will get the transaction id, OTP which will be used in the execution.  We cant use the preparation file for multiple runs.
@@ -176,3 +171,41 @@
 * Sign Up Service - Registration Status (Preparation) : This thread contains 3 API's i.e. generate challenge, verify challenge and register API endpoints. Will save the transaction id generated from the response headers of verify challenge endpoint in a csv file and will use that in the execution.
 
 * Sign Up Service - Registration Status (Execution) : This thread contains Registration Status API endpoint. Will use the file generated from the preparation to pass the transaction id and it can be used multiple times as it will only give the latest status for the transaction id we are passing. The transaction id used has a expiry time which can be configured with the mentioned property mosip.signup.status-check.txn.timeout available in mosip config signup default properties. We need to increase the expiry time of the transaction id we are getting from the preparation thread group so for that we need to update the mentioned property mosip.signup.status-check.txn.timeout in signup default properties.
+
+* Sign Up Service - Reset Password (Preparation) : This thread contains 3 API's i.e. generate challenge, verify challenge and register API endpoints. Will be generating base64url-encoded json value of the khmer name details with the json body. We will be saving the encoded value with the khmer name in csv file;.
+
+* Sign Up Service - Reset Password (Execution) : This thread contains Reset Password API endpoint. Will use the file generated from the preparation to pass the base64url-encoded json value in the verify challenge. The transaction id generated by verify challenge will passed in reset-password endpoint url.
+
+
+### Designing the workload model for performance test execution
+* Calculation of number of users depending on Transactions per second (TPS) provided by client
+
+* Applying little's law
+	* Users = TPS * (SLA of transaction + think time + pacing)
+	* TPS --> Transaction per second.
+	
+* For the realistic approach we can keep (Think time + Pacing) = 1 second for API testing
+	* Calculating number of users for 10 TPS
+		* Users= 10 X (SLA of transaction + 1)
+		       = 10 X (1 + 1)
+			   = 20
+			   
+### Usage of Constant Throughput timer to control Hits/sec from JMeter
+* In order to control hits/ minute in JMeter, it is better to use Timer called Constant Throughput Timer.
+
+* If we are performing load test with 10TPS as hits / sec in one thread group. Then we need to provide value hits / minute as in Constant Throughput Timer
+	* Value = 10 X 60
+			= 600
+
+* Dropdown option in Constant Throughput Timer
+	* Calculate Throughput based on as = All active threads in current thread group
+		* If we are performing load test with 10TPS as hits / sec in one thread group. Then we need to provide value hits / minute as in Constant Throughput Timer
+	 			Value = 10 X 60
+					  = 600
+		  
+	* Calculate Throughput based on as = this thread
+		* If we are performing scalability testing we need to calculate throughput for 10 TPS as 
+          Value = (10 * 60 )/(Number of users)
+
+### Usage of bzm - Weighted Switch Controller for the distribution of hits volume with respect to percentages in a single thread group
+* This controller helps in distributing hits among the different end point urls. We can provide percentage of total hits for the specific url. 
