@@ -13976,7 +13976,7 @@ def currentDir = System.getProperty(&quot;user.dir&quot;);
 def binDir = new File(currentDir);
 
 //saving to the file
-File f = new File(binDir, &quot;Testdataforresetpassword.csv&quot;);
+File f = new File(binDir, &quot;testdata_reset_password.csv&quot;);
 FileWriter fw=new FileWriter(f,true);
 BufferedWriter bw=new BufferedWriter(fw);
 bw.write(&quot;${phonenum},${encodedString}&quot;);
@@ -14005,7 +14005,7 @@ fw.close();</stringProp>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Load identifier From File" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
-          <stringProp name="filename">./Testdataforresetpassword.csv</stringProp>
+          <stringProp name="filename">./testdata_reset_password.csv</stringProp>
           <boolProp name="ignoreFirstLine">false</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
