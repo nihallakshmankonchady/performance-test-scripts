@@ -56,33 +56,33 @@
             <stringProp name="Argument.value">443</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="CredentialClientId" elementType="Argument">
-            <stringProp name="Argument.name">CredentialClientId</stringProp>
+          <elementProp name="credentialClientId" elementType="Argument">
+            <stringProp name="Argument.name">credentialClientId</stringProp>
             <stringProp name="Argument.value">mosip-crereq-client</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="CredentialSecretKey" elementType="Argument">
-            <stringProp name="Argument.name">CredentialSecretKey</stringProp>
+          <elementProp name="credentialSecretKey" elementType="Argument">
+            <stringProp name="Argument.name">credentialSecretKey</stringProp>
             <stringProp name="Argument.value">abc123</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="CredentialAppId" elementType="Argument">
-            <stringProp name="Argument.name">CredentialAppId</stringProp>
+          <elementProp name="credentialAppId" elementType="Argument">
+            <stringProp name="Argument.name">credentialAppId</stringProp>
             <stringProp name="Argument.value">crereq</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="CredentialSvcClientId" elementType="Argument">
-            <stringProp name="Argument.name">CredentialSvcClientId</stringProp>
+          <elementProp name="credentialSvcClientId" elementType="Argument">
+            <stringProp name="Argument.name">credentialSvcClientId</stringProp>
             <stringProp name="Argument.value">mosip-creser-client</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="CredentialSvcSecretKey" elementType="Argument">
-            <stringProp name="Argument.name">CredentialSvcSecretKey</stringProp>
+          <elementProp name="credentialSvcSecretKey" elementType="Argument">
+            <stringProp name="Argument.name">credentialSvcSecretKey</stringProp>
             <stringProp name="Argument.value">abc123</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="CredentialSvcAppId" elementType="Argument">
-            <stringProp name="Argument.name">CredentialSvcAppId</stringProp>
+          <elementProp name="credentialSvcAppId" elementType="Argument">
+            <stringProp name="Argument.name">credentialSvcAppId</stringProp>
             <stringProp name="Argument.value">partner</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -158,6 +158,16 @@
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response 200 status code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Auth Token" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">authToken</stringProp>
@@ -185,9 +195,9 @@
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;${CredentialClientId}&quot;,&#xd;
-    &quot;secretKey&quot;: &quot;${CredentialSecretKey}&quot;,&#xd;
-    &quot;appId&quot;: &quot;${CredentialAppId}&quot;&#xd;
+    &quot;clientId&quot;: &quot;${credentialClientId}&quot;,&#xd;
+    &quot;secretKey&quot;: &quot;${credentialSecretKey}&quot;,&#xd;
+    &quot;appId&quot;: &quot;${credentialAppId}&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
   &quot;version&quot;: &quot;1.0&quot;&#xd;
@@ -230,6 +240,16 @@
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response 200 status code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Auth Token" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">authToken</stringProp>
@@ -257,9 +277,9 @@
   &quot;id&quot;: &quot;string&quot;,&#xd;
   &quot;metadata&quot;: {},&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;clientId&quot;: &quot;${CredentialSvcClientId}&quot;,&#xd;
-    &quot;secretKey&quot;: &quot;${CredentialSvcSecretKey}&quot;,&#xd;
-    &quot;appId&quot;: &quot;${CredentialSvcAppId}&quot;&#xd;
+    &quot;clientId&quot;: &quot;${credentialSvcClientId}&quot;,&#xd;
+    &quot;secretKey&quot;: &quot;${credentialSvcSecretKey}&quot;,&#xd;
+    &quot;appId&quot;: &quot;${credentialSvcAppId}&quot;&#xd;
   },&#xd;
   &quot;requesttime&quot;: &quot;${__time(YYYY-MM-dd&apos;T&apos;HH:mm:ss.SSS,)}Z&quot;,&#xd;
   &quot;version&quot;: &quot;1.0&quot;&#xd;
@@ -300,6 +320,16 @@
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">false</boolProp>
             <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response 200 status code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Auth Token" enabled="true">
