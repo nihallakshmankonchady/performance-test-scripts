@@ -14011,7 +14011,7 @@ fw.close();</stringProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">identifierNum,encodedString</stringProp>
+          <stringProp name="variableNames">identifier,encodedChallenge</stringProp>
         </CSVDataSet>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Challenge Endpoint API" enabled="true">
@@ -14023,7 +14023,7 @@ fw.close();</stringProp>
                 <stringProp name="Argument.value">{&#xd;
   &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;identifier&quot;: &quot;${identifierNum}&quot;,&#xd;
+    &quot;identifier&quot;: &quot;${identifier}&quot;,&#xd;
     &quot;purpose&quot;: &quot;RESET_PASSWORD&quot;,&#xd;
     &quot;captchaToken&quot;: &quot;&quot;&#xd;
   }&#xd;
@@ -14084,7 +14084,7 @@ fw.close();</stringProp>
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UTC Time and Random identifier" enabled="true">
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UTC Time" enabled="true">
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
@@ -14097,8 +14097,6 @@ Calendar cal = Calendar.getInstance();
 String utcTime = dateFormat.format(cal.getTime());
 vars.put(&quot;utcTime&quot;, utcTime);
 
-String tempValue = &quot;${__Random(10000000,999999999,)}&quot;;
-vars.put(&quot;identifier&quot;, tempValue);
 </stringProp>
           </BeanShellPreProcessor>
           <hashTree/>
@@ -14121,7 +14119,7 @@ vars.put(&quot;identifier&quot;, tempValue);
                 <stringProp name="Argument.value">{&#xd;
   &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;identifier&quot;: &quot;${identifierNum}&quot;,&#xd;
+    &quot;identifier&quot;: &quot;${identifier}&quot;,&#xd;
     &quot;challengeInfo&quot;: [&#xd;
       {&#xd;
         &quot;format&quot;: &quot;alpha-numeric&quot;,&#xd;
@@ -14130,7 +14128,7 @@ vars.put(&quot;identifier&quot;, tempValue);
       },&#xd;
       {&#xd;
         &quot;format&quot;: &quot;base64url-encoded-json&quot;,&#xd;
-        &quot;challenge&quot;: &quot;${encodedString}&quot;,&#xd;
+        &quot;challenge&quot;: &quot;${encodedChallenge}&quot;,&#xd;
         &quot;type&quot;: &quot;KBA&quot;&#xd;
       }&#xd;
     ]&#xd;
@@ -14216,7 +14214,7 @@ vars.put(&quot;identifier&quot;, tempValue);
                 <stringProp name="Argument.value">{&#xd;
   &quot;requestTime&quot;: &quot;${utcTime}Z&quot;,&#xd;
   &quot;request&quot;: {&#xd;
-    &quot;identifier&quot;: &quot;${identifierNum}&quot;,&#xd;
+    &quot;identifier&quot;: &quot;${identifier}&quot;,&#xd;
     &quot;password&quot;: &quot;${registerPassword}&quot;&#xd;
   }&#xd;
 }</stringProp>
